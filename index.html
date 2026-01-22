@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German A1 Learning Journey ✿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Covered+By+Your+Grace&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fef9f3;
+            --soft-pink: #ffc4d6;
+            --rose: #ff9eb7;
+            --dusty-rose: #d4899c;
+            --sage: #b8c5b3;
+            --warm-white: #fff8f0;
+            --text-brown: #6b5448;
+            --light-sage: #e8f0e6;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--cream);
+            color: var(--text-brown);
+            line-height: 1.8;
+            padding: 20px;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 Q 30 30 50 50 Q 70 30 50 10' fill='%23ffc4d6' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 248, 240, 0.8);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(212, 137, 156, 0.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .flower-decoration {
+            font-size: 3rem;
+            opacity: 0.6;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .flower-left {
+            left: 10%;
+            top: 20px;
+            animation-delay: 0s;
+        }
+
+        .flower-right {
+            right: 10%;
+            top: 20px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            color: var(--rose);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px rgba(255, 196, 214, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.8rem;
+            color: var(--dusty-rose);
+            margin-bottom: 40px;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, var(--warm-white), var(--light-sage));
+            border: 3px solid var(--soft-pink);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .intro-box p {
+            font-size: 1.1rem;
+            margin: 15px 0;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .lesson-card {
+            background: white;
+            border: 3px solid var(--soft-pink);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+        }
+
+        .lesson-card::before {
+            content: '✿';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 4rem;
+            opacity: 0.1;
+            color: var(--rose);
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px) rotate(-1deg);
+            box-shadow: 0 15px 40px rgba(255, 196, 214, 0.3);
+            border-color: var(--rose);
+        }
+
+        .lesson-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.1rem;
+        }
+
+        .lesson-card h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: var(--dusty-rose);
+            margin: 15px 0;
+        }
+
+        .lesson-card p {
+            color: var(--text-brown);
+            font-size: 0.95rem;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+        }
+
+        .coming-soon-badge {
+            background: linear-gradient(135deg, #e0e0e0, #b0b0b0);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            border-top: 3px dashed var(--soft-pink);
+        }
+
+        footer p {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.3rem;
+            color: var(--dusty-rose);
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-white);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--soft-pink);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--rose);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="flower-decoration flower-left">🌸</div>
+            <div class="flower-decoration flower-right">🌺</div>
+            <h1>German Learning Journey ✿</h1>
+            <p class="subtitle">~ from A1 to fluency, one cozy day at a time ~</p>
+        </header>
+
+        <div class="intro-box">
+            <p><strong>Welcome to your German learning adventure!</strong></p>
+            <p>This is a complete A1 German course designed for self-study with tons of writing practice.</p>
+            <p>Each day includes grammar explanations, vocabulary, and exercises (100+ sentences to write!).</p>
+            <p style="margin-top: 25px; color: var(--rose); font-size: 1.2rem;">Start with Week 1, Day 1 and work your way through! 🌷</p>
+        </div>
+
+        <h2 style="text-align: center; font-family: 'Crimson Pro', serif; font-size: 2.5rem; color: var(--rose); margin: 50px 0 30px;">Available Lessons</h2>
+
+        <div class="lessons-grid">
+            <a href="roadmap.html" class="lesson-card">
+                <div class="lesson-badge">overview</div>
+                <h2>📋 A1 Roadmap</h2>
+                <p>See the complete 8-week plan with all topics organized by week</p>
+            </a>
+
+            <a href="week1-day1.html" class="lesson-card">
+                <div class="lesson-badge">week 1 ~ day 1</div>
+                <h2>🌸 First Day!</h2>
+                <p>Alphabet, pronouns, sein & haben<br>110 writing exercises</p>
+            </a>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 2</div>
+                <h2>Day 2</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 3</div>
+                <h2>Day 3</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 4</div>
+                <h2>Day 4</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 5</div>
+                <h2>Day 5</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 6</div>
+                <h2>Day 6</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+
+            <div class="lesson-card coming-soon">
+                <div class="lesson-badge">week 1 ~ day 7</div>
+                <h2>Day 7</h2>
+                <p>Coming soon...</p>
+                <span class="coming-soon-badge">locked</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>🌸 Built with love for language learning 🌸</p>
+            <p style="margin-top: 10px;">Study 4 hours daily • Write hundreds of sentences • Master German!</p>
+            <p style="margin-top: 15px; color: var(--rose); font-size: 1.4rem;">Viel Erfolg! ✿</p>
+        </footer>
+    </div>
+</body>
+</html>

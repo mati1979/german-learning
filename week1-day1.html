@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - Day 1 | German A1 ✿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Covered+By+Your+Grace&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #fef9f3;
+            --soft-pink: #ffc4d6;
+            --rose: #ff9eb7;
+            --dusty-rose: #d4899c;
+            --sage: #b8c5b3;
+            --warm-white: #fff8f0;
+            --text-brown: #6b5448;
+            --light-sage: #e8f0e6;
+            --correct: #7a9972;
+            --highlight: #ffe4ec;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--cream);
+            color: var(--text-brown);
+            line-height: 1.8;
+            padding: 20px;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 Q 30 30 50 50 Q 70 30 50 10' fill='%23ffc4d6' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: 180px 180px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 248, 240, 0.8);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(212, 137, 156, 0.15);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px dashed var(--soft-pink);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .day-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(255, 158, 183, 0.3);
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 3rem;
+            color: var(--rose);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.3rem;
+            color: var(--dusty-rose);
+        }
+
+        .section {
+            margin: 50px 0;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose));
+            padding: 20px 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(255, 158, 183, 0.25);
+        }
+
+        .section-icon {
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .content-box {
+            background: white;
+            border: 3px solid var(--soft-pink);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(255, 196, 214, 0.15);
+        }
+
+        .content-box h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--dusty-rose);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--soft-pink);
+        }
+
+        .pronunciation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .pronunciation-card {
+            background: var(--highlight);
+            border: 2px solid var(--soft-pink);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pronunciation-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 196, 214, 0.3);
+        }
+
+        .letter {
+            font-size: 2.5rem;
+            color: var(--rose);
+            font-weight: 700;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .sound {
+            font-size: 0.9rem;
+            color: var(--text-brown);
+            margin-top: 8px;
+        }
+
+        .example {
+            font-size: 0.85rem;
+            color: var(--dusty-rose);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .grammar-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid var(--soft-pink);
+        }
+
+        .grammar-table th {
+            background: linear-gradient(135deg, var(--soft-pink), var(--rose));
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+        }
+
+        .grammar-table td {
+            background: white;
+            padding: 15px;
+            border-bottom: 1px solid var(--soft-pink);
+        }
+
+        .grammar-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .german-word {
+            color: var(--rose);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .vocab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .vocab-item {
+            background: var(--light-sage);
+            border: 2px solid var(--sage);
+            border-radius: 15px;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .vocab-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(184, 197, 179, 0.3);
+        }
+
+        .vocab-german {
+            font-size: 1.2rem;
+            color: var(--dusty-rose);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .vocab-english {
+            font-size: 0.9rem;
+            color: var(--text-brown);
+        }
+
+        .exercise-box {
+            background: linear-gradient(135deg, var(--warm-white), var(--light-sage));
+            border: 3px solid var(--sage);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .exercise-box h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            color: var(--dusty-rose);
+            margin-bottom: 20px;
+        }
+
+        .exercise-item {
+            background: white;
+            padding: 15px 20px;
+            margin: 12px 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--soft-pink);
+            font-size: 1rem;
+        }
+
+        .exercise-number {
+            color: var(--rose);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 3px solid var(--soft-pink);
+            border-radius: 15px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            resize: vertical;
+            margin-top: 10px;
+            background: white;
+            color: var(--text-brown);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--rose);
+            box-shadow: 0 0 0 3px rgba(255, 158, 183, 0.1);
+        }
+
+        .note-box {
+            background: var(--highlight);
+            border-left: 5px solid var(--rose);
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .note-box strong {
+            color: var(--rose);
+            font-size: 1.1rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #e8f0e6, #d0e3cc);
+            border: 3px solid var(--sage);
+            padding: 20px 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box strong {
+            color: var(--correct);
+            font-size: 1.1rem;
+        }
+
+        .progress-tracker {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 3px solid var(--soft-pink);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(255, 196, 214, 0.3);
+            z-index: 1000;
+        }
+
+        .progress-tracker h4 {
+            font-family: 'Crimson Pro', serif;
+            color: var(--rose);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .progress-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--soft-pink);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox:hover {
+            background: var(--highlight);
+        }
+
+        .checkbox.checked {
+            background: var(--rose);
+            border-color: var(--rose);
+            position: relative;
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .examples-grid {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .example-sentence {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--sage);
+        }
+
+        .example-sentence .de {
+            color: var(--rose);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+
+        .example-sentence .en {
+            color: var(--text-brown);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 3px dashed var(--soft-pink);
+        }
+
+        footer p {
+            font-family: 'Covered By Your Grace', cursive;
+            font-size: 1.3rem;
+            color: var(--dusty-rose);
+        }
+
+        @media (max-width: 768px) {
+            .progress-tracker {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .pronunciation-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-white);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--soft-pink);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--rose);
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-tracker">
+        <h4>Today's Progress ✿</h4>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>Alphabet</span>
+        </div>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>Pronouns</span>
+        </div>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>sein</span>
+        </div>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>haben</span>
+        </div>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>Vocabulary</span>
+        </div>
+        <div class="progress-item">
+            <div class="checkbox" onclick="toggleCheck(this)"></div>
+            <span>Exercises</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="day-badge">week 1 ~ day 1</div>
+            <h1>Welcome to German! 🌸</h1>
+            <p class="subtitle">~ das Alphabet & erste Wörter ~</p>
+        </header>
+
+        <!-- SECTION 1: ALPHABET -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📝</span>
+                <h2 class="section-title">Das Alphabet (The Alphabet)</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>Special German Letters</h3>
+                <p style="margin-bottom: 20px;">German uses the same alphabet as English, PLUS four special characters. Let's learn them first because they're unique!</p>
+                
+                <div class="pronunciation-grid">
+                    <div class="pronunciation-card">
+                        <div class="letter">Ä ä</div>
+                        <div class="sound">"eh" sound</div>
+                        <div class="example">like "air"</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">Ö ö</div>
+                        <div class="sound">"ur" sound</div>
+                        <div class="example">like "sir"</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">Ü ü</div>
+                        <div class="sound">"ew" sound</div>
+                        <div class="example">like "few"</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">ß</div>
+                        <div class="sound">"ss" sound</div>
+                        <div class="example">sharp S</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 pronunciation tip:</strong> These letters are called "Umlaute" (umlauts). Practice saying them slowly: Ä (eh), Ö (ur), Ü (ew). The ß is called "Eszett" or "scharfes S" (sharp S) and sounds exactly like "ss"!
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>Important Pronunciation Rules</h3>
+                <div class="pronunciation-grid">
+                    <div class="pronunciation-card">
+                        <div class="letter">W</div>
+                        <div class="sound">"v" sound</div>
+                        <div class="example">wie = vee</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">V</div>
+                        <div class="sound">"f" sound</div>
+                        <div class="example">vier = fear</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">Z</div>
+                        <div class="sound">"ts" sound</div>
+                        <div class="example">zu = tsoo</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">J</div>
+                        <div class="sound">"y" sound</div>
+                        <div class="example">ja = yah</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">CH</div>
+                        <div class="sound">soft "h"</div>
+                        <div class="example">ich = ish</div>
+                    </div>
+                    <div class="pronunciation-card">
+                        <div class="letter">SCH</div>
+                        <div class="sound">"sh" sound</div>
+                        <div class="example">schön = shurn</div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <strong>✿ remember:</strong> German pronunciation is very consistent! Unlike English, once you learn the rules, every word follows them. W is always "v", Z is always "ts", etc.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PRONOUNS -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">👥</span>
+                <h2 class="section-title">Personalpronomen (Personal Pronouns)</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>The German Pronouns</h3>
+                <p style="margin-bottom: 20px;">These are the building blocks of every sentence! Memorize these first.</p>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>German</th>
+                            <th>Pronunciation</th>
+                            <th>English</th>
+                            <th>Usage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="german-word">ich</span></td>
+                            <td>ish</td>
+                            <td>I</td>
+                            <td>talking about yourself</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">du</span></td>
+                            <td>doo</td>
+                            <td>you (informal)</td>
+                            <td>friends, family, children, pets</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">er</span></td>
+                            <td>air</td>
+                            <td>he</td>
+                            <td>masculine person/thing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">sie</span></td>
+                            <td>zee</td>
+                            <td>she</td>
+                            <td>feminine person/thing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">es</span></td>
+                            <td>ess</td>
+                            <td>it</td>
+                            <td>neutral person/thing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">wir</span></td>
+                            <td>veer</td>
+                            <td>we</td>
+                            <td>group including yourself</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">ihr</span></td>
+                            <td>ear</td>
+                            <td>you all (informal)</td>
+                            <td>group of friends/family</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">sie</span></td>
+                            <td>zee</td>
+                            <td>they</td>
+                            <td>group of people/things</td>
+                        </tr>
+                        <tr>
+                            <td><span class="german-word">Sie</span></td>
+                            <td>zee</td>
+                            <td>you (formal)</td>
+                            <td>strangers, bosses, elders - ALWAYS CAPITALIZED!</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <strong>✿ important:</strong> Notice that "sie" has THREE meanings! Context tells you which one:
+                    <br>• sie = she (lowercase)
+                    <br>• sie = they (lowercase)
+                    <br>• Sie = you formal (ALWAYS capitalized, even in the middle of sentences!)
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 cultural tip:</strong> Use "Sie" with anyone you don't know well, work colleagues, teachers, shop workers, doctors, etc. Wait for them to offer "du" before switching! It's a sign of respect.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SEIN -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <h2 class="section-title">Das Verb "sein" (The Verb "to be")</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>Conjugation of sein</h3>
+                <p style="margin-bottom: 20px;">This is THE most important verb in German! You'll use it constantly. Memorize this TODAY.</p>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Pronoun</th>
+                            <th>Conjugation</th>
+                            <th>Pronunciation</th>
+                            <th>English</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ich</td>
+                            <td><span class="german-word">bin</span></td>
+                            <td>bin</td>
+                            <td>I am</td>
+                        </tr>
+                        <tr>
+                            <td>du</td>
+                            <td><span class="german-word">bist</span></td>
+                            <td>bist</td>
+                            <td>you are (informal)</td>
+                        </tr>
+                        <tr>
+                            <td>er/sie/es</td>
+                            <td><span class="german-word">ist</span></td>
+                            <td>ist</td>
+                            <td>he/she/it is</td>
+                        </tr>
+                        <tr>
+                            <td>wir</td>
+                            <td><span class="german-word">sind</span></td>
+                            <td>zint</td>
+                            <td>we are</td>
+                        </tr>
+                        <tr>
+                            <td>ihr</td>
+                            <td><span class="german-word">seid</span></td>
+                            <td>zite</td>
+                            <td>you all are (informal)</td>
+                        </tr>
+                        <tr>
+                            <td>sie/Sie</td>
+                            <td><span class="german-word">sind</span></td>
+                            <td>zint</td>
+                            <td>they are / you are (formal)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <strong>✿ pattern to notice:</strong> "wir" and "sie/Sie" use the same form: sind!
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>Example Sentences with sein</h3>
+                <div class="examples-grid">
+                    <div class="example-sentence">
+                        <div class="de">Ich bin Maria.</div>
+                        <div class="en">I am Maria.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Du bist nett.</div>
+                        <div class="en">You are nice.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Er ist müde.</div>
+                        <div class="en">He is tired.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Sie ist Lehrerin.</div>
+                        <div class="en">She is a teacher.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Es ist kalt.</div>
+                        <div class="en">It is cold.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Wir sind Studenten.</div>
+                        <div class="en">We are students.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Ihr seid früh.</div>
+                        <div class="en">You all are early.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Sie sind glücklich.</div>
+                        <div class="en">They are happy.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Sind Sie Herr Schmidt?</div>
+                        <div class="en">Are you Mr. Schmidt? (formal)</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 grammar tip:</strong> Notice the word order! In questions, the verb comes FIRST, then the pronoun: "Bist du...?" "Ist er...?" "Sind Sie...?"
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HABEN -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">💫</span>
+                <h2 class="section-title">Das Verb "haben" (The Verb "to have")</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>Conjugation of haben</h3>
+                <p style="margin-bottom: 20px;">The second most important verb! "haben" means "to have".</p>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Pronoun</th>
+                            <th>Conjugation</th>
+                            <th>Pronunciation</th>
+                            <th>English</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ich</td>
+                            <td><span class="german-word">habe</span></td>
+                            <td>hah-buh</td>
+                            <td>I have</td>
+                        </tr>
+                        <tr>
+                            <td>du</td>
+                            <td><span class="german-word">hast</span></td>
+                            <td>hast</td>
+                            <td>you have (informal)</td>
+                        </tr>
+                        <tr>
+                            <td>er/sie/es</td>
+                            <td><span class="german-word">hat</span></td>
+                            <td>hat</td>
+                            <td>he/she/it has</td>
+                        </tr>
+                        <tr>
+                            <td>wir</td>
+                            <td><span class="german-word">haben</span></td>
+                            <td>hah-ben</td>
+                            <td>we have</td>
+                        </tr>
+                        <tr>
+                            <td>ihr</td>
+                            <td><span class="german-word">habt</span></td>
+                            <td>hapt</td>
+                            <td>you all have (informal)</td>
+                        </tr>
+                        <tr>
+                            <td>sie/Sie</td>
+                            <td><span class="german-word">haben</span></td>
+                            <td>hah-ben</td>
+                            <td>they have / you have (formal)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <strong>✿ pattern to notice:</strong> "ich", "wir" and "sie/Sie" use "haben". Look for patterns - it helps memorization!
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>Example Sentences with haben</h3>
+                <div class="examples-grid">
+                    <div class="example-sentence">
+                        <div class="de">Ich habe Zeit.</div>
+                        <div class="en">I have time.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Du hast Hunger.</div>
+                        <div class="en">You are hungry. (Literally: You have hunger)</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Er hat einen Hund.</div>
+                        <div class="en">He has a dog.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Sie hat eine Katze.</div>
+                        <div class="en">She has a cat.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Es hat vier Beine.</div>
+                        <div class="en">It has four legs.</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Wir haben Glück.</div>
+                        <div class="en">We are lucky. (Literally: We have luck)</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Ihr habt Recht.</div>
+                        <div class="en">You all are right. (Literally: You have right)</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Sie haben Durst.</div>
+                        <div class="en">They are thirsty. (Literally: They have thirst)</div>
+                    </div>
+                    <div class="example-sentence">
+                        <div class="de">Haben Sie Kinder?</div>
+                        <div class="en">Do you have children? (formal)</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 cultural note:</strong> German often uses "haben" where English uses "to be"! 
+                    <br>• Ich habe Hunger = I am hungry (literally: I have hunger)
+                    <br>• Ich habe Durst = I am thirsty (literally: I have thirst)
+                    <br>• Ich habe Angst = I am scared (literally: I have fear)
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: VOCABULARY -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📚</span>
+                <h2 class="section-title">Vokabeln (Vocabulary)</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>First Essential Words (30 words)</h3>
+                <p style="margin-bottom: 20px;">These are your first German words! Learn them today.</p>
+
+                <h4 style="color: var(--dusty-rose); margin: 25px 0 15px; font-family: 'Crimson Pro', serif;">Greetings (Grüße)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-german">Hallo</div>
+                        <div class="vocab-english">Hello</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">Guten Tag</div>
+                        <div class="vocab-english">Good day</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">Guten Morgen</div>
+                        <div class="vocab-english">Good morning</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">Guten Abend</div>
+                        <div class="vocab-english">Good evening</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">Tschüss</div>
+                        <div class="vocab-english">Bye</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">Auf Wiedersehen</div>
+                        <div class="vocab-english">Goodbye (formal)</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--dusty-rose); margin: 25px 0 15px; font-family: 'Crimson Pro', serif;">Basic Words (Grundwörter)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-german">ja</div>
+                        <div class="vocab-english">yes</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">nein</div>
+                        <div class="vocab-english">no</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">bitte</div>
+                        <div class="vocab-english">please / you're welcome</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">danke</div>
+                        <div class="vocab-english">thank you</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">gut</div>
+                        <div class="vocab-english">good</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">schlecht</div>
+                        <div class="vocab-english">bad</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--dusty-rose); margin: 25px 0 15px; font-family: 'Crimson Pro', serif;">Question Words (Fragewörter)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-german">wer</div>
+                        <div class="vocab-english">who</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">was</div>
+                        <div class="vocab-english">what</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">wo</div>
+                        <div class="vocab-english">where</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">wie</div>
+                        <div class="vocab-english">how</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">wann</div>
+                        <div class="vocab-english">when</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">warum</div>
+                        <div class="vocab-english">why</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--dusty-rose); margin: 25px 0 15px; font-family: 'Crimson Pro', serif;">Common Adjectives (Adjektive)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-german">müde</div>
+                        <div class="vocab-english">tired</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">glücklich</div>
+                        <div class="vocab-english">happy</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">traurig</div>
+                        <div class="vocab-english">sad</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">kalt</div>
+                        <div class="vocab-english">cold</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">warm</div>
+                        <div class="vocab-english">warm</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">alt</div>
+                        <div class="vocab-english">old</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">neu</div>
+                        <div class="vocab-english">new</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">groß</div>
+                        <div class="vocab-english">big/tall</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">klein</div>
+                        <div class="vocab-english">small</div>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--dusty-rose); margin: 25px 0 15px; font-family: 'Crimson Pro', serif;">Useful Nouns (Nomen)</h4>
+                <div class="vocab-list">
+                    <div class="vocab-item">
+                        <div class="vocab-german">der Hund</div>
+                        <div class="vocab-english">the dog</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">die Katze</div>
+                        <div class="vocab-english">the cat</div>
+                    </div>
+                    <div class="vocab-item">
+                        <div class="vocab-german">das Kind</div>
+                        <div class="vocab-english">the child</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 study tip:</strong> Notice the articles! "der" = masculine, "die" = feminine, "das" = neuter. ALWAYS learn nouns with their article! Say "der Hund" not just "Hund".
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: EXERCISES -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">✍️</span>
+                <h2 class="section-title">Übungen (Exercises)</h2>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercise 1: Conjugate "sein" (20 sentences)</h4>
+                <p style="margin-bottom: 15px; color: var(--text-brown);">Fill in the correct form of "sein". Write ALL 20 sentences in the box below!</p>
+                
+                <div class="exercise-item">
+                    <span class="exercise-number">1.</span> Ich ______ Maria. (I am Maria)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">2.</span> Du ______ nett. (You are nice)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">3.</span> Er ______ müde. (He is tired)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">4.</span> Sie ______ glücklich. (She is happy)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">5.</span> Es ______ kalt. (It is cold)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">6.</span> Wir ______ Studenten. (We are students)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">7.</span> Ihr ______ alt. (You all are old)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">8.</span> Sie ______ neu. (They are new)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">9.</span> ______ Sie Herr Schmidt? (Are you Mr. Schmidt? - formal)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">10.</span> Ich ______ traurig. (I am sad)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">11.</span> Du ______ groß. (You are tall)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">12.</span> Er ______ klein. (He is small)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">13.</span> Wir ______ glücklich. (We are happy)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">14.</span> Ihr ______ müde. (You all are tired)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">15.</span> Sie ______ warm. (They are warm)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">16.</span> Es ______ gut. (It is good)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">17.</span> ______ du nett? (Are you nice?)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">18.</span> ______ ihr Studenten? (Are you all students?)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">19.</span> Ich ______ alt. (I am old)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">20.</span> Sie ______ schlecht. (She is bad)
+                </div>
+
+                <textarea placeholder="Write all 20 sentences here with the correct form of 'sein'...
+
+Example:
+1. Ich bin Maria.
+2. Du bist nett.
+(continue for all 20...)"></textarea>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercise 2: Conjugate "haben" (20 sentences)</h4>
+                <p style="margin-bottom: 15px; color: var(--text-brown);">Fill in the correct form of "haben". Write ALL 20 sentences!</p>
+                
+                <div class="exercise-item">
+                    <span class="exercise-number">1.</span> Ich ______ Zeit. (I have time)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">2.</span> Du ______ Hunger. (You are hungry)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">3.</span> Er ______ einen Hund. (He has a dog)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">4.</span> Sie ______ eine Katze. (She has a cat)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">5.</span> Es ______ vier Beine. (It has four legs)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">6.</span> Wir ______ Glück. (We are lucky)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">7.</span> Ihr ______ Recht. (You all are right)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">8.</span> Sie ______ Durst. (They are thirsty)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">9.</span> ______ Sie Kinder? (Do you have children? - formal)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">10.</span> Ich ______ Angst. (I am scared)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">11.</span> Du ______ Glück. (You are lucky)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">12.</span> Er ______ Zeit. (He has time)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">13.</span> Wir ______ Hunger. (We are hungry)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">14.</span> Ihr ______ Durst. (You all are thirsty)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">15.</span> Sie ______ Angst. (They are scared)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">16.</span> Es ______ Zeit. (It has time)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">17.</span> ______ du Zeit? (Do you have time?)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">18.</span> ______ ihr Hunger? (Are you all hungry?)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">19.</span> Ich ______ Recht. (I am right)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">20.</span> Sie ______ Glück. (She is lucky)
+                </div>
+
+                <textarea placeholder="Write all 20 sentences here with the correct form of 'haben'...
+
+Example:
+1. Ich habe Zeit.
+2. Du hast Hunger.
+(continue for all 20...)"></textarea>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercise 3: Mixed "sein" and "haben" (20 sentences)</h4>
+                <p style="margin-bottom: 15px; color: var(--text-brown);">Choose the correct verb (sein OR haben) and conjugate it correctly!</p>
+                
+                <div class="exercise-item">
+                    <span class="exercise-number">1.</span> Ich ______ müde. (I am tired)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">2.</span> Du ______ Hunger. (You are hungry)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">3.</span> Er ______ groß. (He is tall)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">4.</span> Sie ______ eine Katze. (She has a cat)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">5.</span> Es ______ kalt. (It is cold)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">6.</span> Wir ______ glücklich. (We are happy)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">7.</span> Ihr ______ Zeit. (You all have time)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">8.</span> Sie ______ nett. (They are nice)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">9.</span> Ich ______ einen Hund. (I have a dog)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">10.</span> Du ______ alt. (You are old)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">11.</span> Er ______ Durst. (He is thirsty)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">12.</span> Sie ______ traurig. (She is sad)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">13.</span> Wir ______ Glück. (We are lucky)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">14.</span> Ihr ______ klein. (You all are small)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">15.</span> Sie ______ Angst. (They are scared)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">16.</span> Ich ______ neu. (I am new)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">17.</span> Du ______ Recht. (You are right)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">18.</span> Es ______ warm. (It is warm)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">19.</span> Wir ______ Studenten. (We are students)
+                </div>
+                <div class="exercise-item">
+                    <span class="exercise-number">20.</span> Sie ______ Kinder. (You have children - formal)
+                </div>
+
+                <textarea placeholder="Write all 20 sentences here with the correct verb and form...
+
+Example:
+1. Ich bin müde.
+2. Du hast Hunger.
+(continue for all 20...)"></textarea>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercise 4: Create Your Own Sentences (30 sentences)</h4>
+                <p style="margin-bottom: 15px; color: var(--text-brown);">Now it's your turn to be creative! Write 30 ORIGINAL sentences using sein and haben. Use the vocabulary you learned today. Mix different pronouns, adjectives, and nouns!</p>
+                
+                <div class="tip-box" style="margin-bottom: 20px;">
+                    <strong>🌿 examples to inspire you:</strong>
+                    <br>• Ich bin glücklich. (I am happy)
+                    <br>• Wir haben einen Hund. (We have a dog)
+                    <br>• Du bist nett. (You are nice)
+                    <br>• Sie haben Hunger. (They are hungry)
+                    <br>• Es ist kalt. (It is cold)
+                </div>
+
+                <textarea placeholder="Write 30 original sentences here...
+
+1. 
+2. 
+3. 
+(continue for all 30...)
+
+Try to use:
+- All pronouns (ich, du, er, sie, es, wir, ihr, sie, Sie)
+- All the adjectives you learned
+- Both sein and haben
+- Questions too! (Bist du müde? Hast du Zeit?)"></textarea>
+            </div>
+
+            <div class="exercise-box">
+                <h4>Exercise 5: Vocabulary Writing Practice (20 sentences)</h4>
+                <p style="margin-bottom: 15px; color: var(--text-brown);">Write 20 sentences using today's vocabulary words. Include greetings, question words, and adjectives!</p>
+                
+                <div class="tip-box" style="margin-bottom: 20px;">
+                    <strong>🌿 examples:</strong>
+                    <br>• Hallo, wie bist du? (Hello, how are you?)
+                    <br>• Guten Tag! Ich bin Maria. (Good day! I am Maria)
+                    <br>• Wer ist das? (Who is that?)
+                    <br>• Was hast du? (What do you have?)
+                    <br>• Der Hund ist groß. (The dog is big)
+                </div>
+
+                <textarea placeholder="Write 20 sentences using vocabulary...
+
+1. 
+2. 
+3. 
+(continue for all 20...)"></textarea>
+            </div>
+
+            <div class="note-box">
+                <strong>🌸 congratulations!</strong> If you completed all exercises, you've written over 100 sentences today! That's AMAZING drilling practice. Tomorrow we'll review these and add more complexity. Rest well - your brain needs to process all this new information! ✨
+            </div>
+        </section>
+
+        <!-- HOMEWORK SECTION -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🏡</span>
+                <h2 class="section-title">Hausaufgaben (Homework)</h2>
+            </div>
+
+            <div class="content-box">
+                <h3>Before Tomorrow's Lesson</h3>
+                
+                <div class="note-box">
+                    <strong>✿ memorize these perfectly:</strong>
+                    <br>• All personal pronouns (ich, du, er, sie, es, wir, ihr, sie, Sie)
+                    <br>• Full conjugation of "sein" (bin, bist, ist, sind, seid, sind)
+                    <br>• Full conjugation of "haben" (habe, hast, hat, haben, habt, haben)
+                    <br>• All 30 vocabulary words from today
+                </div>
+
+                <div class="tip-box">
+                    <strong>🌿 practice tips:</strong>
+                    <br>• Say the conjugations out loud 10 times each before bed
+                    <br>• Write out the sein/haben tables from memory
+                    <br>• Practice pronouncing the special letters: Ä, Ö, Ü, ß
+                    <br>• Try to think in German: "Ich bin müde" when you're tired!
+                </div>
+
+                <div class="exercise-box">
+                    <h4>Bonus Challenge (Optional but Recommended!)</h4>
+                    <p>Write 10 more sentences about yourself using sein and haben:</p>
+                    <textarea placeholder="Bonus sentences about yourself...
+
+Example:
+Ich bin Student.
+Ich habe einen Hund.
+Ich bin glücklich.
+(continue...)"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>🌸 You did amazing today! Day 1 complete! 🌸</p>
+            <p style="margin-top: 10px;">Tomorrow: Regular verbs and more practice!</p>
+            <p style="margin-top: 15px; color: var(--rose); font-size: 1.4rem;">Bis morgen! (See you tomorrow!) ✿</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>

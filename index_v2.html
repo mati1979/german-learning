@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>German Learning Journey · A1 → B2</title>
+  <style>
+    :root{
+      --bg: #fbf7ee;            /* warm cream */
+      --paper: #fffdf7;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --border: #e7dfcf;
+      --shadow: 0 10px 30px rgba(31,41,55,.08);
+      --accent: #2f6f6d;        /* teal */
+      --accent-2: #7b5ea7;      /* plum */
+      --accent-3: #c96a3b;      /* terracotta */
+      --good: #2d7a4f;
+      --warn: #b45309;
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(47,111,109,.10), transparent 55%),
+                  radial-gradient(1100px 700px at 105% 0%, rgba(123,94,167,.10), transparent 50%),
+                  var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a{color:inherit}
+    .container{max-width: 1040px; margin: 0 auto; padding: 28px 18px 72px;}
+    header{
+      position: sticky; top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(251,247,238,.78);
+      border-bottom: 1px solid rgba(231,223,207,.8);
+      z-index: 10;
+    }
+    .topbar{
+      max-width: 1040px; margin: 0 auto;
+      padding: 14px 18px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    }
+    .brand h1{
+      font-size: 1.05rem; margin:0; letter-spacing: .2px;
+    }
+    .brand .pill{
+      font-family: var(--mono);
+      font-size:.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.6);
+      color: var(--muted);
+    }
+    .actions{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.75);
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      color: var(--ink);
+      box-shadow: 0 4px 14px rgba(31,41,55,.06);
+      transition: transform .05s ease, box-shadow .15s ease, background .15s ease;
+      font-size:.92rem;
+    }
+    .btn:hover{background: rgba(255,255,255,.95); box-shadow: 0 10px 24px rgba(31,41,55,.10)}
+    .btn:active{transform: translateY(1px)}
+    .btn.small{padding: 7px 10px; font-size:.85rem}
+
+    .hero{
+      margin-top: 18px;
+      padding: 26px 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,253,247,.85));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-80px -120px auto auto;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle at 30% 30%, rgba(47,111,109,.25), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(201,106,59,.22), transparent 55%);
+      filter: blur(2px);
+      transform: rotate(10deg);
+      pointer-events:none;
+    }
+    .hero h2{margin:0 0 6px; font-size: 2rem; letter-spacing: .2px}
+    .hero p{margin:0; color: var(--muted); max-width: 76ch}
+
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+    }
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,253,247,.9));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h3{margin:0 0 8px; font-size: 1.15rem}
+    .muted{color: var(--muted)}
+    .tiny{font-size:.92rem}
+
+    .metaRow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px;
+    }
+    .tag{
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .85rem;
+      background: rgba(255,255,255,.65);
+      color: var(--muted);
+    }
+    .tag strong{color: var(--ink)}
+    .tag.a{border-color: rgba(47,111,109,.28)}
+    .tag.b{border-color: rgba(123,94,167,.28)}
+    .tag.c{border-color: rgba(201,106,59,.28)}
+
+    .progressWrap{
+      display:grid;
+      gap: 10px;
+    }
+    .progressBar{
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(231,223,207,.6);
+      overflow:hidden;
+      border: 1px solid rgba(231,223,207,.95);
+    }
+    .progressFill{
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+    .progressStats{
+      display:flex; justify-content:space-between; align-items:baseline; gap:8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .progressStats strong{color: var(--ink)}
+
+    .accordion{
+      margin-top: 18px;
+      display:grid;
+      gap: 12px;
+    }
+    details{
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,253,247,.9));
+      box-shadow: 0 10px 30px rgba(31,41,55,.06);
+      overflow:hidden;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 16px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    summary::-webkit-details-marker{display:none}
+    .sumLeft{
+      display:flex; flex-direction:column; gap:3px;
+    }
+    .levelTitle{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .badge{
+      font-family: var(--mono);
+      font-size:.78rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+    }
+    .badge.a{border-color: rgba(47,111,109,.35)}
+    .badge.b{border-color: rgba(201,106,59,.35)}
+    .badge.c{border-color: rgba(123,94,167,.35)}
+
+    .sumHint{
+      font-size:.92rem;
+      color: var(--muted);
+      max-width: 90ch;
+    }
+    .chev{
+      width: 34px; height: 34px; border-radius: 999px;
+      border: 1px solid var(--border);
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.75);
+      transition: transform .2s ease;
+      flex: 0 0 auto;
+    }
+    details[open] .chev{transform: rotate(180deg)}
+    .content{
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(231,223,207,.75);
+    }
+    .cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 860px){
+      .cols{grid-template-columns:1fr}
+    }
+    .box{
+      border: 1px solid rgba(231,223,207,.9);
+      background: rgba(255,255,255,.65);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .box h4{
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+    .list{
+      margin:0;
+      padding-left: 18px;
+      color: var(--ink);
+    }
+    .list li{margin-bottom: 7px}
+    .checklist{
+      display:grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    label.check{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(231,223,207,.95);
+      background: rgba(255,255,255,.7);
+      cursor: pointer;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    label.check:hover{background: rgba(255,255,255,.92)}
+    input[type="checkbox"]{margin-top: 2px; accent-color: var(--accent)}
+    .check span{color: var(--muted)}
+    .check strong{color: var(--ink)}
+    .note{
+      border-left: 4px solid rgba(47,111,109,.35);
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(47,111,109,.06);
+      color: var(--ink);
+      margin-top: 12px;
+    }
+
+    .footer{
+      margin-top: 34px;
+      text-align:center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .kbd{
+      font-family: var(--mono);
+      font-size:.78rem;
+      padding: 2px 6px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(255,255,255,.65);
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <h1>German Learning Journey</h1>
+      <div class="pill">A1 → B2 · overview</div>
+    </div>
+    <div class="actions">
+      <button class="btn small" id="expandAll" title="Expand all levels"><span class="kbd">E</span> Expand</button>
+      <button class="btn small" id="collapseAll" title="Collapse all levels"><span class="kbd">C</span> Collapse</button>
+      <button class="btn small" id="resetProgress" title="Reset checklist progress">Reset</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <section class="hero">
+    <h2>Formal, intensive, and actually usable.</h2>
+    <p>
+      This roadmap is designed for writing-based drilling, strong sentence control, and real-world German.
+      No locked content — just structure, progress tracking, and clear goals for each level.
+    </p>
+    <div class="metaRow">
+      <div class="tag a"><strong>Timeline:</strong> ~10–11 months</div>
+      <div class="tag b"><strong>Daily:</strong> ~4 hours</div>
+      <div class="tag c"><strong>Style:</strong> sentence-first → automation</div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h3>How to use this overview</h3>
+      <p class="muted tiny">
+        Think of each level as a set of habits, not a pile of rules. The checklist is just a tracker — it never blocks content.
+      </p>
+      <ul class="list">
+        <li><strong>Open a level</strong>, skim the “Outcome”, then follow the “Core skills”.</li>
+        <li>Use the checklist to track completion across weeks (saved automatically).</li>
+        <li>If you finish early, great. If a section needs extra days, also great.</li>
+      </ul>
+      <div class="note tiny">
+        Tip: Use <span class="kbd">E</span> / <span class="kbd">C</span> to expand/collapse. Progress is saved in your browser (localStorage).
+      </div>
+    </section>
+
+    <aside class="card progressWrap">
+      <h3>Progress Tracker</h3>
+      <div class="progressStats">
+        <span><strong id="doneCount">0</strong> / <span id="totalCount">0</span> items</span>
+        <span id="percentDone">0%</span>
+      </div>
+      <div class="progressBar" aria-label="progress bar">
+        <div class="progressFill" id="progressFill"></div>
+      </div>
+      <p class="muted tiny" style="margin:0">
+        This is just for you. No guilt. No lockouts. If you ever want a fresh start, hit “Reset”.
+      </p>
+    </aside>
+  </div>
+
+  <section class="accordion" aria-label="levels">
+
+    <!-- A1 -->
+    <details data-level="a1" open>
+      <summary>
+        <div class="sumLeft">
+          <div class="levelTitle">
+            A1 · Beginner <span class="badge a">4 weeks</span> <span class="badge a">~100 hours</span>
+          </div>
+          <div class="sumHint">Sentence control first, then accuracy. Survival German that sticks.</div>
+        </div>
+        <div class="chev">⌄</div>
+      </summary>
+      <div class="content">
+        <div class="cols">
+          <div class="box">
+            <h4>Outcome</h4>
+            <ul class="list">
+              <li>Write & say simple sentences without freezing</li>
+              <li>Handle basic everyday situations (food, shopping, directions)</li>
+              <li>Understand slow, clear German on familiar topics</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Core skills (ordered for learning)</h4>
+            <ul class="list">
+              <li><strong>Sentence control:</strong> V2 word order, pronouns, sein/haben</li>
+              <li><strong>Meaning expansion:</strong> accusative in context, questions, negation</li>
+              <li><strong>Structure variety:</strong> modals, separable verbs, possessives</li>
+              <li><strong>Automation:</strong> time/dates, imperatives, mixed production</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h4>Checklist (A1)</h4>
+          <div class="checklist">
+            <label class="check"><input type="checkbox" data-key="a1_sentence_control" />
+              <div><strong>Sentence control</strong><br><span>V2, pronouns, sein/haben, nominative articles inside sentences</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a1_meaning_expansion" />
+              <div><strong>Meaning expansion</strong><br><span>Accusative in context, questions, nicht vs kein (basic)</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a1_structure_variety" />
+              <div><strong>Structure variety</strong><br><span>Modals, separable verbs, possessives, plural ideas, gender patterns</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a1_exit" />
+              <div><strong>A1 exit</strong><br><span>Mixed drills + short texts + basic speaking prompts</span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- A2 -->
+    <details data-level="a2">
+      <summary>
+        <div class="sumLeft">
+          <div class="levelTitle">
+            A2 · Elementary <span class="badge b">7–8 weeks</span> <span class="badge b">~180 hours</span>
+          </div>
+          <div class="sumHint">Turn structures into habits: cases, past narration, and simple complexity.</div>
+        </div>
+        <div class="chev">⌄</div>
+      </summary>
+      <div class="content">
+        <div class="cols">
+          <div class="box">
+            <h4>Outcome</h4>
+            <ul class="list">
+              <li>Hold routine conversations with less “translation pause”</li>
+              <li>Talk about the past (Perfekt) comfortably</li>
+              <li>Navigate daily admin: appointments, complaints, plans</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Core skills</h4>
+            <ul class="list">
+              <li>Dative case + dative prepositions (aus/bei/mit/nach/seit/von/zu)</li>
+              <li>Two-way prepositions (Acc/Dat) for location vs direction</li>
+              <li>Perfekt (haben/sein) + high-frequency participles</li>
+              <li>weil/dass/wenn clauses (verb-last becomes automatic)</li>
+              <li>Adjective endings (enough for A2, not perfection)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h4>Checklist (A2)</h4>
+          <div class="checklist">
+            <label class="check"><input type="checkbox" data-key="a2_dative" />
+              <div><strong>Dative foundations</strong><br><span>Dative articles/pronouns + core prepositions</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a2_two_way" />
+              <div><strong>Two-way prepositions</strong><br><span>in/an/auf… Acc vs Dat in real sentences</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a2_perfekt" />
+              <div><strong>Past narration</strong><br><span>Perfekt + telling short stories</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a2_clauses" />
+              <div><strong>Sentence complexity</strong><br><span>weil/dass/wenn + verb placement</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="a2_exit" />
+              <div><strong>A2 exit</strong><br><span>Mixed production: writing + listening + speaking prompts</span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- B1 -->
+    <details data-level="b1">
+      <summary>
+        <div class="sumLeft">
+          <div class="levelTitle">
+            B1 · Intermediate <span class="badge c">12–14 weeks</span> <span class="badge c">~350 hours</span>
+          </div>
+          <div class="sumHint">From knowledge to independence: fluency automation under real speed.</div>
+        </div>
+        <div class="chev">⌄</div>
+      </summary>
+      <div class="content">
+        <div class="cols">
+          <div class="box">
+            <h4>Outcome</h4>
+            <ul class="list">
+              <li>Handle most everyday situations independently</li>
+              <li>Speak with fewer stalls and more self-correction</li>
+              <li>Understand the gist of news and longer conversations</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Core skills</h4>
+            <ul class="list">
+              <li>All cases reinforced (incl. genitive basics)</li>
+              <li>Präteritum (sein/haben/modals) + Plusquamperfekt</li>
+              <li>Passive voice + common patterns</li>
+              <li>Konjunktiv II (wäre/hätte/würde) + polite requests</li>
+              <li>Relative clauses + connectors (trotzdem/deshalb/außerdem)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h4>Checklist (B1)</h4>
+          <div class="checklist">
+            <label class="check"><input type="checkbox" data-key="b1_tenses" />
+              <div><strong>Tenses + narration</strong><br><span>Präteritum basics, Plusquamperfekt, future talk</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b1_passive" />
+              <div><strong>Passive</strong><br><span>Present + past passive in real contexts</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b1_konj2" />
+              <div><strong>Konjunktiv II</strong><br><span>Hypotheticals, wishes, polite speech</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b1_relatives" />
+              <div><strong>Relative clauses + connectors</strong><br><span>Complex sentences without breaking fluency</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b1_exit" />
+              <div><strong>B1 exit</strong><br><span>Longer speaking + writing, real-life tasks</span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- B2 -->
+    <details data-level="b2">
+      <summary>
+        <div class="sumLeft">
+          <div class="levelTitle">
+            B2 · Upper Intermediate <span class="badge a">16–20 weeks</span> <span class="badge a">~400 hours</span>
+          </div>
+          <div class="sumHint">Nuance and professional German: register, density, and PiA-ready language.</div>
+        </div>
+        <div class="chev">⌄</div>
+      </summary>
+      <div class="content">
+        <div class="cols">
+          <div class="box">
+            <h4>Outcome</h4>
+            <ul class="list">
+              <li>Spontaneous conversation with fewer simplifications</li>
+              <li>Comfortable with complex texts and formal writing</li>
+              <li>Work-ready communication (PiA / bureaucracy / professional tone)</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h4>Core skills</h4>
+            <ul class="list">
+              <li>Konjunktiv I for reported speech</li>
+              <li>Advanced passive + alternatives (man / sich lassen / sein + zu)</li>
+              <li>Nominalization + “dense” written German</li>
+              <li>Participles + modifier structures</li>
+              <li>Register control (formal vs informal) + argumentation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="box" style="margin-top:14px">
+          <h4>Checklist (B2)</h4>
+          <div class="checklist">
+            <label class="check"><input type="checkbox" data-key="b2_konj1" />
+              <div><strong>Konjunktiv I</strong><br><span>Indirect speech + media-style reporting</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b2_density" />
+              <div><strong>Text density</strong><br><span>Nominalization, long noun phrases, formal register</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b2_structures" />
+              <div><strong>Advanced structures</strong><br><span>Participles, passive alternatives, multi-clause sentences</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b2_professional" />
+              <div><strong>Professional & PiA German</strong><br><span>Emails, reports, education/social-work vocabulary</span></div>
+            </label>
+            <label class="check"><input type="checkbox" data-key="b2_exit" />
+              <div><strong>B2 exit</strong><br><span>Debates, essays, fast listening, real tasks</span></div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <div class="footer">
+    Built for consistency, not perfection. If German feels mean on a given day, it’s working.
+  </div>
+</div>
+
+<script>
+(function(){
+  const STORAGE_KEY = "german_overview_progress_v1";
+  const OPEN_KEY = "german_overview_open_v1";
+
+  const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-key]'));
+  const details = Array.from(document.querySelectorAll('details[data-level]'));
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const state = raw ? JSON.parse(raw) : {};
+      checks.forEach(cb => cb.checked = !!state[cb.dataset.key]);
+
+      const openRaw = localStorage.getItem(OPEN_KEY);
+      const openState = openRaw ? JSON.parse(openRaw) : {};
+      details.forEach(d => {
+        const key = d.dataset.level;
+        if (typeof openState[key] === "boolean") d.open = openState[key];
+      });
+    }catch(e){
+      // ignore
+    }
+    updateProgress();
+  }
+
+  function save(){
+    const state = {};
+    checks.forEach(cb => state[cb.dataset.key] = cb.checked);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    updateProgress();
+  }
+
+  function saveOpenState(){
+    const st = {};
+    details.forEach(d => st[d.dataset.level] = d.open);
+    localStorage.setItem(OPEN_KEY, JSON.stringify(st));
+  }
+
+  function updateProgress(){
+    const total = checks.length;
+    const done = checks.filter(c => c.checked).length;
+    const pct = total ? Math.round((done/total)*100) : 0;
+    document.getElementById("doneCount").textContent = String(done);
+    document.getElementById("totalCount").textContent = String(total);
+    document.getElementById("percentDone").textContent = pct + "%";
+    document.getElementById("progressFill").style.width = pct + "%";
+  }
+
+  checks.forEach(cb => cb.addEventListener("change", save));
+  details.forEach(d => d.addEventListener("toggle", saveOpenState));
+
+  // Buttons
+  document.getElementById("expandAll").addEventListener("click", () => {
+    details.forEach(d => d.open = true);
+    saveOpenState();
+  });
+  document.getElementById("collapseAll").addEventListener("click", () => {
+    details.forEach(d => d.open = false);
+    saveOpenState();
+  });
+  document.getElementById("resetProgress").addEventListener("click", () => {
+    checks.forEach(c => c.checked = false);
+    localStorage.removeItem(STORAGE_KEY);
+    updateProgress();
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener("keydown", (e) => {
+    if (e.target && ["INPUT","TEXTAREA"].includes(e.target.tagName)) return;
+    if (e.key.toLowerCase() === "e") { details.forEach(d => d.open = true); saveOpenState(); }
+    if (e.key.toLowerCase() === "c") { details.forEach(d => d.open = false); saveOpenState(); }
+  });
+
+  load();
+})();
+</script>
+
+</body>
+</html>

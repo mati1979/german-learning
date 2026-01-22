@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 5 — Gender Patterns + Plural Signals (Recognition Strategies)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 5</p>
+    <h1>Gender Patterns + Plural Signals (Recognition, not suffering)</h1>
+    <p class="subtitle">
+      Today you stop treating gender as random chaos and start using <strong>recognition strategies</strong>.
+      This is not “memorize 200 rules.” It’s: learn the highest-yield patterns, notice them in words,
+      and build habits that reduce errors automatically.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day4.html">Day 4</a>
+      <a href="week3-day5.html">Day 5</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#mindset">Mindset</a>
+      <a href="#gender">Gender Patterns</a>
+      <a href="#plural">Plural Signals</a>
+      <a href="#habits">Habits</a>
+      <a href="#guided">Guided Practice</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    Gender and plural matter because they control articles and endings (Week 2 accusative, Day 4 possessives).
+    Today is about <strong>predicting</strong> and <strong>recognizing</strong>, not perfect mastery.
+    You’ll leave with a system: when you meet a new noun, you guess better, record better, and correct faster.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end)</h3>
+      <ul class="checklist">
+        <li>I know the highest-yield gender patterns (suffix cues + categories).</li>
+        <li>I can guess gender for many new nouns with &gt;60% accuracy.</li>
+        <li>I can recognize common plural signals and write plurals with articles in sentences.</li>
+        <li>I have a “noun capture” habit: <span class="mono">article + noun + plural</span> as one unit.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Lesson: gender cues + plural signals + habits</li>
+        <li><strong>90 min</strong> — Drills (A–D)</li>
+        <li><strong>45 min</strong> — Vocabulary capture: build your noun bank</li>
+        <li><strong>25 min</strong> — Reading + pattern spotting</li>
+        <li><strong>20 min</strong> — Speaking + fast retrieval</li>
+        <li><strong>20 min</strong> — Production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Promise:</strong> You are not trying to “win gender” today.
+      You are building tools so gender becomes less random week by week.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="mindset">
+  <h2>Mindset: What you’re actually trying to do</h2>
+  <p class="lede">
+    German gender is not logical, but it’s not pure chaos either. There are patterns — especially suffix patterns —
+    that predict gender reliably. Your strategy:
+  </p>
+
+  <div class="card">
+    <ol>
+      <li><strong>Recognize the sure things</strong> (high confidence suffixes/categories).</li>
+      <li><strong>Guess using signals</strong> (medium confidence patterns).</li>
+      <li><strong>Store nouns correctly</strong> (article + noun + plural).</li>
+      <li><strong>Use sentences to reinforce</strong> (not flashcards alone).</li>
+    </ol>
+
+    <div class="callout">
+      <strong>A1 standard:</strong> If you can keep structure (V2, accusative, modals, separables) stable,
+      gender mistakes are fixable. We want fewer mistakes — but structure stays the boss.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gender">
+  <h2>Gender Patterns (Recognition Strategies)</h2>
+  <p class="lede">
+    We focus on patterns that actually show up in A1 vocabulary: people, places, daily objects, food, activities.
+    You will learn: “high confidence” rules first, then “useful guesses.”
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">High confidence: suffix cues you can trust</h3>
+    <p class="small">These are not 100% perfect in German, but they’re strong enough to build habits.</p>
+
+    <div class="two-col">
+      <div>
+        <h3>Feminine (die) — strong cues</h3>
+        <table class="table">
+          <tr><th>Suffix</th><th>Usually</th><th>Examples</th></tr>
+          <tr><td class="mono">-ung</td><td>die</td><td class="mono">die Wohnung, die Zeitung</td></tr>
+          <tr><td class="mono">-heit / -keit</td><td>die</td><td class="mono">die Freiheit, die Möglichkeit</td></tr>
+          <tr><td class="mono">-schaft</td><td>die</td><td class="mono">die Freundschaft</td></tr>
+          <tr><td class="mono">-ion</td><td>die</td><td class="mono">die Information</td></tr>
+          <tr><td class="mono">-tät</td><td>die</td><td class="mono">die Universität</td></tr>
+          <tr><td class="mono">-ik</td><td>die</td><td class="mono">die Musik, die Politik</td></tr>
+          <tr><td class="mono">-e</td><td>often die</td><td class="mono">die Tasche, die Lampe, die Schule</td></tr>
+        </table>
+
+        <div class="callout">
+          <strong>Very A1-relevant:</strong> many everyday nouns end in <span class="mono">-e</span> and are feminine.
+          Not all — but it’s a great first guess.
+        </div>
+      </div>
+
+      <div>
+        <h3>Masculine (der) — strong cues</h3>
+        <table class="table">
+          <tr><th>Cue</th><th>Usually</th><th>Examples</th></tr>
+          <tr><td>days/months/seasons</td><td>der</td><td class="mono">der Montag, der Januar, der Sommer</td></tr>
+          <tr><td>many male people/roles</td><td>der</td><td class="mono">der Mann, der Vater, der Freund</td></tr>
+          <tr><td class="mono">-er (agent/person)</td><td>often der</td><td class="mono">der Lehrer, der Fahrer</td></tr>
+          <tr><td class="mono">-ling</td><td>der</td><td class="mono">der Frühling</td></tr>
+          <tr><td class="mono">-ismus</td><td>der</td><td class="mono">der Tourismus</td></tr>
+        </table>
+
+        <h3>Neuter (das) — strong cues</h3>
+        <table class="table">
+          <tr><th>Cue</th><th>Usually</th><th>Examples</th></tr>
+          <tr><td class="mono">-chen / -lein</td><td>das</td><td class="mono">das Mädchen, das Brötchen</td></tr>
+          <tr><td>many languages</td><td>das</td><td class="mono">das Deutsch, das Englisch</td></tr>
+          <tr><td class="mono">Ge- (many nouns)</td><td>often das</td><td class="mono">das Getränk, das Gemüse</td></tr>
+        </table>
+
+        <div class="callout">
+          <strong>Notable weirdness:</strong> <span class="mono">das Mädchen</span> is neuter (because -chen),
+          even though it’s a girl. This is why suffix cues matter.
+        </div>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3>Medium confidence: useful guessing categories</h3>
+    <p class="small">When there isn’t a strong suffix, use categories as a “better than random” guess.</p>
+
+    <table class="table">
+      <tr><th>Category</th><th>Common gender</th><th>Examples</th><th>Notes</th></tr>
+      <tr>
+        <td>Most trees/flowers</td><td>die</td><td class="mono">die Rose</td>
+        <td class="small">Not needed much in A1, but nice signal.</td>
+      </tr>
+      <tr>
+        <td>Many alcoholic drinks</td><td>der</td><td class="mono">der Wein</td>
+        <td class="small">Useful as a pattern, but you don’t need alcohol vocab to pass A1.</td>
+      </tr>
+      <tr>
+        <td>Many “tools/objects”</td><td>mixed</td><td class="mono">der Stift / die Tasche / das Handy</td>
+        <td class="small">No good category rule → rely on memory + article.</td>
+      </tr>
+      <tr>
+        <td>Countries</td><td>mostly no article</td><td class="mono">Chile, Deutschland</td>
+        <td class="small">Most countries are used without an article in A1 sentences.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Important A1 habit:</strong> If there’s no strong cue, don’t “guess once and forget.”
+      Capture the noun as: <span class="mono">der/die/das + noun</span> immediately.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plural">
+  <h2>Plural Signals (Recognition, not full memorization)</h2>
+  <p class="lede">
+    Plurals in German have patterns — but also exceptions. A1 goal: recognize the most common plural endings
+    and store plural with the noun. Article for plural is always <span class="mono">die</span> (nominative/accusative).
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Core rule: plural article</h3>
+    <div class="prompt mono">
+      Singular: der Hund / die Tasche / das Buch<br/>
+      Plural: <strong>die</strong> Hunde / <strong>die</strong> Taschen / <strong>die</strong> Bücher
+    </div>
+
+    <hr/>
+
+    <h3>Common plural signals (high frequency in A1)</h3>
+    <table class="table">
+      <tr><th>Plural pattern</th><th>Examples</th><th>Note</th></tr>
+      <tr><td class="mono">-e</td><td class="mono">der Tag → die Tage</td><td class="small">Common, especially masculine.</td></tr>
+      <tr><td class="mono">-e + Umlaut</td><td class="mono">das Buch → die Bücher</td><td class="small">Very common. Umlaut matters.</td></tr>
+      <tr><td class="mono">-er (+ Umlaut sometimes)</td><td class="mono">das Kind → die Kinder</td><td class="small">Many neuter nouns.</td></tr>
+      <tr><td class="mono">-n / -en</td><td class="mono">die Tasche → die Taschen</td><td class="small">Very common for feminine -e nouns.</td></tr>
+      <tr><td class="mono">-s</td><td class="mono">das Handy → die Handys</td><td class="small">Loanwords; A1-friendly.</td></tr>
+      <tr><td class="mono">no ending</td><td class="mono">der Lehrer → die Lehrer</td><td class="small">Often -er nouns (people/jobs).</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Best A1 storage format:</strong> Don’t store “Tasche = bag.”
+      Store: <span class="mono">die Tasche, die Taschen</span>.
+      Don’t store “Buch = book.”
+      Store: <span class="mono">das Buch, die Bücher</span>.
+    </div>
+
+    <hr/>
+
+    <h3>Plural in sentences (nominative & accusative)</h3>
+    <div class="prompt mono">
+      <strong>Nominative:</strong> Die Bücher sind hier.<br/>
+      <strong>Accusative:</strong> Ich kaufe die Bücher. <span class="small">(plural accusative = die)</span><br/>
+      Ich sehe die Freunde.<br/>
+      Wir haben die Handys. <span class="small">(chunk)</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="habits">
+  <h2>Habits: how to make gender & plural stop being random</h2>
+  <p class="lede">This is the part most learners skip — and then gender stays random for years.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Habit 1 — Capture nouns as a 3-part unit</h3>
+    <div class="prompt mono">
+      [article] + [noun] + [plural]<br/><br/>
+      der Kaffee — (no common plural in your A1 routine, but: die Kaffees exists in special contexts)<br/>
+      die Tasche — die Taschen<br/>
+      das Buch — die Bücher<br/>
+      der Freund — die Freunde<br/>
+      das Handy — die Handys
+    </div>
+
+    <h3>Habit 2 — Use a “gender guess” label</h3>
+    <p class="small">
+      When you meet a new noun, you tag it:
+      <span class="badge">sure</span> (suffix rule),
+      <span class="badge">probable</span> (category/ending guess),
+      <span class="badge">unknown</span> (must memorize).
+      This makes your brain pay attention.
+    </p>
+
+    <h3>Habit 3 — Correct with a sentence, not just a note</h3>
+    <p class="small">
+      If you learn <span class="mono">die Wohnung</span>, write:
+      <span class="mono">Meine Wohnung ist hier.</span>
+      If you learn <span class="mono">das Brötchen</span>, write:
+      <span class="mono">Ich kaufe das Brötchen.</span>
+    </p>
+
+    <div class="callout">
+      <strong>One-minute daily rule (from now on):</strong>
+      Add 5 new nouns per day in the 3-part unit format. That’s how you win.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guided">
+  <h2>Guided Practice (build recognition)</h2>
+  <p class="lede">
+    We’ll start with recognition tasks (low pressure), then production (real sentences).
+    You are training your “notice system.”
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Gender by suffix (20)</h3>
+    <p class="small">For each noun, write the article (<span class="mono">der/die/das</span>) based on suffix patterns.</p>
+    <ol class="mono">
+      <li>Wohnung</li>
+      <li>Freundschaft</li>
+      <li>Information</li>
+      <li>Universität</li>
+      <li>Musik</li>
+      <li>Zeitung</li>
+      <li>Möglichkeit</li>
+      <li>Freiheit</li>
+      <li>Mädchen</li>
+      <li>Brötchen</li>
+      <li>Getränk</li>
+      <li>Gemüse</li>
+      <li>Montag</li>
+      <li>Sommer</li>
+      <li>Januar</li>
+      <li>Lehrer</li>
+      <li>Tourismus</li>
+      <li>Tasche</li>
+      <li>Schule</li>
+      <li>Lampe</li>
+    </ol>
+
+    <details><summary>Answer key</summary>
+      <ol class="answer mono">
+        <li>die Wohnung</li>
+        <li>die Freundschaft</li>
+        <li>die Information</li>
+        <li>die Universität</li>
+        <li>die Musik</li>
+        <li>die Zeitung</li>
+        <li>die Möglichkeit</li>
+        <li>die Freiheit</li>
+        <li>das Mädchen</li>
+        <li>das Brötchen</li>
+        <li>das Getränk</li>
+        <li>das Gemüse</li>
+        <li>der Montag</li>
+        <li>der Sommer</li>
+        <li>der Januar</li>
+        <li>der Lehrer</li>
+        <li>der Tourismus</li>
+        <li>die Tasche</li>
+        <li>die Schule</li>
+        <li>die Lampe</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Meta win:</strong> If you got 15+ right, your suffix recognition is already strong.
+      If not, that’s normal — drill it twice this week.
+    </div>
+
+    <hr/>
+
+    <h3>Set 2 — Plural recognition (15)</h3>
+    <p class="small">Write the plural (with article <span class="mono">die</span>). Use the pattern list above.</p>
+    <ol class="mono">
+      <li>die Tasche →</li>
+      <li>das Handy →</li>
+      <li>das Buch →</li>
+      <li>der Freund →</li>
+      <li>das Kind →</li>
+      <li>der Tag →</li>
+      <li>der Lehrer →</li>
+      <li>die Wohnung →</li>
+      <li>das Mädchen →</li>
+      <li>das Brötchen →</li>
+      <li>die Zeitung →</li>
+      <li>die Lampe →</li>
+      <li>die Schule →</li>
+      <li>das Getränk →</li>
+      <li>die Information →</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>die Taschen</li>
+        <li>die Handys</li>
+        <li>die Bücher</li>
+        <li>die Freunde</li>
+        <li>die Kinder</li>
+        <li>die Tage</li>
+        <li>die Lehrer</li>
+        <li>die Wohnungen</li>
+        <li>die Mädchen</li>
+        <li>die Brötchen</li>
+        <li>die Zeitungen</li>
+        <li>die Lampen</li>
+        <li>die Schulen</li>
+        <li>die Getränke</li>
+        <li>die Informationen</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Plural realism:</strong> Yes, plurals are annoying. That’s why we store them with the noun.
+      Your job is recognition + capture, not perfect guessing for every noun in existence.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes) — high volume, smart focus</h2>
+  <p class="lede">
+    These drill blocks connect gender/plural recognition to the stuff you already know:
+    accusative objects, possessives, and sentence structure.
+  </p>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Article + noun capture (50 items)</h4>
+    <p class="small">
+      For each English meaning, write the German noun as a 3-part unit:
+      <span class="mono">article + singular + plural</span>.
+      If you don’t know it, pick from the list below (no guessing from thin air).
+    </p>
+    <div class="prompt mono">
+      Use these nouns (choose & repeat):<br/>
+      der Freund — die Freunde<br/>
+      die Tasche — die Taschen<br/>
+      das Buch — die Bücher<br/>
+      das Handy — die Handys<br/>
+      die Wohnung — die Wohnungen<br/>
+      die Schule — die Schulen<br/>
+      der Tag — die Tage<br/>
+      das Kind — die Kinder<br/>
+      die Lampe — die Lampen<br/>
+      das Brötchen — die Brötchen<br/>
+      die Zeitung — die Zeitungen
+    </div>
+    <ol>
+      <li>friend</li>
+      <li>bag</li>
+      <li>book</li>
+      <li>phone</li>
+      <li>apartment</li>
+      <li>school</li>
+      <li>day</li>
+      <li>child</li>
+      <li>lamp</li>
+      <li>bread roll</li>
+      <li>newspaper</li>
+      <li>friend</li><li>bag</li><li>book</li><li>phone</li><li>apartment</li><li>school</li><li>day</li><li>child</li><li>lamp</li>
+      <li>bread roll</li><li>newspaper</li><li>friend</li><li>bag</li><li>book</li><li>phone</li><li>apartment</li><li>school</li><li>day</li><li>child</li>
+      <li>lamp</li><li>bread roll</li><li>newspaper</li><li>friend</li><li>bag</li><li>book</li><li>phone</li><li>apartment</li><li>school</li><li>day</li>
+      <li>child</li><li>lamp</li><li>bread roll</li><li>newspaper</li><li>friend</li><li>bag</li><li>book</li><li>phone</li><li>apartment</li><li>school</li>
+    </ol>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Possessives + gender (36 sentences)</h4>
+    <p class="small">
+      Write 36 sentences with possessives. Mix genders on purpose:
+      12 masculine, 12 feminine, 12 neuter/plural.
+      Use verbs: <span class="mono">kaufen/trinken/essen/lesen/suchen</span>.
+    </p>
+    <div class="prompt mono">
+      m: der Freund, der Tag, der Kaffee<br/>
+      f: die Tasche, die Wohnung, die Zeitung<br/>
+      n: das Buch, das Handy, das Kind<br/>
+      pl: die Freunde, die Bücher, die Taschen
+    </div>
+    <div class="callout">
+      <strong>Goal:</strong> you should feel why gender matters:
+      <span class="mono">mein Buch</span> vs <span class="mono">meine Tasche</span> vs <span class="mono">meinen Freund</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (20 min) — Plural sentences (24 sentences)</h4>
+    <p class="small">
+      Write 24 sentences using plural nouns with <span class="mono">die</span>.
+      Mix nominative and accusative (object).
+    </p>
+    <details><summary>Examples</summary>
+      <div class="answer mono">
+        Die Bücher sind hier. <span class="small">(nominative)</span><br/>
+        Ich kaufe die Bücher. <span class="small">(accusative)</span><br/>
+        Die Taschen sind da.<br/>
+        Wir sehen die Freunde.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (20 min) — Mixed correction (gender & plural traps)</h4>
+    <p class="small">Rewrite correctly. Each line has 1–2 mistakes (article/plural/possessive ending).</p>
+    <div class="prompt mono">
+      Das ist meine Buch. <br/>
+      Ich kaufe mein Freund. <br/>
+      Die Tasche sind hier. <br/>
+      Ich sehe die Freund. <br/>
+      Wo ist mein Tasche? <br/>
+      Ich lese meinen Bücher. <br/>
+      Das Handy sind da. <br/>
+      Wir kaufen die Buch. <br/>
+      Sie sucht ihr Handy. <span class="small">(could be correct; check context)</span><br/>
+      Ich habe kein Tasche. <br/>
+    </div>
+
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Das ist mein Buch. <br/>
+        Ich kaufe meinen Freund. <span class="small">(meaning is odd; structurally correct — better: Ich rufe meinen Freund an.)</span><br/>
+        Die Taschen sind hier. <span class="small">(or: Die Tasche ist hier.)</span><br/>
+        Ich sehe die Freunde. <br/>
+        Wo ist meine Tasche? <br/>
+        Ich lese meine Bücher. <br/>
+        Die Handys sind da. <span class="small">(or: Das Handy ist da.)</span><br/>
+        Wir kaufen die Bücher. <br/>
+        Sie sucht ihr Handy. <br/>
+        Ich habe keine Tasche. <br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Important:</strong> Some corrected sentences may be “weird meaning” but structurally right.
+      Your brain needs structure first; meaning refinement comes with vocabulary.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (15 minutes) — spotting cues in context</h2>
+  <p class="lede">
+    Read aloud once. Then underline nouns that have suffix cues and circle plural endings.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Ich habe eine Wohnung. Die Wohnung ist klein, aber schön. <br/>
+      In der Wohnung sind zwei Taschen und drei Bücher. <br/>
+      Die Taschen sind nicht hier. Die Bücher sind hier. <br/>
+      Am Morgen lese ich die Zeitung. <br/>
+      Ich kaufe im Supermarkt zwei Brötchen. <br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Underline all nouns ending in <span class="mono">-ung</span>, <span class="mono">-e</span>, <span class="mono">-chen</span>, <span class="mono">Ge-</span>.</li>
+      <li>Circle plural markers (<span class="mono">-en/-e/-er/-s</span>) and write the singular form next to each.</li>
+      <li>Rewrite 3 sentences using possessives (my/your): <span class="mono">meine Wohnung</span>, <span class="mono">meine Bücher</span>, <span class="mono">meine Zeitung</span>.</li>
+    </ul>
+
+    <details><summary>Example rewrites</summary>
+      <div class="answer mono">
+        Meine Wohnung ist klein, aber schön.<br/>
+        Meine Bücher sind hier.<br/>
+        Ich lese meine Zeitung am Morgen.
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (20 minutes) — fast retrieval</h2>
+  <p class="lede">
+    You will speak in short bursts. Gender/plural is trained by rapid recall + correction,
+    not by silent thinking.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 — “Article + noun” speed (8 min)</h3>
+    <p class="small">
+      Choose 20 nouns (from today). Say them out loud as a unit:
+      <span class="mono">die Wohnung, die Tasche, das Buch, der Freund…</span>
+      Repeat twice.
+    </p>
+
+    <hr/>
+
+    <h3>Part 2 — Plural burst (7 min)</h3>
+    <p class="small">Say 10 pairs: singular → plural.</p>
+    <div class="prompt mono">
+      die Tasche → die Taschen<br/>
+      das Buch → die Bücher<br/>
+      das Handy → die Handys<br/>
+      der Freund → die Freunde<br/>
+      das Kind → die Kinder
+    </div>
+
+    <hr/>
+
+    <h3>Part 3 — Mini sentences (5 min)</h3>
+    <p class="small">Say 10 sentences quickly using possessives + plural:</p>
+    <ul>
+      <li class="mono">Meine Bücher sind hier.</li>
+      <li class="mono">Ich kaufe meine Bücher nicht.</li>
+      <li class="mono">Wo sind meine Taschen?</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Rule:</strong> If you say the wrong article, immediately repeat the corrected version twice.
+      That’s how you rewire it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — apply strategies, not rules</h2>
+  <p class="lede">
+    Now you prove you can use gender/plural knowledge inside real A1 output.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — Noun bank (your personal list)</h4>
+    <p class="small">
+      Create a list of 25 nouns you actually use (objects, places, people). For each, write:
+      <span class="mono">article + singular + plural</span>.
+      Mark each as <span class="badge">sure</span> / <span class="badge">probable</span> / <span class="badge">unknown</span>.
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — 10 sentences with variety</h4>
+    <p class="small">
+      Write 10 sentences. Requirements:
+      <ul class="small">
+        <li>3 sentences with plurals (<span class="mono">die</span> + plural noun)</li>
+        <li>3 sentences with possessives (Day 4)</li>
+        <li>2 sentences with modals (Day 1–2)</li>
+        <li>2 sentences with separable verbs (Day 3)</li>
+        <li>At least 3 time-first V2 sentences</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (realistic A1 mix)</h4>
+    <div class="prompt mono">
+      Meine Wohnung ist schön. Der Wohnung ist hier. <br/>
+      Ich sehe die Freund. <br/>
+      Wo sind mein Taschen? <br/>
+      Heute kann ich mein Buch lesen. <br/>
+      Ich kaufe zwei Brötchens. <br/>
+      Die Handys ist da. <br/>
+    </div>
+
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Meine Wohnung ist schön. Die Wohnung ist hier. <br/>
+        Ich sehe die Freunde. <br/>
+        Wo sind meine Taschen? <br/>
+        Heute kann ich mein Buch lesen. <br/>
+        Ich kaufe zwei Brötchen. <br/>
+        Die Handys sind da. <br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Notice:</strong> Plural verb agreement shows up in A1:
+      <span class="mono">die Taschen sind</span>, <span class="mono">die Bücher sind</span>.
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 6):</strong> Integration day. We mix modals + separables + possessives + accusative + questions + negation.
+    Today’s gender/plural work makes your sentences cleaner and less random.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Finish by proving you can recognize patterns quickly.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 10 nouns with suffix cues and label their gender (e.g., <span class="mono">-ung</span> → <span class="mono">die</span>).</li>
+      <li>Write 10 nouns in the 3-part unit format: <span class="mono">article + singular + plural</span>.</li>
+      <li>Write 8 sentences using 4 different plural patterns (<span class="mono">-en, -e, -er, -s</span>).</li>
+      <li>Write 6 sentences with possessives where gender changes the form (<span class="mono">mein/meine/meinen</span>).</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Bug list</h3>
+    <ol>
+      <li>My biggest gender/plural weak spot is…</li>
+      <li>I notice it when I see words ending in… / when I speak fast / when I use possessives.</li>
+      <li>My fix: I will add 5 nouns per day in the 3-part unit format.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 5 — Gender Patterns + Plural Signals · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

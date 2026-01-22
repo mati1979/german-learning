@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 1 — Modal Verbs: können / müssen / wollen / möchten</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:120px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 1</p>
+    <h1>Modal Verbs: <em>können</em> / <em>müssen</em> / <em>wollen</em> / <em>möchten</em></h1>
+    <p class="subtitle">
+      Week 3 is “Structure Variety.” Today you unlock the most important German pattern after V2:
+      <strong>two-verb sentences</strong>. The rule is simple and powerful:
+      the modal is the conjugated verb (position 2), and the main verb stays in <strong>infinitive at the end</strong>.
+      If you master this, German stops feeling fragile.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day1.html">Day 1</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#core">Core Pattern</a>
+      <a href="#forms">Forms (present)</a>
+      <a href="#meanings">Meaning & Use</a>
+      <a href="#vocab">Vocabulary</a>
+      <a href="#guided">Guided Practice</a>
+      <a href="#drills">Drills</a>
+      <a href="#questions">Questions</a>
+      <a href="#negation">Negation</a>
+      <a href="#reading">Read Aloud</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    You study 4 hours/day. Today is heavy on pattern automation. The goal is not to “know about modals.”
+    The goal is to produce correct modal sentences fast, in statements, questions, and negations.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will be able to do</h3>
+      <ul>
+        <li>Say what you <strong>can</strong>, <strong>must</strong>, <strong>want</strong>, and <strong>would like</strong> to do.</li>
+        <li>Keep <strong>V2</strong> correct with modals.</li>
+        <li>Place the <strong>main verb infinitive at the end</strong> reliably.</li>
+        <li>Ask and answer basic questions with modals.</li>
+        <li>Negate modal sentences with <span class="mono">nicht</span> and <span class="mono">kein</span> (review).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>55 min</strong> — Mini lesson + forms + controlled examples</li>
+        <li><strong>95 min</strong> — Drills (chunked blocks, high volume)</li>
+        <li><strong>45 min</strong> — Vocabulary in context (your own sentences)</li>
+        <li><strong>30 min</strong> — Activation: 15 min listening/reading + 15 min speaking</li>
+        <li><strong>15 min</strong> — Production task + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Rule of the day:</strong> The modal takes the conjugation, the main verb stays infinitive at the end.
+      If you conjugate the second verb, you break the system.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <h2>The Core Pattern (the “German engine”)</h2>
+  <p class="lede">
+    This is the central Week 3 pattern. Memorize it as a <em>sentence frame</em>, not a grammar fact.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Main clause with modal</h3>
+    <div class="prompt mono">
+      <strong>Position 1</strong> (subject or time) + <strong>Modal (pos. 2)</strong> + ... + <strong>Infinitive at the end</strong>
+      <br/><br/>
+      Ich <strong>kann</strong> heute Kaffee <strong>kaufen</strong>.<br/>
+      Heute <strong>muss</strong> ich Wasser <strong>trinken</strong>.<br/>
+      Du <strong>willst</strong> Pizza <strong>essen</strong>.<br/>
+      Wir <strong>möchten</strong> im Park <strong>gehen</strong>. <span class="small">(better: spazieren gehen; but A1 ok)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Don’t fight German:</strong> In English we keep verbs together (“can buy”). In German, the second verb goes to the end.
+      Your job is to enjoy the weirdness and do it anyway.
+    </div>
+
+    <hr/>
+
+    <h3>Sentence skeleton (with Week 2 pieces)</h3>
+    <div class="prompt mono">
+      [Time/Subject] + Modal + (Subject) + (Object) + (Place/Prep phrase) + <strong>Infinitive</strong><br/>
+      Heute + kann + ich + den Kaffee + für den Freund + <strong>kaufen</strong>.
+    </div>
+
+    <div class="callout">
+      <strong>Important:</strong> You can still have accusative objects and accusative prepositions inside a modal sentence.
+      Modal sentences don’t replace Week 2. They sit on top of it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="forms">
+  <h2>Forms (present tense) — learn only what you need</h2>
+  <p class="lede">
+    We keep this A1-focused: the forms you will actually use.
+    You don’t need perfect theory; you need working forms.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Present tense: the four modals</h3>
+    <p class="small">Say them aloud. Then write them once without looking.</p>
+
+    <table class="table">
+      <tr>
+        <th>Person</th>
+        <th>können</th>
+        <th>müssen</th>
+        <th>wollen</th>
+        <th>möchten <span class="small">(polite “would like”)</span></th>
+      </tr>
+      <tr>
+        <td class="mono">ich</td>
+        <td class="mono">kann</td>
+        <td class="mono">muss</td>
+        <td class="mono">will</td>
+        <td class="mono">möchte</td>
+      </tr>
+      <tr>
+        <td class="mono">du</td>
+        <td class="mono">kannst</td>
+        <td class="mono">musst</td>
+        <td class="mono">willst</td>
+        <td class="mono">möchtest</td>
+      </tr>
+      <tr>
+        <td class="mono">er/sie/es</td>
+        <td class="mono">kann</td>
+        <td class="mono">muss</td>
+        <td class="mono">will</td>
+        <td class="mono">möchte</td>
+      </tr>
+      <tr>
+        <td class="mono">wir</td>
+        <td class="mono">können</td>
+        <td class="mono">müssen</td>
+        <td class="mono">wollen</td>
+        <td class="mono">möchten</td>
+      </tr>
+      <tr>
+        <td class="mono">ihr</td>
+        <td class="mono">könnt</td>
+        <td class="mono">müsst</td>
+        <td class="mono">wollt</td>
+        <td class="mono">möchtet</td>
+      </tr>
+      <tr>
+        <td class="mono">sie/Sie</td>
+        <td class="mono">können</td>
+        <td class="mono">müssen</td>
+        <td class="mono">wollen</td>
+        <td class="mono">möchten</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>A1 survival tip:</strong> If you blank on a form, use <span class="mono">ich kann / ich muss / ich will / ich möchte</span>.
+      But your goal today is to make <span class="mono">du</span> and <span class="mono">wir</span> forms automatic too.
+    </div>
+
+    <hr/>
+    <h3>Pronunciation notes (short, practical)</h3>
+    <ul class="small">
+      <li><span class="mono">können</span> has “ö” (like “uh” but rounded). Approximate if needed; don’t freeze.</li>
+      <li><span class="mono">müssen</span> has “ü”. Same deal: approximate, keep going.</li>
+      <li><span class="mono">möchten</span> is often used in shops/cafés. Treat it as a single chunk: <span class="mono">Ich möchte ...</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="meanings">
+  <h2>Meaning & Use (A1 situations)</h2>
+  <p class="lede">
+    Don’t memorize definitions. Learn the “life contexts” where each modal is natural.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0"><span class="mono">können</span> — ability / possibility (“can”)</h3>
+    <div class="prompt mono">
+      Ich kann Deutsch lernen. <span class="small">(ability)</span><br/>
+      Kannst du heute kommen? <span class="small">(possibility)</span><br/>
+      Wir können im Park gehen. <span class="small">(we can go)</span>
+    </div>
+
+    <hr/>
+
+    <h3><span class="mono">müssen</span> — necessity / obligation (“must / have to”)</h3>
+    <div class="prompt mono">
+      Ich muss Wasser trinken. <span class="small">(have to)</span><br/>
+      Heute muss ich arbeiten. <span class="small">(must)</span><br/>
+      Musst du jetzt gehen? <span class="small">(do you have to go?)</span>
+    </div>
+
+    <hr/>
+
+    <h3><span class="mono">wollen</span> — desire / intention (“want”)</h3>
+    <div class="prompt mono">
+      Ich will Pizza essen. <span class="small">(want)</span><br/>
+      Willst du Kaffee trinken? <span class="small">(do you want...?)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Important nuance:</strong> <span class="mono">wollen</span> is direct/strong (“I want”).
+      <span class="mono">möchten</span> is softer/polite (“I would like”).
+      In shops, cafés, polite requests → <span class="mono">möchten</span>.
+    </div>
+
+    <hr/>
+
+    <h3><span class="mono">möchten</span> — polite request / preference (“would like”)</h3>
+    <div class="prompt mono">
+      Ich möchte einen Kaffee. <span class="small">(in a café)</span><br/>
+      Möchtest du Tee oder Kaffee? <span class="small">(offer/choice)</span><br/>
+      Wir möchten heute durch die Stadt gehen. <span class="small">(we’d like to)</span>
+    </div>
+
+    <div class="callout">
+      <strong>A1 power move:</strong> In real life, “I would like…” is one of the most useful frames you can have.
+      It makes you sound competent even with simple vocabulary.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Vocabulary for Modal Practice (small set, high reuse)</h2>
+  <p class="lede">
+    Week 3 is about structure, so we keep vocabulary controlled. You’ll reuse Week 2 nouns and add
+    a few “action verbs” as infinitives.
+  </p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <h3 style="margin-top:0">Infinitive verbs (use at the end)</h3>
+        <ul>
+          <li class="mono">kaufen</li>
+          <li class="mono">essen</li>
+          <li class="mono">trinken</li>
+          <li class="mono">lesen</li>
+          <li class="mono">lernen</li>
+          <li class="mono">kommen</li>
+          <li class="mono">gehen</li>
+          <li class="mono">arbeiten</li>
+        </ul>
+        <p class="small">Today’s main job: do NOT conjugate these after the modal. Keep them infinitive.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Objects (Week 2 review)</h3>
+        <ul>
+          <li class="mono">den Kaffee</li>
+          <li class="mono">den Tee</li>
+          <li class="mono">das Wasser</li>
+          <li class="mono">das Brot</li>
+          <li class="mono">die Pizza</li>
+          <li class="mono">das Buch</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Useful time words (for V2)</h3>
+        <ul>
+          <li class="mono">heute</li>
+          <li class="mono">morgen</li>
+          <li class="mono">jetzt</li>
+          <li class="mono">später</li>
+          <li class="mono">am Morgen / am Abend</li>
+          <li class="mono">um zwei Uhr</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr/>
+    <h3 style="margin-top:.2rem">Flashcards (sentence frames)</h3>
+    <p class="small">Say the whole frame aloud. Your brain should feel the pattern.</p>
+
+    <div class="flashcards">
+      <div class="flip"><div class="front mono">Ich kann ___ kaufen.</div><div class="back">I can buy ___. (infinitive at end)</div></div>
+      <div class="flip"><div class="front mono">Heute muss ich ___ trinken.</div><div class="back">Today I have to drink ___. (V2 + modal)</div></div>
+      <div class="flip"><div class="front mono">Willst du ___ essen?</div><div class="back">Do you want to eat ___? (verb-first question)</div></div>
+      <div class="flip"><div class="front mono">Ich möchte ___ kaufen.</div><div class="back">I would like to buy ___. (polite)</div></div>
+      <div class="flip"><div class="front mono">Kannst du heute ___ kommen?</div><div class="back">Can you come ___ today?</div></div>
+      <div class="flip"><div class="front mono">Wir wollen heute ___ lesen.</div><div class="back">We want to read ___ today.</div></div>
+      <div class="flip"><div class="front mono">Ich muss heute ___ arbeiten.</div><div class="back">I have to work ___ today.</div></div>
+      <div class="flip"><div class="front mono">Möchtest du Tee trinken?</div><div class="back">Would you like to drink tea? (offer)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guided">
+  <h2>Guided Practice (controlled changes)</h2>
+  <p class="lede">
+    Here you’ll change ONE thing at a time (modal OR object OR time word).
+    That’s how accuracy becomes automatic.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Put the infinitive at the end (don’t conjugate it)</h3>
+    <p class="small">Rewrite with the correct modal structure. Keep meaning.</p>
+    <ol>
+      <li class="mono">Ich kann kaufe den Kaffee.</li>
+      <li class="mono">Heute muss ich trinke Wasser.</li>
+      <li class="mono">Du willst isst Pizza.</li>
+      <li class="mono">Wir möchten lesen das Buch.</li>
+      <li class="mono">Ich will komme morgen.</li>
+    </ol>
+
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>Ich kann den Kaffee kaufen.</li>
+        <li>Heute muss ich Wasser trinken.</li>
+        <li>Du willst Pizza essen.</li>
+        <li>Wir möchten das Buch lesen.</li>
+        <li>Ich will morgen kommen.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 2 — Choose the correct modal (meaning cue)</h3>
+    <p class="small">Write the modal form for <span class="mono">ich</span>: <span class="mono">kann/muss/will/möchte</span>.</p>
+    <ol>
+      <li>I can learn German. → <span class="mono">Ich ___ Deutsch lernen.</span></li>
+      <li>I have to work today. → <span class="mono">Heute ___ ich arbeiten.</span></li>
+      <li>I want to eat pizza. → <span class="mono">Ich ___ Pizza essen.</span></li>
+      <li>I would like to drink tea. → <span class="mono">Ich ___ Tee trinken.</span></li>
+    </ol>
+
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>kann</li>
+        <li>muss</li>
+        <li>will</li>
+        <li>möchte</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 3 — V2 with time-first (modal stays position 2)</h3>
+    <p class="small">Reorder so the verb (modal) is position 2.</p>
+    <ol>
+      <li class="mono">Heute ich kann den Kaffee kaufen.</li>
+      <li class="mono">Morgen ich will Pizza essen.</li>
+      <li class="mono">Jetzt wir möchten das Buch lesen.</li>
+      <li class="mono">Später du musst Wasser trinken.</li>
+    </ol>
+
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>Heute kann ich den Kaffee kaufen.</li>
+        <li>Morgen will ich Pizza essen.</li>
+        <li>Jetzt möchten wir das Buch lesen.</li>
+        <li>Später musst du Wasser trinken.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (where you actually learn it)</h2>
+  <p class="lede">
+    Do these in blocks. If quality drops, reduce volume — but keep the pattern correct.
+    Your biggest enemy today is “forgetting the infinitive at the end.”
+  </p>
+
+  <div class="callout">
+    <strong>Self-correction rule:</strong> If you conjugate the second verb once, rewrite that sentence correctly 3 times.
+    Example: wrong <span class="mono">Ich kann kaufe</span> → correct <span class="mono">Ich kann kaufen</span> ×3.
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A — Modal frame repetition (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences total:
+      10 with <span class="mono">können</span>, 10 with <span class="mono">müssen</span>, 10 with <span class="mono">wollen</span>, 10 with <span class="mono">möchten</span>.
+      At least 20 are time-first (V2).
+      Use the verb list: <span class="mono">kaufen/essen/trinken/lesen/lernen/kommen/gehen/arbeiten</span>.
+    </p>
+    <div class="prompt mono">
+      Heute kann ich Wasser trinken.<br/>
+      Morgen muss ich arbeiten.<br/>
+      Jetzt will ich Pizza essen.<br/>
+      Später möchte ich Deutsch lernen.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B — Swap only the modal (same sentence base)</h4>
+    <p class="small">
+      Take the base sentence below and rewrite it 12 times, changing ONLY the modal meaning.
+      This trains the difference between want vs would like vs can vs must.
+    </p>
+    <div class="prompt mono">
+      Base: Ich ___ den Kaffee kaufen.
+    </div>
+    <ul class="small">
+      <li>Write 3 versions with <span class="mono">können</span> (ability/possibility)</li>
+      <li>Write 3 with <span class="mono">müssen</span> (obligation)</li>
+      <li>Write 3 with <span class="mono">wollen</span> (want)</li>
+      <li>Write 3 with <span class="mono">möchten</span> (polite)</li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C — Build from chunks (30 “stacking” sentences)</h4>
+    <p class="small">
+      Build 30 sentences by stacking:
+      <span class="badge">Time</span> + <span class="badge">Modal</span> + <span class="badge">Object</span> + <span class="badge">Infinitive</span>.
+      Don’t add extra stuff. Keep it clean.
+    </p>
+    <div class="prompt mono">
+      [Heute/Morgen/Jetzt/Später] + [kann/muss/will/möchte] + [den Kaffee/die Pizza/das Buch] + [kaufen/essen/lesen]
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions">
+  <h2>Questions with Modals (A1 essential)</h2>
+  <p class="lede">
+    German question word order remains consistent:
+    yes/no = verb-first (modal first), W-question = W-word + modal.
+    The infinitive still sits at the end.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Yes/No questions</h3>
+    <div class="prompt mono">
+      <strong>Kannst</strong> du heute kommen?<br/>
+      <strong>Musst</strong> du heute arbeiten?<br/>
+      <strong>Willst</strong> du Pizza essen?<br/>
+      <strong>Möchtest</strong> du Tee trinken?
+    </div>
+
+    <h3>W‑questions</h3>
+    <div class="prompt mono">
+      <strong>Was</strong> willst du essen?<br/>
+      <strong>Wann</strong> kannst du kommen?<br/>
+      <strong>Warum</strong> musst du heute arbeiten? <span class="small">(optional, can answer with two sentences)</span><br/>
+      <strong>Wer</strong> möchte Tee trinken?
+    </div>
+
+    <hr/>
+
+    <h3>Practice Set — write question + answer (12 pairs)</h3>
+    <p class="small">Write a full-sentence answer each time. Keep it A1 simple.</p>
+    <ol>
+      <li>Ask: Can you come today? (yes)</li>
+      <li>Ask: Do you have to work today? (no)</li>
+      <li>Ask: What do you want to drink? (tea)</li>
+      <li>Ask: When do you want to come? (2 o’clock)</li>
+      <li>Ask: Would you like to eat pizza? (yes)</li>
+      <li>Ask: What can you learn? (German)</li>
+      <li>Ask: Who wants to read the book? (I)</li>
+      <li>Ask: Can we go through the park? (yes)</li>
+      <li>Ask: What do you have to buy? (bread)</li>
+      <li>Ask: Do you want to buy coffee for the friend? (no)</li>
+      <li>Ask: When do you have to go? (now)</li>
+      <li>Ask: Why do you want to learn German? (simple)</li>
+    </ol>
+
+    <details><summary>Possible answers (one set)</summary>
+      <div class="answer mono">
+        1) Kannst du heute kommen? — Ja, ich kann heute kommen.<br/>
+        2) Musst du heute arbeiten? — Nein, ich muss heute nicht arbeiten.<br/>
+        3) Was willst du trinken? — Ich will Tee trinken.<br/>
+        4) Wann willst du kommen? — Ich will um zwei Uhr kommen.<br/>
+        5) Möchtest du Pizza essen? — Ja, ich möchte Pizza essen.<br/>
+        6) Was kannst du lernen? — Ich kann Deutsch lernen.<br/>
+        7) Wer will das Buch lesen? — Ich will das Buch lesen.<br/>
+        8) Können wir durch den Park gehen? — Ja, wir können durch den Park gehen.<br/>
+        9) Was musst du kaufen? — Ich muss das Brot kaufen.<br/>
+        10) Willst du Kaffee für den Freund kaufen? — Nein, ich will keinen Kaffee für den Freund kaufen.<br/>
+        11) Wann musst du gehen? — Ich muss jetzt gehen.<br/>
+        12) Warum willst du Deutsch lernen? — Ich will Deutsch lernen. <span class="small">(A1 safe: repeat the goal)</span>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Notice:</strong> In #2, the negation comes before the infinitive: <span class="mono">nicht arbeiten</span>.
+      That’s a natural pattern. We keep it simple today: put <span class="mono">nicht</span> before the infinitive when negating the action.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="negation">
+  <h2>Negation with Modals (Week 2 review, new placement)</h2>
+  <p class="lede">
+    You already know <span class="mono">nicht</span> vs <span class="mono">kein</span>.
+    With modals, the key new habit is: the infinitive stays at the end — and negation often sits right before it.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Two safe A1 patterns</h3>
+
+    <div class="prompt mono">
+      (A) Negate the noun/object → <strong>kein‑</strong><br/>
+      Ich will <strong>keinen</strong> Kaffee kaufen.<br/>
+      Wir möchten <strong>kein</strong> Brot kaufen.<br/>
+      Sie will <strong>keine</strong> Pizza essen.<br/><br/>
+
+      (B) Negate the action → <strong>nicht</strong> before the infinitive (A1 safe)<br/>
+      Ich muss heute <strong>nicht</strong> arbeiten.<br/>
+      Du kannst heute <strong>nicht</strong> kommen.<br/>
+      Wir wollen das Buch <strong>nicht</strong> lesen.
+    </div>
+
+    <div class="callout">
+      <strong>Decision rule (still the same):</strong>
+      If you mean “no/not any + noun,” use <span class="mono">kein‑</span>.
+      If you mean “not do / not come / not read,” use <span class="mono">nicht</span>.
+    </div>
+
+    <hr/>
+
+    <h3>Practice — choose the correct negation (12 sentences)</h3>
+    <p class="small">Write the full German sentence. Keep modal + infinitive correct.</p>
+    <ol>
+      <li>I don’t have to work today. (action negation)</li>
+      <li>I want no coffee. (noun negation)</li>
+      <li>We can’t come today. (action)</li>
+      <li>She would like no pizza. (noun)</li>
+      <li>He doesn’t want to read the book. (action)</li>
+      <li>You don’t want any bread. (noun)</li>
+      <li>I can’t learn German today. (action)</li>
+      <li>We must not go now. (action)</li>
+      <li>Do you not want coffee? (noun)</li>
+      <li>Do you not have to work tomorrow? (action)</li>
+      <li>I don’t want to buy the coffee for the friend. (action + prep phrase)</li>
+      <li>I want to buy no coffee for the friend. (noun + prep phrase)</li>
+    </ol>
+
+    <details><summary>Possible answers (one set)</summary>
+      <ol class="answer mono">
+        <li>Heute muss ich nicht arbeiten.</li>
+        <li>Ich will keinen Kaffee kaufen.</li>
+        <li>Wir können heute nicht kommen.</li>
+        <li>Sie möchte keine Pizza essen.</li>
+        <li>Er will das Buch nicht lesen.</li>
+        <li>Du willst kein Brot kaufen.</li>
+        <li>Heute kann ich nicht Deutsch lernen. <span class="small">(also ok: Heute kann ich Deutsch nicht lernen — but we keep A1 simple)</span></li>
+        <li>Wir müssen jetzt nicht gehen. <span class="small">(meaning: we don’t have to go now)</span></li>
+        <li>Willst du keinen Kaffee?</li>
+        <li>Musst du morgen nicht arbeiten?</li>
+        <li>Ich will den Kaffee für den Freund nicht kaufen.</li>
+        <li>Ich will keinen Kaffee für den Freund kaufen.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Meaning nuance:</strong>
+      #11 vs #12 differ:
+      <span class="mono">Ich will den Kaffee ... nicht kaufen</span> = not this coffee / not for this purpose.
+      <span class="mono">Ich will keinen Kaffee ... kaufen</span> = no coffee at all.
+      Don’t obsess — just notice.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Read Aloud (mini text + questions)</h2>
+  <p class="lede">Read slowly, then answer in German. You’re training “modal automation.”</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Text</h3>
+    <div class="prompt mono">
+      Heute möchte ich einen Kaffee kaufen. <br/>
+      Aber ich kann heute nicht in die Stadt gehen. <br/>
+      Deshalb muss ich Wasser trinken. <br/>
+      Morgen will ich durch den Park gehen. <br/>
+      Ich möchte Deutsch lernen. <br/>
+      Kannst du morgen um zwei Uhr kommen? <br/>
+    </div>
+
+    <h3>Questions</h3>
+    <ol>
+      <li>Was möchtest du heute kaufen?</li>
+      <li>Kannst du heute in die Stadt gehen?</li>
+      <li>Was musst du trinken?</li>
+      <li>Wann willst du durch den Park gehen?</li>
+      <li>Was möchtest du lernen?</li>
+      <li>Wann kann die Person kommen?</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich möchte heute einen Kaffee kaufen.</li>
+        <li>Nein, ich kann heute nicht in die Stadt gehen.</li>
+        <li>Ich muss Wasser trinken.</li>
+        <li>Morgen will ich durch den Park gehen.</li>
+        <li>Ich möchte Deutsch lernen.</li>
+        <li>Die Person kann morgen um zwei Uhr kommen.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Pronunciation reminder:</strong> Don’t stop mid-sentence.
+      If a word is hard, approximate and finish the structure. Structure first.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Activation: Speaking (15 minutes)</h2>
+  <p class="lede">
+    You’ll do short, controlled speaking. The goal is accuracy + confidence, not speed.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 — Shadow the mini text (5 min)</h3>
+    <p class="small">Read the text aloud twice: slow → medium.</p>
+
+    <hr/>
+
+    <h3>Part 2 — Self-talk frames (10 min)</h3>
+    <p class="small">Complete each frame out loud with your own words. Use any vocabulary you know.</p>
+    <ul>
+      <li class="mono">Heute kann ich ...</li>
+      <li class="mono">Heute muss ich ...</li>
+      <li class="mono">Heute will ich ...</li>
+      <li class="mono">Heute möchte ich ...</li>
+      <li class="mono">Morgen kann ich ...</li>
+      <li class="mono">Morgen muss ich ...</li>
+      <li class="mono">Morgen will ich ...</li>
+      <li class="mono">Morgen möchte ich ...</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Speaking hack:</strong> If you freeze, do the shortest correct thing:
+      <span class="mono">Ich möchte Wasser trinken.</span> Then add time: <span class="mono">Heute möchte ich Wasser trinken.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (15–25 minutes) — prove you own the pattern</h2>
+  <p class="lede">
+    Production is where you stop being a student and start being a user of German.
+    Keep it simple. Keep it correct.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — 12-sentence paragraph (modal-only focus)</h4>
+    <p class="small">
+      Write 12 sentences about today/tomorrow.
+      Requirements:
+      3 with <span class="mono">können</span>, 3 with <span class="mono">müssen</span>, 3 with <span class="mono">wollen</span>, 3 with <span class="mono">möchten</span>.
+      At least 6 time-first (V2).
+      Include at least 4 accusative objects (Week 2) and 2 prepositional phrases from Week 2 (<span class="mono">für/durch/ohne/um</span>).
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue (10 lines)</h4>
+    <p class="small">
+      Write a short café dialogue using modals.
+      Must include: 4 questions, 4 answers, 2 uses of <span class="mono">möchten</span>, 2 uses of <span class="mono">können</span>.
+    </p>
+
+    <details><summary>Dialogue skeleton</summary>
+      <div class="answer mono">
+        A: Was möchtest du trinken?<br/>
+        B: ...<br/>
+        A: Möchtest du auch Pizza essen?<br/>
+        B: ...<br/>
+        A: Kannst du morgen um zwei Uhr kommen?<br/>
+        B: ...<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (modal structure)</h4>
+    <p class="small">Rewrite correctly. Fix infinitive position, V2, and negation.</p>
+    <div class="prompt mono">
+      Heute ich kann kaufe den Kaffee nicht. <br/>
+      Du willst isst die Pizza. <br/>
+      Morgen wir möchten lesen das Buch. <br/>
+      Ich muss nicht arbeite heute. <br/>
+    </div>
+
+    <details><summary>One corrected version</summary>
+      <div class="answer mono">
+        Heute kann ich den Kaffee nicht kaufen. <br/>
+        Du willst die Pizza essen. <br/>
+        Morgen möchten wir das Buch lesen. <br/>
+        Heute muss ich nicht arbeiten. <br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>If this felt hard:</strong> Great. That means your brain is rebuilding the sentence engine.
+    Tomorrow (Day 2) we drill structure even harder so it becomes boring.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove Day 1 worked — without notes.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Do these tasks</h3>
+    <ul class="checklist">
+      <li>Write 6 modal sentences (2 time-first) with infinitive correctly at the end.</li>
+      <li>Write 4 modal questions (2 yes/no + 2 W) and answer them.</li>
+      <li>Write 4 negations: 2 with <span class="mono">nicht</span>, 2 with <span class="mono">kein‑</span>.</li>
+      <li>Write 2 sentences with a Week 2 accusative preposition phrase inside a modal sentence.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Your “bug list” (write it)</h3>
+    <ol>
+      <li>The mistake I made most today was…</li>
+      <li>It happened because…</li>
+      <li>Tomorrow I will fix it by doing… (specific drill block)</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 1 — Modal Verbs · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

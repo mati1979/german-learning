@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 3 — Separable Verbs (Trennbare Verben)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 3</p>
+    <h1>Separable Verbs (Trennbare Verben) — Make German Sound Like German</h1>
+    <p class="subtitle">
+      Today you learn the thing that makes beginners go “why is the verb split?!” — and then, once it clicks,
+      you start sounding noticeably more German. The rule is simple: the conjugated verb stays in position 2,
+      and the prefix goes to the end of the main clause.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day1.html">Day 1</a>
+      <a href="week3-day2.html">Day 2</a>
+      <a href="week3-day3.html">Day 3</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#core">Core Rule</a>
+      <a href="#verbs">Starter Verb Set</a>
+      <a href="#forms">Conjugation</a>
+      <a href="#positions">Word Order</a>
+      <a href="#questions">Questions</a>
+      <a href="#negation">Negation</a>
+      <a href="#guided">Guided Practice</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    Today you install a new engine: separable verbs. The goal is not to memorize a big list.
+    The goal is to master the <strong>split pattern</strong> with a small set and use it confidently.
+    Tomorrow we add possessives; later we combine modals + separables in integration.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end)</h3>
+      <ul class="checklist">
+        <li>I recognize a separable prefix and can separate it in main clauses.</li>
+        <li>I keep the verb stem in position 2 (V2) and throw the prefix to the end.</li>
+        <li>I can form questions and negatives with separable verbs.</li>
+        <li>I can use separable verbs with Week 2 elements (objects, prepositions, nicht/kein).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>40 min</strong> — Lesson + core rule + examples</li>
+        <li><strong>90 min</strong> — Drills (A–D)</li>
+        <li><strong>45 min</strong> — Vocabulary + your own sentences</li>
+        <li><strong>30 min</strong> — Activation: reading + speaking</li>
+        <li><strong>35 min</strong> — Mixed production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Today’s weirdness:</strong> German hides the prefix at the end like a plot twist.
+      Your job is to put it there consistently.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <h2>The Core Rule (memorize this as a frame)</h2>
+  <p class="lede">In main clauses, separable prefixes split off and go to the end.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Structure</h3>
+    <div class="prompt mono">
+      [Position 1] + <strong>Verb stem (pos. 2)</strong> + ... + <strong>Prefix at the end</strong><br/><br/>
+      Ich <strong>stehe</strong> um sieben Uhr <strong>auf</strong>.<br/>
+      Heute <strong>kaufe</strong> ich im Supermarkt <strong>ein</strong>.<br/>
+      Er <strong>ruft</strong> seine Mutter <strong>an</strong>.<br/>
+      Wir <strong>fangen</strong> um zwei Uhr <strong>an</strong>.<br/>
+      Du <strong>machst</strong> das Fenster <strong>auf</strong>.
+    </div>
+
+    <div class="callout">
+      <strong>Important:</strong> The verb stem is the conjugated verb (position 2). The prefix is NOT conjugated.
+      It just goes to the end.
+    </div>
+
+    <hr/>
+    <h3>Infinitive form (dictionary form)</h3>
+    <div class="prompt mono">
+      aufstehen → ich stehe auf<br/>
+      einkaufen → ich kaufe ein<br/>
+      anrufen → ich rufe an<br/>
+      anfangen → ich fange an<br/>
+      aufmachen → ich mache auf
+    </div>
+
+    <div class="callout">
+      <strong>Reading tip:</strong> When you see <span class="mono">aufstehen</span>, mentally split it:
+      <span class="mono">stehen ... auf</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="verbs">
+  <h2>Starter Verb Set (small set, high reuse)</h2>
+  <p class="lede">
+    We use a controlled set today so you can master the pattern. These are extremely common in daily life.
+  </p>
+
+  <div class="card">
+    <table class="table">
+      <tr><th>Infinitive</th><th>Prefix</th><th>Meaning</th><th>Example (A1)</th></tr>
+      <tr>
+        <td class="mono">aufstehen</td>
+        <td class="mono">auf</td>
+        <td>to get up</td>
+        <td class="mono">Ich stehe um sieben Uhr auf.</td>
+      </tr>
+      <tr>
+        <td class="mono">einkaufen</td>
+        <td class="mono">ein</td>
+        <td>to shop / buy groceries</td>
+        <td class="mono">Heute kaufe ich ein.</td>
+      </tr>
+      <tr>
+        <td class="mono">anrufen</td>
+        <td class="mono">an</td>
+        <td>to call (phone)</td>
+        <td class="mono">Ich rufe meine Mutter an.</td>
+      </tr>
+      <tr>
+        <td class="mono">anfangen</td>
+        <td class="mono">an</td>
+        <td>to start (begin)</td>
+        <td class="mono">Wir fangen um zwei Uhr an.</td>
+      </tr>
+      <tr>
+        <td class="mono">aufmachen</td>
+        <td class="mono">auf</td>
+        <td>to open (something)</td>
+        <td class="mono">Ich mache das Fenster auf.</td>
+      </tr>
+      <tr>
+        <td class="mono">zumachen</td>
+        <td class="mono">zu</td>
+        <td>to close (something)</td>
+        <td class="mono">Ich mache die Tür zu.</td>
+      </tr>
+      <tr>
+        <td class="mono">mitkommen</td>
+        <td class="mono">mit</td>
+        <td>to come along</td>
+        <td class="mono">Kommst du mit?</td>
+      </tr>
+      <tr>
+        <td class="mono">fernsehen</td>
+        <td class="mono">fern</td>
+        <td>to watch TV</td>
+        <td class="mono">Am Abend sehe ich fern.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Note:</strong> <span class="mono">fernsehen</span> is separable: <span class="mono">sehen ... fern</span>.
+      It looks like two words in a sentence — that’s normal.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="forms">
+  <h2>Conjugation (keep it simple)</h2>
+  <p class="lede">
+    The good news: separable verbs are regular in the stem most of the time.
+    You conjugate the stem like a normal verb. The prefix stays unchanged.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Example: <span class="mono">aufstehen</span> (stem: stehen)</h3>
+    <div class="prompt mono">
+      ich <strong>stehe</strong> ... auf<br/>
+      du <strong>stehst</strong> ... auf<br/>
+      er/sie/es <strong>steht</strong> ... auf<br/>
+      wir <strong>stehen</strong> ... auf<br/>
+      ihr <strong>steht</strong> ... auf<br/>
+      sie/Sie <strong>stehen</strong> ... auf
+    </div>
+
+    <h3>Example: <span class="mono">anrufen</span> (stem: rufen)</h3>
+    <div class="prompt mono">
+      ich <strong>rufe</strong> ... an<br/>
+      du <strong>rufst</strong> ... an<br/>
+      er/sie/es <strong>ruft</strong> ... an
+    </div>
+
+    <div class="callout">
+      <strong>Don’t overlearn conjugations today.</strong>
+      Today is mainly about word order: stem in position 2, prefix at the end.
+      Conjugation accuracy improves through repetition.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="positions">
+  <h2>Word Order: where the prefix goes</h2>
+  <p class="lede">
+    Separable verbs interact with the things you already learned: time-first V2, objects (accusative), and prepositional phrases.
+    The prefix normally goes to the very end of the clause.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Time-first + separable verb</h3>
+    <div class="prompt mono">
+      Heute <strong>stehe</strong> ich um sieben Uhr <strong>auf</strong>.<br/>
+      Morgen <strong>rufe</strong> ich meine Mutter <strong>an</strong>.<br/>
+      Jetzt <strong>mache</strong> ich das Fenster <strong>zu</strong>.
+    </div>
+
+    <h3>With accusative objects (Week 2)</h3>
+    <div class="prompt mono">
+      Ich <strong>mache</strong> <strong>die Tür</strong> <strong>zu</strong>.<br/>
+      Du <strong>machst</strong> <strong>das Fenster</strong> <strong>auf</strong>.<br/>
+      Er <strong>ruft</strong> <strong>den Freund</strong> <strong>an</strong>.
+    </div>
+
+    <h3>With prepositional phrases (Week 2)</h3>
+    <div class="prompt mono">
+      Heute <strong>kaufe</strong> ich <strong>für den Freund</strong> <strong>ein</strong>.<br/>
+      Wir <strong>fangen</strong> <strong>um zwei Uhr</strong> <strong>an</strong>.<br/>
+      Ich <strong>gehe</strong> nicht ohne das Handy <span class="small">(not separable; just a reminder)</span>.
+    </div>
+
+    <div class="callout">
+      <strong>Prefix placement test:</strong> Read your sentence and ask: “Where is the prefix?”
+      If it isn’t at the end, fix it immediately.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions">
+  <h2>Questions with separable verbs</h2>
+  <p class="lede">
+    Same question rules as Week 2 — only now the prefix still goes to the end.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Yes/No (verb-first)</h3>
+    <div class="prompt mono">
+      <strong>Stehst</strong> du um sieben Uhr <strong>auf</strong>?<br/>
+      <strong>Rufst</strong> du deine Mutter <strong>an</strong>?<br/>
+      <strong>Kaufst</strong> du heute <strong>ein</strong>?<br/>
+      <strong>Machst</strong> du die Tür <strong>zu</strong>?
+    </div>
+
+    <h3>W‑questions</h3>
+    <div class="prompt mono">
+      <strong>Wann</strong> stehst du <strong>auf</strong>?<br/>
+      <strong>Wen</strong> rufst du <strong>an</strong>? <span class="small">(accusative question word)</span><br/>
+      <strong>Was</strong> machst du <strong>auf</strong>?<br/>
+      <strong>Wo</strong> kaufst du <strong>ein</strong>?
+    </div>
+
+    <div class="callout">
+      <strong>New useful word:</strong> <span class="mono">wen</span> = “whom” (accusative).
+      A1 use: <span class="mono">Wen rufst du an?</span> — “Who are you calling?”
+    </div>
+
+    <hr/>
+    <h3>Practice: write question + answer (12 pairs)</h3>
+    <ol>
+      <li>Ask: When do you get up? (7)</li>
+      <li>Ask: Who do you call? (friend)</li>
+      <li>Ask: Do you shop today? (yes)</li>
+      <li>Ask: What do you open? (window)</li>
+      <li>Ask: Do you close the door? (no)</li>
+      <li>Ask: Where do you watch TV? (at home)</li>
+      <li>Ask: When do we start? (2)</li>
+      <li>Ask: Do you come along? (yes)</li>
+      <li>Ask: Who do you call today? (mother)</li>
+      <li>Ask: What do you close? (door)</li>
+      <li>Ask: Do you get up early? (no)</li>
+      <li>Ask: Where do you shop? (supermarket)</li>
+    </ol>
+
+    <details><summary>Sample answers (one set)</summary>
+      <div class="answer mono">
+        1) Wann stehst du auf? — Ich stehe um sieben Uhr auf.<br/>
+        2) Wen rufst du an? — Ich rufe den Freund an.<br/>
+        3) Kaufst du heute ein? — Ja, ich kaufe heute ein.<br/>
+        4) Was machst du auf? — Ich mache das Fenster auf.<br/>
+        5) Machst du die Tür zu? — Nein, ich mache die Tür nicht zu.<br/>
+        6) Wo siehst du fern? — Ich sehe zu Hause fern.<br/>
+        7) Wann fangen wir an? — Wir fangen um zwei Uhr an.<br/>
+        8) Kommst du mit? — Ja, ich komme mit.<br/>
+        9) Wen rufst du heute an? — Ich rufe meine Mutter an.<br/>
+        10) Was machst du zu? — Ich mache die Tür zu.<br/>
+        11) Stehst du früh auf? — Nein, ich stehe nicht früh auf.<br/>
+        12) Wo kaufst du ein? — Ich kaufe im Supermarkt ein.
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="negation">
+  <h2>Negation with separable verbs</h2>
+  <p class="lede">
+    Two common A1 patterns:
+    (1) negate the action with <span class="mono">nicht</span>, and
+    (2) negate an object with <span class="mono">kein‑</span>.
+    The prefix still goes to the end.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Negate the action (nicht)</h3>
+    <div class="prompt mono">
+      Ich stehe heute <strong>nicht</strong> auf.<br/>
+      Du rufst den Freund <strong>nicht</strong> an.<br/>
+      Wir kaufen heute <strong>nicht</strong> ein.<br/>
+      Ich mache die Tür <strong>nicht</strong> zu.
+    </div>
+
+    <div class="callout">
+      <strong>Placement habit:</strong> Put <span class="mono">nicht</span> right before the prefix-ending chunk.
+      In many A1 sentences, that means: ... nicht + prefix.
+    </div>
+
+    <hr/>
+
+    <h3>Negate the object (kein‑)</h3>
+    <div class="prompt mono">
+      Ich kaufe <strong>keinen</strong> Kaffee <strong>ein</strong>. <span class="small">(better: Ich kaufe keinen Kaffee.)</span><br/>
+      Ich rufe <strong>keinen</strong> Freund <strong>an</strong>.<br/>
+      Wir machen <strong>keine</strong> Tür <strong>zu</strong>. <span class="small">(rare; usually you specify)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Real-life note:</strong> With <span class="mono">einkaufen</span>, you often just say:
+      <span class="mono">Ich kaufe heute nicht ein.</span> (I’m not shopping today.)
+      And specify the object with <span class="mono">kaufen</span>:
+      <span class="mono">Ich kaufe keinen Kaffee.</span>
+      Still, you can practice object negation for structure control.
+    </div>
+
+    <hr/>
+
+    <h3>Practice (12) — write the full German sentence</h3>
+    <ol>
+      <li>I don’t get up today.</li>
+      <li>I don’t call the friend.</li>
+      <li>We don’t shop today.</li>
+      <li>You don’t open the window.</li>
+      <li>She doesn’t close the door.</li>
+      <li>Do you not come along? (yes/no question + negation)</li>
+      <li>When do you not start? (W question + negation)</li>
+      <li>I call no one. (use <span class="mono">keinen</span> + <span class="mono">anrufen</span>)</li>
+      <li>We want to not watch TV today. (use <span class="mono">fernsehen</span> + <span class="mono">nicht</span>)</li>
+      <li>I buy nothing today. (A1: use <span class="mono">nichts</span> + <span class="mono">kaufen</span>)</li>
+      <li>I don’t close the window, I open it. (two separables)</li>
+      <li>We don’t start at two. (negate time phrase)</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich stehe heute nicht auf.</li>
+        <li>Ich rufe den Freund nicht an.</li>
+        <li>Wir kaufen heute nicht ein.</li>
+        <li>Du machst das Fenster nicht auf.</li>
+        <li>Sie macht die Tür nicht zu.</li>
+        <li>Kommst du nicht mit?</li>
+        <li>Wann fängst du nicht an? <span class="small">(A1 ok)</span></li>
+        <li>Ich rufe keinen an. <span class="small">(implicit “no one”)</span></li>
+        <li>Heute wollen wir nicht fernsehen.</li>
+        <li>Heute kaufe ich nichts.</li>
+        <li>Ich mache das Fenster nicht zu, ich mache es auf.</li>
+        <li>Wir fangen nicht um zwei Uhr an.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>New tiny word:</strong> <span class="mono">nichts</span> = “nothing.”
+      Super useful, very A1-friendly. (No declension drama.)
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guided">
+  <h2>Guided Practice (controlled changes)</h2>
+  <p class="lede">
+    You’ll train the split pattern by changing one piece at a time.
+    This prevents “random German.”
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Put the prefix at the end (10)</h3>
+    <p class="small">Rewrite correctly. Only move the prefix and fix V2 if needed.</p>
+    <ol>
+      <li class="mono">Ich aufstehe um sieben Uhr.</li>
+      <li class="mono">Heute ich einkaufe.</li>
+      <li class="mono">Du anrufst den Freund.</li>
+      <li class="mono">Wir anfangen um zwei Uhr.</li>
+      <li class="mono">Ich aufmache das Fenster.</li>
+      <li class="mono">Du zumachst die Tür.</li>
+      <li class="mono">Heute ich fernsehe am Abend.</li>
+      <li class="mono">Kommst mit du?</li>
+      <li class="mono">Wann du aufstehst?</li>
+      <li class="mono">Was du aufmachst?</li>
+    </ol>
+
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>Ich stehe um sieben Uhr auf.</li>
+        <li>Heute kaufe ich ein.</li>
+        <li>Du rufst den Freund an.</li>
+        <li>Wir fangen um zwei Uhr an.</li>
+        <li>Ich mache das Fenster auf.</li>
+        <li>Du machst die Tür zu.</li>
+        <li>Am Abend sehe ich fern. <span class="small">(or: Heute sehe ich am Abend fern.)</span></li>
+        <li>Kommst du mit?</li>
+        <li>Wann stehst du auf?</li>
+        <li>Was machst du auf?</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 2 — Build from chunks (20)</h3>
+    <p class="small">Build 20 sentences using this recipe:</p>
+    <div class="prompt mono">
+      [Time] + [Verb stem] + [Subject] + [Object/Extra] + [Prefix]
+    </div>
+    <p class="small">Time starters: <span class="mono">Heute/Morgen/Jetzt/Am Abend/Um zwei Uhr</span></p>
+    <p class="small">Verbs: <span class="mono">aufstehen/einkaufen/anrufen/anfangen/aufmachen/zumachen/mitkommen/fernsehen</span></p>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes) — make it automatic</h2>
+  <p class="lede">
+    These drill blocks are where your prefix placement becomes reliable under pressure.
+    Don’t do them “mentally.” Write them. Say them. Fix mistakes immediately.
+  </p>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Split recognition (30 items)</h4>
+    <p class="small">
+      Split the infinitive into “stem + prefix.” Then write the <span class="mono">ich</span> sentence correctly.
+      Example: <span class="mono">aufstehen → stehen + auf → Ich stehe auf.</span>
+    </p>
+    <ol class="mono">
+      <li>aufstehen</li>
+      <li>einkaufen</li>
+      <li>anrufen</li>
+      <li>anfangen</li>
+      <li>aufmachen</li>
+      <li>zumachen</li>
+      <li>mitkommen</li>
+      <li>fernsehen</li>
+      <li>aufstehen</li>
+      <li>einkaufen</li>
+      <li>anrufen</li>
+      <li>anfangen</li>
+      <li>aufmachen</li>
+      <li>zumachen</li>
+      <li>mitkommen</li>
+      <li>fernsehen</li>
+      <li>aufstehen</li>
+      <li>einkaufen</li>
+      <li>anrufen</li>
+      <li>anfangen</li>
+      <li>aufmachen</li>
+      <li>zumachen</li>
+      <li>mitkommen</li>
+      <li>fernsehen</li>
+      <li>aufstehen</li>
+      <li>einkaufen</li>
+      <li>anrufen</li>
+      <li>anfangen</li>
+      <li>aufmachen</li>
+      <li>zumachen</li>
+    </ol>
+    <p class="small">Yes, repetition is on purpose. You’re training reflexes.</p>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Time-first V2 with separables (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences. Every sentence starts with a time word. The verb stem must be position 2.
+      The prefix must be the last word. Mix verbs freely.
+    </p>
+    <div class="prompt mono">
+      Time: Heute / Morgen / Jetzt / Später / Am Morgen / Am Abend / Um zwei Uhr
+    </div>
+    <div class="callout">
+      <strong>Quality check:</strong> underline the verb stem and box the prefix. If the prefix isn’t last, fix it.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (20 min) — Questions factory (24 questions + answers)</h4>
+    <p class="small">
+      Write 24 questions: 12 yes/no (verb-first) + 12 W.
+      Use <span class="mono">wann/was/wo/wen</span>.
+      Answer each with a full sentence.
+    </p>
+    <details><summary>Question templates</summary>
+      <div class="answer mono">
+        Stehst du ... auf? / Wann stehst du auf?<br/>
+        Rufst du ... an? / Wen rufst du an?<br/>
+        Kaufst du ... ein? / Wo kaufst du ein?<br/>
+        Fängst du ... an? / Wann fängst du an?<br/>
+        Machst du ... auf/zu? / Was machst du auf/zu?<br/>
+        Kommst du ... mit?
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (20 min) — Negation + contrast (20 pairs)</h4>
+    <p class="small">
+      Write 20 pairs. Each pair has:
+      (A) a positive sentence
+      (B) the negative version with <span class="mono">nicht</span>.
+      Keep the prefix at the end in BOTH.
+      Example: <span class="mono">Ich stehe auf.</span> → <span class="mono">Ich stehe nicht auf.</span>
+    </p>
+    <div class="callout">
+      <strong>Extra challenge (optional):</strong> For 5 pairs, add a second sentence with the opposite action:
+      <span class="mono">Ich mache die Tür nicht zu. Ich mache sie auf.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (15 minutes) — mini routine text</h2>
+  <p class="lede">
+    Read aloud twice. Then answer questions. This is A1 real life: routines.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Am Morgen stehe ich um sieben Uhr auf. <br/>
+      Dann mache ich das Fenster auf. <br/>
+      Ich kaufe am Vormittag im Supermarkt ein. <br/>
+      Um zwei Uhr fangen wir an. <br/>
+      Am Abend rufe ich meine Mutter an. <br/>
+      Später sehe ich nicht fern. <br/>
+    </div>
+
+    <h3>Questions (answer in German)</h3>
+    <ol>
+      <li>Wann stehst du auf?</li>
+      <li>Was machst du am Morgen auf?</li>
+      <li>Wo kaufst du ein?</li>
+      <li>Wann fangt ihr an?</li>
+      <li>Wen rufst du an?</li>
+      <li>Siehst du fern?</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich stehe um sieben Uhr auf.</li>
+        <li>Ich mache das Fenster auf.</li>
+        <li>Ich kaufe im Supermarkt ein.</li>
+        <li>Wir fangen um zwei Uhr an.</li>
+        <li>Ich rufe meine Mutter an.</li>
+        <li>Nein, ich sehe nicht fern.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (15 minutes) — routine control</h2>
+  <p class="lede">
+    Separable verbs are very “speakable.” The goal is clean, short sentences with correct prefix placement.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 — Shadow the routine text (5 min)</h3>
+    <p class="small">Read it aloud twice. Second time: slightly faster.</p>
+
+    <hr/>
+
+    <h3>Part 2 — Self-talk: your routine (10 min)</h3>
+    <p class="small">Speak 8–10 sentences about your day. Must include at least 5 separable verbs.</p>
+    <ul>
+      <li class="mono">Am Morgen stehe ich ... auf.</li>
+      <li class="mono">Dann mache ich ... auf/zu.</li>
+      <li class="mono">Ich kaufe ... ein.</li>
+      <li class="mono">Ich rufe ... an.</li>
+      <li class="mono">Wir fangen ... an.</li>
+      <li class="mono">Ich komme ... mit.</li>
+      <li class="mono">Am Abend sehe ich ... fern.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Speaking hack:</strong> If you freeze, repeat a correct frame and change only one element:
+      <span class="mono">Heute stehe ich auf.</span> → <span class="mono">Heute stehe ich um sieben Uhr auf.</span> → <span class="mono">Morgen stehe ich um acht Uhr auf.</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (35 minutes) — make it yours</h2>
+  <p class="lede">
+    Production is where separable verbs stop being “a topic” and start being “your language.”
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — 12-sentence routine paragraph</h4>
+    <p class="small">
+      Write a paragraph about your day. Requirements:
+      <ul class="small">
+        <li>12 sentences</li>
+        <li>At least 8 separable verbs (from the list)</li>
+        <li>At least 6 time-first sentences (V2 correct)</li>
+        <li>At least 2 questions inside the paragraph (ask yourself)</li>
+        <li>At least 3 negatives with <span class="mono">nicht</span></li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue (planning + phone call)</h4>
+    <p class="small">
+      Write a 10-line dialogue. Must include:
+      <span class="badge">2</span> uses of <span class="mono">anrufen</span>,
+      <span class="badge">2</span> uses of <span class="mono">mitkommen</span>,
+      <span class="badge">2</span> W-questions,
+      <span class="badge">2</span> yes/no questions.
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (separable verb traps)</h4>
+    <div class="prompt mono">
+      Heute ich stehe auf um sieben Uhr. <br/>
+      Du rufst an deine Mutter. <br/>
+      Wir fangen an um zwei Uhr nicht. <br/>
+      Was du machst auf? <br/>
+      Kaufst du ein heute? <br/>
+      Ich mache zu die Tür. <br/>
+      Am Abend sehe ich fern nicht. <br/>
+    </div>
+
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Heute stehe ich um sieben Uhr auf. <br/>
+        Du rufst deine Mutter an. <br/>
+        Wir fangen um zwei Uhr nicht an. <br/>
+        Was machst du auf? <br/>
+        Kaufst du heute ein? <br/>
+        Ich mache die Tür zu. <br/>
+        Am Abend sehe ich nicht fern. <br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Notice:</strong> The prefix still wants to be last even when you negate:
+      <span class="mono">nicht ... an / nicht ... auf / nicht ... zu</span>.
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 4):</strong> Possessives (mein/dein/sein/ihr…).
+    Separable verbs + possessives = you can talk about “my phone,” “your book,” “his mother,” etc. in real routines.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove you can do separables without thinking.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 8 separable-verb sentences (at least 4 time-first). Prefix must be last.</li>
+      <li>Write 6 questions (3 yes/no + 3 W) with separables. Answer all.</li>
+      <li>Write 6 negatives with separables (<span class="mono">nicht</span>). Prefix still last.</li>
+      <li>Write 3 sentences mixing Week 2 + separables (accusative object or prep phrase).</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Your bug list (write it)</h3>
+    <ol>
+      <li>My most common separable-verb mistake is…</li>
+      <li>It happens when… (questions / negation / long sentences)</li>
+      <li>I will fix it by drilling Block … tomorrow for 10 minutes.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 3 — Separable Verbs · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

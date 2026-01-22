@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 7 — Checkpoint (A1 Structure Variety)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.1rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:780px){
+  h1{font-size:1.85rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 7</p>
+    <h1>Checkpoint — Week 3 “Structure Variety” (Still A1)</h1>
+    <p class="subtitle">
+      This checkpoint is designed to confirm: Week 3 has been installed without breaking your A1 core:
+      <strong>verb position</strong>, <strong>questions</strong>, <strong>negation</strong>, <strong>nominative + accusative</strong>,
+      and now <strong>modals</strong> + <strong>separable verbs</strong> + <strong>possessives</strong> + <strong>plural recognition</strong>.
+      You are not writing essays. You are proving sentence control under mixed conditions.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day6.html">Day 6</a>
+      <a href="week3-day7.html">Day 7</a>
+      <a href="#how">How to Use This</a>
+      <a href="#rubric">Self-Scoring</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#test">Checkpoint Test</a>
+      <a href="#review">Review Method</a>
+      <a href="#remediate">Fix Plan</a>
+      <a href="#exit">Week 3 Exit Criteria</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="how">
+  <h2>How to Use This Checkpoint (A1 rules, no drama)</h2>
+  <p class="lede">
+    This is a <strong>test + learning loop</strong>. You will write answers, then immediately correct and rewrite.
+    That correction phase is where the improvement happens.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Time plan (4 hours)</h3>
+      <ul class="checklist">
+        <li><strong>15 min</strong> — Setup + quick review (toolbox below)</li>
+        <li><strong>120 min</strong> — Do the checkpoint tasks (Sections A–F)</li>
+        <li><strong>60 min</strong> — Review & rewrite (error hunting + second pass)</li>
+        <li><strong>25 min</strong> — Speaking checkpoint (out loud)</li>
+      </ul>
+      <p class="small">
+        If you have less time: do Sections A, B, D, and F + the review method.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Rules</h3>
+      <ul class="checklist">
+        <li>Use only A1 structures (main clauses). No subordinate clauses.</li>
+        <li>Keep modals simple: modal in position 2, infinitive at the end.</li>
+        <li>Keep separables simple: prefix at the end.</li>
+        <li>If you don’t know a word, swap in a known word from the toolbox.</li>
+        <li>Do NOT “invent grammar.” Keep it clean.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Pass condition (A1):</strong> Your sentences are understandable and mostly correct, and
+      your word order stays stable even when you add modals/separables/negation/objects.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rubric">
+  <h2>Self-Scoring Rubric (simple and honest)</h2>
+  <p class="lede">
+    Score yourself to diagnose what to drill next week. Don’t chase 100%. Chase stability.
+  </p>
+
+  <div class="card">
+    <table class="table">
+      <tr><th>Category</th><th>0</th><th>1</th><th>2</th></tr>
+      <tr>
+        <td><strong>Word order</strong> (V2 / questions)</td>
+        <td>Often broken</td>
+        <td>Mostly OK, some slips</td>
+        <td>Stable</td>
+      </tr>
+      <tr>
+        <td><strong>Modals</strong> (infinitive at end)</td>
+        <td>Often missing</td>
+        <td>Mostly OK</td>
+        <td>Automatic</td>
+      </tr>
+      <tr>
+        <td><strong>Separable verbs</strong> (prefix at end)</td>
+        <td>Often missing</td>
+        <td>Mostly OK</td>
+        <td>Automatic</td>
+      </tr>
+      <tr>
+        <td><strong>Accusative</strong> (direct object)</td>
+        <td>Random</td>
+        <td>Mostly OK</td>
+        <td>Stable</td>
+      </tr>
+      <tr>
+        <td><strong>Possessives</strong> (mein/meine/meinen)</td>
+        <td>Often wrong</td>
+        <td>Mostly OK</td>
+        <td>Reliable</td>
+      </tr>
+      <tr>
+        <td><strong>Negation</strong> (nicht vs kein)</td>
+        <td>Confused</td>
+        <td>Mostly OK</td>
+        <td>Reliable</td>
+      </tr>
+      <tr>
+        <td><strong>Plural</strong> (die + plural noun)</td>
+        <td>Rare / wrong</td>
+        <td>Mostly OK</td>
+        <td>Comfortable</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Interpretation:</strong>
+      If any category is 0 → drill it daily next week for 10 minutes.
+      If most categories are 1 → you’re on track for A1.
+      If most categories are 2 → congratulations, A1 is starting to become “boring,” which is the goal.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="toolbox">
+  <h2>Toolbox (use this for clean A1 output)</h2>
+  <p class="lede">
+    Don’t let missing vocab sabotage structure.
+    Use these words, reuse them a lot, and keep sentences short.
+  </p>
+
+  <div class="card">
+    <div class="two-col">
+      <div>
+        <h3 style="margin-top:0">Verbs (base)</h3>
+        <div class="prompt mono">
+          kaufen, trinken, essen, lesen, lernen, suchen, sehen
+        </div>
+        <h3>Modals</h3>
+        <div class="prompt mono">
+          können, müssen, wollen, möchten
+        </div>
+        <h3>Separable verbs</h3>
+        <div class="prompt mono">
+          aufstehen, einkaufen, anrufen, anfangen, aufmachen, zumachen, mitkommen, fernsehen
+        </div>
+        <h3>Time words</h3>
+        <div class="prompt mono">
+          heute, morgen, jetzt, später, am Morgen, am Abend, um zwei Uhr
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Nouns (A1 set)</h3>
+        <div class="prompt mono">
+          der Freund — die Freunde<br/>
+          der Kaffee — (singular item)<br/>
+          die Tasche — die Taschen<br/>
+          die Tür — die Türen<br/>
+          die Wohnung — die Wohnungen<br/>
+          das Buch — die Bücher<br/>
+          das Handy — die Handys<br/>
+          das Brot — (singular item)
+        </div>
+
+        <h3>Possessives</h3>
+        <div class="prompt mono">
+          mein/meine/meinen · dein/deine/deinen · sein/seine/seinen · ihr/ihre/ihren · unser/unsere/unseren
+        </div>
+
+        <h3>Negation</h3>
+        <div class="prompt mono">
+          nicht (not) · kein/keine/keinen (no/not any)
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Reminder:</strong> plural article is always <span class="mono">die</span> (in nominative/accusative).
+      Masculine accusative possessive is <span class="mono">-en</span> (meinen/deinen…).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="test">
+  <h2>Checkpoint Test (Sections A–F)</h2>
+  <p class="lede">
+    Do all sections. Write your answers. Don’t peek at examples while writing.
+    Then use the review method below.
+  </p>
+
+  <div class="exercise">
+    <h4>Section A — Core structure (V2 stability) (25 sentences)</h4>
+    <p class="small">
+      Write 25 main-clause statements. Requirements:
+      <ul class="small">
+        <li>At least 15 time-first V2 sentences</li>
+        <li>At least 10 accusative objects</li>
+        <li>At least 6 possessives</li>
+        <li>At least 6 negatives (mix nicht/kein)</li>
+      </ul>
+    </p>
+    <details><summary>Starter examples (do not copy; just to show format)</summary>
+      <div class="answer mono">
+        Heute kaufe ich kein Brot.<br/>
+        Am Abend rufe ich meinen Freund an.<br/>
+        Jetzt suche ich meine Tasche nicht.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Section B — Modals (infinitive at end) (20 sentences)</h4>
+    <p class="small">
+      Write 20 modal sentences. Requirements:
+      <ul class="small">
+        <li>Use each modal at least 4 times: <span class="mono">können/müssen/wollen/möchten</span></li>
+        <li>At least 10 sentences are time-first V2</li>
+        <li>At least 8 sentences include a possessive object</li>
+        <li>At least 6 negatives</li>
+      </ul>
+    </p>
+    <details><summary>Self-check question</summary>
+      <div class="answer small">
+        Did every modal sentence end with an infinitive? If not, rewrite it correctly.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Section C — Separable verbs (prefix at end) (20 sentences)</h4>
+    <p class="small">
+      Write 20 separable-verb sentences. Requirements:
+      <ul class="small">
+        <li>Use at least 6 different separable verbs</li>
+        <li>At least 10 time-first V2 sentences</li>
+        <li>At least 8 sentences include an accusative object</li>
+        <li>At least 6 negatives</li>
+      </ul>
+    </p>
+    <details><summary>Common trap reminder</summary>
+      <div class="answer mono">
+        ✅ Am Abend rufe ich meinen Freund <strong>an</strong>.<br/>
+        ❌ Am Abend rufe ich <strong>an</strong> meinen Freund.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Section D — Questions + answers (24 Q/A pairs)</h4>
+    <p class="small">
+      Write 24 question/answer pairs. Requirements:
+      <ul class="small">
+        <li>12 yes/no questions (verb-first)</li>
+        <li>12 W-questions (mix <span class="mono">was/wo/wann/wen/wie</span>)</li>
+        <li>At least 10 pairs use possessives</li>
+        <li>At least 10 answers use negation</li>
+        <li>At least 6 questions use separable verbs</li>
+        <li>At least 6 answers use a modal sentence</li>
+      </ul>
+    </p>
+
+    <details><summary>Templates (use & vary)</summary>
+      <div class="answer mono">
+        Wo ist meine Tasche? — Sie ist hier/da.<br/>
+        Ist das dein Buch? — Nein, das ist nicht mein Buch.<br/>
+        Wen rufst du an? — Ich rufe meinen Freund an.<br/>
+        Kaufst du heute ein? — Nein, ich kaufe heute nicht ein.<br/>
+        Kannst du mein Handy suchen? — Ja, ich kann dein Handy suchen.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Section E — Plural + agreement (12 sentences)</h4>
+    <p class="small">
+      Write 12 sentences using plural nouns. Requirements:
+      <ul class="small">
+        <li>At least 6 sentences with plural as subject (use <span class="mono">sind</span>)</li>
+        <li>At least 6 sentences with plural as object (accusative plural = <span class="mono">die</span>)</li>
+        <li>At least 6 possessives with plural nouns (<span class="mono">meine Bücher</span>)</li>
+      </ul>
+    </p>
+
+    <div class="callout">
+      <strong>A1 trap:</strong> plural verb agreement:
+      <span class="mono">Die Taschen sind…</span> not <span class="mono">ist</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Section F — Production scenario (A1 mini-world) (1 text + 1 dialogue)</h4>
+    <p class="small">
+      This is the “can you function?” test.
+      Do both tasks.
+    </p>
+
+    <h3>F1 — Text: My day (12–14 sentences)</h3>
+    <p class="small">
+      Requirements:
+      <ul class="small">
+        <li>At least 5 time-first V2 sentences</li>
+        <li>At least 3 modal sentences</li>
+        <li>At least 3 separable-verb sentences</li>
+        <li>At least 5 accusative objects</li>
+        <li>At least 5 possessives</li>
+        <li>At least 4 negatives (mix nicht/kein)</li>
+        <li>At least 2 questions</li>
+        <li>At least 1 plural sentence</li>
+      </ul>
+    </p>
+
+    <h3>F2 — Dialogue: Lost item + plan (14 lines)</h3>
+    <p class="small">
+      Scenario: you lost your phone/bag at a café and you need to meet someone later.
+      Requirements:
+      <span class="badge">4</span> questions,
+      <span class="badge">3</span> possessives,
+      <span class="badge">2</span> modal sentences,
+      <span class="badge">2</span> separables,
+      <span class="badge">2</span> negatives,
+      <span class="badge">1</span> plural sentence.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="review">
+  <h2>Review Method (60 minutes) — how you actually improve from a checkpoint</h2>
+  <p class="lede">
+    Do not skip this. Test without review is just “performing.” Review turns it into learning.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Step 1 — Mark structure (15 min)</h3>
+    <ul>
+      <li>Underline every conjugated verb.</li>
+      <li>Circle every infinitive (modal) and every separable prefix.</li>
+      <li>Box every object phrase (accusative): <span class="mono">den/die/das/einen</span> + noun, or possessive object.</li>
+    </ul>
+
+    <h3>Step 2 — Identify mistakes (15 min)</h3>
+    <p class="small">Use this checklist:</p>
+    <ul class="checklist">
+      <li>V2 broken? (verb not in position 2)</li>
+      <li>Modal missing infinitive at end?</li>
+      <li>Separable prefix not at end?</li>
+      <li>Question word order wrong? (verb-first or W + verb)</li>
+      <li>nicht vs kein wrong?</li>
+      <li>Accusative article wrong? (den/einen, etc.)</li>
+      <li>Possessive ending wrong? (esp. masculine accusative -en)</li>
+      <li>Plural agreement wrong? (sind vs ist)</li>
+    </ul>
+
+    <h3>Step 3 — Rewrite correctly (20 min)</h3>
+    <p class="small">
+      Choose the 15 worst sentences and rewrite them correctly.
+      Then rewrite 5 of them again, faster, without looking.
+    </p>
+
+    <h3>Step 4 — Mini drill (10 min)</h3>
+    <p class="small">
+      Pick your #1 mistake category and do a focused drill:
+      <span class="mono">10 sentences</span> where you force the correct pattern.
+      Example: if your mistake is masculine accusative possessive → write 10 sentences with <span class="mono">meinen/deinen</span>.
+    </p>
+
+    <div class="callout">
+      <strong>Checkpoint secret:</strong> The rewrite phase is the real training. The test just tells you where to aim.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="remediate">
+  <h2>Fix Plan (for next week) — 10 minutes/day</h2>
+  <p class="lede">
+    Based on your rubric scores, pick 1–2 daily fixes. Keep it small and consistent.
+  </p>
+
+  <div class="card">
+    <table class="table">
+      <tr><th>If you struggle with…</th><th>Daily 10-minute fix</th></tr>
+      <tr>
+        <td>V2 word order</td>
+        <td>Write 10 time-first V2 sentences with simple verbs. Underline the verb. Repeat next day.</td>
+      </tr>
+      <tr>
+        <td>Modals</td>
+        <td>Write 10 modal sentences. Circle the infinitive at the end. 5 with negation.</td>
+      </tr>
+      <tr>
+        <td>Separable verbs</td>
+        <td>Write 10 separable sentences. Circle the prefix at the end.</td>
+      </tr>
+      <tr>
+        <td>Accusative articles</td>
+        <td>Write 12 sentences with direct objects: 6 masculine (den/einen), 3 feminine, 3 neuter.</td>
+      </tr>
+      <tr>
+        <td>Possessives</td>
+        <td>Write 12 sentences forcing: <span class="mono">meinen</span> (6) + <span class="mono">meine</span> (3) + <span class="mono">mein</span> (3).</td>
+      </tr>
+      <tr>
+        <td>nicht vs kein</td>
+        <td>Write 12 pairs: “kein noun” vs “nicht my/your noun” and explain why each uses it.</td>
+      </tr>
+      <tr>
+        <td>Plurals</td>
+        <td>Write 10 singular→plural pairs, then 10 sentences with plural subjects using <span class="mono">sind</span>.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Keep A1 in mind:</strong> Don’t add new grammar to fix grammar.
+      You fix A1 by repeating A1 correctly.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Week 3 Exit Criteria (A1-compatible)</h2>
+  <p class="lede">You “pass Week 3” when these are true most of the time (not perfect):</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can use modals with infinitive at the end without thinking too hard.</li>
+      <li>I can use 6–8 separable verbs in main clauses (prefix at the end).</li>
+      <li>I can use possessives correctly in nominative and usually in accusative (especially masculine -en).</li>
+      <li>I can ask/answer basic questions and negate with nicht/kein mostly correctly.</li>
+      <li>I can write a short paragraph + a simple dialogue in A1 German.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>And the real sign:</strong> It starts to feel a bit boring. That’s automation.
+      If it’s still chaotic, you don’t need “more grammar” — you need more clean reps.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 7 — Checkpoint · Designed for a 4‑hour study block · A1-focused</small>
+</footer>
+
+</body>
+</html>

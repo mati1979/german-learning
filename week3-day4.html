@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 4 — Possessives: mein / dein / sein / ihr / unser / euer / Ihr</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 4</p>
+    <h1>Possessives: <em>mein</em> / <em>dein</em> / <em>sein</em> / <em>ihr</em> / <em>unser</em> / <em>euer</em> / <em>Ihr</em></h1>
+    <p class="subtitle">
+      Today you unlock “my / your / his / her / our / your(pl.) / your(formal)” — one of the fastest ways to make German feel personal.
+      The key idea: possessives behave like <strong>articles</strong>. They change depending on the noun’s gender and case.
+      We focus on A1: nominative + accusative in real sentences.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day3.html">Day 3</a>
+      <a href="week3-day4.html">Day 4</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#core">Core Idea</a>
+      <a href="#baseforms">Base Forms</a>
+      <a href="#nominative">Nominative</a>
+      <a href="#accusative">Accusative</a>
+      <a href="#questions">Questions</a>
+      <a href="#negation">Negation</a>
+      <a href="#guided">Guided Practice</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    Possessives feel “table-y,” but we’ll do it the right way: in sentence frames, not abstract memorization.
+    Your goal is to use possessives naturally with the nouns you already know (food, objects, family),
+    in both nominative and accusative.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end)</h3>
+      <ul class="checklist">
+        <li>I can say <span class="mono">mein/dein/sein/ihr/unser/euer/Ihr</span> + noun in nominative.</li>
+        <li>I can say possessives in accusative (direct object): <span class="mono">meinen/meine/mein</span>.</li>
+        <li>I can use possessives inside modal sentences and separable-verb sentences.</li>
+        <li>I can ask/answer basic questions: <span class="mono">Wo ist mein…?</span>, <span class="mono">Hast du dein…?</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>55 min</strong> — Lesson + forms (A1 useful)</li>
+        <li><strong>90 min</strong> — Drills (A–D)</li>
+        <li><strong>45 min</strong> — Vocabulary-in-context (your nouns)</li>
+        <li><strong>30 min</strong> — Activation: reading + speaking</li>
+        <li><strong>20 min</strong> — Production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Core truth:</strong> Possessives are like <em>ein‑words</em>:
+      they follow the same pattern as <span class="mono">ein/einen/eine</span>.
+      If you know accusative articles, you can learn possessives quickly.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <h2>The Core Idea (possessives behave like articles)</h2>
+  <p class="lede">
+    In A1, think of a possessive as “the article slot.”
+    Instead of <span class="mono">der/die/das</span> or <span class="mono">ein/eine</span>, you put <span class="mono">mein/dein/sein/ihr...</span>
+    and it changes to match gender + case.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Article slot examples</h3>
+    <div class="prompt mono">
+      <strong>der</strong> Kaffee → <strong>mein</strong> Kaffee / <strong>dein</strong> Kaffee / <strong>sein</strong> Kaffee<br/>
+      <strong>die</strong> Pizza → <strong>meine</strong> Pizza / <strong>deine</strong> Pizza / <strong>ihre</strong> Pizza<br/>
+      <strong>das</strong> Buch → <strong>mein</strong> Buch / <strong>dein</strong> Buch / <strong>sein</strong> Buch<br/><br/>
+      Ich trinke <strong>meinen</strong> Kaffee. <span class="small">(accusative masculine)</span><br/>
+      Ich esse <strong>meine</strong> Pizza. <span class="small">(accusative feminine)</span><br/>
+      Ich lese <strong>mein</strong> Buch. <span class="small">(accusative neuter)</span>
+    </div>
+
+    <div class="callout">
+      <strong>What changes?</strong> Not the owner word (mein/dein/etc.) by itself — but its ending (-∅ / -e / -en) depending on case+gender.
+      You don’t need all endings today. You need the A1 ones.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="baseforms">
+  <h2>Base Forms (who owns it?)</h2>
+  <p class="lede">
+    First: the “owner” base words. Then we add the endings.
+    These are the possessive stems you choose depending on the person.
+  </p>
+
+  <div class="card">
+    <table class="table">
+      <tr><th>Meaning</th><th>German (base)</th><th>Example (base)</th></tr>
+      <tr><td>my</td><td class="mono">mein‑</td><td class="mono">mein ...</td></tr>
+      <tr><td>your (singular, informal)</td><td class="mono">dein‑</td><td class="mono">dein ...</td></tr>
+      <tr><td>his</td><td class="mono">sein‑</td><td class="mono">sein ...</td></tr>
+      <tr><td>her</td><td class="mono">ihr‑</td><td class="mono">ihr ...</td></tr>
+      <tr><td>its</td><td class="mono">sein‑</td><td class="mono">sein ...</td></tr>
+      <tr><td>our</td><td class="mono">unser‑</td><td class="mono">unser ...</td></tr>
+      <tr><td>your (plural, informal)</td><td class="mono">euer‑</td><td class="mono">euer ...</td></tr>
+      <tr><td>their</td><td class="mono">ihr‑</td><td class="mono">ihr ...</td></tr>
+      <tr><td>your (formal)</td><td class="mono">Ihr‑</td><td class="mono">Ihr ...</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Critical distinction:</strong>
+      <span class="mono">ihr</span> can mean <em>her</em>, <em>their</em>, or <em>your (plural)</em> depending on context.
+      And formal “your” is <span class="mono">Ihr</span> with a capital I.
+      You don’t need to panic — you need to notice context.
+    </div>
+
+    <hr/>
+    <h3>Pronunciation & spelling note: <span class="mono">euer</span></h3>
+    <p class="small">
+      <span class="mono">euer</span> often drops the middle <span class="mono">e</span> in endings:
+      <span class="mono">euer</span> → <span class="mono">eure</span>, <span class="mono">euren</span>.
+      A1 goal: recognize it; don’t overthink it.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="nominative">
+  <h2>Nominative Possessives (subject / predicate noun)</h2>
+  <p class="lede">
+    Start here. Nominative is what you say when something is the subject (“my book is here”)
+    or after <span class="mono">sein</span> (“it is my book”).
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">A1 nominative endings</h3>
+    <p class="small">
+      Think: same as <span class="mono">ein</span>. Masculine & neuter usually have no ending in nominative; feminine/plural take <span class="mono">-e</span>.
+    </p>
+    <table class="table">
+      <tr><th>Noun</th><th>Gender</th><th>Nominative example</th></tr>
+      <tr><td class="mono">Kaffee</td><td>der (m)</td><td class="mono">mein Kaffee / dein Kaffee / sein Kaffee</td></tr>
+      <tr><td class="mono">Pizza</td><td>die (f)</td><td class="mono">meine Pizza / deine Pizza / ihre Pizza</td></tr>
+      <tr><td class="mono">Buch</td><td>das (n)</td><td class="mono">mein Buch / dein Buch / sein Buch</td></tr>
+      <tr><td class="mono">Freunde</td><td>plural</td><td class="mono">meine Freunde / deine Freunde / ihre Freunde</td></tr>
+    </table>
+
+    <hr/>
+
+    <h3>Sentence frames (nominative)</h3>
+    <div class="prompt mono">
+      <strong>Frame A (simple):</strong> Das ist mein Buch.<br/>
+      <strong>Frame B (location):</strong> Mein Buch ist hier.<br/>
+      <strong>Frame C (question):</strong> Ist das dein Buch?<br/>
+      <strong>Frame D (possession):</strong> Das ist ihre Pizza. <span class="small">(her/their)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Very useful A1 move:</strong> “Das ist mein …” works for almost anything.
+      If you forget an ending, you can often still communicate. But you will practice correctly today.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="accusative">
+  <h2>Accusative Possessives (direct object — Week 2 meets Week 3)</h2>
+  <p class="lede">
+    This is the big practical piece: “I buy my coffee,” “I read my book,” “I call my friend.”
+    In accusative, masculine changes to <span class="mono">-en</span>. Feminine stays <span class="mono">-e</span>. Neuter stays <span class="mono">-∅</span>.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">A1 accusative endings (the ones you need)</h3>
+    <table class="table">
+      <tr><th>Gender</th><th>Accusative possessive form</th><th>Example</th></tr>
+      <tr>
+        <td>masculine (der)</td>
+        <td class="mono">meinen / deinen / seinen / ihren / unseren / euren / Ihren</td>
+        <td class="mono">Ich trinke <strong>meinen</strong> Kaffee.</td>
+      </tr>
+      <tr>
+        <td>feminine (die)</td>
+        <td class="mono">meine / deine / seine / ihre / unsere / eure / Ihre</td>
+        <td class="mono">Ich esse <strong>meine</strong> Pizza.</td>
+      </tr>
+      <tr>
+        <td>neuter (das)</td>
+        <td class="mono">mein / dein / sein / ihr / unser / euer / Ihr</td>
+        <td class="mono">Ich lese <strong>mein</strong> Buch.</td>
+      </tr>
+      <tr>
+        <td>plural (die)</td>
+        <td class="mono">meine / deine / seine / ihre / unsere / eure / Ihre</td>
+        <td class="mono">Ich sehe <strong>meine</strong> Freunde.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>The single most important rule today:</strong>
+      Masculine accusative = <span class="mono">-en</span>: <span class="mono">meinen / deinen / seinen / ihren</span>.
+      If you remember only one ending, remember that one.
+    </div>
+
+    <hr/>
+    <h3>Sentence frames (accusative)</h3>
+    <div class="prompt mono">
+      Ich kaufe <strong>meinen</strong> Kaffee.<br/>
+      Du kaufst <strong>dein</strong> Brot. <span class="small">(das Brot)</span><br/>
+      Wir lesen <strong>unser</strong> Buch. <span class="small">(das Buch)</span><br/>
+      Sie ruft <strong>ihren</strong> Freund an. <span class="small">(der Freund)</span><br/>
+      Ich mache <strong>meine</strong> Tür zu. <span class="small">(die Tür)</span>
+    </div>
+
+    <hr/>
+    <h3>Possessives inside modals and separables (integration)</h3>
+    <div class="prompt mono">
+      Heute <strong>kann</strong> ich <strong>meinen</strong> Kaffee <strong>kaufen</strong>. <span class="small">(modal)</span><br/>
+      Morgen <strong>will</strong> ich <strong>mein</strong> Buch <strong>lesen</strong>. <span class="small">(modal)</span><br/>
+      Am Abend <strong>rufe</strong> ich <strong>meine</strong> Mutter <strong>an</strong>. <span class="small">(separable)</span><br/>
+      Jetzt <strong>mache</strong> ich <strong>meine</strong> Tür <strong>zu</strong>. <span class="small">(separable)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Why this matters:</strong> You’re now stacking Week 2 + Week 3:
+      accusative objects + possessives + modals/separables. That’s real A1 power.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="questions">
+  <h2>Questions with Possessives (real-life A1)</h2>
+  <p class="lede">
+    You will constantly ask about things: “Where is my phone?”, “Is this your book?”
+    Today you learn the most useful question frames.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Core question frames</h3>
+    <div class="prompt mono">
+      <strong>Ist das mein Buch?</strong><br/>
+      <strong>Ist das deine Pizza?</strong><br/>
+      <strong>Wo ist mein Handy?</strong><br/>
+      <strong>Wo ist deine Tasche?</strong><br/>
+      <strong>Hast du mein Buch?</strong> <span class="small">(Week 1 haben is coming soon; but you can use it as a chunk)</span><br/>
+      <strong>Wen rufst du an?</strong> — <strong>Ich rufe meinen Freund an.</strong>
+    </div>
+
+    <div class="callout">
+      <strong>Note:</strong> If you don’t want to use <span class="mono">haben</span> yet, you can say:
+      <span class="mono">Wo ist mein Buch?</span> / <span class="mono">Das ist mein Buch.</span> / <span class="mono">Ich suche mein Buch.</span>
+    </div>
+
+    <hr/>
+    <h3>Practice set — write question + answer (12 pairs)</h3>
+    <p class="small">Answer in a full sentence. Use possessives correctly.</p>
+    <ol>
+      <li>Ask: Is this your book? (yes)</li>
+      <li>Ask: Is that her pizza? (no → it’s my pizza)</li>
+      <li>Ask: Where is my coffee? (here)</li>
+      <li>Ask: Where is your bag? (there)</li>
+      <li>Ask: Who are you calling? (my mother)</li>
+      <li>Ask: What are you buying? (my bread)</li>
+      <li>Ask: Do you want to read your book? (yes, with modal)</li>
+      <li>Ask: Can you buy my coffee? (yes, with modal)</li>
+      <li>Ask: Are we starting our lesson now? (yes, separable <span class="mono">anfangen</span>)</li>
+      <li>Ask: Are you opening your window? (no)</li>
+      <li>Ask: Are they calling their friend? (yes)</li>
+      <li>Ask: Where is your (formal) book? (here)</li>
+    </ol>
+
+    <details><summary>Possible answers (one set)</summary>
+      <div class="answer mono">
+        1) Ist das dein Buch? — Ja, das ist mein Buch. <span class="small">(or: Ja, das ist mein Buch.)</span><br/>
+        2) Ist das ihre Pizza? — Nein, das ist meine Pizza.<br/>
+        3) Wo ist mein Kaffee? — Dein Kaffee ist hier. <span class="small">(or: Er ist hier.)</span><br/>
+        4) Wo ist deine Tasche? — Sie ist da.<br/>
+        5) Wen rufst du an? — Ich rufe meine Mutter an.<br/>
+        6) Was kaufst du? — Ich kaufe mein Brot. <span class="small">(better: Ich kaufe das Brot.)</span><br/>
+        7) Willst du dein Buch lesen? — Ja, ich will mein Buch lesen.<br/>
+        8) Kannst du meinen Kaffee kaufen? — Ja, ich kann deinen Kaffee kaufen.<br/>
+        9) Fangen wir unsere Stunde jetzt an? — Ja, wir fangen unsere Stunde jetzt an. <span class="small">(A1 ok)</span><br/>
+        10) Machst du dein Fenster auf? — Nein, ich mache mein Fenster nicht auf.<br/>
+        11) Rufen sie ihren Freund an? — Ja, sie rufen ihren Freund an.<br/>
+        12) Wo ist Ihr Buch? — Ihr Buch ist hier.
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Small correction note:</strong> #6 sounds more natural with articles in real life.
+      Today we practice possessive structure; don’t worry if some sentences feel slightly “textbook.”
+    </div>
+  </div>
+</section>
+
+<section class="section" id="negation">
+  <h2>Negation with Possessives (nicht vs kein + possessive)</h2>
+  <p class="lede">
+    Review: <span class="mono">kein</span> negates a noun. But if you have a possessive (my/your),
+    you usually negate with <span class="mono">nicht</span> because it’s “not my book,” not “no book.”
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">The A1 rule</h3>
+    <div class="prompt mono">
+      <strong>kein</strong> + noun = no/not any noun<br/>
+      Ich habe <strong>kein</strong> Brot. <span class="small">(no bread)</span><br/><br/>
+      <strong>nicht</strong> + possessive phrase = not my/your/his...<br/>
+      Das ist <strong>nicht mein</strong> Buch. <br/>
+      Ich kaufe <strong>nicht meinen</strong> Kaffee. <span class="small">(not my coffee / not buying my coffee)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Practical guideline:</strong> If a possessive is present (mein/dein/etc.), default to <span class="mono">nicht</span> for “not my/your…”.
+      Use <span class="mono">kein</span> when you mean “none at all.”
+    </div>
+
+    <hr/>
+    <h3>Practice (12) — choose negation</h3>
+    <ol>
+      <li>That is not my book.</li>
+      <li>I have no coffee. (none)</li>
+      <li>I am not buying my coffee today. (action focus)</li>
+      <li>She is not calling her friend. (action)</li>
+      <li>This is not your pizza.</li>
+      <li>We have no time. (A1 noun: <span class="mono">Zeit</span>)</li>
+      <li>I want no tea. (none)</li>
+      <li>I don’t want to drink my tea. (not my tea / not drinking it)</li>
+      <li>He doesn’t want to read his book. (action)</li>
+      <li>These are not our friends.</li>
+      <li>Do you have no bread? (question)</li>
+      <li>Is this not your bag? (question)</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Das ist nicht mein Buch.</li>
+        <li>Ich habe keinen Kaffee.</li>
+        <li>Heute kaufe ich meinen Kaffee nicht. <span class="small">(or: Heute kaufe ich nicht meinen Kaffee.)</span></li>
+        <li>Sie ruft ihren Freund nicht an.</li>
+        <li>Das ist nicht deine Pizza.</li>
+        <li>Wir haben keine Zeit.</li>
+        <li>Ich will keinen Tee.</li>
+        <li>Ich will meinen Tee nicht trinken.</li>
+        <li>Er will sein Buch nicht lesen.</li>
+        <li>Das sind nicht unsere Freunde.</li>
+        <li>Hast du kein Brot?</li>
+        <li>Ist das nicht deine Tasche?</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Position note (A1):</strong> For sentences like “I don’t want to drink my tea,”
+      putting <span class="mono">nicht</span> right before the infinitive works well:
+      <span class="mono">meinen Tee nicht trinken</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guided">
+  <h2>Guided Practice (controlled, then free)</h2>
+  <p class="lede">
+    You will start controlled (choose the right form), then move to sentence building.
+    The big win is masculine accusative <span class="mono">-en</span>.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Choose the correct possessive form (15)</h3>
+    <p class="small">Fill the blank with the correct form: <span class="mono">mein / meine / meinen</span> (or other person).</p>
+    <ol>
+      <li class="mono">Ich trinke ___ Kaffee. <span class="small">(der Kaffee)</span></li>
+      <li class="mono">Ich esse ___ Pizza. <span class="small">(die Pizza)</span></li>
+      <li class="mono">Ich lese ___ Buch. <span class="small">(das Buch)</span></li>
+      <li class="mono">Du kaufst ___ Kaffee. <span class="small">(der Kaffee)</span></li>
+      <li class="mono">Wir sehen ___ Freunde. <span class="small">(die Freunde)</span></li>
+      <li class="mono">Sie ruft ___ Freund an. <span class="small">(der Freund)</span></li>
+      <li class="mono">Das ist ___ Tasche. <span class="small">(die Tasche)</span></li>
+      <li class="mono">Das ist ___ Handy. <span class="small">(das Handy)</span></li>
+      <li class="mono">Ist das ___ Buch? <span class="small">(dein)</span></li>
+      <li class="mono">Wo ist ___ Kaffee? <span class="small">(mein)</span></li>
+      <li class="mono">Er will ___ Buch lesen. <span class="small">(sein)</span></li>
+      <li class="mono">Sie möchte ___ Pizza essen. <span class="small">(ihre)</span></li>
+      <li class="mono">Wir machen ___ Tür zu. <span class="small">(unsere)</span></li>
+      <li class="mono">Ich kann ___ Freund anrufen. <span class="small">(meinen)</span></li>
+      <li class="mono">Heute kaufe ich ___ Brot. <span class="small">(mein; das Brot)</span></li>
+    </ol>
+
+    <details><summary>Answer key</summary>
+      <ol class="answer mono">
+        <li>meinen</li>
+        <li>meine</li>
+        <li>mein</li>
+        <li>deinen</li>
+        <li>unsere</li>
+        <li>ihren</li>
+        <li>meine <span class="small">(or: deine/ihre depending)</span></li>
+        <li>mein</li>
+        <li>dein</li>
+        <li>mein</li>
+        <li>sein</li>
+        <li>ihre</li>
+        <li>unsere</li>
+        <li>meinen</li>
+        <li>mein</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Reality check:</strong> If you got #1/#4/#6/#14 wrong, your weak point is masculine accusative.
+      That’s normal. Drill it today until it becomes boring.
+    </div>
+
+    <hr/>
+
+    <h3>Set 2 — Transformations (statement ↔ question ↔ negation)</h3>
+    <p class="small">For each base sentence, write 3 versions: question + negation.</p>
+    <ol class="mono">
+      <li>Base: Das ist mein Buch.</li>
+      <li>Base: Ich trinke meinen Kaffee.</li>
+      <li>Base: Sie ruft ihren Freund an.</li>
+      <li>Base: Wir lesen unser Buch.</li>
+      <li>Base: Du kaufst deine Pizza. <span class="small">(textbook-y but ok)</span></li>
+    </ol>
+
+    <details><summary>Example for #2</summary>
+      <div class="answer mono">
+        Statement: Ich trinke meinen Kaffee.<br/>
+        Question: Trinkst du meinen Kaffee?<br/>
+        Negation: Ich trinke meinen Kaffee nicht. / Ich trinke nicht meinen Kaffee. <span class="small">(context)</span>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes) — the repetition that makes it real</h2>
+  <p class="lede">
+    Possessives become automatic only through use. We keep the drills structured so you don’t drift.
+  </p>
+
+  <div class="exercise">
+    <h4>Drill Block A (25 min) — Masculine accusative hammer (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences with masculine accusative objects using possessives.
+      Use nouns like: <span class="mono">der Kaffee, der Freund, der Hund, der Film, der Stift</span>.
+      Requirement: at least 20 time-first V2 sentences.
+    </p>
+    <details><summary>Examples</summary>
+      <div class="answer mono">
+        Heute trinke ich <strong>meinen</strong> Kaffee.<br/>
+        Morgen rufe ich <strong>meinen</strong> Freund an.<br/>
+        Jetzt kaufe ich <strong>deinen</strong> Kaffee.<br/>
+        Später sehe ich <strong>seinen</strong> Film.
+      </div>
+    </details>
+    <div class="callout">
+      <strong>Non-negotiable:</strong> masculine accusative = <span class="mono">-en</span>.
+      If you write <span class="mono">mein Kaffee</span> as an object, correct it immediately.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B (25 min) — Mixed genders (36 sentences)</h4>
+    <p class="small">
+      Write 36 sentences: 12 masculine, 12 feminine, 12 neuter objects — all with possessives.
+      Use verbs: <span class="mono">kaufen/trinken/essen/lesen/anrufen</span>.
+    </p>
+    <div class="prompt mono">
+      m: den Kaffee / den Freund / den Hund<br/>
+      f: die Pizza / die Tasche / die Tür<br/>
+      n: das Buch / das Handy / das Brot
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C (20 min) — Modals + possessives (24 sentences)</h4>
+    <p class="small">
+      Write 24 modal sentences (from Day 1–2) that include a possessive object.
+      Mix: <span class="mono">können/müssen/wollen/möchten</span>.
+      Infinitive at the end. Possessive must match the object.
+    </p>
+    <details><summary>Examples</summary>
+      <div class="answer mono">
+        Heute kann ich <strong>meinen</strong> Kaffee kaufen.<br/>
+        Ich möchte <strong>mein</strong> Buch lesen.<br/>
+        Du musst <strong>deine</strong> Tasche nehmen. <span class="small">(A1 ok; “nehmen” = take)</span><br/>
+        Wir wollen <strong>unser</strong> Brot essen.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block D (20 min) — Separable verbs + possessives (24 sentences)</h4>
+    <p class="small">
+      Write 24 separable-verb sentences (from Day 3) that include a possessive.
+      Keep the prefix at the end.
+    </p>
+    <details><summary>Examples</summary>
+      <div class="answer mono">
+        Am Abend rufe ich <strong>meine</strong> Mutter <strong>an</strong>.<br/>
+        Heute mache ich <strong>meine</strong> Tür <strong>zu</strong>.<br/>
+        Morgen stehe ich mit <strong>meinem</strong> Freund <strong>auf</strong>. <span class="small">(dative not taught; skip if unsure)</span><br/>
+        Ich mache <strong>dein</strong> Fenster <strong>auf</strong>. <span class="small">(context: you open it)</span>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Note:</strong> If you notice “dative” creeping in (e.g., <span class="mono">mit meinem</span>),
+      skip it for now. Keep A1 clean: nominative + accusative.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (15 minutes) — lost & found</h2>
+  <p class="lede">
+    Read aloud twice. Then answer. This trains your “real life” possessive questions.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Wo ist mein Buch? <br/>
+      Mein Buch ist nicht hier. <br/>
+      Ich suche mein Handy. <br/>
+      Ist das dein Handy? <br/>
+      Nein, das ist nicht mein Handy. <br/>
+      Ich rufe meinen Freund an. <br/>
+      Er sagt: „Dein Handy ist da.“ <br/>
+    </div>
+
+    <h3>Questions (answer in German)</h3>
+    <ol>
+      <li>Wo ist das Buch?</li>
+      <li>Sucht die Person ihr Handy?</li>
+      <li>Ist das Handy hier?</li>
+      <li>Wen ruft die Person an?</li>
+      <li>Wessen Handy ist da? (use <span class="mono">mein/dein</span>)</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Das Buch ist nicht hier.</li>
+        <li>Ja, sie sucht ihr Handy. <span class="small">(or: Er sucht sein Handy — depends; keep it simple: Die Person sucht ihr Handy.)</span></li>
+        <li>Nein, das Handy ist nicht hier.</li>
+        <li>Die Person ruft ihren Freund an. <span class="small">(owner could be mein; we keep it generic)</span></li>
+        <li>Dein Handy ist da.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Grammar note:</strong> “her/its/their” depends on context. For A1, it’s okay to avoid overthinking.
+      Use <span class="mono">mein/dein</span> confidently first.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (15 minutes) — possessions in your world</h2>
+  <p class="lede">
+    You’ll speak about your actual objects: phone, book, bag, coffee, keys, etc.
+    That’s how possessives stick.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 — Shadow (3 min)</h3>
+    <p class="small">Read the reading text aloud once, then again faster.</p>
+
+    <hr/>
+
+    <h3>Part 2 — “Where is my…?” drill (7 min)</h3>
+    <p class="small">Say 10 mini-dialogues aloud:</p>
+    <div class="prompt mono">
+      A: Wo ist mein ____? <br/>
+      B: Dein ____ ist hier/da. <br/>
+      A: Danke!
+    </div>
+    <p class="small">Use nouns: <span class="mono">Buch, Handy, Tasche, Schlüssel, Kaffee</span> (learn: <span class="mono">der Schlüssel</span>).</p>
+
+    <hr/>
+
+    <h3>Part 3 — “Not mine” (5 min)</h3>
+    <p class="small">Say 8 sentences:</p>
+    <ul>
+      <li class="mono">Das ist nicht mein ____.</li>
+      <li class="mono">Das ist meine ____.</li>
+      <li class="mono">Das ist mein ____.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Speaking rule:</strong> Don’t hesitate. If you’re unsure about gender, choose one and keep going.
+      Then check later. Fluency with structure beats silent perfection.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — prove you own it</h2>
+  <p class="lede">
+    Production tasks will reveal whether you can use possessives automatically, not just fill blanks.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — 10-sentence paragraph (my stuff / your stuff)</h4>
+    <p class="small">
+      Write 10 sentences about your day and your objects.
+      Requirements:
+      <ul class="small">
+        <li>At least 6 possessives (<span class="mono">mein/dein</span> minimum)</li>
+        <li>At least 4 accusative objects with correct possessive endings</li>
+        <li>At least 2 questions</li>
+        <li>At least 2 negations with <span class="mono">nicht</span></li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue (lost & found, 12 lines)</h4>
+    <p class="small">
+      Scenario: you lost your phone/book in a café.
+      Requirements:
+      <span class="badge">4</span> questions,
+      <span class="badge">2</span> uses of “not mine” (<span class="mono">nicht mein</span>),
+      <span class="badge">2</span> modal sentences (<span class="mono">kann/möchte</span>),
+      <span class="badge">1</span> separable verb sentence (<span class="mono">anrufen/aufmachen/zumachen</span>).
+    </p>
+    <details><summary>Starter skeleton</summary>
+      <div class="answer mono">
+        A: Entschuldigung, ist das mein Handy?<br/>
+        B: ...<br/>
+        A: Wo ist mein Buch?<br/>
+        B: ...<br/>
+        A: Ich möchte meinen Freund anrufen.<br/>
+        B: ...<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (possessive traps)</h4>
+    <div class="prompt mono">
+      Ich trinke mein Kaffee. <br/>
+      Du kaufst dein Pizza. <br/>
+      Sie ruft ihr Freund an. <br/>
+      Heute kann ich mein Kaffee kaufen. <br/>
+      Das ist nicht meine Buch. <br/>
+      Wo ist meinen Handy? <br/>
+    </div>
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Ich trinke meinen Kaffee. <br/>
+        Du kaufst deine Pizza. <br/>
+        Sie ruft ihren Freund an. <br/>
+        Heute kann ich meinen Kaffee kaufen. <br/>
+        Das ist nicht mein Buch. <br/>
+        Wo ist mein Handy? <br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Spot the pattern:</strong> masculine objects = <span class="mono">meinen/deinen/seinen/ihren</span>.
+      Neuter with <span class="mono">Buch/Handy</span> = <span class="mono">mein/dein/sein/ihr</span> without -en.
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 5):</strong> Gender patterns + plural signals.
+    Possessives force you to care about gender — Day 5 gives you the recognition strategies so it stops being random.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove you can do nominative + accusative possessives without notes.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 6 nominative possessive sentences: 2 with masculine, 2 with feminine, 2 with neuter.</li>
+      <li>Write 8 accusative possessive sentences: 4 masculine (must be -en), 2 feminine, 2 neuter.</li>
+      <li>Write 6 questions using possessives (<span class="mono">Wo ist…?</span> / <span class="mono">Ist das…?</span> / <span class="mono">Was kaufst du…?</span>) and answer them.</li>
+      <li>Write 4 “not mine/your” sentences with <span class="mono">nicht</span>.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Bug list</h3>
+    <ol>
+      <li>My biggest possessive mistake is…</li>
+      <li>It happens with… (masculine accusative / ihr vs Ihr / questions)</li>
+      <li>I will fix it by drilling Block … tomorrow for 10 minutes.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 4 — Possessives · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

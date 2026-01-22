@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 3 · Day 2 — Modal Sentence Structure + Drills</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 3 · DAY 2</p>
+    <h1>Modal Sentence Structure + Drills (Automation Day)</h1>
+    <p class="subtitle">
+      Day 1 introduced modals. Day 2 makes them <strong>boringly automatic</strong>.
+      Today you will drill the modal sentence engine until you stop thinking about it:
+      modal in position 2 (V2), and the main verb stays infinitive at the end — even in questions and negation.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week3.html">Week 3</a>
+      <a href="week3-day1.html">Day 1</a>
+      <a href="week3-day2.html">Day 2</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#engine">The Engine</a>
+      <a href="#errors">Error Traps</a>
+      <a href="#warmup">Warm‑Up</a>
+      <a href="#drills">Drill Blocks</a>
+      <a href="#mix">Mixed Sets</a>
+      <a href="#speed">Speed Round</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    This day is “drill dense.” If you do it well, you’ll notice you stop translating.
+    Your job is to build the modal sentence pattern under multiple pressures:
+    time-first V2, objects, prepositions, questions, and negation — without losing the infinitive.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end of Day 2)</h3>
+      <ul class="checklist">
+        <li>I produce modal sentences without conjugating the second verb.</li>
+        <li>I can switch: statement ↔ yes/no question ↔ W-question instantly.</li>
+        <li>I can place <span class="mono">nicht</span> before the infinitive to negate the action.</li>
+        <li>I can use <span class="mono">kein‑</span> to negate an object inside a modal sentence.</li>
+        <li>I can keep V2 correct when starting with time words.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour schedule</h3>
+      <ul class="checklist">
+        <li><strong>25 min</strong> — Engine recap + error traps</li>
+        <li><strong>25 min</strong> — Warm-up (controlled reps)</li>
+        <li><strong>100 min</strong> — Drill blocks (A–D)</li>
+        <li><strong>40 min</strong> — Mixed sets (E–F)</li>
+        <li><strong>25 min</strong> — Speed round (timed)</li>
+        <li><strong>25 min</strong> — Reading + speaking activation</li>
+        <li><strong>20 min</strong> — Production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Day 2 mantra:</strong> Modal = the conjugated verb. The other verb is a calm little infinitive that lives at the end.
+      It does not move. It does not conjugate. It just vibes.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="engine">
+  <h2>The Engine (recap you must internalize)</h2>
+  <p class="lede">You will be repeating these frames all day. Treat them like muscle memory.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Statement</h3>
+    <div class="prompt mono">
+      [Time/Subject] + <strong>Modal (pos. 2)</strong> + (Subject) + (Object) + (Extras) + <strong>Infinitive</strong><br/><br/>
+      Heute <strong>muss</strong> ich das Brot <strong>kaufen</strong>.<br/>
+      Ich <strong>kann</strong> den Kaffee für den Freund <strong>kaufen</strong>.<br/>
+      Wir <strong>wollen</strong> durch den Park <strong>gehen</strong>.<br/>
+      Du <strong>möchtest</strong> Tee <strong>trinken</strong>.
+    </div>
+
+    <h3>Yes/No question</h3>
+    <div class="prompt mono">
+      <strong>Modal first</strong> + subject + ... + <strong>Infinitive</strong><br/><br/>
+      <strong>Kannst</strong> du heute kommen?<br/>
+      <strong>Musst</strong> du jetzt gehen?<br/>
+      <strong>Willst</strong> du Pizza essen?<br/>
+      <strong>Möchtest</strong> du einen Kaffee trinken?
+    </div>
+
+    <h3>W-question</h3>
+    <div class="prompt mono">
+      W-word + <strong>Modal</strong> + subject + ... + <strong>Infinitive</strong><br/><br/>
+      <strong>Was</strong> willst du essen?<br/>
+      <strong>Wann</strong> kannst du kommen?<br/>
+      <strong>Wo</strong> möchtest du gehen?
+    </div>
+
+    <div class="callout">
+      <strong>Key diagnostic:</strong> If the infinitive isn’t the last word (or last major idea), you probably broke the pattern.
+      Fix it immediately.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="errors">
+  <h2>Error Traps (and how you fix them fast)</h2>
+  <p class="lede">
+    These are the predictable ways your brain will sabotage you.
+    Knowing the trap = cutting the fix time in half.
+  </p>
+
+  <div class="card">
+    <table class="table">
+      <tr><th>Trap</th><th>Wrong example</th><th>Why wrong</th><th>Fix pattern</th></tr>
+      <tr>
+        <td>Conjugating the second verb</td>
+        <td class="mono">Ich kann kaufe den Kaffee.</td>
+        <td>Modal takes conjugation; second verb must be infinitive.</td>
+        <td class="mono">Ich kann den Kaffee kaufen.</td>
+      </tr>
+      <tr>
+        <td>V2 breaks when time-first</td>
+        <td class="mono">Heute ich muss arbeiten.</td>
+        <td>Verb must be position 2.</td>
+        <td class="mono">Heute muss ich arbeiten.</td>
+      </tr>
+      <tr>
+        <td>Negation doubles accidentally</td>
+        <td class="mono">Ich will nicht keinen Kaffee kaufen.</td>
+        <td>Choose one: <span class="mono">nicht</span> OR <span class="mono">kein</span>.</td>
+        <td class="mono">Ich will keinen Kaffee kaufen. / Ich will den Kaffee nicht kaufen.</td>
+      </tr>
+      <tr>
+        <td>Question word order (forget verb-first)</td>
+        <td class="mono">Du willst Pizza essen?</td>
+        <td>Yes/no question = verb-first.</td>
+        <td class="mono">Willst du Pizza essen?</td>
+      </tr>
+      <tr>
+        <td>Forgetting accusative after Week 2 preps</td>
+        <td class="mono">für der Freund kaufen</td>
+        <td>Accusative preps force accusative.</td>
+        <td class="mono">für den Freund kaufen</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Micro-fix rule:</strong> When you make a trap error, rewrite the corrected sentence 3 times.
+      Don’t “move on.” You’re training your hand to stop doing it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="warmup">
+  <h2>Warm‑Up (25 minutes) — controlled reps</h2>
+  <p class="lede">
+    This warm-up forces the engine to start smoothly. Do it fast, but correct.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Warm-up A (10 min) — 12 sentence frames</h3>
+    <p class="small">Write 12 sentences using only these infinitives: <span class="mono">kaufen / trinken / essen / lesen</span>.</p>
+    <ul class="small">
+      <li>3 with <span class="mono">kann</span></li>
+      <li>3 with <span class="mono">muss</span></li>
+      <li>3 with <span class="mono">will</span></li>
+      <li>3 with <span class="mono">möchte</span></li>
+    </ul>
+
+    <hr/>
+
+    <h3>Warm-up B (8 min) — 8 questions</h3>
+    <p class="small">Write 8 yes/no questions (modal-first). Answer each with a full sentence.</p>
+
+    <hr/>
+
+    <h3>Warm-up C (7 min) — 8 negations</h3>
+    <p class="small">Write 4 with <span class="mono">nicht</span> (action) + 4 with <span class="mono">kein</span> (object).</p>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drill Blocks (100 minutes) — high volume, smart focus</h2>
+  <p class="lede">
+    These blocks are your core study today. Each block has a single job.
+    Don’t “skip to the fun part.” This is the fun part — it’s where your brain becomes German-shaped.
+  </p>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Infinitive-at-the-end bootcamp (30 items)</h4>
+    <p class="small">
+      Rewrite correctly. Each sentence has exactly one structural error.
+      Focus: keep the infinitive at the end, and V2 correct.
+    </p>
+    <ol>
+      <li class="mono">Ich kann kaufe den Kaffee.</li>
+      <li class="mono">Heute ich muss trinken Wasser.</li>
+      <li class="mono">Du willst isst Pizza.</li>
+      <li class="mono">Wir möchten lesen das Buch.</li>
+      <li class="mono">Morgen ich will komme.</li>
+      <li class="mono">Jetzt wir können gehen durch den Park.</li>
+      <li class="mono">Ich muss arbeite heute.</li>
+      <li class="mono">Du kannst nicht kommst heute.</li>
+      <li class="mono">Wir wollen nicht lesen das Buch.</li>
+      <li class="mono">Heute ich möchte kaufe einen Kaffee.</li>
+      <li class="mono">Er kann trinkt Tee.</li>
+      <li class="mono">Sie muss geht jetzt.</li>
+      <li class="mono">Ich will nicht kaufe den Kaffee.</li>
+      <li class="mono">Möchtest du kaufst Brot?</li>
+      <li class="mono">Was du willst essen?</li>
+    </ol>
+
+    <details><summary>Answer key (one correct set)</summary>
+      <ol class="answer mono">
+        <li>Ich kann den Kaffee kaufen.</li>
+        <li>Heute muss ich Wasser trinken.</li>
+        <li>Du willst Pizza essen.</li>
+        <li>Wir möchten das Buch lesen.</li>
+        <li>Morgen will ich kommen.</li>
+        <li>Jetzt können wir durch den Park gehen.</li>
+        <li>Heute muss ich arbeiten.</li>
+        <li>Du kannst heute nicht kommen.</li>
+        <li>Wir wollen das Buch nicht lesen.</li>
+        <li>Heute möchte ich einen Kaffee kaufen.</li>
+        <li>Er kann Tee trinken.</li>
+        <li>Sie muss jetzt gehen.</li>
+        <li>Ich will den Kaffee nicht kaufen.</li>
+        <li>Möchtest du Brot kaufen?</li>
+        <li>Was willst du essen?</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Pattern to notice:</strong> When negating the action, <span class="mono">nicht</span> sits right before the infinitive:
+      <span class="mono">nicht kommen / nicht lesen / nicht kaufen</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Transformations (statement ↔ question ↔ negation)</h4>
+    <p class="small">
+      For each base sentence, write 4 versions:
+      <span class="badge">1</span> statement,
+      <span class="badge">2</span> yes/no question,
+      <span class="badge">3</span> W-question (use <span class="mono">was/wann/wo</span>),
+      <span class="badge">4</span> negation (choose <span class="mono">nicht</span> or <span class="mono">kein</span>).
+      This trains switching without breaking structure.
+    </p>
+    <div class="prompt mono">Base sentences:</div>
+    <ol>
+      <li class="mono">Ich kann den Kaffee kaufen.</li>
+      <li class="mono">Wir müssen heute arbeiten.</li>
+      <li class="mono">Du willst Pizza essen.</li>
+      <li class="mono">Sie möchte Tee trinken.</li>
+      <li class="mono">Wir können durch den Park gehen.</li>
+    </ol>
+
+    <details><summary>Example for #1 (model)</summary>
+      <div class="answer mono">
+        1) Ich kann den Kaffee kaufen.<br/>
+        2) Kannst du den Kaffee kaufen?<br/>
+        3) Was kannst du kaufen?<br/>
+        4) Ich kann den Kaffee nicht kaufen. <span class="small">(action negation)</span><br/>
+        or: Ich kann keinen Kaffee kaufen. <span class="small">(object negation)</span>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (25 min) — Time-first V2 pressure (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences. Requirement: each sentence starts with a time word.
+      Modal must be in position 2. Infinitive at the end.
+      Mix all four modals. Include at least 10 with Week 2 objects (accusative articles).
+    </p>
+    <div class="prompt mono">
+      Time starters: Heute / Morgen / Jetzt / Später / Am Morgen / Am Abend / Um zwei Uhr
+    </div>
+    <div class="callout">
+      <strong>Quality check:</strong> underline the modal in each sentence. If it’s not the second element, fix it.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (25 min) — Week 2 inside Week 3 (objects + prepositions)</h4>
+    <p class="small">
+      Write 25 sentences that include BOTH:
+      (1) a modal + infinitive at the end, and
+      (2) a Week 2 element: accusative object OR accusative preposition phrase.
+      At least 10 sentences must include a preposition phrase from:
+      <span class="mono">für/durch/gegen/ohne/um</span>.
+    </p>
+    <details><summary>Examples (use as pattern)</summary>
+      <div class="answer mono">
+        Heute kann ich den Kaffee für den Freund kaufen.<br/>
+        Morgen muss ich durch den Park gehen.<br/>
+        Ich will keinen Kaffee ohne Zucker trinken.<br/>
+        Wir möchten um zwei Uhr kommen.<br/>
+        Du musst das Brot kaufen.
+      </div>
+    </details>
+    <p class="small">
+      Note: <span class="mono">ohne Zucker</span> is naturally without an article. That’s fine.
+      If you use a noun that needs an article, use the correct accusative article.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="mix">
+  <h2>Mixed Sets (40 minutes) — integration without chaos</h2>
+  <p class="lede">
+    These sets are shorter but harder: they force you to make choices quickly.
+    This is where your brain starts “feeling” German structure.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set E (20 min) — Choose the best modal (meaning control)</h3>
+    <p class="small">Write the German sentence. Choose the best modal: <span class="mono">können / müssen / wollen / möchten</span>.</p>
+    <ol>
+      <li>I would like to buy a coffee. (polite)</li>
+      <li>I have to work today. (obligation)</li>
+      <li>Can you come tomorrow? (possibility)</li>
+      <li>We want to go through the park. (intention)</li>
+      <li>I can learn German. (ability)</li>
+      <li>Do you want to drink tea? (direct)</li>
+      <li>We would like to eat pizza. (polite preference)</li>
+      <li>I must go now. (necessity)</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Ich möchte einen Kaffee kaufen.</li>
+        <li>Heute muss ich arbeiten.</li>
+        <li>Kannst du morgen kommen?</li>
+        <li>Wir wollen durch den Park gehen.</li>
+        <li>Ich kann Deutsch lernen.</li>
+        <li>Willst du Tee trinken?</li>
+        <li>Wir möchten Pizza essen.</li>
+        <li>Ich muss jetzt gehen.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set F (20 min) — Spot the meaning difference (kein vs nicht)</h3>
+    <p class="small">
+      For each pair, write ONE English meaning difference in a short note.
+      Then write 2 more pairs of your own.
+    </p>
+    <div class="prompt mono">
+      A) Ich will keinen Kaffee kaufen. <br/>
+      B) Ich will den Kaffee nicht kaufen.
+    </div>
+    <div class="prompt mono">
+      A) Wir müssen heute nicht arbeiten. <br/>
+      B) Wir müssen heute ohne das Handy gehen. <span class="small">(different idea; not negation)</span>
+    </div>
+
+    <details><summary>Notes (examples)</summary>
+      <div class="answer mono">
+        Pair 1: A = no coffee at all. B = not this coffee (or not buying it).<br/>
+        Pair 2: A = we don't have to work today. B = we must go without the phone (no negation).
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="speed">
+  <h2>Speed Round (25 minutes) — timed automation</h2>
+  <p class="lede">
+    You will go fast on purpose. Speed reveals what is truly automatic.
+    Then you fix only the errors.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Sprint 1 (8 min) — 24 modal sentences</h3>
+    <p class="small"><span class="timer">⏱ 08:00</span> Write 24 modal sentences. Rules: infinitive at end, no fancy clauses.</p>
+
+    <hr/>
+
+    <h3>Sprint 2 (8 min) — 16 questions</h3>
+    <p class="small"><span class="timer">⏱ 08:00</span> Write 16 questions (8 yes/no + 8 W). Answer each with a full sentence.</p>
+
+    <hr/>
+
+    <h3>Sprint 3 (9 min) — Negation under speed</h3>
+    <p class="small"><span class="timer">⏱ 09:00</span> Write 18 negatives: 9 with <span class="mono">nicht</span> (action), 9 with <span class="mono">kein‑</span> (object).</p>
+
+    <div class="callout">
+      <strong>Correction method:</strong> Circle the sentences where you forgot the infinitive at the end.
+      Rewrite ONLY those + 3 new correct ones of the same type.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (15 minutes) — short text + structure spotting</h2>
+  <p class="lede">
+    Read aloud once, then underline modals and circle infinitives.
+    You’re training your eyes to see the pattern instantly.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Heute kann ich nicht in die Stadt gehen. <br/>
+      Ich möchte einen Kaffee kaufen, aber ich muss heute arbeiten. <br/>
+      Morgen wollen wir durch den Park gehen. <br/>
+      Kannst du um zwei Uhr kommen? <br/>
+      Ich will keinen Tee trinken. <br/>
+      Was möchtest du essen? <br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Underline each modal.</li>
+      <li>Circle each infinitive at the end.</li>
+      <li>Rewrite the text changing <span class="mono">heute</span> → <span class="mono">morgen</span> where possible.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (10 minutes) — switching practice</h2>
+  <p class="lede">
+    You will practice switching forms out loud: statement → question → negation.
+    That switching is the A1 superpower.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Speak these triples (5 rounds)</h3>
+    <p class="small">For each base idea, say 3 sentences out loud: statement, yes/no question, negation.</p>
+    <ol>
+      <li class="mono">Base idea: buy coffee</li>
+      <li class="mono">Base idea: drink tea</li>
+      <li class="mono">Base idea: come tomorrow</li>
+      <li class="mono">Base idea: go through the park</li>
+      <li class="mono">Base idea: work today</li>
+    </ol>
+    <details><summary>Example (model)</summary>
+      <div class="answer mono">
+        Ich kann den Kaffee kaufen. <br/>
+        Kannst du den Kaffee kaufen? <br/>
+        Ich kann den Kaffee nicht kaufen. <br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Speaking rule:</strong> Don’t search for perfect vocabulary. Use the simplest words you have and keep the structure correct.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — real use</h2>
+  <p class="lede">
+    You’ll produce two short texts. Keep them A1 simple and structurally clean.
+    This proves automation.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — 10-line dialogue (modals + questions)</h4>
+    <p class="small">
+      Scenario: planning a simple meeting + coffee.
+      Requirements:
+      4 questions (mix yes/no + W),
+      6 answers,
+      at least 2 time-first lines,
+      at least 2 uses of <span class="mono">nicht</span>,
+      at least 1 <span class="mono">kein‑</span>.
+    </p>
+    <details><summary>Starter skeleton</summary>
+      <div class="answer mono">
+        A: Wann kannst du kommen?<br/>
+        B: ...<br/>
+        A: Möchtest du einen Kaffee trinken?<br/>
+        B: ...<br/>
+        A: Musst du heute arbeiten?<br/>
+        B: ...<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — 8 sentences “Today vs Tomorrow”</h4>
+    <p class="small">
+      Write 8 sentences: 4 about today, 4 about tomorrow.
+      Must include all four modals at least once.
+      Include one accusative preposition phrase: <span class="mono">für/durch/ohne/um/gegen</span>.
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (typical Day 2 mistakes)</h4>
+    <div class="prompt mono">
+      Morgen ich will komme um zwei Uhr. <br/>
+      Kannst du heute nicht kommst? <br/>
+      Ich möchte kaufe einen Kaffee für der Freund. <br/>
+      Was du möchtest trinken? <br/>
+      Wir wollen nicht gehen durch den Park. <br/>
+    </div>
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Morgen will ich um zwei Uhr kommen. <br/>
+        Kannst du heute nicht kommen? <br/>
+        Ich möchte einen Kaffee für den Freund kaufen. <br/>
+        Was möchtest du trinken? <br/>
+        Wir wollen nicht durch den Park gehen. <br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 3):</strong> Separable verbs.
+    If your modal structure is stable, separables will feel like “new spice,” not “new chaos.”
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove the structure is yours (no notes).</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Do these tasks</h3>
+    <ul class="checklist">
+      <li>Write 8 time-first modal sentences (V2 correct) with 8 different infinitives.</li>
+      <li>Write 6 questions with modals (3 yes/no + 3 W) and answer them.</li>
+      <li>Write 6 negatives: 3 with <span class="mono">nicht</span> (action), 3 with <span class="mono">kein‑</span> (object).</li>
+      <li>Write 3 modal sentences that include a Week 2 preposition phrase (accusative prep).</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Bug list (write it)</h3>
+    <ol>
+      <li>My most common mistake today was…</li>
+      <li>It happened when… (time-first / questions / negation / long sentences)</li>
+      <li>Tomorrow I will fix it by repeating Block …</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 3 · Day 2 — Modal Sentence Structure + Drills · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

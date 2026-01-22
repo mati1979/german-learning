@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 1 · Day 4 — Nominative Articles in Context (der / die / das)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65;}
+a{color:inherit;}
+header{background:var(--paper);border-bottom:1px solid var(--border);}
+.header-inner{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 1.6rem;}
+.kicker{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:.78rem;margin:0 0 .55rem;}
+h1{font-size:2.25rem;margin:.15rem 0 .35rem;}
+.subtitle{color:var(--muted);max-width:96ch;margin:0;font-size:1.03rem;}
+.nav{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem;padding-top:1rem;border-top:1px solid var(--border);}
+.nav a{text-decoration:none;padding:.42rem .7rem;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.nav a:hover{border-color:#cfcfcf;}
+main{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 5rem;}
+.section{margin:2.1rem 0;}
+.section h2{font-size:1.7rem;margin:0 0 .6rem;}
+.section h3{font-size:1.2rem;margin:1.2rem 0 .45rem;}
+.lede{color:var(--muted);margin:.25rem 0 1.15rem;max-width:95ch;}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:1.25rem 1.2rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1rem;}
+.pill{display:inline-block;font-size:.78rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.22rem .55rem;background:#fff;}
+.callout{border-left:4px solid var(--accent);padding:.9rem 1rem;background:#fff;border:1px solid var(--border);border-radius:12px;}
+.callout strong{color:var(--accent);}
+.table{width:100%;border-collapse:collapse;margin:.7rem 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.table th,.table td{padding:.62rem .7rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.table th{text-align:left;background:#fcfcfc;font-weight:700;}
+.table tr:last-child td{border-bottom:none;}
+.exercise{padding:1rem 1rem;border:1px dashed #d7d7d7;border-radius:12px;background:#fff;margin:.9rem 0;}
+.exercise h4{margin:.2rem 0 .55rem;font-size:1.08rem;}
+.prompt{background:#fcfcfc;border:1px solid var(--border);border-radius:12px;padding:.85rem .95rem;margin:.65rem 0;}
+details{border:1px solid var(--border);border-radius:12px;padding:.75rem .9rem;background:#fff;margin:.6rem 0;}
+summary{cursor:pointer;font-weight:700;}
+.small{font-size:.95rem;color:var(--muted);}
+.mono{font-family:var(--mono);}
+hr{border:none;border-top:1px solid var(--border);margin:1.15rem 0;}
+.flashgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem;margin-top:.75rem;}
+.flash{border:1px solid var(--border);border-radius:14px;background:#fff;padding:.95rem;min-height:96px;}
+.flash .front{font-weight:700;}
+.flash .back{color:var(--muted);margin-top:.35rem;}
+.checklist{list-style:none;padding-left:0;margin:.4rem 0 0;}
+.checklist li{margin:.35rem 0;padding-left:1.6rem;position:relative;}
+.checklist li:before{content:"☐";position:absolute;left:0;color:var(--muted);}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
+.tag{display:inline-block;font-size:.78rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.18rem .55rem;background:#fff;margin-left:.35rem;}
+footer{border-top:1px solid var(--border);background:var(--paper);padding:1.8rem 1.2rem;color:var(--muted);text-align:center;}
+@media (max-width:780px){h1{font-size:2.0rem;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 1 · DAY 4</p>
+    <h1>Nominative Articles in Context <span class="tag">der · die · das</span></h1>
+    <p class="subtitle">
+      Today you stop guessing. You’ll learn how to use <strong>der/die/das</strong> and <strong>ein/eine</strong>
+      correctly in the <strong>nominative</strong> (subject) case — in real sentences, not in lonely word lists.
+      If German has a “tax you pay every sentence,” it’s articles. So we train them until they’re boring.
+    </p>
+
+    <div class="nav">
+      <a href="a1.html">← A1 Hub</a>
+      <a href="week1-day2.html">Day 2</a>
+      <a href="week1-day3.html">Day 3</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#lesson">Mini‑Lesson</a>
+      <a href="#patterns">Gender Patterns</a>
+      <a href="#vocab">Core Nouns</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    You are not memorizing “der = masculine” in the abstract.
+    You are building the habit: <strong>noun + article is one unit</strong>.
+    Today you will write and rewrite until your brain feels uncomfortable without the article.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will master</h3>
+      <ul>
+        <li>Definite articles (nominative): <span class="mono">der / die / das</span> + plural <span class="mono">die</span></li>
+        <li>Indefinite articles (nominative): <span class="mono">ein / eine</span> (no plural)</li>
+        <li>Using articles inside real sentences: <span class="mono">Das ist … / Der Mann … / Die Frau …</span></li>
+        <li>Asking “what is it?”: <span class="mono">Was ist das?</span> and answering correctly</li>
+        <li>Gender guessing strategies (patterns) + when to stop guessing</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour structure (recommended)</h3>
+      <ul class="checklist">
+        <li><strong>50–60 min</strong> — lesson + patterns + core nouns</li>
+        <li><strong>90 min</strong> — drills (articles in sentences)</li>
+        <li><strong>35–40 min</strong> — quizzes + corrections</li>
+        <li><strong>25–30 min</strong> — read aloud + transformations</li>
+        <li><strong>25–35 min</strong> — production writing + speaking prompts</li>
+        <li><strong>10 min</strong> — exit check + notes</li>
+      </ul>
+      <p class="small">
+        If you feel overwhelmed: reduce the number of new nouns, not the number of sentences.
+        Structure beats vocabulary.
+      </p>
+    </div>
+
+    <div class="callout">
+      <strong>Rule for Day 4:</strong> You may not write a noun without an article (unless it’s a verb object you haven’t learned yet).
+      This feels strict. That’s why it works.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini‑Lesson: Nominative Articles (the useful part)</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) Nominative = the subject (the “doer”)</h3>
+    <p class="lede">
+      Nominative is used for the subject: the person/thing that <em>is</em> something or <em>does</em> something.
+      We’re staying in nominative today so your brain doesn’t mix cases too early.
+    </p>
+
+    <table class="table">
+      <tr><th>Gender</th><th>Definite (the)</th><th>Indefinite (a/an)</th><th>Example</th></tr>
+      <tr><td>Masculine</td><td class="mono">der</td><td class="mono">ein</td><td class="mono">Der Mann ist hier. / Ein Mann ist hier.</td></tr>
+      <tr><td>Feminine</td><td class="mono">die</td><td class="mono">eine</td><td class="mono">Die Frau arbeitet. / Eine Frau arbeitet.</td></tr>
+      <tr><td>Neuter</td><td class="mono">das</td><td class="mono">ein</td><td class="mono">Das Buch ist gut. / Ein Buch ist gut.</td></tr>
+      <tr><td>Plural</td><td class="mono">die</td><td class="mono">—</td><td class="mono">Die Bücher sind gut.</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Big trap:</strong> “ein” is used for both masculine and neuter.
+      So you must learn the noun’s gender, not just the article.
+    </div>
+
+    <h3>2) The three most common A1 sentence frames (use them constantly)</h3>
+    <div class="prompt mono">
+      (A) <strong>Das ist</strong> ein/eine … <br/>
+      (B) <strong>Der/Die/Das</strong> … <strong>ist</strong> … <br/>
+      (C) <strong>Der/Die/Das</strong> … <strong>arbeitet/lernt/wohnt</strong> …
+    </div>
+
+    <h3>3) “Das ist…” — why it’s so useful</h3>
+    <p class="lede">
+      <span class="mono">Das ist</span> is the easiest A1 tool for identifying things.
+      It lets you practice articles without needing complex grammar.
+    </p>
+    <div class="prompt mono">
+      Das ist <strong>ein</strong> Hund. <br/>
+      Das ist <strong>eine</strong> Frau. <br/>
+      Das ist <strong>ein</strong> Buch. <br/>
+      Das sind <strong>die</strong> Bücher. (plural)
+    </div>
+
+    <h3>4) Quick pronunciation reminder (so you don’t mumble the articles)</h3>
+    <ul>
+      <li><span class="mono">der</span> (like “dair”)</li>
+      <li><span class="mono">die</span> (like “dee”)</li>
+      <li><span class="mono">das</span> (like “dahs”)</li>
+      <li><span class="mono">ein</span> (like “ine”)</li>
+      <li><span class="mono">eine</span> (like “EYE-nuh”)</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Method:</strong> When you learn a noun, store it as <span class="mono">der Tisch</span>, not “Tisch”.
+      Your future B2 self will thank you.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="patterns">
+  <h2>Gender Patterns (helpful, not magic)</h2>
+  <p class="lede">
+    Patterns don’t guarantee gender — but they help you guess better than random.
+    Use them as training wheels, then remove them.
+  </p>
+
+  <div class="cols">
+    <div class="card">
+      <h3 style="margin-top:0">Often <span class="mono">die</span> (feminine)</h3>
+      <ul class="mono">
+        <li>-ung (die Wohnung)</li>
+        <li>-heit / -keit (die Freiheit)</li>
+        <li>-schaft (die Freundschaft)</li>
+        <li>-ion (die Information)</li>
+        <li>-ei (die Bäckerei)</li>
+      </ul>
+      <p class="small">These show up more in A2/B1, but it’s good to see the pattern early.</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Often <span class="mono">das</span> (neuter)</h3>
+      <ul class="mono">
+        <li>-chen / -lein (das Mädchen)</li>
+        <li>many -ment (das Instrument)</li>
+        <li>many -um (das Museum)</li>
+        <li>many -o (das Foto)</li>
+      </ul>
+      <p class="small">Again: “often”, not “always”.</p>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Often <span class="mono">der</span> (masculine)</h3>
+      <ul class="mono">
+        <li>days/months (der Montag)</li>
+        <li>many -er (der Computer)</li>
+        <li>many -en (der Garten)</li>
+      </ul>
+      <p class="small">But don’t over-trust endings at A1. Memorize noun+article.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Reality check:</strong> German gender is not “logical”. Your job is not to justify it —
+    it’s to build reflexes: article + noun as one chunk.
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Core Nouns for Day 4 (small set, heavy repetition)</h2>
+  <p class="lede">
+    We keep the noun list intentionally small so you can drill hard.
+    If you add 80 nouns today, you’ll remember 10. If you drill 20 nouns, you’ll remember 18.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">People & basic things</h3>
+    <table class="table">
+      <tr><th>Article + Noun</th><th>English</th><th>Sample frame</th></tr>
+      <tr><td class="mono">der Mann</td><td>man</td><td class="mono">Der Mann arbeitet.</td></tr>
+      <tr><td class="mono">die Frau</td><td>woman</td><td class="mono">Die Frau lernt Deutsch.</td></tr>
+      <tr><td class="mono">das Kind</td><td>child</td><td class="mono">Das Kind ist hier.</td></tr>
+      <tr><td class="mono">der Hund</td><td>dog</td><td class="mono">Der Hund ist da.</td></tr>
+      <tr><td class="mono">die Katze</td><td>cat</td><td class="mono">Die Katze ist süß.</td></tr>
+      <tr><td class="mono">das Buch</td><td>book</td><td class="mono">Das Buch ist gut.</td></tr>
+      <tr><td class="mono">der Kaffee</td><td>coffee</td><td class="mono">Der Kaffee ist heiß.</td></tr>
+      <tr><td class="mono">das Wasser</td><td>water</td><td class="mono">Das Wasser ist kalt.</td></tr>
+      <tr><td class="mono">die Musik</td><td>music</td><td class="mono">Die Musik ist schön.</td></tr>
+      <tr><td class="mono">die Stadt</td><td>city</td><td class="mono">Die Stadt ist groß.</td></tr>
+    </table>
+
+    <h3>Plural (only 3 today)</h3>
+    <p class="small">Plural uses <span class="mono">die</span> for all genders. Keep it simple.</p>
+    <table class="table">
+      <tr><th>Singular</th><th>Plural</th><th>Example</th></tr>
+      <tr><td class="mono">das Buch</td><td class="mono">die Bücher</td><td class="mono">Die Bücher sind gut.</td></tr>
+      <tr><td class="mono">der Hund</td><td class="mono">die Hunde</td><td class="mono">Die Hunde sind hier.</td></tr>
+      <tr><td class="mono">die Katze</td><td class="mono">die Katzen</td><td class="mono">Die Katzen sind da.</td></tr>
+    </table>
+
+    <h3 style="margin-top:.2rem">Flashcards (say the whole chunk)</h3>
+    <p class="small">Look → cover → say it aloud: article + noun + one sentence.</p>
+    <div class="flashgrid">
+      <div class="flash"><div class="front mono">der Mann</div><div class="back">man · “Der Mann …”</div></div>
+      <div class="flash"><div class="front mono">die Frau</div><div class="back">woman · “Die Frau …”</div></div>
+      <div class="flash"><div class="front mono">das Kind</div><div class="back">child · “Das Kind …”</div></div>
+      <div class="flash"><div class="front mono">der Hund</div><div class="back">dog · “Der Hund …”</div></div>
+      <div class="flash"><div class="front mono">die Katze</div><div class="back">cat · “Die Katze …”</div></div>
+      <div class="flash"><div class="front mono">das Buch</div><div class="back">book · “Das Buch …”</div></div>
+      <div class="flash"><div class="front mono">der Kaffee</div><div class="back">coffee · “Der Kaffee …”</div></div>
+      <div class="flash"><div class="front mono">das Wasser</div><div class="back">water · “Das Wasser …”</div></div>
+      <div class="flash"><div class="front mono">die Musik</div><div class="back">music · “Die Musik …”</div></div>
+      <div class="flash"><div class="front mono">die Stadt</div><div class="back">city · “Die Stadt …”</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (the main meal)</h2>
+  <p class="lede">
+    Today you will use articles in full sentences until your hand automatically writes them.
+    You will also train: <strong>Was ist das?</strong> → correct answer with <span class="mono">ein/eine</span>.
+  </p>
+
+  <div class="callout">
+    <strong>Correction rule:</strong> If you pick the wrong article, rewrite the correct noun chunk
+    (<span class="mono">die Katze</span>) 10 times, then write 3 sentences with it.
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A — Article reflex (10 minutes)</h4>
+    <p class="small">Write each noun chunk 5 times (yes, five). Say it aloud every time.</p>
+    <div class="prompt mono">
+      der Mann · die Frau · das Kind · der Hund · die Katze · das Buch · der Kaffee · das Wasser · die Musik · die Stadt
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B — “Das ist …” identification (30 sentences)</h4>
+    <p class="small">
+      Write 30 sentences using only this frame:
+      <span class="mono">Das ist ein/eine …</span>.
+      Use all nouns from the list. Repeat them. The goal is automatic <span class="mono">ein/eine</span>.
+    </p>
+    <div class="prompt mono">
+      Das ist ein Hund. / Das ist eine Katze. / Das ist ein Buch.
+    </div>
+    <details><summary>Mini self-check</summary>
+      <ul class="checklist">
+        <li>I wrote 30 sentences</li>
+        <li>I used both <span class="mono">ein</span> and <span class="mono">eine</span></li>
+        <li>I said them aloud</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C — Subject sentences (35 sentences)</h4>
+    <p class="small">
+      Write 35 sentences where the noun is the subject.
+      Use verbs from Days 1–3 (<span class="mono">sein / haben / arbeiten / lernen / trinken / lesen / hören</span>).
+      Keep them A1 simple.
+    </p>
+
+    <div class="prompt mono">
+      Der Mann arbeitet. <br/>
+      Die Frau lernt Deutsch. <br/>
+      Das Kind ist hier. <br/>
+      Der Hund ist da. <br/>
+      Das Buch ist gut. <br/>
+      Der Kaffee ist heiß. <br/>
+      Die Musik ist schön.
+    </div>
+
+    <details><summary>Optional constraints (hard mode)</summary>
+      <ul>
+        <li>10 sentences start with a time chunk (use Day 3)</li>
+        <li>10 sentences use <span class="mono">wir</span> somewhere (later in the sentence)</li>
+        <li>10 sentences use plural (<span class="mono">die Hunde / die Bücher / die Katzen</span>)</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block D — Micro-dialogues (10 dialogues)</h4>
+    <p class="small">Write 10 tiny dialogues. Keep them short. The goal is article accuracy in context.</p>
+
+    <div class="prompt mono">
+      A: Was ist das? <br/>
+      B: Das ist ein Hund. <br/><br/>
+      A: Ist das das Buch? <br/>
+      B: Ja, das ist das Buch.
+    </div>
+
+    <p class="small">Use these building blocks:</p>
+    <ul class="mono">
+      <li>Was ist das?</li>
+      <li>Das ist ein/eine …</li>
+      <li>Ist das der/die/das …?</li>
+      <li>Ja, das ist der/die/das …</li>
+      <li>Nein, das ist nicht der/die/das …</li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block E — Speed round (5 minutes)</h4>
+    <p class="small">
+      Set a timer. Write as many correct noun chunks as you can:
+      article + noun. No sentences, just chunks.
+      Then circle any you are unsure about and correct them.
+    </p>
+    <div class="prompt mono">
+      der/die/das + Mann/Frau/Kind/Hund/Katze/Buch/Kaffee/Wasser/Musik/Stadt
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes (catch mistakes fast)</h2>
+  <p class="lede">Do them, check answers, then rewrite wrong ones until correct.</p>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Fill in the article (definite)</h4>
+    <ol>
+      <li>___ Mann arbeitet.</li>
+      <li>___ Frau lernt Deutsch.</li>
+      <li>___ Kind ist hier.</li>
+      <li>___ Hund ist da.</li>
+      <li>___ Katze ist süß.</li>
+      <li>___ Buch ist gut.</li>
+      <li>___ Kaffee ist heiß.</li>
+      <li>___ Wasser ist kalt.</li>
+      <li>___ Musik ist schön.</li>
+      <li>___ Stadt ist groß.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <p class="mono">der, die, das, der, die, das, der, das, die, die</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Fill in <span class="mono">ein</span> or <span class="mono">eine</span></h4>
+    <p class="small">Complete the “Das ist …” sentences.</p>
+    <ol>
+      <li>Das ist ___ Mann.</li>
+      <li>Das ist ___ Frau.</li>
+      <li>Das ist ___ Kind.</li>
+      <li>Das ist ___ Hund.</li>
+      <li>Das ist ___ Katze.</li>
+      <li>Das ist ___ Buch.</li>
+      <li>Das ist ___ Kaffee.</li>
+      <li>Das ist ___ Wasser.</li>
+      <li>Das ist ___ Stadt.</li>
+      <li>Das ist ___ Musik.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <p class="mono">ein, eine, ein, ein, eine, ein, ein, ein, eine, eine</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 3 — Choose the correct sentence (article accuracy)</h4>
+    <ol>
+      <li>a) Der Frau lernt Deutsch. &nbsp; b) Die Frau lernt Deutsch.</li>
+      <li>a) Das Mann arbeitet. &nbsp; b) Der Mann arbeitet.</li>
+      <li>a) Die Kind ist hier. &nbsp; b) Das Kind ist hier.</li>
+      <li>a) Der Katze ist süß. &nbsp; b) Die Katze ist süß.</li>
+      <li>a) Das Kaffee ist heiß. &nbsp; b) Der Kaffee ist heiß.</li>
+      <li>a) Die Buch ist gut. &nbsp; b) Das Buch ist gut.</li>
+      <li>a) Das Wasser ist kalt. &nbsp; b) Der Wasser ist kalt.</li>
+      <li>a) Die Stadt ist groß. &nbsp; b) Der Stadt ist groß.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <p class="mono">b, b, b, b, b, b, a, a</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 4 — Fix the mistake (rewrite correctly)</h4>
+    <ol>
+      <li>Heute lernt der Frau Deutsch.</li>
+      <li>Am Morgen trinkt die Kaffee.</li>
+      <li>Jetzt ist die Kind hier.</li>
+      <li>Oft liest der Musik.</li>
+      <li>Morgen ist das Stadt groß.</li>
+      <li>Das ist eine Hund.</li>
+      <li>Das ist ein Katze.</li>
+      <li>Das ist eine Buch.</li>
+      <li>Das sind ein Bücher.</li>
+      <li>Das sind die Hund.</li>
+    </ol>
+    <details><summary>Correct versions</summary>
+      <ol class="mono">
+        <li>Heute lernt die Frau Deutsch.</li>
+        <li>Am Morgen trinkt der Kaffee.</li>
+        <li>Jetzt ist das Kind hier.</li>
+        <li>Oft ist die Musik … (or: Oft höre ich Musik.)</li>
+        <li>Morgen ist die Stadt groß.</li>
+        <li>Das ist ein Hund.</li>
+        <li>Das ist eine Katze.</li>
+        <li>Das ist ein Buch.</li>
+        <li>Das sind die Bücher.</li>
+        <li>Das sind die Hunde.</li>
+      </ol>
+      <p class="small">
+        Note: Sentence 4 is tricky because “die Musik” is normally an object with <span class="mono">hören</span>.
+        A correct easy fix: <span class="mono">Oft höre ich Musik.</span>
+      </p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 5 — Mixed translation (English → German)</h4>
+    <p class="small">Keep it A1. Use correct nominative articles.</p>
+    <ol>
+      <li>The man works.</li>
+      <li>The woman learns German.</li>
+      <li>The child is here.</li>
+      <li>This is a dog.</li>
+      <li>This is a cat.</li>
+      <li>The book is good.</li>
+      <li>In the morning the coffee is hot.</li>
+      <li>Today the city is big.</li>
+      <li>These are the dogs.</li>
+      <li>These are the books.</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <ol class="mono">
+        <li>Der Mann arbeitet.</li>
+        <li>Die Frau lernt Deutsch.</li>
+        <li>Das Kind ist hier.</li>
+        <li>Das ist ein Hund.</li>
+        <li>Das ist eine Katze.</li>
+        <li>Das Buch ist gut.</li>
+        <li>Am Morgen ist der Kaffee heiß.</li>
+        <li>Heute ist die Stadt groß.</li>
+        <li>Das sind die Hunde.</li>
+        <li>Das sind die Bücher.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud (and transform)</h2>
+  <p class="lede">Read aloud twice. Then rewrite using the tasks. This makes articles stick.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Text A — Objects in your life (A1)</h3>
+    <div class="prompt mono">
+      Heute ist die Stadt groß. <br/>
+      Der Mann arbeitet. Die Frau lernt Deutsch. <br/>
+      Das Kind ist hier. <br/>
+      Am Morgen ist der Kaffee heiß und das Wasser ist kalt. <br/>
+      Am Abend ist die Musik schön. <br/>
+      Das ist ein Hund. Das ist eine Katze. <br/>
+      Das Buch ist gut. <br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Underline every article (<span class="mono">der/die/das/ein/eine</span>).</li>
+      <li>Rewrite the text with 3 sentences starting with time words (use Day 3).</li>
+      <li>Change 4 sentences from definite to indefinite (the → a).</li>
+      <li>Change 2 sentences into plural using <span class="mono">die</span> (e.g., <span class="mono">Das sind die Hunde.</span>).</li>
+    </ul>
+
+    <details><summary>Example transformations (one possible set)</summary>
+      <div class="prompt mono">
+        Heute arbeitet ein Mann. <br/>
+        Am Morgen ist ein Kaffee heiß. (better: Der Kaffee ist heiß.) <br/>
+        Das sind die Hunde. <br/>
+        Das sind die Bücher. <br/>
+      </div>
+      <p class="small">
+        Note: Some nouns (like <span class="mono">Kaffee</span>) are often used with <span class="mono">der</span> in normal speech,
+        but indefinite is still grammatically possible. Use whichever helps you drill the rule.
+      </p>
+    </details>
+
+    <hr/>
+
+    <h3 style="margin-top:0">Text B — Dialogue (read aloud)</h3>
+    <div class="prompt mono">
+      A: Was ist das? <br/>
+      B: Das ist ein Buch. <br/>
+      A: Ist das das Buch? <br/>
+      B: Ja, das ist das Buch. <br/>
+      A: Und was ist das? <br/>
+      B: Das ist eine Katze. <br/>
+      A: Ist das der Hund? <br/>
+      B: Nein, das ist nicht der Hund. Das ist die Katze. <br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Read aloud twice (slow, clear articles).</li>
+      <li>Replace <span class="mono">Buch</span> with <span class="mono">Wasser</span>, then with <span class="mono">Kaffee</span>.</li>
+      <li>Write 5 new lines of dialogue using other nouns.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (make it yours)</h2>
+  <p class="lede">
+    Articles become real when you use them about your world.
+    This is where you stop “doing exercises” and start “speaking German”.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — “My room / my life” (20 sentences)</h4>
+    <p class="small">
+      Write 20 sentences about things/people around you.
+      Use only nouns you know. If you don’t know a noun, replace it with a noun from today’s list.
+    </p>
+    <ul>
+      <li>At least 10 sentences start with time words (use Day 3)</li>
+      <li>At least 8 sentences use <span class="mono">Das ist ein/eine …</span></li>
+      <li>At least 5 sentences use plural with <span class="mono">die</span></li>
+    </ul>
+    <details><summary>Starter prompts</summary>
+      <ul class="mono">
+        <li>Heute ist …</li>
+        <li>Am Morgen ist …</li>
+        <li>Das ist ein/eine …</li>
+        <li>Das sind die …</li>
+        <li>Der/Die/Das … ist …</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Paragraph (10–12 sentences)</h4>
+    <p class="small">
+      Write a paragraph that includes:
+      1) 3 sentences with <span class="mono">Das ist …</span>,
+      2) 5 sentences with <span class="mono">Der/Die/Das …</span> as subject,
+      3) 2 plural sentences with <span class="mono">die</span>.
+    </p>
+    <details><summary>Example (don’t copy; compare)</summary>
+      <div class="prompt mono">
+        Heute ist die Stadt groß. Am Morgen ist der Kaffee heiß. <br/>
+        Das ist ein Hund. Das ist eine Katze. Das ist ein Buch. <br/>
+        Der Mann arbeitet. Die Frau lernt Deutsch. Das Kind ist hier. <br/>
+        Am Abend ist die Musik schön. <br/>
+        Das sind die Hunde. Das sind die Bücher. <br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Speaking prompts (optional but recommended)</h4>
+    <p class="small">
+      Say these out loud (record yourself if possible). Speak slowly but clearly.
+      Your focus is: articles + V2 (if you use time-first).
+    </p>
+    <ol class="mono">
+      <li>Heute ist …</li>
+      <li>Am Morgen ist …</li>
+      <li>Das ist ein/eine …</li>
+      <li>Das sind die …</li>
+      <li>Der/Die/Das … arbeitet/lernt/ist …</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Don’t stop without proving the habit exists.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can write 15 noun chunks with correct articles without looking.</li>
+      <li>I can answer <span class="mono">Was ist das?</span> with correct <span class="mono">ein/eine</span>.</li>
+      <li>I can write 10 correct subject sentences with <span class="mono">der/die/das</span>.</li>
+      <li>I can use plural <span class="mono">die</span> correctly in 5 sentences.</li>
+      <li>I read Text A aloud twice and underlined the articles.</li>
+      <li>I wrote at least one paragraph with articles in context.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Notes for Day 5 (tomorrow)</h3>
+    <p class="small">Write 3 bullets:</p>
+    <ol>
+      <li>The noun gender I mess up most is…</li>
+      <li>The “Das ist …” pattern feels…</li>
+      <li>Tomorrow I want to get faster at…</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer><small>Week 1 · Day 4 — Nominative Articles in Context (der/die/das)</small></footer>
+</body>
+</html>

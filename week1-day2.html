@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 1 · Day 2 — Regular Verbs & Conjugation Automation</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65;}
+a{color:inherit;}
+header{background:var(--paper);border-bottom:1px solid var(--border);}
+.header-inner{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 1.6rem;}
+.kicker{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:.78rem;margin:0 0 .55rem;}
+h1{font-size:2.2rem;margin:.15rem 0 .35rem;}
+.subtitle{color:var(--muted);max-width:80ch;margin:0;font-size:1.02rem;}
+.nav{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem;padding-top:1rem;border-top:1px solid var(--border);}
+.nav a{text-decoration:none;padding:.42rem .7rem;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.nav a:hover{border-color:#cfcfcf;}
+main{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 5rem;}
+.section{margin:2.1rem 0;}
+.section h2{font-size:1.6rem;margin:0 0 .6rem;}
+.section h3{font-size:1.18rem;margin:1.2rem 0 .4rem;}
+.lede{color:var(--muted);margin:.25rem 0 1.15rem;max-width:90ch;}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:1.25rem 1.2rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
+.pill{display:inline-block;font-size:.78rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:.22rem .55rem;background:#fff;}
+.callout{border-left:4px solid var(--accent);padding:.9rem 1rem;background:#fff;border:1px solid var(--border);border-radius:12px;}
+.callout strong{color:var(--accent);}
+.table{width:100%;border-collapse:collapse;margin:.6rem 0;border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.table th,.table td{padding:.6rem .65rem;border-bottom:1px solid var(--border);}
+.table th{text-align:left;background:#fcfcfc;font-weight:700;}
+.table tr:last-child td{border-bottom:none;}
+.exercise{padding:1rem;border:1px dashed #d7d7d7;border-radius:12px;background:#fff;margin:.8rem 0;}
+.exercise h4{margin:.2rem 0 .55rem;font-size:1.05rem;}
+.prompt{background:#fcfcfc;border:1px solid var(--border);border-radius:12px;padding:.8rem .9rem;margin:.6rem 0;}
+details{border:1px solid var(--border);border-radius:12px;padding:.7rem .85rem;background:#fff;margin:.55rem 0;}
+summary{cursor:pointer;font-weight:700;}
+.small{font-size:.95rem;color:var(--muted);}
+.mono{font-family:var(--mono);}
+ul{margin:.35rem 0 0 1.1rem;}
+li{margin:.28rem 0;}
+footer{border-top:1px solid var(--border);background:var(--paper);padding:1.8rem 1.2rem;color:var(--muted);text-align:center;}
+@media (max-width:780px){h1{font-size:1.95rem;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 1 · DAY 2</p>
+    <h1>Regular Verbs (Present) & Conjugation Automation</h1>
+    <p class="subtitle">
+      Day 2 is about making verb endings automatic. You already know where the verb goes (V2).
+      Today, you make the verb <em>change correctly</em> without thinking.
+    </p>
+    <div class="nav">
+      <a href="a1.html">← A1 Hub</a>
+      <a href="week1-day1.html">Day 1</a>
+      <a href="#plan">Plan</a>
+      <a href="#lesson">Lesson</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    You will learn to conjugate <strong>regular verbs</strong> in the present tense and combine them
+    with the sentence structure from Day 1.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">You will master</h3>
+      <ul>
+        <li>Regular verb endings (‑e, ‑st, ‑t, ‑en)</li>
+        <li>Conjugation with all pronouns</li>
+        <li>V2 word order with regular verbs</li>
+        <li>Mixing <span class="mono">sein / haben</span> with regular verbs</li>
+        <li>Talking about what people <em>do</em></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour structure</h3>
+      <ul>
+        <li>60 min — lesson + guided practice</li>
+        <li>90 min — conjugation drills (chunked)</li>
+        <li>30 min — quizzes</li>
+        <li>30 min — read aloud + manipulation</li>
+        <li>30 min — production writing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini‑Lesson: Regular Verbs</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) What “regular” means</h3>
+    <p class="lede">
+      Regular verbs follow a predictable pattern. You remove <span class="mono">‑en</span>
+      and add endings.
+    </p>
+
+    <table class="table">
+      <tr><th>Pronoun</th><th>Ending</th><th>Example: <span class="mono">lernen</span></th></tr>
+      <tr><td class="mono">ich</td><td class="mono">‑e</td><td class="mono">ich lerne</td></tr>
+      <tr><td class="mono">du</td><td class="mono">‑st</td><td class="mono">du lernst</td></tr>
+      <tr><td class="mono">er/sie/es</td><td class="mono">‑t</td><td class="mono">er lernt</td></tr>
+      <tr><td class="mono">wir</td><td class="mono">‑en</td><td class="mono">wir lernen</td></tr>
+      <tr><td class="mono">ihr</td><td class="mono">‑t</td><td class="mono">ihr lernt</td></tr>
+      <tr><td class="mono">sie/Sie</td><td class="mono">‑en</td><td class="mono">sie lernen</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Important:</strong> Endings matter more than vocabulary.
+      It’s better to write “ich lerne” 20 times than to learn 20 new verbs badly.
+    </div>
+
+    <h3>2) Core Day‑2 verbs</h3>
+    <ul>
+      <li class="mono">arbeiten</li>
+      <li class="mono">wohnen</li>
+      <li class="mono">lernen</li>
+      <li class="mono">trinken</li>
+      <li class="mono">essen</li>
+      <li class="mono">lesen</li>
+      <li class="mono">schreiben</li>
+      <li class="mono">hören</li>
+    </ul>
+
+    <h3>3) Verb position reminder (V2)</h3>
+    <div class="prompt mono">
+      Heute <strong>lerne</strong> ich Deutsch. <br/>
+      Jetzt <strong>arbeiten</strong> wir. <br/>
+      Morgens <strong>trinkt</strong> er Kaffee.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (automation)</h2>
+  <p class="lede">Say every sentence aloud after writing it.</p>
+
+  <div class="exercise">
+    <h4>Drill A — Pure conjugation</h4>
+    <p class="small">Conjugate each verb with all pronouns.</p>
+    <ul>
+      <li>lernen</li>
+      <li>arbeiten</li>
+      <li>wohnen</li>
+      <li>trinken</li>
+    </ul>
+    <details><summary>Check pattern</summary>
+      <p class="mono">ich lerne · du lernst · er lernt · wir lernen · ihr lernt · sie lernen</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill B — Sentences (subject first)</h4>
+    <p class="small">Write 25 sentences.</p>
+    <div class="prompt mono">Ich arbeite. / Du lernst Deutsch. / Wir wohnen hier.</div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill C — Sentences (time first, V2)</h4>
+    <p class="small">Write 25 sentences starting with a time word.</p>
+    <div class="prompt mono">Heute lerne ich. / Morgens trinkt er Kaffee.</div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill D — Mixing with <span class="mono">sein / haben</span></h4>
+    <p class="small">Write 20 mixed sentences.</p>
+    <ul>
+      <li>10 with regular verbs</li>
+      <li>5 with <span class="mono">sein</span></li>
+      <li>5 with <span class="mono">haben</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes</h2>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Choose the correct ending</h4>
+    <ol>
+      <li>Ich lern___ Deutsch.</li>
+      <li>Du arbeit___ hier.</li>
+      <li>Er wohn___ in der Stadt.</li>
+      <li>Wir trink___ Kaffee.</li>
+      <li>Ihr les___ ein Buch.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="mono"><li>e</li><li>est</li><li>t</li><li>en</li><li>t</li></ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Fix the verb</h4>
+    <ol>
+      <li>Heute ich lerne Deutsch.</li>
+      <li>Morgens wir trinken Kaffee.</li>
+      <li>Jetzt du arbeitest.</li>
+    </ol>
+    <details><summary>Correct sentences</summary>
+      <p class="mono">
+        Heute lerne ich Deutsch. <br/>
+        Morgens trinken wir Kaffee. <br/>
+        Jetzt arbeitest du.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud</h2>
+
+  <div class="card">
+    <div class="prompt mono">
+      Hallo! Ich arbeite in der Stadt. <br/>
+      Heute lerne ich Deutsch. <br/>
+      Morgens trinke ich Kaffee. <br/>
+      Abends lese ich ein Buch.
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Read aloud twice.</li>
+      <li>Change the subject (ich → wir).</li>
+      <li>Change the time word.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production</h2>
+
+  <div class="exercise">
+    <h4>Production 1 — Sentence ladder</h4>
+    <p class="small">Write 10 sentences describing what you and others do.</p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini paragraph</h4>
+    <p class="small">6–8 sentences. Use at least 4 regular verbs.</p>
+    <details><summary>Example</summary>
+      <p class="mono">
+        Heute lerne ich Deutsch. Morgens trinke ich Kaffee.
+        Ich arbeite hier. Abends lese ich ein Buch.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check</h2>
+  <div class="card">
+    <ul>
+      <li>I can conjugate a regular verb without thinking.</li>
+      <li>I keep verb position correct with time‑first sentences.</li>
+      <li>I can write a short paragraph about my daily actions.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer><small>Week 1 · Day 2 — Regular Verbs</small></footer>
+</body>
+</html>

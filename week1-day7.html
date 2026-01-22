@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 1 · Day 7 — Checkpoint: Rewrite Errors + Mini Test</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.7;}
+header{background:var(--paper);border-bottom:1px solid var(--border);}
+.header-inner{max-width:980px;margin:0 auto;padding:2.4rem 1.2rem 1.7rem;}
+.kicker{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:.78rem;margin:0 0 .6rem;}
+h1{font-size:2.4rem;margin:.2rem 0 .4rem;}
+.subtitle{color:var(--muted);max-width:96ch;margin:0;font-size:1.05rem;}
+.nav{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem;padding-top:1rem;border-top:1px solid var(--border);}
+.nav a{text-decoration:none;padding:.45rem .75rem;border:1px solid var(--border);border-radius:999px;background:#fff;}
+main{max-width:980px;margin:0 auto;padding:2.4rem 1.2rem 5.5rem;}
+.section{margin:2.4rem 0;}
+.section h2{font-size:1.8rem;margin:0 0 .7rem;}
+.section h3{font-size:1.25rem;margin:1.4rem 0 .5rem;}
+.lede{color:var(--muted);margin:.3rem 0 1.3rem;max-width:96ch;}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:1.4rem 1.35rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;}
+.callout{border-left:4px solid var(--accent);padding:1rem 1.1rem;background:#fff;border:1px solid var(--border);border-radius:14px;}
+.callout strong{color:var(--accent);}
+.table{width:100%;border-collapse:collapse;margin:.9rem 0;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.table th,.table td{padding:.7rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.table th{text-align:left;background:#fcfcfc;font-weight:700;}
+.exercise{padding:1.15rem;border:1px dashed #d7d7d7;border-radius:14px;background:#fff;margin:1.1rem 0;}
+.exercise h4{margin:.25rem 0 .65rem;font-size:1.15rem;}
+.prompt{background:#fcfcfc;border:1px solid var(--border);border-radius:14px;padding:1rem 1.05rem;margin:.75rem 0;}
+details{border:1px solid var(--border);border-radius:14px;padding:.9rem 1.05rem;background:#fff;margin:.7rem 0;}
+summary{cursor:pointer;font-weight:700;}
+.small{font-size:.97rem;color:var(--muted);}
+.mono{font-family:var(--mono);}
+ul{margin:.5rem 0 0 1.2rem;}
+li{margin:.35rem 0;}
+.checklist{list-style:none;padding-left:0;}
+.checklist li{margin:.45rem 0;padding-left:1.6rem;position:relative;}
+.checklist li:before{content:"☐";position:absolute;left:0;color:var(--muted);}
+footer{border-top:1px solid var(--border);background:var(--paper);padding:2rem 1.2rem;color:var(--muted);text-align:center;}
+@media (max-width:780px){h1{font-size:2.1rem;}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<p class="kicker">WEEK 1 · DAY 7</p>
+<h1>Checkpoint: Rewrite Errors + Mini Test</h1>
+<p class="subtitle">
+This is not a “light review day”.
+This is where Week 1 becomes permanent.
+You will actively <strong>find errors, fix them, explain them, and then prove mastery</strong>
+under exam-like conditions.
+</p>
+<div class="nav">
+<a href="a1.html">← A1 Hub</a>
+<a href="week1-day6.html">Day 6</a>
+<a href="#plan">Plan</a>
+<a href="#errors">Error Lab</a>
+<a href="#repair">Repair Drills</a>
+<a href="#test">Mini Test</a>
+<a href="#writing">Writing</a>
+<a href="#reflection">Reflection</a>
+</div>
+</div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+<h2>Today’s Overview</h2>
+<p class="lede">
+If you only “do exercises”, mistakes survive.
+If you <em>rewrite</em> mistakes, they die.
+Day 7 is about killing Week‑1 errors before they fossilize.
+</p>
+
+<div class="grid">
+<div class="card">
+<h3 style="margin-top:0">Everything you must control</h3>
+<ul>
+<li>V2 word order (subject-first & time-first)</li>
+<li>Nominative articles: der / die / das / plural die</li>
+<li>Regular verbs (present)</li>
+<li><span class="mono">sein</span> + predicate adjectives (no endings)</li>
+<li>Plural <span class="mono">sind</span></li>
+</ul>
+</div>
+
+<div class="card">
+<h3 style="margin-top:0">4-hour checkpoint structure</h3>
+<ul class="checklist">
+<li>45 min — error diagnosis</li>
+<li>75 min — rewrite & repair drills</li>
+<li>60 min — full A1 mini test</li>
+<li>45 min — writing & speaking production</li>
+<li>15 min — reflection & Week‑2 prep</li>
+</ul>
+</div>
+
+<div class="callout">
+<strong>Rule of Day 7:</strong> You do not move on until every corrected sentence
+can be explained out loud.
+</div>
+</div>
+</section>
+
+<section class="section" id="errors">
+<h2>Error Lab (spot it before fixing it)</h2>
+<p class="lede">
+Read carefully. Do not correct yet.
+First, underline what feels wrong.
+</p>
+
+<div class="exercise">
+<h4>Error Set A — Word order</h4>
+<ol class="mono">
+<li>Heute ich lerne Deutsch.</li>
+<li>Am Morgen der Mann arbeitet.</li>
+<li>Jetzt wir sind müde.</li>
+<li>Am Abend die Bücher sind gut.</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h4>Error Set B — Articles</h4>
+<ol class="mono">
+<li>Der Frau lernt Deutsch.</li>
+<li>Das Mann arbeitet.</li>
+<li>Die Buch ist gut.</li>
+<li>Der Stadt ist groß.</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h4>Error Set C — Adjectives & plural</h4>
+<ol class="mono">
+<li>Die Stadt ist große.</li>
+<li>Das Wasser ist kaltes.</li>
+<li>Die Bücher ist gut.</li>
+<li>Die Hunde ist klein.</li>
+</ol>
+</div>
+</section>
+
+<section class="section" id="repair">
+<h2>Repair Drills (rewrite until automatic)</h2>
+
+<div class="exercise">
+<h4>Repair A — Correct & explain</h4>
+<p class="small">
+Rewrite each sentence correctly.
+Then write one short reason (in English or German).
+</p>
+
+<details><summary>Corrected versions</summary>
+<p class="mono">
+Heute lerne ich Deutsch. <br/>
+Am Morgen arbeitet der Mann. <br/>
+Jetzt sind wir müde. <br/>
+Am Abend sind die Bücher gut. <br/><br/>
+Die Frau lernt Deutsch. <br/>
+Der Mann arbeitet. <br/>
+Das Buch ist gut. <br/>
+Die Stadt ist groß. <br/><br/>
+Die Stadt ist groß. <br/>
+Das Wasser ist kalt. <br/>
+Die Bücher sind gut. <br/>
+Die Hunde sind klein.
+</p>
+</details>
+</div>
+
+<div class="exercise">
+<h4>Repair B — One mistake per sentence</h4>
+<p class="small">
+Rewrite each sentence so it contains <em>exactly one</em> mistake.
+Then fix it.
+</p>
+<ul class="mono">
+<li>Die Stadt ist groß.</li>
+<li>Heute arbeitet der Mann.</li>
+<li>Die Bücher sind gut.</li>
+<li>Am Morgen bin ich müde.</li>
+</ul>
+</div>
+
+<div class="exercise">
+<h4>Repair C — Speed correction (10 minutes)</h4>
+<p class="small">
+Set a timer.
+Correct as many sentences as you can.
+No explanations — just perfect output.
+</p>
+<div class="prompt mono">
+Heute ich bin müde. <br/>
+Der Stadt ist groß. <br/>
+Die Bücher ist gut. <br/>
+Am Abend wir arbeiten. <br/>
+Der Kaffee ist heißer.
+</div>
+</div>
+</section>
+
+<section class="section" id="test">
+<h2>A1 Mini Test (Week 1)</h2>
+<p class="lede">
+Do this like an exam.
+No notes. No checking rules.
+</p>
+
+<div class="exercise">
+<h4>Part 1 — Grammar (fill in)</h4>
+<ol>
+<li>Heute ___ ich Deutsch. (lernen)</li>
+<li>___ Mann arbeitet. (article)</li>
+<li>Die Stadt ___ groß. (sein)</li>
+<li>Am Morgen ___ wir müde. (sein)</li>
+<li>___ Bücher sind gut. (article)</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h4>Part 2 — Choose the correct sentence</h4>
+<ol>
+<li>a) Heute ich bin müde. / b) Heute bin ich müde.</li>
+<li>a) Die Stadt ist große. / b) Die Stadt ist groß.</li>
+<li>a) Das Bücher sind gut. / b) Die Bücher sind gut.</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h4>Part 3 — Translation</h4>
+<ol>
+<li>Today the city is big.</li>
+<li>In the morning the man works.</li>
+<li>The books are good.</li>
+</ol>
+</div>
+
+<div class="exercise">
+<h4>Part 4 — Writing (short)</h4>
+<p class="small">
+Write 5 sentences about your day.
+Include:
+</p>
+<ul>
+<li>2 time-first sentences</li>
+<li>2 adjectives</li>
+<li>1 plural sentence</li>
+</ul>
+</div>
+
+<details><summary>Answer Key</summary>
+<p class="mono">
+1) lerne · Der · ist · sind · Die <br/><br/>
+b · b · b <br/><br/>
+Heute ist die Stadt groß. <br/>
+Am Morgen arbeitet der Mann. <br/>
+Die Bücher sind gut.
+</p>
+</details>
+</section>
+
+<section class="section" id="writing">
+<h2>Extended Writing (lock it in)</h2>
+
+<div class="exercise">
+<h4>Paragraph — Week 1 mastery</h4>
+<p class="small">
+Write an 8–10 sentence paragraph.
+You must include:
+</p>
+<ul>
+<li>3 time-first sentences</li>
+<li>3 adjectives (no endings)</li>
+<li>2 plural sentences</li>
+<li>Correct articles everywhere</li>
+</ul>
+</div>
+
+<div class="exercise">
+<h4>Optional speaking</h4>
+<p class="small">
+Read your paragraph aloud twice.
+Focus on:
+</p>
+<ul>
+<li>clear articles</li>
+<li>verb position</li>
+<li>calm pace</li>
+</ul>
+</div>
+</section>
+
+<section class="section" id="reflection">
+<h2>Reflection & Week 2 Prep</h2>
+
+<div class="card">
+<ul class="checklist">
+<li>I can explain V2 without thinking.</li>
+<li>I rarely hesitate on der/die/das.</li>
+<li>I no longer add adjective endings accidentally.</li>
+<li>I can write a paragraph without translating word by word.</li>
+</ul>
+
+<h3>Write (important)</h3>
+<ol>
+<li>The mistake I still make most is…</li>
+<li>The rule that finally “clicked” is…</li>
+<li>Before Week 2, I need to review…</li>
+</ol>
+
+<div class="callout">
+If you can complete this day honestly,
+you are <strong>ready for Week 2</strong>.
+</div>
+</div>
+</section>
+
+</main>
+
+<footer><small>Week 1 · Day 7 — Checkpoint Complete</small></footer>
+</body>
+</html>

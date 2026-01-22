@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>German Learning · Index</title>
+  <style>
+    :root{
+      --bg:#fafafa; --paper:#fff; --ink:#1a1a1a; --muted:#6b6b6b; --border:#e6e6e6; --shadow:0 10px 30px rgba(0,0,0,.06);
+      --accent:#9c2a2a; --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0; background:var(--bg); color:var(--ink); font-family: Georgia, "Times New Roman", serif; line-height:1.6;}
+    header{background:var(--paper); border-bottom:1px solid var(--border);}
+    .wrap{max-width:980px; margin:0 auto; padding:2.2rem 1.2rem;}
+    h1{margin:.1rem 0 .4rem; font-size:2.3rem;}
+    .sub{margin:0; color:var(--muted); max-width:80ch;}
+    main{max-width:980px; margin:0 auto; padding:1.6rem 1.2rem 4rem;}
+    .card{background:var(--paper); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:1.2rem 1.2rem;}
+    .pill{display:inline-block; font-size:.78rem; color:var(--muted); border:1px solid var(--border); border-radius:999px; padding:.22rem .55rem; background:#fff;}
+    .row{display:flex; gap:1rem; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+    .btns{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem;}
+    a.btn{ text-decoration:none; color:inherit; border:1px solid var(--border); padding:.45rem .75rem; border-radius:999px; background:#fff;}
+    a.btn:hover{border-color:#cfcfcf;}
+    table{width:100%; border-collapse:collapse; margin-top:1rem; border:1px solid var(--border); border-radius:12px; overflow:hidden;}
+    th,td{padding:.7rem .75rem; border-bottom:1px solid var(--border); vertical-align:top;}
+    th{background:#fcfcfc; text-align:left;}
+    tr:last-child td{border-bottom:none;}
+    td small{color:var(--muted);}
+    code{font-family:var(--mono); font-size:.92rem;}
+    .muted{color:var(--muted);}
+    footer{background:var(--paper); border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.6rem 1.2rem;}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="pill">GERMAN LEARNING</span>
+    <h1>Course Index</h1>
+    <p class="sub">
+      This index auto-builds your links from a tiny list. To add a new day file, you only edit the <code>LESSONS</code> list below.
+      No hunting through HTML, no copy-paste chaos.
+    </p>
+    <div class="btns">
+      <a class="btn" href="a1-overview.html">A1 Overview</a>
+      <!-- Add more top-level pages here if you want (A2 overview later, etc.) -->
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="row">
+      <h2 style="margin:.2rem 0;">Lessons</h2>
+      <p class="muted" style="margin:.2rem 0;">
+        Add new pages by editing the list in the script. (Look for <code>LESSONS</code>.)
+      </p>
+    </div>
+
+    <table id="lessonTable" aria-label="Lessons table">
+      <thead>
+        <tr>
+          <th style="width:16ch;">Week / Day</th>
+          <th>Title</th>
+          <th style="width:24ch;">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filled by the script -->
+      </tbody>
+    </table>
+
+    <p class="muted" style="margin:1rem 0 0;">
+      Tip: keep filenames consistent like <code>week1-day1.html</code>, <code>week1-day2.html</code>… then you can add them in 10 seconds.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <small>Simple index · edit one list, the page updates</small>
+</footer>
+
+<script>
+/*
+  ✅ HOW TO ADD A NEW DAY
+  1) Create the file in your repo, e.g. week1-day2.html
+  2) Add one line below in LESSONS
+  3) Done. The table updates automatically.
+
+  Format:
+  { week: 1, day: 2, title: "Regular verbs (present) + basic actions", file: "week1-day2.html" }
+*/
+
+const LESSONS = [
+  { week: 1, day: 1, title: "Sentence Core: V2 + sein/haben + pronouns + nominative", file: "week1-day1.html" },
+
+  // Add more here:
+  // { week: 1, day: 2, title: "Regular verbs (present) + basic actions", file: "week1-day2.html" },
+  // { week: 1, day: 3, title: "Time-first sentences + V2 automation", file: "week1-day3.html" },
+];
+
+function renderLessons() {
+  const tbody = document.querySelector("#lessonTable tbody");
+  tbody.innerHTML = "";
+
+  // Sort by week then day
+  const sorted = [...LESSONS].sort((a,b) => (a.week - b.week) || (a.day - b.day));
+
+  for (const item of sorted) {
+    const tr = document.createElement("tr");
+
+    const tdWD = document.createElement("td");
+    tdWD.innerHTML = `<strong>Week ${item.week}</strong><br><small>Day ${item.day}</small>`;
+    tr.appendChild(tdWD);
+
+    const tdTitle = document.createElement("td");
+    tdTitle.textContent = item.title;
+    tr.appendChild(tdTitle);
+
+    const tdLink = document.createElement("td");
+    tdLink.innerHTML = `<a href="${item.file}">${item.file}</a>`;
+    tr.appendChild(tdLink);
+
+    tbody.appendChild(tr);
+  }
+}
+
+renderLessons();
+</script>
+
+</body>
+</html>

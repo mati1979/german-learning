@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 7 — Checkpoint (Mini Test + Speaking + Review Plan)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 7</p>
+    <h1>Checkpoint — Accusative + Questions + Negation + Accusative Prepositions</h1>
+    <p class="subtitle">
+      This is your Week 2 checkpoint. No new topics — only proof.
+      You’ll do a mini test, then a short speaking task, then targeted repair drills based on your mistakes.
+      The goal is not “perfect.” The goal is <strong>stable sentences without freezing</strong>.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="week2-day1.html">Day 1</a>
+      <a href="week2-day2.html">Day 2</a>
+      <a href="week2-day3.html">Day 3</a>
+      <a href="week2-day4.html">Day 4</a>
+      <a href="week2-day5.html">Day 5</a>
+      <a href="week2-day6.html">Day 6</a>
+      <a href="week2-day7.html">Day 7</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#rules">Rules Recap</a>
+      <a href="#test">Mini Test</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#repair">Repair Drills</a>
+      <a href="#score">Scoring</a>
+      <a href="#week3">Week 3 Preview</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Checkpoint Plan (4 Hours)</h2>
+  <p class="lede">
+    This day is structured like a good exam prep session: test → diagnose → fix.
+    Don’t skip the diagnosis. That’s where A1 becomes automatic.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What Week 2 covered (your overview)</h3>
+      <ul>
+        <li><strong>Accusative basics</strong>: direct object (what receives the action)</li>
+        <li><strong>Accusative articles</strong>: <span class="mono">den / die / das</span> and <span class="mono">einen</span></li>
+        <li><strong>Questions</strong>: W‑questions + yes/no (verb-first)</li>
+        <li><strong>Negation</strong>: <span class="mono">nicht</span> vs <span class="mono">kein</span> + placement</li>
+        <li><strong>Accusative prepositions</strong>: <span class="mono">für/durch/gegen/ohne/um</span></li>
+        <li><strong>Vocab focus</strong>: food/drinks, shopping, places, common objects</li>
+      </ul>
+      <div class="callout">
+        <strong>End-of-week skill target:</strong> You can ask/answer basics and negate correctly most of the time (without breaking V2).
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour schedule</h3>
+      <ul class="checklist">
+        <li><strong>20 min</strong> — Rules recap + warm-up</li>
+        <li><strong>70 min</strong> — Mini test (writing + grammar + questions)</li>
+        <li><strong>30 min</strong> — Speaking checkpoint (shadow + self-talk)</li>
+        <li><strong>60 min</strong> — Repair drills (based on your errors)</li>
+        <li><strong>40 min</strong> — Mixed production (dialogue + paragraph)</li>
+        <li><strong>20 min</strong> — Scoring + plan for Week 3</li>
+      </ul>
+      <p class="small">If you’re short on time: do Mini Test Parts A–C + Speaking + Repair Drill #1.</p>
+    </div>
+
+    <div class="callout">
+      <strong>Anti-cheat rule:</strong> Do the test <em>without notes</em>.
+      Notes are allowed only during the repair drills.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules">
+  <h2>Rules Recap (fast)</h2>
+  <p class="lede">Read once. Then close it. You’ll prove it in the test.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Accusative articles you must control</h3>
+    <div class="prompt mono">
+      der → <strong>den</strong> (masc acc) · die → die · das → das · plural die → die<br/>
+      ein → <strong>einen</strong> (masc acc) · eine → eine · ein → ein
+    </div>
+
+    <h3>Questions</h3>
+    <div class="prompt mono">
+      Yes/No: <strong>Verb first</strong> → Kaufst du den Kaffee?<br/>
+      W: <strong>W‑word + verb</strong> → Was kaufst du?
+    </div>
+
+    <h3>Negation</h3>
+    <div class="prompt mono">
+      <strong>kein‑</strong> replaces an article: keinen Kaffee / keine Pizza / kein Brot<br/>
+      <strong>nicht</strong> negates the action or adjective: Ich kaufe den Kaffee nicht. / Der Tee ist nicht heiß.
+    </div>
+
+    <h3>Accusative prepositions</h3>
+    <div class="prompt mono">
+      <strong>für / durch / gegen / ohne / um</strong> → accusative after them (masc → <strong>den</strong>)
+    </div>
+
+    <div class="callout">
+      <strong>Most common Week 2 bug:</strong> writing <span class="mono">für der</span> or <span class="mono">durch der</span>.
+      If you see that in your test, your repair drill is easy: accusative-prep phrases until it’s automatic.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="test">
+  <h2>Mini Test (70 minutes total)</h2>
+  <p class="lede">
+    Do this like a real test: timer on, no notes, full sentences where requested.
+    After each part, mark what felt slow or uncertain — that becomes your repair plan.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part A — Accusative article accuracy (15 min)</h3>
+    <p class="small"><span class="timer">⏱ 15:00</span> Fill in: <span class="mono">den/die/das</span> or <span class="mono">einen/eine/ein</span>.</p>
+    <ol>
+      <li class="mono">Ich kaufe ____ Kaffee. (the coffee)</li>
+      <li class="mono">Du kaufst ____ Apfel. (an apple)</li>
+      <li class="mono">Wir essen ____ Pizza. (the pizza)</li>
+      <li class="mono">Sie trinkt ____ Wasser. (the water)</li>
+      <li class="mono">Ich lese ____ Buch. (a book)</li>
+      <li class="mono">Er kauft ____ Tee. (the tea)</li>
+      <li class="mono">Ich trinke ____ Saft. (a juice)</li>
+      <li class="mono">Wir kaufen ____ Brot. (the bread)</li>
+      <li class="mono">Du isst ____ Banane. (a banana)</li>
+      <li class="mono">Sie liest ____ Buch nicht. (the book)</li>
+    </ol>
+    <details><summary>Answer key</summary>
+      <ol class="answer mono">
+        <li>den</li>
+        <li>einen</li>
+        <li>die</li>
+        <li>das</li>
+        <li>ein</li>
+        <li>den</li>
+        <li>einen</li>
+        <li>das</li>
+        <li>eine</li>
+        <li>das</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Part B — nicht vs kein (20 min)</h3>
+    <p class="small"><span class="timer">⏱ 20:00</span> Write the full German sentence. Choose the correct negator. Keep it A1-simple.</p>
+    <ol>
+      <li>I buy no coffee. (general)</li>
+      <li>I don’t buy the coffee. (this coffee)</li>
+      <li>We have no bread.</li>
+      <li>The tea is not hot.</li>
+      <li>She eats no pizza.</li>
+      <li>Today I don’t read the book.</li>
+      <li>Do you buy no coffee?</li>
+      <li>Is the coffee not good?</li>
+    </ol>
+    <details><summary>One valid answer set</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe keinen Kaffee.</li>
+        <li>Ich kaufe den Kaffee nicht.</li>
+        <li>Wir haben kein Brot.</li>
+        <li>Der Tee ist nicht heiß.</li>
+        <li>Sie isst keine Pizza.</li>
+        <li>Heute lese ich das Buch nicht. <span class="small">(or: Heute lese ich kein Buch.)</span></li>
+        <li>Kaufst du keinen Kaffee?</li>
+        <li>Ist der Kaffee nicht gut?</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Part C — Questions (W + yes/no) (15 min)</h3>
+    <p class="small"><span class="timer">⏱ 15:00</span> Write the question and a full-sentence answer. (No one-word answers.)</p>
+    <ol>
+      <li>Ask: What do you buy? (coffee)</li>
+      <li>Ask: Who buys the pizza? (she)</li>
+      <li>Ask: When do you come? (2 o’clock)</li>
+      <li>Ask: Do you buy the tea? (no)</li>
+      <li>Ask: What don’t you buy? (the coffee)</li>
+      <li>Ask: Do you drink tea without sugar? (yes)</li>
+    </ol>
+    <details><summary>Example answers</summary>
+      <div class="answer mono">
+        1) Was kaufst du? — Ich kaufe Kaffee.<br/>
+        2) Wer kauft die Pizza? — Sie kauft die Pizza.<br/>
+        3) Wann kommst du? — Ich komme um zwei Uhr.<br/>
+        4) Kaufst du den Tee? — Nein, ich kaufe den Tee nicht.<br/>
+        5) Was kaufst du nicht? — Ich kaufe den Kaffee nicht.<br/>
+        6) Trinkst du Tee ohne Zucker? — Ja, ich trinke Tee ohne Zucker.
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Part D — Accusative prepositions (20 min)</h3>
+    <p class="small"><span class="timer">⏱ 20:00</span> Fill in the correct article after the preposition and write the full sentence.</p>
+    <ol>
+      <li class="mono">Heute kaufe ich den Kaffee für ____ Freund.</li>
+      <li class="mono">Jetzt gehe ich durch ____ Park.</li>
+      <li class="mono">Er läuft gegen ____ Wand.</li>
+      <li class="mono">Ich gehe ohne ____ Handy.</li>
+      <li class="mono">Wir sitzen um ____ Tisch.</li>
+      <li class="mono">Ich komme um zwei Uhr. <span class="small">(rewrite as a question + answer)</span></li>
+      <li class="mono">Wir trinken Tee ohne Zucker. <span class="small">(rewrite as a yes/no question + answer)</span></li>
+      <li class="mono">Ich kaufe keinen Kaffee für ____ Familie. <span class="small">(add the article)</span></li>
+    </ol>
+
+    <details><summary>Answer key</summary>
+      <div class="answer mono">
+        1) den · 2) den · 3) die · 4) das · 5) den<br/>
+        6) Wann kommst du? — Ich komme um zwei Uhr.<br/>
+        7) Trinkst du Tee ohne Zucker? — Ja, ich trinke Tee ohne Zucker.<br/>
+        8) die
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Pass condition for Part D:</strong> zero instances of <span class="mono">für der / durch der / um der</span>.
+      If you have even one, your repair drill is “prep phrases until your hand stops doing that.”
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking Checkpoint (30 minutes)</h2>
+  <p class="lede">
+    Speaking at A1 is not “fluent.” It’s “I can produce correct sentences out loud.”
+    Your job is to speak in small correct units.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Speaking Part 1 — Shadowing (10 min)</h3>
+    <p class="small">Read this mini text aloud 3 times: slow → medium → confident.</p>
+    <div class="prompt mono">
+      Heute kaufe ich keinen Kaffee. <br/>
+      Ich kaufe den Tee für den Freund. <br/>
+      Jetzt gehe ich durch den Park. <br/>
+      Abends esse ich die Pizza nicht. <br/>
+      Ich trinke Tee ohne Zucker. <br/>
+      Ich komme um zwei Uhr. <br/>
+      Morgen gehe ich nicht ohne das Handy. <br/>
+    </div>
+
+    <hr/>
+
+    <h3>Speaking Part 2 — Self-talk Q&A (15 min)</h3>
+    <p class="small">Ask + answer out loud. Use full sentences.</p>
+    <ol>
+      <li>Was kaufst du heute?</li>
+      <li>Kaufst du keinen Kaffee?</li>
+      <li>Für wen kaufst du den Tee?</li>
+      <li>Wo gehst du jetzt?</li>
+      <li>Trinkst du Tee ohne Zucker?</li>
+      <li>Wann kommst du?</li>
+      <li>Isst du die Pizza nicht?</li>
+      <li>Gehst du morgen ohne das Handy?</li>
+    </ol>
+
+    <hr/>
+
+    <h3>Speaking Part 3 — One-minute monologue (5 min)</h3>
+    <p class="small">
+      Speak for ~60 seconds (record yourself if possible). Topic: “My day.”
+      Required elements: one <span class="mono">kein‑</span>, one <span class="mono">nicht</span>, one accusative preposition phrase, one question.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="repair">
+  <h2>Repair Drills (60 minutes) — based on your mistakes</h2>
+  <p class="lede">
+    This section is your “adaptive study.” You do the drill that matches your error type.
+    Don’t do everything — do what your test showed you.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Step 1: classify your mistakes</h3>
+    <ul>
+      <li><span class="badge">A</span> V2 / word order breaks</li>
+      <li><span class="badge">B</span> Accusative masculine (<span class="mono">den/einen/keinen</span>)</li>
+      <li><span class="badge">C</span> Question word order</li>
+      <li><span class="badge">D</span> nicht vs kein confusion</li>
+      <li><span class="badge">E</span> Accusative prepositions + article</li>
+    </ul>
+
+    <hr/>
+
+    <h3>Repair Drill A — V2 stabilizer (15 min)</h3>
+    <p class="small">Write 20 time-first sentences. Underline the verb. Verb must be position 2.</p>
+
+    <h3>Repair Drill B — Masculine accusative bootcamp (15 min)</h3>
+    <p class="small">Write 30 lines: 10 with <span class="mono">den</span>, 10 with <span class="mono">einen</span>, 10 with <span class="mono">keinen</span>. Keep nouns simple: Kaffee/Tee/Freund/Park/Tisch.</p>
+
+    <h3>Repair Drill C — Question factory (15 min)</h3>
+    <p class="small">Write 20 questions: 10 yes/no (verb-first) + 10 W. Answer each with a full sentence.</p>
+
+    <h3>Repair Drill D — Negation decision drill (15 min)</h3>
+    <p class="small">
+      Write 12 pairs (24 sentences): each pair has one <span class="mono">kein‑</span> sentence + one <span class="mono">nicht</span> sentence with the same verb.
+      Example: <span class="mono">Ich kaufe keinen Kaffee.</span> / <span class="mono">Ich kaufe den Kaffee nicht.</span>
+    </p>
+
+    <h3>Repair Drill E — Preposition phrase automation (15 min)</h3>
+    <p class="small">
+      Write 40 phrases (not sentences): 8 for each of the five prepositions.
+      At least 20 must be masculine (<span class="mono">den</span>).
+      Say them aloud.
+    </p>
+
+    <div class="callout">
+      <strong>Minimum effective repair:</strong> Pick your top 2 error types and do those drills. Then repeat Part D of the test quickly.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="score">
+  <h2>Scoring + What to do next</h2>
+  <p class="lede">We use scoring to make decisions, not to judge your soul.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">How to score Week 2</h3>
+    <ul>
+      <li><strong>Green</strong> (ready for Week 3): 80%+ correct overall and no catastrophic errors (V2 stable, questions usable).</li>
+      <li><strong>Yellow</strong> (on track but shaky): 65–79% correct, or one repeated error type. Do one more integration/repair day.</li>
+      <li><strong>Red</strong> (stop and fix): below 65% OR you keep breaking V2 / question order. Repeat Week 2 Days 3–6 patterns for 2 days.</li>
+    </ul>
+
+    <hr/>
+
+    <h3>Concrete checkpoint goals (write your numbers)</h3>
+    <ul class="checklist">
+      <li>Part A score: ____ / 10</li>
+      <li>Part B score: ____ / 8</li>
+      <li>Part C score: ____ / 6</li>
+      <li>Part D score: ____ / 8</li>
+      <li>Speaking: Did I freeze less than yesterday? ____ (yes/no)</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Rule:</strong> If Part D (prepositions) is weak, fix it before Week 3.
+      The whole point of Week 3 (modals + separables) is that your base sentence structure is already solid.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="week3">
+  <h2>Week 3 Preview (next week’s “job”)</h2>
+  <p class="lede">
+    Week 3 is “Structure Variety”: modals + separable verbs + possessives.
+    You’ll be able to express wants/duties/plans and build real daily-life sentences.
+    But only if Week 2 is stable.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">If you’re Green</h3>
+    <p class="small">Start Week 3 Day 1 tomorrow. Keep a 10-minute daily review of Week 2: one preposition phrase sprint + 5 negation sentences.</p>
+
+    <h3>If you’re Yellow</h3>
+    <p class="small">Do one more day of integration: repeat Day 6’s blocks, then redo Part D (prepositions) and Part C (questions) fast.</p>
+
+    <h3>If you’re Red</h3>
+    <p class="small">Repeat Days 3–6 (questions + negation + prepositions) over two days with high volume, then retake this checkpoint.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 7 — Checkpoint · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

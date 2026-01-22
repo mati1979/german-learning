@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 1 — Accusative Basics (Direct Object)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:82ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:92ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+kbd{
+  font-family:var(--mono);
+  font-size:.9rem;
+  border:1px solid var(--border);
+  border-bottom:2px solid #d9d9d9;
+  padding:.1rem .35rem;
+  border-radius:.35rem;
+  background:#fff;
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:110px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 1</p>
+    <h1>Accusative Basics: Direct Object (<em>wen/was?</em>)</h1>
+    <p class="subtitle">
+      Week 1 gave you the sentence engine (V2). Week 2 upgrades meaning: now your verbs can <strong>hit</strong> something.
+      Today you install the concept that unlocks real German: <strong>the direct object</strong> (Akkusativ).
+      German doesn’t “love cases.” It loves clarity.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#lesson">Mini-Lesson</a>
+      <a href="#vocab">Vocabulary</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    Your mission: write stable sentences with a direct object, without breaking V2.
+    If Week 1 was “I am / I have,” Week 2 begins “I buy / I drink / I read … <strong>something</strong>.”
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will learn</h3>
+      <ul>
+        <li><strong>Direct object</strong> = the thing receiving the action (<span class="mono">wen? / was?</span>)</li>
+        <li><strong>Accusative articles</strong> in context:
+          <span class="mono">den / die / das</span> and <span class="mono">einen</span>
+        </li>
+        <li>Keep V2 stable while adding an object</li>
+        <li>High-frequency verbs with objects:
+          <span class="mono">haben, kaufen, essen, trinken, lesen</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Mini-lesson + guided practice</li>
+        <li><strong>90 min</strong> — Drills (3 blocks, controlled)</li>
+        <li><strong>45 min</strong> — Flashcards + quick recall</li>
+        <li><strong>30 min</strong> — Quizzes (fast + strict)</li>
+        <li><strong>30 min</strong> — Read aloud + Q&A (answers in German)</li>
+        <li><strong>25 min</strong> — Production writing</li>
+        <li><strong>10 min</strong> — Exit check + error notes</li>
+      </ul>
+      <p class="small">Rule stays the same: if quality drops, reduce volume, not structure.</p>
+    </div>
+
+    <div class="callout">
+      <strong>Rule for today:</strong> you don’t “study the accusative.” You build sentences until accusative becomes boring.<br/>
+      If you hesitate on the article, you pause and ask: <span class="mono">Subject?</span> vs <span class="mono">Object?</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini-Lesson</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) The new piece: direct object</h3>
+    <p class="lede">
+      A direct object is <strong>what receives the action</strong>.
+      English shows this mostly by position (“I buy <em>coffee</em>”).
+      German also marks it with the accusative (Akkusativ) — mainly visible in the articles.
+    </p>
+
+    <div class="prompt">
+      <p style="margin:.2rem 0 .3rem;"><span class="pill">Core pattern</span> Subject – Verb – Object</p>
+      <p class="mono" style="margin:.3rem 0;">Ich <strong>kaufe</strong> <u>den Kaffee</u>.</p>
+      <p class="mono" style="margin:.3rem 0;">Wir <strong>lesen</strong> <u>das Buch</u>.</p>
+      <p class="mono" style="margin:.3rem 0;">Du <strong>trinkst</strong> <u>das Wasser</u>.</p>
+    </div>
+
+    <div class="callout">
+      <strong>How to find the object:</strong> ask <span class="mono">wen?</span> (who/whom) or <span class="mono">was?</span> (what).<br/>
+      Example: <span class="mono">Ich kaufe … was?</span> → <span class="mono">den Kaffee</span>.
+    </div>
+
+    <hr/>
+
+    <h3>2) The big visible change: accusative articles</h3>
+    <p class="lede">
+      Good news: accusative is not a giant monster today.
+      For <strong>most</strong> nouns in A1, only one article really changes:
+      <strong>der → den</strong> (masculine).
+      The others stay the same.
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>Gender</th><th>Nominative (Subject)</th><th>Accusative (Direct object)</th><th>Example</th>
+      </tr>
+      <tr>
+        <td>masculine</td>
+        <td class="mono">der Mann</td>
+        <td class="mono"><strong>den</strong> Mann</td>
+        <td class="mono">Der Mann kauft den Kaffee.</td>
+      </tr>
+      <tr>
+        <td>feminine</td>
+        <td class="mono">die Frau</td>
+        <td class="mono">die Frau</td>
+        <td class="mono">Die Frau kauft die Pizza.</td>
+      </tr>
+      <tr>
+        <td>neuter</td>
+        <td class="mono">das Kind</td>
+        <td class="mono">das Kind</td>
+        <td class="mono">Ich sehe das Kind. <span class="small">(“see” comes later; pattern only)</span></td>
+      </tr>
+      <tr>
+        <td>plural</td>
+        <td class="mono">die Kinder</td>
+        <td class="mono">die Kinder</td>
+        <td class="mono">Wir kaufen die Äpfel.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Today’s memory hack:</strong> In A1, accusative is basically:
+      <span class="mono"><strong>der → den</strong></span> and everything else mostly stays the same (for articles).
+      Your job is not perfection. Your job is automatic recognition.
+    </div>
+
+    <hr/>
+
+    <h3>3) Indefinite articles (a/an): <span class="mono">ein → einen</span> (masculine only)</h3>
+    <p class="lede">
+      Same story. Only masculine changes.
+      You will drill this until your brain stops negotiating.
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>Gender</th><th>Nominative</th><th>Accusative</th><th>Example</th>
+      </tr>
+      <tr>
+        <td>masculine</td>
+        <td class="mono">ein Kaffee</td>
+        <td class="mono"><strong>einen</strong> Kaffee</td>
+        <td class="mono">Ich kaufe einen Kaffee.</td>
+      </tr>
+      <tr>
+        <td>feminine</td>
+        <td class="mono">eine Pizza</td>
+        <td class="mono">eine Pizza</td>
+        <td class="mono">Du kaufst eine Pizza.</td>
+      </tr>
+      <tr>
+        <td>neuter</td>
+        <td class="mono">ein Wasser</td>
+        <td class="mono">ein Wasser</td>
+        <td class="mono">Wir trinken ein Wasser. <span class="small">(restaurant German)</span></td>
+      </tr>
+    </table>
+
+    <hr/>
+
+    <h3>4) V2 still rules</h3>
+    <p class="lede">
+      You’re adding an object, but V2 stays the boss.
+      Time-first sentences still keep the verb in position 2.
+    </p>
+
+    <div class="prompt">
+      <p style="margin:.2rem 0 .3rem;"><span class="pill">Pattern A</span> Subject first</p>
+      <p class="mono" style="margin:.3rem 0;">Ich <strong>kaufe</strong> den Kaffee.</p>
+      <p class="mono" style="margin:.3rem 0;">Wir <strong>lesen</strong> das Buch.</p>
+    </div>
+
+    <div class="prompt">
+      <p style="margin:.2rem 0 .3rem;"><span class="pill">Pattern B</span> Time first → verb still #2</p>
+      <p class="mono" style="margin:.3rem 0;"><strong>Heute</strong> <strong>kaufe</strong> ich den Kaffee.</p>
+      <p class="mono" style="margin:.3rem 0;"><strong>Jetzt</strong> <strong>trinken</strong> wir das Wasser.</p>
+      <p class="mono" style="margin:.3rem 0;"><strong>Abends</strong> <strong>essen</strong> wir eine Pizza.</p>
+    </div>
+
+    <div class="callout">
+      <strong>Common failure mode:</strong> you focus on <span class="mono">den</span> and accidentally break V2.
+      That’s illegal. V2 first, always.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Day 1 Vocabulary (food + objects, but controlled)</h2>
+  <p class="lede">
+    You’re not collecting nouns. You’re building object sentences.
+    This set is enough for 150+ correct sentences.
+  </p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <h3 style="margin-top:0">Verbs (with objects)</h3>
+        <ul>
+          <li class="mono">haben</li>
+          <li class="mono">kaufen</li>
+          <li class="mono">essen</li>
+          <li class="mono">trinken</li>
+          <li class="mono">lesen</li>
+        </ul>
+        <p class="small">You already know present endings. Today you apply them while adding objects.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Time words (reuse Week 1)</h3>
+        <ul>
+          <li class="mono">heute</li>
+          <li class="mono">jetzt</li>
+          <li class="mono">morgens</li>
+          <li class="mono">abends</li>
+          <li class="mono">oft</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Objects (with article)</h3>
+        <ul>
+          <li class="mono">der Kaffee → den Kaffee</li>
+          <li class="mono">der Apfel → den Apfel</li>
+          <li class="mono">das Wasser</li>
+          <li class="mono">das Brot</li>
+          <li class="mono">das Buch</li>
+          <li class="mono">die Pizza</li>
+          <li class="mono">die Banane</li>
+        </ul>
+        <p class="small">Yes, we’re explicitly showing the <span class="mono">der → den</span> change. No shame.</p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3 style="margin-top:.2rem">Flashcards (quick recall)</h3>
+    <p class="small">Use: look → cover → say aloud. Speed matters more than vibes.</p>
+
+    <div class="flashcards">
+      <div class="flip"><div class="front">kaufen</div><div class="back">to buy</div></div>
+      <div class="flip"><div class="front">essen</div><div class="back">to eat</div></div>
+      <div class="flip"><div class="front">trinken</div><div class="back">to drink</div></div>
+      <div class="flip"><div class="front">lesen</div><div class="back">to read</div></div>
+
+      <div class="flip"><div class="front">der Kaffee → den Kaffee</div><div class="back">the coffee (object: den)</div></div>
+      <div class="flip"><div class="front">der Apfel → den Apfel</div><div class="back">the apple (object: den)</div></div>
+      <div class="flip"><div class="front">die Pizza</div><div class="back">the pizza</div></div>
+      <div class="flip"><div class="front">das Wasser</div><div class="back">the water</div></div>
+
+      <div class="flip"><div class="front">Ich kaufe den Kaffee.</div><div class="back">I buy the coffee. (object → den)</div></div>
+      <div class="flip"><div class="front">Heute kaufe ich den Apfel.</div><div class="back">Today I buy the apple. (V2 + den)</div></div>
+      <div class="flip"><div class="front">Wir essen eine Pizza.</div><div class="back">We eat a pizza. (eine stays)</div></div>
+      <div class="flip"><div class="front">Du trinkst das Wasser.</div><div class="back">You drink the water. (das stays)</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (writing + saying aloud)</h2>
+  <p class="lede">
+    The drills are in the only order that works:
+    <strong>identify object → choose article → keep V2 stable → produce</strong>.
+    Say every sentence aloud after writing it.
+  </p>
+
+  <div class="callout">
+    <strong>How to drill:</strong> Write → speak → underline the verb → underline the object → check the article.
+    If wrong: rewrite correctly <strong>three times</strong>.
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A (Object Finder): “What is the object?”</h4>
+    <p class="small">
+      Write 25 sentences. Then underline the direct object (the thing receiving the action).
+      Don’t worry about <em>perfect</em> endings — worry about object awareness.
+    </p>
+
+    <div class="prompt">
+      <p class="mono"><strong>Model:</strong> Ich kaufe den Kaffee.</p>
+      <p class="mono"><strong>Model:</strong> Wir lesen das Buch.</p>
+      <p class="small">Underline: <span class="mono">den Kaffee</span> / <span class="mono">das Buch</span></p>
+    </div>
+
+    <ul>
+      <li>Use only these verbs: <span class="mono">kaufen, essen, trinken, lesen</span></li>
+      <li>Use only these objects: <span class="mono">den Kaffee, den Apfel, das Wasser, das Brot, das Buch, die Pizza, die Banane</span></li>
+      <li>Use 5+ different subjects (<span class="mono">ich/du/er/sie/wir/ihr/sie</span>)</li>
+    </ul>
+
+    <details>
+      <summary>Sample answers (peek only if needed)</summary>
+      <p class="mono">
+        Ich kaufe den Kaffee. — Du isst die Pizza. — Er trinkt das Wasser. — Wir lesen das Buch. — Ihr kauft den Apfel.
+      </p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B (Article Training): “der → den” until boring</h4>
+    <p class="small">
+      Write 30 sentences that contain masculine objects.
+      Your only job is to write <span class="mono">den</span> correctly and not sabotage V2.
+    </p>
+
+    <div class="prompt">
+      <p class="mono"><strong>Model:</strong> Ich kaufe <strong>den</strong> Kaffee.</p>
+      <p class="mono"><strong>Model:</strong> Wir essen <strong>den</strong> Apfel.</p>
+    </div>
+
+    <ul>
+      <li>Use masculine objects only: <span class="mono">den Kaffee / den Apfel</span></li>
+      <li>Mix verbs: <span class="mono">kaufen, essen, haben</span></li>
+      <li>10 sentences must be time-first (V2): <span class="mono">Heute / Jetzt / Morgens / Abends / Oft</span></li>
+    </ul>
+
+    <details>
+      <summary>Mini checklist</summary>
+      <ul class="checklist">
+        <li>I wrote <span class="mono">den</span> 20+ times</li>
+        <li>I did 10+ time-first sentences with correct V2</li>
+        <li>I did not accidentally write <span class="mono">der Kaffee</span> as an object</li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C (Mix + Speed): “V2 + object + variety”</h4>
+    <p class="small">
+      Write 40 mixed sentences. Half subject-first, half time-first.
+      This is where your brain tries to complain. Ignore it.
+    </p>
+
+    <ul>
+      <li>Include 15+ masculine objects (<span class="mono">den Kaffee / den Apfel</span>)</li>
+      <li>Include 10+ neuter objects (<span class="mono">das Wasser / das Brot / das Buch</span>)</li>
+      <li>Include 10+ feminine objects (<span class="mono">die Pizza / die Banane</span>)</li>
+      <li>Use all 5 verbs at least once</li>
+    </ul>
+
+    <details>
+      <summary>Speed target</summary>
+      <p class="small">
+        If you can write 40 correct-ish sentences in ~25 minutes while keeping V2 stable,
+        you’re on track for A1 mastery. If you can’t yet, that’s normal — you repeat until you can.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes (mean but fair)</h2>
+  <p class="lede">
+    These force accuracy. Do them fast, then check answers.
+    If you miss a pattern, you go drill that pattern again. No drama.
+  </p>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Identify subject vs object</h4>
+    <p class="small">Mark S (subject) and O (object) for the underlined part.</p>
+    <ol>
+      <li class="mono">Ich kaufe <u>den Kaffee</u>.</li>
+      <li class="mono"><u>Der Mann</u> kauft den Apfel.</li>
+      <li class="mono">Wir lesen <u>das Buch</u>.</li>
+      <li class="mono"><u>Die Frau</u> trinkt das Wasser.</li>
+      <li class="mono">Ihr esst <u>die Pizza</u>.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>O</li><li>S</li><li>O</li><li>S</li><li>O</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Choose the correct accusative article (der → den)</h4>
+    <p class="small">Fill in: <span class="mono">den / die / das</span></p>
+    <ol>
+      <li>Ich kaufe ____ Kaffee.</li>
+      <li>Du isst ____ Apfel.</li>
+      <li>Wir trinken ____ Wasser.</li>
+      <li>Ihr lest ____ Buch.</li>
+      <li>Sie kaufen ____ Pizza.</li>
+      <li>Ich esse ____ Banane.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>den</li><li>den</li><li>das</li><li>das</li><li>die</li><li>die</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 3 — Time-first V2 (fix the word order)</h4>
+    <p class="small">Rewrite each sentence correctly. Verb must be position 2.</p>
+    <ol>
+      <li class="mono">Heute ich kaufe den Kaffee.</li>
+      <li class="mono">Jetzt wir trinken das Wasser.</li>
+      <li class="mono">Morgens du isst den Apfel.</li>
+      <li class="mono">Abends wir lesen das Buch.</li>
+      <li class="mono">Oft ich kaufe die Pizza.</li>
+    </ol>
+    <details><summary>Suggested corrections</summary>
+      <ol class="answer mono">
+        <li>Heute kaufe ich den Kaffee.</li>
+        <li>Jetzt trinken wir das Wasser.</li>
+        <li>Morgens isst du den Apfel.</li>
+        <li>Abends lesen wir das Buch.</li>
+        <li>Oft kaufe ich die Pizza.</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 4 — Indefinite article: <span class="mono">ein → einen</span></h4>
+    <p class="small">Fill in: <span class="mono">einen / eine / ein</span></p>
+    <ol>
+      <li>Ich kaufe ____ Kaffee.</li>
+      <li>Du kaufst ____ Pizza.</li>
+      <li>Wir trinken ____ Wasser.</li>
+      <li>Ihr esst ____ Banane.</li>
+      <li>Ich kaufe ____ Apfel.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>einen</li><li>eine</li><li>ein</li><li>eine</li><li>einen</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 5 — Micro-translations (English → German)</h4>
+    <p class="small">Keep it simple. Focus on V2 + accusative articles.</p>
+    <ol>
+      <li>Today I buy the coffee.</li>
+      <li>Now we drink the water.</li>
+      <li>In the morning you eat the apple.</li>
+      <li>In the evening we read the book.</li>
+      <li>I buy an apple.</li>
+      <li>We eat a pizza.</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Heute kaufe ich den Kaffee.</li>
+        <li>Jetzt trinken wir das Wasser.</li>
+        <li>Morgens isst du den Apfel.</li>
+        <li>Abends lesen wir das Buch.</li>
+        <li>Ich kaufe einen Apfel.</li>
+        <li>Wir essen eine Pizza.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud (texts + questions)</h2>
+  <p class="lede">Read slowly and clearly. Then answer in German. Don’t translate in your head for 3 minutes first. Just answer.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Text A (objects everywhere)</h3>
+    <div class="prompt mono">
+      Hallo! Ich bin Matilde. <br/>
+      Heute kaufe ich den Kaffee. <br/>
+      Jetzt trinke ich das Wasser. <br/>
+      Morgens esse ich den Apfel. <br/>
+      Abends lese ich das Buch. <br/>
+      Oft kaufe ich eine Pizza. <br/>
+    </div>
+
+    <h3>Questions (answer in German)</h3>
+    <ol>
+      <li>Was kauft sie heute?</li>
+      <li>Was trinkt sie jetzt?</li>
+      <li>Was isst sie morgens?</li>
+      <li>Was liest sie abends?</li>
+      <li>Kauft sie oft eine Pizza?</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Sie kauft heute den Kaffee.</li>
+        <li>Sie trinkt jetzt das Wasser.</li>
+        <li>Sie isst morgens den Apfel.</li>
+        <li>Sie liest abends das Buch.</li>
+        <li>Ja, sie kauft oft eine Pizza.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Text B (subject vs object contrast)</h3>
+    <div class="prompt mono">
+      Der Mann kauft den Kaffee. <br/>
+      Die Frau kauft die Pizza. <br/>
+      Das Kind trinkt das Wasser. <br/>
+      Wir lesen das Buch. <br/>
+      Ihr esst den Apfel. <br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Read it aloud twice.</li>
+      <li>Underline all objects (<span class="mono">wen/was?</span>) in each sentence.</li>
+      <li>Rewrite 3 sentences with a time word first (V2!).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (prove you own it)</h2>
+  <p class="lede">This is where you stop being a student and start being someone who can produce German.</p>
+
+  <div class="exercise">
+    <h4>Production 1 — “Accusative Ladder” (12 sentences)</h4>
+    <p class="small">Write 12 sentences. Each step adds control. Keep V2 correct.</p>
+    <ol>
+      <li><span class="mono">Ich kaufe den Kaffee.</span></li>
+      <li>Time-first: <span class="mono">Heute kaufe ich den Kaffee.</span></li>
+      <li>Change object: <span class="mono">Ich kaufe den Apfel.</span></li>
+      <li>Change verb: <span class="mono">Ich esse den Apfel.</span></li>
+      <li>Change gender (feminine): <span class="mono">Ich kaufe die Pizza.</span></li>
+      <li>Neuter: <span class="mono">Ich trinke das Wasser.</span></li>
+      <li>Plural (optional): <span class="mono">Wir kaufen die Äpfel.</span></li>
+      <li>Use <span class="mono">du</span>: <span class="mono">Du liest das Buch.</span></li>
+      <li>Time-first with <span class="mono">du</span>: <span class="mono">Abends liest du das Buch.</span></li>
+      <li>Use <span class="mono">wir</span>: <span class="mono">Wir essen eine Pizza.</span></li>
+      <li>Indefinite masculine: <span class="mono">Ich kaufe einen Apfel.</span></li>
+      <li>Finish: a mixed sentence you invent (must include V2 + object).</li>
+    </ol>
+
+    <details>
+      <summary>Strict rule</summary>
+      <p class="small">
+        If you hesitate: write simpler, not fewer.
+        The win is stable structure + correct object marking (especially <span class="mono">der → den</span>).
+      </p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini paragraph (6–8 sentences)</h4>
+    <p class="small">No dictionary. Use only today’s verbs and objects + Week 1 time words.</p>
+
+    <div class="prompt">
+      <p><strong>Write about:</strong></p>
+      <ul>
+        <li>What you buy/eat/drink/read today</li>
+        <li>What you do in the morning / evening</li>
+      </ul>
+      <p class="small"><strong>Rules:</strong> include 3 time-first sentences (V2!) and 3 masculine objects with <span class="mono">den</span>.</p>
+    </div>
+
+    <details><summary>Example (do not copy — just compare)</summary>
+      <p class="answer mono">
+        Hallo! Heute kaufe ich den Kaffee. Jetzt trinke ich das Wasser.
+        Morgens esse ich den Apfel. Abends lese ich das Buch.
+        Oft kaufe ich den Apfel und eine Pizza.
+      </p>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>Real A1 skill:</strong> you can produce without freezing.
+    Articles can be corrected later — but only if your sentence structure exists.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove Day 1 worked.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can explain “direct object” in one sentence (English is fine).</li>
+      <li>I can answer <span class="mono">wen/was?</span> to find the object.</li>
+      <li>I can write 8 sentences with masculine objects using <span class="mono">den</span>.</li>
+      <li>I can write 5 time-first sentences without breaking V2.</li>
+      <li>I can use <span class="mono">einen</span> correctly at least 5 times.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Notes for tomorrow</h3>
+    <p class="small">Write 3 bullets:</p>
+    <ol>
+      <li>My most common mistake today was…</li>
+      <li>The easiest thing today was…</li>
+      <li>Tomorrow I want to get faster at…</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 1 — Accusative Basics (Direct Object) · Designed for a 4-hour study block</small>
+</footer>
+
+</body>
+</html>

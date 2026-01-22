@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 3 — Questions: W‑Questions + Yes/No (Verb‑First)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:90ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:96ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:110px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+  .two-col{grid-template-columns:1fr;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 3</p>
+    <h1>Questions: W‑questions + Yes/No (Verb‑First)</h1>
+    <p class="subtitle">
+      Today is huge for “real German.” You’ll learn the two question engines:
+      <strong>W‑questions</strong> (question word first) and <strong>Yes/No</strong> questions (verb first).
+      Your sentence control survives because the verb still obeys the same logic: it goes early and stays stable.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="week2-day1.html">Day 1</a>
+      <a href="week2-day2.html">Day 2</a>
+      <a href="week2-day3.html">Day 3</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#lesson">Mini‑Lesson</a>
+      <a href="#wq">W‑Questions</a>
+      <a href="#yn">Yes/No</a>
+      <a href="#vocab">Vocabulary</a>
+      <a href="#practice">Practice Sets</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    This day is about <strong>asking</strong> and <strong>answering</strong> without freezing.
+    If you can ask a question, you can control a conversation.
+    (Also: Germans will answer you even if you make mistakes. They might just answer you in English as punishment.)
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will learn</h3>
+      <ul>
+        <li>W‑question structure: <span class="mono">W‑word + verb + subject + ...</span></li>
+        <li>Yes/No structure: <span class="mono">Verb + subject + ... ?</span></li>
+        <li>Accusative objects inside questions (still accusative!)</li>
+        <li>Answer patterns (short answers, full answers)</li>
+        <li>Polite <span class="mono">Sie</span> basics (minimal, functional)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Mini‑lesson + question templates</li>
+        <li><strong>90 min</strong> — Drills (question building + answering)</li>
+        <li><strong>45 min</strong> — Flashcards (question words + chunks)</li>
+        <li><strong>30 min</strong> — Quizzes (strict)</li>
+        <li><strong>30 min</strong> — Read aloud + Q&A</li>
+        <li><strong>25 min</strong> — Production dialogues</li>
+        <li><strong>10 min</strong> — Exit check + mistakes list</li>
+      </ul>
+      <p class="small">Rule: you must answer your own questions in German. That’s how the pattern sticks.</p>
+    </div>
+
+    <div class="callout">
+      <strong>Today’s rule:</strong> You do not “translate questions.” You use templates and swap words.
+      Your goal is speed + stability, not poetic originality.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini‑Lesson: question word order (the truth, no fluff)</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">German questions are a word order game</h3>
+    <p class="lede">
+      In a statement, the verb is in position 2 (V2).
+      In a yes/no question, the verb moves to position 1.
+      In a W‑question, the W‑word is position 1, and the verb is position 2.
+      Same idea: the verb comes early. German likes its verbs punctual.
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>Type</th>
+        <th>Pattern</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td>Statement</td>
+        <td class="mono">1st element + verb + subject + ...</td>
+        <td class="mono">Heute <strong>kaufe</strong> ich den Kaffee.</td>
+      </tr>
+      <tr>
+        <td>Yes/No question</td>
+        <td class="mono"><strong>verb</strong> + subject + ... ?</td>
+        <td class="mono"><strong>Kaufst</strong> du den Kaffee?</td>
+      </tr>
+      <tr>
+        <td>W‑question</td>
+        <td class="mono"><strong>W‑word</strong> + verb + subject + ... ?</td>
+        <td class="mono"><strong>Was</strong> kaufst du?</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Important:</strong> Accusative does NOT disappear in questions.<br/>
+      <span class="mono">Was kaufst du?</span> → <span class="mono">Ich kaufe <strong>den</strong> Kaffee.</span>
+    </div>
+
+    <hr/>
+
+    <h3>Micro skill: short answers vs full answers</h3>
+    <div class="two-col">
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">Short answer</span></p>
+        <p class="mono" style="margin:.3rem 0;"><strong>Ja.</strong> / <strong>Nein.</strong></p>
+        <p class="mono" style="margin:.3rem 0;"><strong>Doch.</strong> <span class="small">(later with negation; today optional)</span></p>
+      </div>
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">Full answer</span></p>
+        <p class="mono" style="margin:.3rem 0;">Ja, ich kaufe den Kaffee.</p>
+        <p class="mono" style="margin:.3rem 0;">Nein, ich kaufe den Kaffee nicht. <span class="small">(negation comes Day 4)</span></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Today’s focus:</strong> Ask + answer. Tomorrow we add negation properly.
+      You are building the question machine first.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="wq">
+  <h2>W‑Questions (the core set you actually use)</h2>
+  <p class="lede">
+    There are many W‑words. A1 needs a small, high‑frequency set.
+    You will drill them in food/shopping contexts (Week 2 theme) so they become automatic.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">The A1 W‑set</h3>
+    <table class="table">
+      <tr>
+        <th>W‑word</th><th>Meaning</th><th>What it asks</th><th>Example question</th>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Was</strong></td>
+        <td>what</td>
+        <td>thing / object</td>
+        <td class="mono">Was kaufst du?</td>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Wer</strong></td>
+        <td>who</td>
+        <td>person as subject</td>
+        <td class="mono">Wer kauft den Kaffee?</td>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Wo</strong></td>
+        <td>where</td>
+        <td>location (static)</td>
+        <td class="mono">Wo kaufst du den Kaffee?</td>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Wann</strong></td>
+        <td>when</td>
+        <td>time</td>
+        <td class="mono">Wann kaufst du den Kaffee?</td>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Wie</strong></td>
+        <td>how</td>
+        <td>manner / state</td>
+        <td class="mono">Wie heißt du?</td>
+      </tr>
+      <tr>
+        <td class="mono"><strong>Wie viel(e)</strong></td>
+        <td>how much / many</td>
+        <td>quantity</td>
+        <td class="mono">Wie viel kostet der Kaffee?</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Two crucial distinctions:</strong><br/>
+      1) <span class="mono">Wer</span> asks for a <strong>subject</strong> (who does the action).<br/>
+      2) <span class="mono">Was</span> often asks for an <strong>object</strong> (what do you buy/eat/drink).<br/>
+      If you confuse these, your answers get weird fast.
+    </div>
+
+    <hr/>
+
+    <h3>W‑question templates (copy, then swap)</h3>
+    <div class="prompt mono">
+      Was + Verb + Subjekt + (Objekt/Extra)?<br/>
+      → Was kaufst du? / Was trinkt ihr? / Was lesen Sie? <br/><br/>
+      Wo + Verb + Subjekt + Objekt?<br/>
+      → Wo kaufst du den Kaffee?<br/><br/>
+      Wann + Verb + Subjekt + Objekt?<br/>
+      → Wann kaufst du den Apfel?<br/><br/>
+      Wer + Verb + Objekt?<br/>
+      → Wer kauft den Kaffee? (verb still 2nd: W‑word + verb)<br/><br/>
+      Wie heißt du? (fixed chunk, memorize it)
+    </div>
+
+    <div class="callout">
+      <strong>Note:</strong> If the W‑word is first, the verb is next. Always.
+      If you put the subject first, you accidentally made a statement.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="yn">
+  <h2>Yes/No Questions (verb first)</h2>
+  <p class="lede">
+    Yes/no questions are the simplest: verb in position 1.
+    The rest of the sentence stays normal: subject then object/time etc.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Pattern</h3>
+    <div class="prompt mono">
+      Verb + Subjekt + Objekt + (Time/Extra)?<br/>
+      Kaufst du den Kaffee?<br/>
+      Trinkt ihr das Wasser?<br/>
+      Esst ihr die Pizza?<br/>
+      Lest du das Buch?
+    </div>
+
+    <h3>Answer patterns</h3>
+    <div class="two-col">
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">Short</span></p>
+        <p class="mono" style="margin:.3rem 0;">Ja.</p>
+        <p class="mono" style="margin:.3rem 0;">Nein.</p>
+      </div>
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">Full</span></p>
+        <p class="mono" style="margin:.3rem 0;">Ja, ich kaufe den Kaffee.</p>
+        <p class="mono" style="margin:.3rem 0;">Nein, ich kaufe den Kaffee nicht. <span class="small">(tomorrow you control <em>nicht</em> vs <em>kein</em>)</span></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Polite form (minimal):</strong> <span class="mono">Sie</span> = “you” (formal). Verb matches <span class="mono">sie</span> (they).<br/>
+      <span class="mono">Kaufen Sie den Kaffee?</span> / <span class="mono">Was kaufen Sie?</span><br/>
+      Don’t overthink. Just recognize it when you see it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Vocabulary for Questions (chunks > lists)</h2>
+  <p class="lede">Same nouns and verbs as Day 2, plus a few shop/location words so your questions sound real.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <h3 style="margin-top:0">W‑words (memorize as a set)</h3>
+        <ul>
+          <li class="mono">was</li>
+          <li class="mono">wer</li>
+          <li class="mono">wo</li>
+          <li class="mono">wann</li>
+          <li class="mono">wie</li>
+          <li class="mono">wie viel(e)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Places (minimal)</h3>
+        <ul>
+          <li class="mono">im Supermarkt</li>
+          <li class="mono">im Café</li>
+          <li class="mono">zu Hause</li>
+          <li class="mono">hier</li>
+          <li class="mono">dort</li>
+        </ul>
+        <p class="small">We are not “learning prepositions” yet. Treat these as chunks.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Useful chunks</h3>
+        <ul>
+          <li class="mono">Wie heißt du?</li>
+          <li class="mono">Wie heißen Sie?</li>
+          <li class="mono">Was kostet das?</li>
+          <li class="mono">Wie viel kostet der Kaffee?</li>
+        </ul>
+        <p class="small"><span class="mono">kosten</span> is “to cost.” You can use it as a fixed question chunk today.</p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3 style="margin-top:.2rem">Flashcards (question → answer)</h3>
+    <p class="small">Look at the question, answer aloud, then check.</p>
+
+    <div class="flashcards">
+      <div class="flip"><div class="front">Was kaufst du?</div><div class="back">Ich kaufe den Kaffee.</div></div>
+      <div class="flip"><div class="front">Was trinkst du?</div><div class="back">Ich trinke den Tee.</div></div>
+      <div class="flip"><div class="front">Was isst du?</div><div class="back">Ich esse die Pizza.</div></div>
+      <div class="flip"><div class="front">Was liest du?</div><div class="back">Ich lese das Buch.</div></div>
+
+      <div class="flip"><div class="front">Wo kaufst du den Kaffee?</div><div class="back">Ich kaufe den Kaffee im Café.</div></div>
+      <div class="flip"><div class="front">Wann kaufst du den Apfel?</div><div class="back">Ich kaufe den Apfel morgens.</div></div>
+
+      <div class="flip"><div class="front">Kaufst du den Tee?</div><div class="back">Ja, ich kaufe den Tee.</div></div>
+      <div class="flip"><div class="front">Trinkt ihr das Wasser?</div><div class="back">Ja, wir trinken das Wasser.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="practice">
+  <h2>Practice Sets (guided → faster)</h2>
+  <p class="lede">You will build questions, then answer them. Every time. That’s the whole point.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Turn statements into yes/no questions</h3>
+    <p class="small">Rewrite as a yes/no question (verb first). Then answer: <span class="mono">Ja, ...</span></p>
+    <ol>
+      <li class="mono">Du kaufst den Kaffee.</li>
+      <li class="mono">Ihr trinkt das Wasser.</li>
+      <li class="mono">Wir essen die Pizza.</li>
+      <li class="mono">Du liest das Buch.</li>
+      <li class="mono">Sie kaufen den Apfel.</li>
+      <li class="mono">Er trinkt den Tee.</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <div class="answer mono">
+        1) Kaufst du den Kaffee? — Ja, ich kaufe den Kaffee.<br/>
+        2) Trinkt ihr das Wasser? — Ja, wir trinken das Wasser.<br/>
+        3) Esst ihr die Pizza? — Ja, wir essen die Pizza. <span class="small">(or: Ja, ihr esst ... depending on subject)</span><br/>
+        4) Liest du das Buch? — Ja, ich lese das Buch.<br/>
+        5) Kaufen sie den Apfel? — Ja, sie kaufen den Apfel.<br/>
+        6) Trinkt er den Tee? — Ja, er trinkt den Tee.
+      </div>
+      <p class="small">Note: sentence 3 changes subject if you want strict agreement. Prefer: <span class="mono">Esst ihr die Pizza?</span> if subject is <span class="mono">ihr</span>. If statement subject is <span class="mono">wir</span>, question should be <span class="mono">Essen wir die Pizza?</span>.</p>
+    </details>
+
+    <hr/>
+
+    <h3>Set 2 — Build W‑questions from answers</h3>
+    <p class="small">You get the answer. Write the best matching question.</p>
+    <ol>
+      <li class="mono">Ich kaufe den Kaffee.</li>
+      <li class="mono">Ich esse den Apfel.</li>
+      <li class="mono">Wir trinken das Wasser.</li>
+      <li class="mono">Ich lese das Buch.</li>
+      <li class="mono">Ich kaufe den Kaffee im Supermarkt.</li>
+      <li class="mono">Ich kaufe den Apfel morgens.</li>
+    </ol>
+    <details><summary>Possible questions</summary>
+      <ol class="answer mono">
+        <li>Was kaufst du?</li>
+        <li>Was isst du?</li>
+        <li>Was trinkt ihr? / Was trinken wir?</li>
+        <li>Was liest du?</li>
+        <li>Wo kaufst du den Kaffee?</li>
+        <li>Wann kaufst du den Apfel?</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 3 — Insert the object correctly (accusative still matters)</h3>
+    <p class="small">Fill in the object phrase with the correct article.</p>
+    <ol>
+      <li class="mono">Was kaufst du? — Ich kaufe ____ Kaffee.</li>
+      <li class="mono">Was isst du? — Ich esse ____ Apfel.</li>
+      <li class="mono">Was trinkst du? — Ich trinke ____ Wasser.</li>
+      <li class="mono">Was kaufst du? — Ich kaufe ____ Pizza.</li>
+      <li class="mono">Was trinkt er? — Er trinkt ____ Tee.</li>
+      <li class="mono">Was lest ihr? — Wir lesen ____ Buch.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>den</li><li>den</li><li>das</li><li>die</li><li>den</li><li>das</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 4 — Mixed: choose W‑word + keep verb position</h3>
+    <p class="small">Write a question that matches the cue. Do NOT translate. Use templates.</p>
+    <ol>
+      <li>You want to know the object: (buy) <span class="mono">?</span></li>
+      <li>You want to know the place: (buy coffee) <span class="mono">?</span></li>
+      <li>You want to know the time: (eat an apple) <span class="mono">?</span></li>
+      <li>You want to know the subject: (buys the tea) <span class="mono">?</span></li>
+      <li>You want to know the name (informal) <span class="mono">?</span></li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Was kaufst du?</li>
+        <li>Wo kaufst du den Kaffee?</li>
+        <li>Wann isst du einen Apfel?</li>
+        <li>Wer kauft den Tee?</li>
+        <li>Wie heißt du?</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 5 — Timed Q&A sprint (12 minutes)</h3>
+    <p class="small">
+      Set a timer for <strong>12 minutes</strong>.
+      Create <strong>24</strong> question + answer pairs (aim for 2 per minute).
+      Pattern: 12 yes/no + 12 W‑questions. Alternate them.
+    </p>
+    <div class="callout">
+      <strong>Minimum rule:</strong> every answer must include an object phrase, and the article must match the noun’s gender (accusative for objects).
+      If you can do this quickly, you are genuinely on track for A1 mastery.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (the automation phase)</h2>
+  <p class="lede">
+    These drills look repetitive. That’s the point. You are training reflexes.
+    You will hate me for about 12 minutes and then it gets easier.
+  </p>
+
+  <div class="callout">
+    <strong>Drill rule:</strong> Speak every question aloud with correct intonation (question melody).
+    If you can’t say it smoothly, it’s not learned yet.
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A — Verb‑first (Yes/No): 40 questions</h4>
+    <p class="small">
+      Write 40 yes/no questions. Then answer each with a full sentence.
+      Use at least 5 different subjects: <span class="mono">du, ihr, wir, er, sie</span> (+ optional <span class="mono">Sie</span>).
+    </p>
+    <ul>
+      <li>Use verbs: <span class="mono">kaufen, essen, trinken, lesen</span></li>
+      <li>Use objects: <span class="mono">den Kaffee, den Tee, den Apfel, den Saft, das Wasser, das Brot, das Buch, die Pizza, die Banane</span></li>
+      <li>Include 12 masculine objects with <span class="mono">den</span></li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B — W‑questions (Was): 30 questions</h4>
+    <p class="small">Write 30 <span class="mono">Was ...?</span> questions and answer them.</p>
+    <div class="prompt mono">
+      Was kaufst du? — Ich kaufe den Kaffee.<br/>
+      Was trinkt ihr? — Wir trinken das Wasser.
+    </div>
+    <ul>
+      <li>10 with <span class="mono">kaufen</span>, 10 with <span class="mono">essen</span>, 10 with <span class="mono">trinken/lesen</span></li>
+      <li>Answers must vary: don’t always use <span class="mono">ich</span></li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C — W‑questions (Wo/Wann): 24 questions</h4>
+    <p class="small">
+      Write 12 <span class="mono">Wo ...?</span> and 12 <span class="mono">Wann ...?</span>.
+      Use chunks: <span class="mono">im Supermarkt / im Café / zu Hause</span> and <span class="mono">heute/jetzt/morgens/abends/oft</span>.
+      Answer each question.
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block D — Mixed rapid transformation: 30 items</h4>
+    <p class="small">For each statement: (1) make a yes/no question, (2) make a W‑question with <span class="mono">was</span>, (3) answer it.</p>
+    <div class="prompt mono">
+      Statement: Du kaufst den Kaffee.<br/>
+      → Kaufst du den Kaffee?<br/>
+      → Was kaufst du?<br/>
+      → Ich kaufe den Kaffee.
+    </div>
+    <ul>
+      <li>Do this for 10 statements (3 lines each) = 30 total lines.</li>
+      <li>Underline verb position in your questions (verb should be 1st in yes/no, 2nd in W‑questions).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes (strict + targeted)</h2>
+  <p class="lede">If you miss items here, you drill that exact pattern again. No shame. Precision wins.</p>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Choose the correct word order</h4>
+    <p class="small">Pick the correct question for each meaning.</p>
+    <ol>
+      <li>“What do you buy?”<br/>
+        A) <span class="mono">Du kaufst was?</span> &nbsp;&nbsp; B) <span class="mono">Was kaufst du?</span>
+      </li>
+      <li>“Do you drink the tea?”<br/>
+        A) <span class="mono">Trinkst du den Tee?</span> &nbsp;&nbsp; B) <span class="mono">Du trinkst den Tee?</span>
+      </li>
+      <li>“Where do you buy the coffee?”<br/>
+        A) <span class="mono">Wo kaufst du den Kaffee?</span> &nbsp;&nbsp; B) <span class="mono">Kaufst du wo den Kaffee?</span>
+      </li>
+      <li>“Who buys the apple?”<br/>
+        A) <span class="mono">Wer kauft den Apfel?</span> &nbsp;&nbsp; B) <span class="mono">Wer den Apfel kauft?</span>
+      </li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>B</li><li>A</li><li>A</li><li>A</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Fill the missing word (W‑word or verb)</h4>
+    <p class="small">Complete each question with the correct missing element.</p>
+    <ol>
+      <li class="mono">____ kaufst du?</li>
+      <li class="mono">____ kaufst du den Kaffee?</li>
+      <li class="mono">____ kaufst du den Apfel? (time)</li>
+      <li class="mono">____ du den Tee? (yes/no)</li>
+      <li class="mono">____ trinkt den Saft?</li>
+    </ol>
+    <details><summary>One valid set</summary>
+      <ol class="answer mono">
+        <li>Was</li>
+        <li>Wo</li>
+        <li>Wann</li>
+        <li>Kaufst / Trinkst</li>
+        <li>Wer</li>
+      </ol>
+      <p class="small">#4 accepts the correct verb that matches the rest of the sentence.</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 3 — Answer in German (no English)</h4>
+    <p class="small">Write full answers with correct accusative objects.</p>
+    <ol>
+      <li class="mono">Was kaufst du?</li>
+      <li class="mono">Trinkst du den Tee?</li>
+      <li class="mono">Wo kaufst du den Kaffee?</li>
+      <li class="mono">Wann isst du den Apfel?</li>
+      <li class="mono">Wer kauft die Pizza?</li>
+    </ol>
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe den Kaffee.</li>
+        <li>Ja, ich trinke den Tee.</li>
+        <li>Ich kaufe den Kaffee im Supermarkt.</li>
+        <li>Ich esse den Apfel morgens.</li>
+        <li>Die Frau kauft die Pizza. <span class="small">(example subject)</span></li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud (mini dialogues)</h2>
+  <p class="lede">Read both roles aloud. Then cover the answers and respond from memory.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Dialogue A (shopping)</h3>
+    <div class="prompt mono">
+      A: Hallo! Wie heißt du?<br/>
+      B: Ich heiße Matilde.<br/>
+      A: Was kaufst du?<br/>
+      B: Ich kaufe den Kaffee und den Apfel.<br/>
+      A: Wo kaufst du den Kaffee?<br/>
+      B: Ich kaufe den Kaffee im Supermarkt.<br/>
+      A: Kaufst du auch die Pizza?<br/>
+      B: Ja, ich kaufe die Pizza.<br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Underline every verb in the questions.</li>
+      <li>Circle every object phrase (accusative).</li>
+      <li>Rewrite 4 lines using <span class="mono">Sie</span> (formal), if you want a challenge.</li>
+    </ul>
+
+    <hr/>
+
+    <h3>Dialogue B (quick questions)</h3>
+    <div class="prompt mono">
+      A: Was trinkst du?<br/>
+      B: Ich trinke den Tee.<br/>
+      A: Trinkst du auch das Wasser?<br/>
+      B: Ja, ich trinke das Wasser.<br/>
+      A: Wann trinkst du den Tee?<br/>
+      B: Ich trinke den Tee morgens.<br/>
+      A: Wo bist du?<br/>
+      B: Ich bin zu Hause.<br/>
+    </div>
+
+    <div class="callout">
+      <strong>Note:</strong> <span class="mono">Wo bist du?</span> uses <span class="mono">sein</span>. Same question logic: W‑word + verb + subject.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (real output)</h2>
+  <p class="lede">Now you generate questions like a human in a shop, not like a grammar worksheet.</p>
+
+  <div class="exercise">
+    <h4>Production 1 — Build a mini interview (12 Q&A pairs)</h4>
+    <p class="small">
+      Write 12 question‑answer pairs.
+      Rules: 6 W‑questions + 6 yes/no questions. Use at least 4 different W‑words.
+      Every answer must contain an object phrase with the correct article.
+    </p>
+    <div class="prompt">
+      <p><strong>Suggested topics:</strong> buying, drinking, eating, reading, where, when.</p>
+      <p class="small">Tip: you can reuse the same nouns. Your brain needs repetition, not novelty.</p>
+    </div>
+
+    <details><summary>Mini example (3 pairs only)</summary>
+      <div class="answer mono">
+        Was kaufst du? — Ich kaufe den Kaffee.<br/>
+        Wo kaufst du den Kaffee? — Ich kaufe den Kaffee im Café.<br/>
+        Trinkst du den Tee? — Ja, ich trinke den Tee.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Repair the broken dialogue</h4>
+    <p class="small">Fix word order + articles. Don’t add new vocabulary.</p>
+    <div class="prompt mono">
+      A: Du kaufst was?<br/>
+      B: Ich kaufe der Kaffee.<br/>
+      A: Wo du kaufst den Kaffee?<br/>
+      B: Ich kaufe den Kaffee im Café.<br/>
+      A: Trinkst du das Tee?<br/>
+      B: Ja, ich trinke das Tee.
+    </div>
+
+    <details><summary>One corrected version</summary>
+      <div class="answer mono">
+        A: Was kaufst du?<br/>
+        B: Ich kaufe den Kaffee.<br/>
+        A: Wo kaufst du den Kaffee?<br/>
+        B: Ich kaufe den Kaffee im Café.<br/>
+        A: Trinkst du den Tee?<br/>
+        B: Ja, ich trinke den Tee.
+      </div>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>Skill test:</strong> if you can do Production 2 smoothly without checking rules, you’re building real A1 automation.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove Day 3 worked.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can form a yes/no question (verb first) from any simple statement.</li>
+      <li>I can form a W‑question with <span class="mono">was</span> and answer it.</li>
+      <li>I can use <span class="mono">wo</span> and <span class="mono">wann</span> correctly in questions.</li>
+      <li>I keep accusative objects correct in answers (especially <span class="mono">den</span>).</li>
+      <li>I can write 10 Q&A pairs without freezing.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Notes for Day 4 (negation)</h3>
+    <p class="small">Write 3 bullets:</p>
+    <ol>
+      <li>The question type that feels easiest is…</li>
+      <li>The question type that breaks my brain is…</li>
+      <li>My #1 recurring error today was…</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 3 — W‑Questions + Yes/No Questions · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

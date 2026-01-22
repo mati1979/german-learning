@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 5 — Accusative Prepositions: für / durch / gegen / ohne / um</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:100ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:105ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:110px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+  .two-col{grid-template-columns:1fr;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 5</p>
+    <h1>Accusative Prepositions: <em>für</em> / <em>durch</em> / <em>gegen</em> / <em>ohne</em> / <em>um</em></h1>
+    <p class="subtitle">
+      Today you learn a “German shortcut”: some prepositions always force <strong>accusative</strong>.
+      That means the noun after them behaves like a direct object — even if it isn’t the direct object of the verb.
+      If you master these five early, your article accuracy jumps fast.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="week2-day1.html">Day 1</a>
+      <a href="week2-day2.html">Day 2</a>
+      <a href="week2-day3.html">Day 3</a>
+      <a href="week2-day4.html">Day 4</a>
+      <a href="week2-day5.html">Day 5</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#lesson">Mini‑Lesson</a>
+      <a href="#meaning">Meanings + Examples</a>
+      <a href="#articles">Articles after Prep</a>
+      <a href="#vocab">Vocabulary</a>
+      <a href="#practice">Practice Sets</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    Week 2 is “Meaning Expansion.” Today’s upgrade is: you can add <strong>purpose</strong>, <strong>movement through</strong>, <strong>against</strong>,
+    <strong>without</strong>, and <strong>around</strong> — and still keep your structure stable.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will learn</h3>
+      <ul>
+        <li>The “always accusative” preposition set: <span class="mono">für / durch / gegen / ohne / um</span></li>
+        <li>Meaning + typical uses (A1 contexts)</li>
+        <li>Articles after them: <span class="mono">den / die / das</span> and <span class="mono">einen / eine / ein</span></li>
+        <li>Negation with them: <span class="mono">kein‑</span> (bonus review)</li>
+        <li>Question patterns that include prepositional phrases</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Mini‑lesson + meaning map + guided examples</li>
+        <li><strong>90 min</strong> — Drills (prep + article automation)</li>
+        <li><strong>45 min</strong> — Flashcards (prep chunks + collocations)</li>
+        <li><strong>30 min</strong> — Quizzes (accuracy)</li>
+        <li><strong>30 min</strong> — Read aloud + Q&A</li>
+        <li><strong>25 min</strong> — Production (mini narratives + dialogues)</li>
+        <li><strong>10 min</strong> — Exit check + error list</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Today’s rule:</strong> After these prepositions, you automatically think “accusative.”
+      That means masculine becomes <span class="mono"><strong>den</strong></span> / <span class="mono"><strong>einen</strong></span> / <span class="mono"><strong>keinen</strong></span>.
+      This is the whole point.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini‑Lesson: what a preposition does (A1 view)</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Prepositions introduce a phrase</h3>
+    <p class="lede">
+      A preposition is a small word that connects a noun to the sentence: purpose, direction, relation, etc.
+      In German, prepositions often “choose” the case of the noun that follows.
+      Today’s set is easy: they always choose <strong>accusative</strong>.
+    </p>
+
+    <div class="prompt mono">
+      Ich kaufe den Kaffee. <span class="small">(direct object accusative)</span><br/>
+      Ich kaufe den Kaffee <strong>für den</strong> Freund. <span class="small">(preposition phrase also accusative)</span><br/>
+      Ich gehe <strong>durch die</strong> Stadt. <span class="small">(prep phrase accusative)</span><br/>
+      Ich laufe <strong>ohne das</strong> Handy. <span class="small">(prep phrase accusative)</span>
+    </div>
+
+    <div class="callout">
+      <strong>Key idea:</strong> You can have more than one accusative thing in a sentence:
+      a direct object + a prepositional phrase. You’re not “choosing” between them; you’re marking both correctly.
+    </div>
+
+    <hr/>
+
+    <h3>The Five (memorize as a set)</h3>
+    <div class="prompt mono">
+      <strong>für</strong> (for) · <strong>durch</strong> (through) · <strong>gegen</strong> (against) · <strong>ohne</strong> (without) · <strong>um</strong> (around / at)
+    </div>
+
+    <div class="callout">
+      <strong>Shortcut memory:</strong> FD‑GO‑U (sounds like a weird startup).
+      The important part: after them, accusative happens.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="meaning">
+  <h2>Meaning + A1 examples (useful, not philosophical)</h2>
+  <p class="lede">
+    Each preposition has typical “natural” uses. Learn the uses as chunks.
+    You’ll be using simple verbs today: <span class="mono">kaufen, essen, trinken, lesen</span> plus a few movement verbs.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0"><span class="mono">für</span> — “for” (recipient / purpose)</h3>
+    <div class="prompt mono">
+      Ich kaufe den Kaffee <strong>für</strong> dich. <span class="small">(for you)</span><br/>
+      Ich kaufe einen Apfel <strong>für</strong> den Freund. <span class="small">(for the friend)</span><br/>
+      Das ist <strong>für</strong> die Familie. <span class="small">(for the family)</span>
+    </div>
+    <ul class="small">
+      <li>Super common in shopping: “for me/for you/for my mom.”</li>
+      <li>In A1, learn it with pronouns too: <span class="mono">für mich / für dich / für ihn / für sie / für uns</span>.</li>
+    </ul>
+
+    <hr/>
+
+    <h3><span class="mono">durch</span> — “through” (movement through space)</h3>
+    <div class="prompt mono">
+      Ich gehe <strong>durch</strong> die Stadt. <span class="small">(through the city)</span><br/>
+      Wir laufen <strong>durch</strong> den Park. <span class="small">(through the park)</span><br/>
+      Er geht <strong>durch</strong> das Haus. <span class="small">(through the house)</span>
+    </div>
+    <p class="small">Today we use a few movement verbs as chunks: <span class="mono">gehen / laufen</span>. No deep conjugation focus — you’ve already got present tense basics.</p>
+
+    <hr/>
+
+    <h3><span class="mono">gegen</span> — “against” (against something / versus)</h3>
+    <div class="prompt mono">
+      Ich bin <strong>gegen</strong> den Kaffee. <span class="small">(I’m against coffee)</span><br/>
+      Wir spielen <strong>gegen</strong> die Mannschaft. <span class="small">(against the team)</span><br/>
+      Er läuft <strong>gegen</strong> die Wand. <span class="small">(oops)</span>
+    </div>
+    <p class="small">A1 use: opinions (“I’m against…”), sports (“play against”), physical contact (“against the wall”).</p>
+
+    <hr/>
+
+    <h3><span class="mono">ohne</span> — “without”</h3>
+    <div class="prompt mono">
+      Ich trinke den Tee <strong>ohne</strong> Zucker. <span class="small">(without sugar)</span><br/>
+      Ich gehe <strong>ohne</strong> das Handy. <span class="small">(without the phone)</span><br/>
+      Wir kaufen <strong>ohne</strong> den Apfel. <span class="small">(awkward but grammatical)</span>
+    </div>
+    <p class="small">Most natural A1: without sugar/milk; without phone; without bag. (We’ll add more vocab below.)</p>
+
+    <hr/>
+
+    <h3><span class="mono">um</span> — “around” / “at” (time)</h3>
+    <div class="prompt mono">
+      Ich gehe <strong>um</strong> den Park. <span class="small">(around the park)</span><br/>
+      Wir sitzen <strong>um</strong> den Tisch. <span class="small">(around the table)</span><br/>
+      Ich komme <strong>um</strong> zwei Uhr. <span class="small">(at 2 o'clock)</span>
+    </div>
+    <p class="small">
+      Two A1 uses: (1) around something in space, (2) at a time (<span class="mono">um 2 Uhr</span>). 
+      Both are extremely common.
+    </p>
+
+    <div class="callout">
+      <strong>Don’t panic about “time um”.</strong>
+      It still belongs to our set here and behaves consistently in A1 usage. You use it as a chunk: <span class="mono">um zwei Uhr</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="articles">
+  <h2>Articles after accusative prepositions (the automation table)</h2>
+  <p class="lede">
+    The preposition forces accusative. So you don’t choose nominative.
+    You choose the accusative forms you already learned — and you learn to apply them fast.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Definite articles after the prepositions</h3>
+    <table class="table">
+      <tr>
+        <th>Gender</th><th>After <span class="mono">für/durch/gegen/ohne/um</span></th><th>Example</th>
+      </tr>
+      <tr>
+        <td>masc</td>
+        <td class="mono"><strong>den</strong></td>
+        <td class="mono">für den Kaffee · durch den Park</td>
+      </tr>
+      <tr>
+        <td>fem</td>
+        <td class="mono">die</td>
+        <td class="mono">für die Pizza · gegen die Wand</td>
+      </tr>
+      <tr>
+        <td>neut</td>
+        <td class="mono">das</td>
+        <td class="mono">ohne das Handy · durch das Haus</td>
+      </tr>
+      <tr>
+        <td>plural</td>
+        <td class="mono">die</td>
+        <td class="mono">für die Äpfel · ohne die Bücher</td>
+      </tr>
+    </table>
+
+    <hr/>
+
+    <h3>Indefinite after the prepositions</h3>
+    <table class="table">
+      <tr>
+        <th>Gender</th><th>Indefinite</th><th>Example</th>
+      </tr>
+      <tr>
+        <td>masc acc</td>
+        <td class="mono"><strong>einen</strong></td>
+        <td class="mono">für einen Freund · ohne einen Apfel</td>
+      </tr>
+      <tr>
+        <td>fem acc</td>
+        <td class="mono">eine</td>
+        <td class="mono">für eine Pizza</td>
+      </tr>
+      <tr>
+        <td>neut acc</td>
+        <td class="mono">ein</td>
+        <td class="mono">ohne ein Handy <span class="small">(more natural: ohne das Handy)</span></td>
+      </tr>
+    </table>
+
+    <hr/>
+
+    <h3>Negated noun phrase after the prepositions (bonus review)</h3>
+    <p class="lede">
+      If you negate the noun phrase, you replace the article with <span class="mono">kein‑</span>.
+      Same endings as <span class="mono">ein‑</span>.
+    </p>
+    <div class="prompt mono">
+      Ich kaufe den Kaffee <strong>für den</strong> Freund. → Ich kaufe den Kaffee <strong>für keinen</strong> Freund. (rare, but grammatical)<br/>
+      Ich gehe <strong>ohne das</strong> Handy. → Ich gehe <strong>ohne</strong> Handy nicht? <span class="small">(better: Ich gehe nicht ohne das Handy.)</span><br/>
+      Ich trinke Tee <strong>ohne</strong> Zucker. → Ich trinke Tee <strong>ohne</strong> Zucker. <span class="small">(Zucker = no article often)</span>
+    </div>
+
+    <div class="callout">
+      <strong>A1 focus:</strong> Don’t overcomplicate. Most of your “kein” practice is with direct objects.
+      For prepositions today, your main target is <span class="mono">den</span> after the preposition.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Vocabulary for Day 5 (controlled + useful)</h2>
+  <p class="lede">We add a few nouns so the prepositions feel natural. But we keep the set small.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <h3 style="margin-top:0">Prepositions (the set)</h3>
+        <ul>
+          <li class="mono">für</li>
+          <li class="mono">durch</li>
+          <li class="mono">gegen</li>
+          <li class="mono">ohne</li>
+          <li class="mono">um</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">New nouns (with gender)</h3>
+        <ul>
+          <li class="mono">der Park → durch den Park</li>
+          <li class="mono">der Tisch → um den Tisch</li>
+          <li class="mono">die Stadt → durch die Stadt</li>
+          <li class="mono">die Wand → gegen die Wand</li>
+          <li class="mono">das Handy → ohne das Handy</li>
+          <li class="mono">der Zucker → ohne Zucker</li>
+          <li class="mono">die Milch → ohne Milch</li>
+        </ul>
+        <p class="small">Yes: <span class="mono">Zucker</span> often appears without an article. Treat it as a chunk: <span class="mono">ohne Zucker</span>.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Verbs (minimal movement)</h3>
+        <ul>
+          <li class="mono">gehen</li>
+          <li class="mono">laufen</li>
+          <li class="mono">kommen</li>
+        </ul>
+        <p class="small">Use present tense: <span class="mono">ich gehe, du gehst, wir gehen</span>. You can keep it basic.</p>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3 style="margin-top:.2rem">Flashcards (prep chunk → meaning)</h3>
+    <p class="small">Say the German phrase aloud. Then say the English meaning.</p>
+
+    <div class="flashcards">
+      <div class="flip"><div class="front mono">für den Freund</div><div class="back">for the friend (acc)</div></div>
+      <div class="flip"><div class="front mono">durch den Park</div><div class="back">through the park (den)</div></div>
+      <div class="flip"><div class="front mono">gegen die Wand</div><div class="back">against the wall (die)</div></div>
+      <div class="flip"><div class="front mono">ohne das Handy</div><div class="back">without the phone (das)</div></div>
+
+      <div class="flip"><div class="front mono">ohne Zucker</div><div class="back">without sugar (no article)</div></div>
+      <div class="flip"><div class="front mono">um den Tisch</div><div class="back">around the table (den)</div></div>
+      <div class="flip"><div class="front mono">um zwei Uhr</div><div class="back">at 2 o'clock (time)</div></div>
+      <div class="flip"><div class="front mono">für mich</div><div class="back">for me</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="practice">
+  <h2>Practice Sets (guided → timed)</h2>
+  <p class="lede">
+    You will do controlled swaps: only one variable changes.
+    That’s how your brain stops guessing and starts predicting.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Fill the article after the preposition</h3>
+    <p class="small">Fill in: <span class="mono">den / die / das</span>. All are accusative because of the preposition.</p>
+    <ol>
+      <li class="mono">Ich kaufe den Kaffee für ____ Freund.</li>
+      <li class="mono">Wir gehen durch ____ Stadt.</li>
+      <li class="mono">Er läuft gegen ____ Wand.</li>
+      <li class="mono">Ich gehe ohne ____ Handy.</li>
+      <li class="mono">Wir laufen durch ____ Park.</li>
+      <li class="mono">Sie sitzt um ____ Tisch.</li>
+      <li class="mono">Ich trinke Tee ohne ____ Milch. <span class="small">(optional article; both possible)</span></li>
+      <li class="mono">Du kaufst die Pizza für ____ Familie. <span class="small">(use die)</span></li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>den</li>
+        <li>die</li>
+        <li>die</li>
+        <li>das</li>
+        <li>den</li>
+        <li>den</li>
+        <li>die</li>
+        <li>die</li>
+      </ol>
+      <p class="small">Note: <span class="mono">ohne Milch</span> is also natural. In A1, accept both; the point is the pattern.</p>
+    </details>
+
+    <hr/>
+
+    <h3>Set 2 — Choose the preposition (meaning cue)</h3>
+    <p class="small">Write the correct preposition: <span class="mono">für/durch/gegen/ohne/um</span>.</p>
+    <ol>
+      <li class="mono">I buy the coffee ___ my friend. (for)</li>
+      <li class="mono">We walk ___ the city. (through)</li>
+      <li class="mono">He runs ___ the wall. (against)</li>
+      <li class="mono">I drink tea ___ sugar. (without)</li>
+      <li class="mono">I come ___ two o’clock. (at)</li>
+      <li class="mono">We walk ___ the park. (around)</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>für</li><li>durch</li><li>gegen</li><li>ohne</li><li>um</li><li>um</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 3 — Build questions with the prepositional phrase</h3>
+    <p class="small">Write the question and answer it. Keep word order correct.</p>
+    <ol>
+      <li>You want to know the recipient: <span class="mono">Ich kaufe den Kaffee für den Freund.</span></li>
+      <li>You want to know the place (through where?): <span class="mono">Wir gehen durch den Park.</span></li>
+      <li>You want to know the time: <span class="mono">Ich komme um zwei Uhr.</span></li>
+      <li>You want to know what is missing: <span class="mono">Ich trinke Tee ohne Zucker.</span></li>
+    </ol>
+    <details><summary>Possible Q&A</summary>
+      <div class="answer mono">
+        1) Für wen kaufst du den Kaffee? — Ich kaufe den Kaffee für den Freund. <span class="small">(Für wen is introduced here as a useful chunk.)</span><br/>
+        2) Wo geht ihr? / Wohin geht ihr? — Wir gehen durch den Park. <span class="small">(A1 acceptable: Wo ...? with phrase)</span><br/>
+        3) Wann kommst du? — Ich komme um zwei Uhr.<br/>
+        4) Womit trinkst du Tee? — Ich trinke Tee ohne Zucker. <span class="small">(Hard; alternative: Trinkst du Tee ohne Zucker? — Ja...)</span>
+      </div>
+      <p class="small">Note: “Für wen?” is extremely useful and worth learning as a chunk even if we haven’t done dative yet. Treat it as fixed: <span class="mono">Für wen?</span></p>
+    </details>
+
+    <hr/>
+
+    <h3>Set 4 — Replace the object and keep the preposition phrase correct</h3>
+    <p class="small">Swap the noun, keep the preposition, keep the article correct.</p>
+
+    <div class="prompt mono">
+      Model: Ich gehe ohne das Handy.<br/>
+      → Ich gehe ohne das Buch.<br/>
+      → Ich gehe ohne den Kaffee. <span class="small">(weird, but tests den)</span>
+    </div>
+
+    <ol>
+      <li class="mono">Ich gehe ohne ____ (Handy/Buch/Brot).</li>
+      <li class="mono">Wir gehen durch ____ (Park/Stadt/Haus).</li>
+      <li class="mono">Er läuft gegen ____ (Wand/Tisch).</li>
+      <li class="mono">Ich kaufe den Apfel für ____ (Freund/Familie).</li>
+      <li class="mono">Wir sitzen um ____ (Tisch/Park). <span class="small">(park awkward; still tests den)</span></li>
+    </ol>
+    <details><summary>Example answers (one set)</summary>
+      <div class="answer mono">
+        1) ohne das Handy / ohne das Buch / ohne das Brot<br/>
+        2) durch den Park / durch die Stadt / durch das Haus<br/>
+        3) gegen die Wand / gegen den Tisch<br/>
+        4) für den Freund / für die Familie<br/>
+        5) um den Tisch / um den Park
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Set 5 — Timed sprint (12 minutes)</h3>
+    <p class="small">
+      Set a timer for <strong>12 minutes</strong>. Write 24 sentences:
+      6 with <span class="mono">für</span>, 6 with <span class="mono">durch</span>, 6 with <span class="mono">ohne</span>, 3 with <span class="mono">gegen</span>, 3 with <span class="mono">um</span>.
+      Each sentence must include a correct accusative article after the preposition (if there is one).
+    </p>
+    <div class="callout">
+      <strong>Target:</strong> 18+ correct sentences.
+      If you miss articles after prepositions, that’s your review signal: do Set 1 again tomorrow.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (the real work)</h2>
+  <p class="lede">
+    These drills are designed to build the “automatic accusative” reflex after the preposition.
+    You’ll mostly drill <span class="mono">den</span> because that’s where mistakes happen.
+  </p>
+
+  <div class="callout">
+    <strong>Drill rule:</strong> If you write <span class="mono">der</span> after one of these prepositions, you must rewrite the phrase 5× correctly.
+    Example: <span class="mono">für den Park</span> 5×. Your brain learns through shame. (Joke. Mostly.)
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A — Phrase factory (50 phrases)</h4>
+    <p class="small">Write 50 prepositional phrases only (not full sentences). Make them fast and correct.</p>
+    <ul>
+      <li>20 phrases with masculine nouns (<span class="mono">für den…, durch den…, um den…</span>)</li>
+      <li>15 with feminine nouns (<span class="mono">durch die…, gegen die…</span>)</li>
+      <li>15 with neuter nouns (<span class="mono">ohne das…, durch das…</span>)</li>
+      <li>Say each phrase aloud after writing it.</li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B — Full sentences with V2 + preposition phrase: 30 sentences</h4>
+    <p class="small">
+      Write 30 sentences. 15 must be time-first (V2). Each sentence contains one of the prepositional phrases.
+      Use verbs: <span class="mono">kaufen, essen, trinken, lesen, gehen, laufen, kommen</span>.
+    </p>
+    <div class="prompt mono">
+      Heute kaufe ich den Kaffee für den Freund.<br/>
+      Jetzt gehe ich durch den Park.<br/>
+      Abends trinke ich Tee ohne Zucker.<br/>
+      Ich komme um zwei Uhr.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C — Questions + answers: 20 pairs</h4>
+    <p class="small">
+      Create 20 Q&A pairs. Requirements:
+      10 yes/no questions + 10 W‑questions. At least 8 must contain one of the accusative prepositions.
+    </p>
+    <ul>
+      <li>Include 6 questions with <span class="mono">für</span></li>
+      <li>Include 4 questions with <span class="mono">ohne</span></li>
+      <li>Include 4 with <span class="mono">durch</span></li>
+      <li>Optional: include 2 with <span class="mono">um</span> (time)</li>
+    </ul>
+    <p class="small">If “Für wen?” feels new, treat it as a fixed tool question and keep going.</p>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block D — Mixed with negation (review Day 4): 20 sentences</h4>
+    <p class="small">
+      Write 20 sentences combining prepositions and negation.
+      Mix <span class="mono">nicht</span> and <span class="mono">kein‑</span>.
+      Keep it simple.
+    </p>
+    <div class="prompt mono">
+      Ich kaufe keinen Kaffee für den Freund.<br/>
+      Heute gehe ich nicht durch den Park.<br/>
+      Ich trinke Tee ohne Zucker nicht? <span class="small">(better: Ich trinke Tee nicht ohne Zucker — advanced; A1 safer: Ich trinke Tee ohne Zucker.)</span><br/>
+      Ich gehe ohne das Handy nicht. <span class="small">(= I don't go without the phone)</span>
+    </div>
+    <p class="small">For A1, it’s okay to keep negation out of the preposition phrase and just negate the sentence at the end.</p>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes (accuracy checks)</h2>
+  <p class="lede">Do them fast. Then fix only your errors — that’s efficient learning.</p>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Choose the correct article after the preposition</h4>
+    <p class="small">Fill in: <span class="mono">den/die/das</span>.</p>
+    <ol>
+      <li class="mono">für ____ Park</li>
+      <li class="mono">durch ____ Stadt</li>
+      <li class="mono">gegen ____ Tisch</li>
+      <li class="mono">ohne ____ Handy</li>
+      <li class="mono">um ____ Tisch</li>
+      <li class="mono">durch ____ Haus</li>
+      <li class="mono">für ____ Pizza</li>
+      <li class="mono">gegen ____ Wand</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer">
+        <li>den</li>
+        <li>die</li>
+        <li>den</li>
+        <li>das</li>
+        <li>den</li>
+        <li>das</li>
+        <li>die</li>
+        <li>die</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Pick the preposition</h4>
+    <p class="small">Choose: <span class="mono">für/durch/gegen/ohne/um</span>.</p>
+    <ol>
+      <li class="mono">I drink tea ___ milk. (without)</li>
+      <li class="mono">We walk ___ the city. (through)</li>
+      <li class="mono">I buy the pizza ___ my family. (for)</li>
+      <li class="mono">He runs ___ the wall. (against)</li>
+      <li class="mono">I come ___ two o’clock. (at)</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>ohne</li><li>durch</li><li>für</li><li>gegen</li><li>um</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 3 — Fix the sentence (prep + article + word order)</h4>
+    <p class="small">Rewrite correctly.</p>
+    <ol>
+      <li class="mono">Heute ich kaufe den Kaffee für der Freund.</li>
+      <li class="mono">Wir gehen durch der Park.</li>
+      <li class="mono">Er läuft gegen den Wand.</li>
+      <li class="mono">Ich gehe ohne die Handy.</li>
+      <li class="mono">Ich komme zwei Uhr um.</li>
+    </ol>
+    <details><summary>Corrections</summary>
+      <ol class="answer mono">
+        <li>Heute kaufe ich den Kaffee für den Freund.</li>
+        <li>Wir gehen durch den Park.</li>
+        <li>Er läuft gegen die Wand.</li>
+        <li>Ich gehe ohne das Handy.</li>
+        <li>Ich komme um zwei Uhr.</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 4 — Micro translations (English → German)</h4>
+    <p class="small">Keep it simple. Focus on preposition + article.</p>
+    <ol>
+      <li>Today I buy the coffee for my friend.</li>
+      <li>We walk through the park.</li>
+      <li>I drink tea without sugar.</li>
+      <li>He runs against the wall.</li>
+      <li>I come at two o’clock.</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Heute kaufe ich den Kaffee für den Freund.</li>
+        <li>Wir gehen durch den Park.</li>
+        <li>Ich trinke Tee ohne Zucker.</li>
+        <li>Er läuft gegen die Wand.</li>
+        <li>Ich komme um zwei Uhr.</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud (mini text + questions)</h2>
+  <p class="lede">Read slowly. Then answer the questions in German. Don’t translate word-by-word.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Text (Week 2 style)</h3>
+    <div class="prompt mono">
+      Heute kaufe ich den Kaffee für den Freund. <br/>
+      Jetzt gehe ich durch den Park. <br/>
+      Abends trinke ich Tee ohne Zucker. <br/>
+      Ich komme um zwei Uhr. <br/>
+      Morgen gehe ich ohne das Handy. <br/>
+    </div>
+
+    <h3>Questions</h3>
+    <ol>
+      <li>Was kaufst du heute?</li>
+      <li>Für wen kaufst du den Kaffee?</li>
+      <li>Wo gehst du jetzt?</li>
+      <li>Was trinkst du abends?</li>
+      <li>Ohne was gehst du morgen?</li>
+      <li>Wann kommst du?</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe heute den Kaffee.</li>
+        <li>Ich kaufe den Kaffee für den Freund.</li>
+        <li>Ich gehe jetzt durch den Park.</li>
+        <li>Ich trinke abends Tee ohne Zucker.</li>
+        <li>Ich gehe morgen ohne das Handy.</li>
+        <li>Ich komme um zwei Uhr.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Pronunciation tip (quick):</strong> <span class="mono">für</span> has an ü-sound. If you can’t yet, approximate, but keep practicing.
+      Don’t let pronunciation stop the grammar practice.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (prove you own it)</h2>
+  <p class="lede">
+    Production is where the lesson becomes your language.
+    Keep it boring, clear, and correct.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — “A day with prepositions” (10–12 sentences)</h4>
+    <p class="small">
+      Write 10–12 sentences about a day.
+      Requirements:
+      2 sentences with <span class="mono">für</span>, 2 with <span class="mono">durch</span>, 2 with <span class="mono">ohne</span>, 2 with <span class="mono">um</span> (time), 1 with <span class="mono">um</span> (around), 1 with <span class="mono">gegen</span>.
+      At least 5 time-first (V2).
+    </p>
+
+    <details><summary>Mini example (short)</summary>
+      <p class="answer mono">
+        Heute kaufe ich den Kaffee für den Freund. Jetzt gehe ich durch den Park.
+        Abends trinke ich Tee ohne Zucker. Ich komme um zwei Uhr.
+      </p>
+      <p class="small">Don’t copy. Use it as a structure model.</p>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue (10 Q&A pairs)</h4>
+    <p class="small">
+      Create 10 Q&A pairs where you use these prepositions naturally.
+      Include at least: 3 with <span class="mono">für</span>, 2 with <span class="mono">ohne</span>, 2 with <span class="mono">um</span> (time), 2 with <span class="mono">durch</span>, 1 with <span class="mono">gegen</span>.
+    </p>
+    <details><summary>Example (2 pairs)</summary>
+      <div class="answer mono">
+        Für wen kaufst du den Kaffee? — Ich kaufe den Kaffee für den Freund.<br/>
+        Trinkst du Tee ohne Zucker? — Ja, ich trinke Tee ohne Zucker.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite</h4>
+    <p class="small">Fix preposition choice, article, and word order. Don’t add new words.</p>
+    <div class="prompt mono">
+      Heute ich gehe durch der Stadt. Ich kaufe den Kaffee für die Freund.
+      Ich komme zwei Uhr um. Ich gehe ohne das Handy nicht.
+      Wir laufen gegen den Wand.
+    </div>
+    <details><summary>One corrected version</summary>
+      <p class="answer mono">
+        Heute gehe ich durch die Stadt. Ich kaufe den Kaffee für den Freund.
+        Ich komme um zwei Uhr. Ich gehe nicht ohne das Handy.
+        Wir laufen gegen die Wand.
+      </p>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>Key A1 success signal:</strong> you see <span class="mono">für/durch/gegen/ohne/um</span> and your hand writes accusative automatically.
+    If that happens, you’re building real sentence control.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove Day 5 worked.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can recite the set: <span class="mono">für/durch/gegen/ohne/um</span> → accusative.</li>
+      <li>I can write 10 phrases with <span class="mono">für</span> and correct articles (especially <span class="mono">für den</span>).</li>
+      <li>I can write 10 phrases with <span class="mono">durch</span> and correct articles (especially <span class="mono">durch den</span> / <span class="mono">durch die</span>).</li>
+      <li>I can write 6 sentences with <span class="mono">um</span> + time (<span class="mono">um zwei Uhr</span> etc.).</li>
+      <li>I can ask and answer 6 questions using these prepositions.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Notes for Day 6 (integration day)</h3>
+    <p class="small">Write 3 bullets:</p>
+    <ol>
+      <li>The preposition I remember instantly is…</li>
+      <li>The article pattern I still mess up is…</li>
+      <li>Tomorrow I want to be faster at…</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 5 — Accusative Prepositions · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

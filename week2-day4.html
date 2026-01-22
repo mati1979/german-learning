@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 4 — Negation: nicht vs kein</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:96ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:98ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:110px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+  .two-col{grid-template-columns:1fr;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 4</p>
+    <h1>Negation: <em>nicht</em> vs <em>kein</em> (and where to put them)</h1>
+    <p class="subtitle">
+      Today you learn the A1 superpower: saying “no” correctly.
+      German has two main negators: <strong>nicht</strong> (not) and <strong>kein</strong> (no / not a / not any).
+      The rules are actually simple — what’s hard is <strong>placement</strong>.
+      We will drill it until it stops feeling like a trap.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="week2-day1.html">Day 1</a>
+      <a href="week2-day2.html">Day 2</a>
+      <a href="week2-day3.html">Day 3</a>
+      <a href="week2-day4.html">Day 4</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#lesson">Mini‑Lesson</a>
+      <a href="#rules">Core Rules</a>
+      <a href="#placement">Placement</a>
+      <a href="#vocab">Vocabulary</a>
+      <a href="#practice">Practice Sets</a>
+      <a href="#drills">Drills</a>
+      <a href="#quizzes">Quizzes</a>
+      <a href="#read">Read Aloud</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Overview</h2>
+  <p class="lede">
+    Your mission: choose <span class="mono">nicht</span> or <span class="mono">kein</span> quickly, and place it correctly
+    in statements and questions, while keeping V2 stable.
+    By the end, you can say things like: “I don’t buy coffee.” / “I buy no coffee.” / “Do you not buy coffee?” and not melt.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">What you will learn</h3>
+      <ul>
+        <li>When to use <span class="mono"><strong>kein</strong></span> vs <span class="mono"><strong>nicht</strong></span></li>
+        <li><span class="mono">kein</span> forms: <span class="mono">kein / keine / keinen</span> (mini set)</li>
+        <li>Where <span class="mono">nicht</span> goes in simple sentences (A1 logic)</li>
+        <li>Negation in yes/no questions + W‑questions</li>
+        <li>High‑volume practice (because your brain is lazy)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Mini‑lesson + decision tree</li>
+        <li><strong>90 min</strong> — Drills (accuracy → speed)</li>
+        <li><strong>45 min</strong> — Flashcards (kein forms + chunks)</li>
+        <li><strong>30 min</strong> — Quizzes (strict)</li>
+        <li><strong>30 min</strong> — Read aloud + Q&A</li>
+        <li><strong>25 min</strong> — Production (mini dialogues)</li>
+        <li><strong>10 min</strong> — Exit check + errors</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Today’s rule:</strong> Don’t “feel” negation. Decide it.
+      Run the decision tree: <span class="mono">noun with article?</span> → <span class="mono">kein</span>. Otherwise → <span class="mono">nicht</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lesson">
+  <h2>Mini‑Lesson: two negators, two jobs</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">The big idea</h3>
+    <p class="lede">
+      German splits negation into:
+      <strong>kein</strong> = negates a noun with an article (no / not a / not any).<br/>
+      <strong>nicht</strong> = negates verbs/activities, adjectives, names, and “everything else” (not).
+    </p>
+
+    <div class="two-col">
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">kein</span> = “no” (noun)</p>
+        <p class="mono" style="margin:.3rem 0;">Ich kaufe <strong>keinen</strong> Kaffee.</p>
+        <p class="mono" style="margin:.3rem 0;">Wir haben <strong>kein</strong> Brot.</p>
+        <p class="mono" style="margin:.3rem 0;">Sie kauft <strong>keine</strong> Pizza.</p>
+        <p class="small">Replaces an article: <span class="mono">den/einen</span> → <span class="mono">keinen</span> (masc acc), etc.</p>
+      </div>
+      <div class="prompt">
+        <p style="margin:.2rem 0 .3rem;"><span class="pill">nicht</span> = “not” (everything else)</p>
+        <p class="mono" style="margin:.3rem 0;">Ich kaufe den Kaffee <strong>nicht</strong>.</p>
+        <p class="mono" style="margin:.3rem 0;">Der Kaffee ist <strong>nicht</strong> gut.</p>
+        <p class="mono" style="margin:.3rem 0;">Ich bin <strong>nicht</strong> Matilde. <span class="small">(identity/name)</span></p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Important:</strong> Both can be correct, but mean slightly different things.<br/>
+      <span class="mono">Ich kaufe den Kaffee nicht.</span> = I’m not buying the coffee (this action).<br/>
+      <span class="mono">Ich kaufe keinen Kaffee.</span> = I buy no coffee / I don’t buy coffee at all (general).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules">
+  <h2>Core Rules (decision tree you’ll use forever)</h2>
+
+  <div class="card">
+    <h3 style="margin-top:0">Step 1: Is there a noun with an article (or would there be one)?</h3>
+    <p class="lede">
+      If you’re negating a noun phrase like “a coffee / the coffee / coffee (as a thing)” — you usually use <span class="mono"><strong>kein</strong></span>.
+      If you’re negating a verb/action (“I don’t buy”), an adjective (“not good”), or a name (“not Matilde”), use <span class="mono"><strong>nicht</strong></span>.
+    </p>
+
+    <div class="prompt">
+      <p style="margin:.2rem 0 .3rem;"><span class="pill">Use <span class="mono">kein</span></span> when negating a noun phrase</p>
+      <p class="mono" style="margin:.3rem 0;">Ich kaufe <strong>keinen</strong> Kaffee. <span class="small">(no coffee)</span></p>
+      <p class="mono" style="margin:.3rem 0;">Wir haben <strong>kein</strong> Wasser. <span class="small">(no water)</span></p>
+      <p class="mono" style="margin:.3rem 0;">Sie liest <strong>kein</strong> Buch. <span class="small">(no book)</span></p>
+    </div>
+
+    <div class="prompt">
+      <p style="margin:.2rem 0 .3rem;"><span class="pill">Use <span class="mono">nicht</span></span> when negating the verb/action or a description</p>
+      <p class="mono" style="margin:.3rem 0;">Ich kaufe den Kaffee <strong>nicht</strong>. <span class="small">(not this action)</span></p>
+      <p class="mono" style="margin:.3rem 0;">Der Tee ist <strong>nicht</strong> heiß. <span class="small">(adjective)</span></p>
+      <p class="mono" style="margin:.3rem 0;">Ich bin <strong>nicht</strong> aus Deutschland. <span class="small">(later, but pattern)</span></p>
+    </div>
+
+    <hr/>
+
+    <h3>Step 2: If it’s <span class="mono">kein</span>, pick the correct form</h3>
+    <p class="lede">
+      <span class="mono">kein</span> behaves like an article. In A1, you need just these forms:
+      <span class="mono">kein / keine / keinen</span>.
+      (Yes there are more forms, but A1 survival uses these constantly.)
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>Meaning</th><th>Gender/Case (in our Week 2 sentences)</th><th>Form</th><th>Example</th>
+      </tr>
+      <tr>
+        <td>no (masc object)</td>
+        <td>Accusative masculine</td>
+        <td class="mono"><strong>keinen</strong></td>
+        <td class="mono">Ich kaufe <strong>keinen</strong> Kaffee.</td>
+      </tr>
+      <tr>
+        <td>no (fem object)</td>
+        <td>Accusative feminine</td>
+        <td class="mono"><strong>keine</strong></td>
+        <td class="mono">Ich kaufe <strong>keine</strong> Pizza.</td>
+      </tr>
+      <tr>
+        <td>no (neuter object)</td>
+        <td>Accusative neuter</td>
+        <td class="mono"><strong>kein</strong></td>
+        <td class="mono">Ich kaufe <strong>kein</strong> Brot.</td>
+      </tr>
+      <tr>
+        <td>no (plural object)</td>
+        <td>Accusative plural</td>
+        <td class="mono"><strong>keine</strong></td>
+        <td class="mono">Wir kaufen <strong>keine</strong> Äpfel.</td>
+      </tr>
+    </table>
+
+    <div class="callout">
+      <strong>Memory hook:</strong><br/>
+      <span class="mono">kein</span> works like <span class="mono">ein</span> (indefinite article) — same endings.
+      So if you know <span class="mono">einen</span>, you already know <span class="mono">keinen</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="placement">
+  <h2>Placement: where to put <em>nicht</em> and <em>kein</em></h2>
+  <p class="lede">
+    Choosing <span class="mono">nicht</span> vs <span class="mono">kein</span> is half the battle.
+    The other half is placement — especially for <span class="mono">nicht</span>.
+    We’ll keep A1 placement rules simple and usable.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Placement rule for <span class="mono">kein</span></h3>
+    <p class="lede">
+      Easy: <span class="mono">kein</span> goes <strong>inside the noun phrase</strong>, replacing the article.
+      So it sits right before the noun.
+    </p>
+    <div class="prompt mono">
+      Ich kaufe <strong>den</strong> Kaffee. → Ich kaufe <strong>keinen</strong> Kaffee.<br/>
+      Wir essen <strong>die</strong> Pizza. → Wir essen <strong>keine</strong> Pizza.<br/>
+      Du trinkst <strong>das</strong> Wasser. → Du trinkst <strong>kein</strong> Wasser.
+    </div>
+
+    <hr/>
+
+    <h3>Placement rule for <span class="mono">nicht</span> (A1 version)</h3>
+    <p class="lede">
+      <span class="mono">nicht</span> usually goes <strong>before what it negates</strong>.
+      But in simple A1 sentences with a direct object, the safest default is:
+      <strong>put <span class="mono">nicht</span> at the end</strong>.
+      (Later you’ll learn finer placement rules. For A1, we want reliability.)
+    </p>
+
+    <div class="prompt mono">
+      Ich kaufe den Kaffee. → Ich kaufe den Kaffee <strong>nicht</strong>.<br/>
+      Wir trinken das Wasser. → Wir trinken das Wasser <strong>nicht</strong>.<br/>
+      Heute kaufe ich den Tee. → Heute kaufe ich den Tee <strong>nicht</strong>.
+    </div>
+
+    <div class="callout">
+      <strong>When not end?</strong> If you negate an adjective after <span class="mono">sein</span>, <span class="mono">nicht</span> goes before the adjective:<br/>
+      <span class="mono">Der Kaffee ist nicht gut.</span><br/>
+      That’s the main A1 exception you need today.
+    </div>
+
+    <hr/>
+
+    <h3>Negation in questions (yes/no + W‑questions)</h3>
+    <p class="lede">
+      Question word order stays the same. Negation sits where it normally would.
+      Yes/no question: verb first. W‑question: W‑word then verb.
+    </p>
+
+    <div class="prompt mono">
+      Kaufst du den Kaffee <strong>nicht</strong>?<br/>
+      Kaufst du <strong>keinen</strong> Kaffee?<br/>
+      Was kaufst du <strong>nicht</strong>?<br/>
+      Was kaufst du? — Ich kaufe <strong>keinen</strong> Kaffee.
+    </div>
+
+    <div class="callout">
+      <strong>Meaning difference again:</strong><br/>
+      <span class="mono">Kaufst du den Kaffee nicht?</span> = Aren’t you buying <em>the</em> coffee? (this one)<br/>
+      <span class="mono">Kaufst du keinen Kaffee?</span> = Are you buying <em>no</em> coffee at all?
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vocab">
+  <h2>Day 4 Vocabulary (negation chunks)</h2>
+  <p class="lede">You don’t need lots of new words today. You need negation patterns.</p>
+
+  <div class="card">
+    <div class="grid">
+      <div>
+        <h3 style="margin-top:0">Negators</h3>
+        <ul>
+          <li class="mono">nicht</li>
+          <li class="mono">kein / keine / keinen</li>
+        </ul>
+        <p class="small">Say them aloud. The goal is not to stare at them. It’s to use them.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Adjectives for <span class="mono">sein</span> sentences</h3>
+        <ul>
+          <li class="mono">gut</li>
+          <li class="mono">heiß</li>
+          <li class="mono">kalt</li>
+          <li class="mono">teuer</li>
+        </ul>
+        <p class="small">Used only to train: <span class="mono">ist nicht + Adjektiv</span>.</p>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Objects (same as before)</h3>
+        <ul>
+          <li class="mono">Kaffee, Tee, Apfel, Saft</li>
+          <li class="mono">Wasser, Brot, Buch</li>
+          <li class="mono">Pizza, Banane</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr/>
+
+    <h3 style="margin-top:.2rem">Flashcards (choice + placement)</h3>
+    <p class="small">Look → answer aloud → check. Speed matters.</p>
+
+    <div class="flashcards">
+      <div class="flip"><div class="front">I buy no coffee.</div><div class="back mono">Ich kaufe <strong>keinen</strong> Kaffee.</div></div>
+      <div class="flip"><div class="front">I don’t buy the coffee.</div><div class="back mono">Ich kaufe den Kaffee <strong>nicht</strong>.</div></div>
+      <div class="flip"><div class="front">The coffee is not good.</div><div class="back mono">Der Kaffee ist <strong>nicht</strong> gut.</div></div>
+      <div class="flip"><div class="front">We eat no pizza.</div><div class="back mono">Wir essen <strong>keine</strong> Pizza.</div></div>
+
+      <div class="flip"><div class="front">Do you buy no tea?</div><div class="back mono">Kaufst du <strong>keinen</strong> Tee?</div></div>
+      <div class="flip"><div class="front">What don’t you buy?</div><div class="back mono">Was kaufst du <strong>nicht</strong>?</div></div>
+      <div class="flip"><div class="front">We don’t drink the water.</div><div class="back mono">Wir trinken das Wasser <strong>nicht</strong>.</div></div>
+      <div class="flip"><div class="front">I have no bread.</div><div class="back mono">Ich habe <strong>kein</strong> Brot.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="practice">
+  <h2>Practice Sets (the “stop guessing” zone)</h2>
+  <p class="lede">
+    These sets force the decision: <span class="mono">nicht</span> or <span class="mono">kein</span>, then correct placement.
+    Do Set 1 slowly. Then speed up.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Set 1 — Choose: nicht or kein (and write the full sentence)</h3>
+    <p class="small">
+      Write the German sentence in full.
+      Decide which negator is correct. Don’t mix them.
+      (Some answers can be both, but you choose the best one for the meaning given.)
+    </p>
+    <ol>
+      <li>I buy no coffee. <span class="small">(general)</span></li>
+      <li>I don’t buy the coffee. <span class="small">(this coffee)</span></li>
+      <li>We have no bread.</li>
+      <li>The tea is not hot.</li>
+      <li>She eats no pizza.</li>
+      <li>We don’t read the book (today).</li>
+      <li>I drink no water.</li>
+      <li>The apple is not good.</li>
+    </ol>
+
+    <details><summary>One valid set of answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe keinen Kaffee.</li>
+        <li>Ich kaufe den Kaffee nicht.</li>
+        <li>Wir haben kein Brot.</li>
+        <li>Der Tee ist nicht heiß.</li>
+        <li>Sie isst keine Pizza.</li>
+        <li>Heute lesen wir das Buch nicht.</li>
+        <li>Ich trinke kein Wasser.</li>
+        <li>Der Apfel ist nicht gut.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 2 — Replace the article with <span class="mono">kein</span></h3>
+    <p class="small">Convert each sentence by negating the object with <span class="mono">kein</span> (not <span class="mono">nicht</span>).</p>
+    <ol>
+      <li class="mono">Ich kaufe den Kaffee.</li>
+      <li class="mono">Du kaufst einen Apfel.</li>
+      <li class="mono">Wir essen die Pizza.</li>
+      <li class="mono">Ihr trinkt das Wasser.</li>
+      <li class="mono">Sie lesen das Buch.</li>
+      <li class="mono">Er trinkt den Tee.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe keinen Kaffee.</li>
+        <li>Du kaufst keinen Apfel.</li>
+        <li>Wir essen keine Pizza.</li>
+        <li>Ihr trinkt kein Wasser.</li>
+        <li>Sie lesen kein Buch.</li>
+        <li>Er trinkt keinen Tee.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 3 — Add <span class="mono">nicht</span> (end position) to negate the action</h3>
+    <p class="small">Negate each sentence with <span class="mono">nicht</span> (keep the object definite).</p>
+    <ol>
+      <li class="mono">Ich kaufe den Kaffee.</li>
+      <li class="mono">Wir trinken das Wasser.</li>
+      <li class="mono">Du isst den Apfel.</li>
+      <li class="mono">Heute lesen wir das Buch.</li>
+      <li class="mono">Abends trinken wir den Tee.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe den Kaffee nicht.</li>
+        <li>Wir trinken das Wasser nicht.</li>
+        <li>Du isst den Apfel nicht.</li>
+        <li>Heute lesen wir das Buch nicht.</li>
+        <li>Abends trinken wir den Tee nicht.</li>
+      </ol>
+    </details>
+
+    <hr/>
+
+    <h3>Set 4 — Contrast pairs (same idea, different meaning)</h3>
+    <p class="small">Write both sentences. Notice the meaning shift.</p>
+    <ol>
+      <li>“I don’t buy the coffee” vs “I buy no coffee.”</li>
+      <li>“We don’t drink the water” vs “We drink no water.”</li>
+      <li>“She doesn’t read the book” vs “She reads no book.”</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <div class="answer mono">
+        1) Ich kaufe den Kaffee nicht. / Ich kaufe keinen Kaffee.<br/>
+        2) Wir trinken das Wasser nicht. / Wir trinken kein Wasser.<br/>
+        3) Sie liest das Buch nicht. / Sie liest kein Buch.
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Set 5 — Negation in questions (build + answer)</h3>
+    <p class="small">Write the question and then answer it with a full sentence.</p>
+    <ol>
+      <li>Do you buy no coffee?</li>
+      <li>Aren’t you buying the coffee?</li>
+      <li>What don’t you buy?</li>
+      <li>Who doesn’t buy the tea? <span class="small">(use a simple answer)</span></li>
+      <li>Is the coffee not good?</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <div class="answer mono">
+        1) Kaufst du keinen Kaffee? — Nein, ich kaufe keinen Kaffee. <span class="small">(or: Ja, ich kaufe keinen Kaffee)</span><br/>
+        2) Kaufst du den Kaffee nicht? — Nein, ich kaufe den Kaffee nicht.<br/>
+        3) Was kaufst du nicht? — Ich kaufe den Tee nicht.<br/>
+        4) Wer kauft den Tee nicht? — Ich kaufe den Tee nicht. <span class="small">(simple)</span><br/>
+        5) Ist der Kaffee nicht gut? — Nein, der Kaffee ist nicht gut.
+      </div>
+      <p class="small">For #1, note the logic: If the question is “Kaufst du keinen Kaffee?”, answering <span class="mono">Ja</span> means “Yes (correct), I buy no coffee.”</p>
+    </details>
+
+    <hr/>
+
+    <h3>Set 6 — Timed sprint (12 minutes)</h3>
+    <p class="small">
+      Set a timer for <strong>12 minutes</strong>. Write 24 sentences:
+      12 with <span class="mono">kein</span> and 12 with <span class="mono">nicht</span>.
+      Alternate them: kein → nicht → kein → nicht...
+      Use time words in at least 10 sentences (V2 stays correct).
+    </p>
+
+    <div class="callout">
+      <strong>Target:</strong> 18+ correct sentences.
+      If you get 12–15, repeat tomorrow for speed. Accuracy first.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (accuracy → speed)</h2>
+  <p class="lede">
+    Drills today are designed to remove the “which one do I use?” hesitation.
+    You will do lots of conversions because they force decision + placement.
+  </p>
+
+  <div class="callout">
+    <strong>Drill rule:</strong> If you choose the wrong negator, you must:
+    (1) write the correct version 3×, (2) write 2 new sentences using that negator correctly.
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block A — “Article replacement” (kein): 40 conversions</h4>
+    <p class="small">
+      Write 20 positive sentences, then convert each to <span class="mono">kein</span>.
+      Total = 40 lines.
+      Focus: <span class="mono">ein → kein</span>, <span class="mono">einen → keinen</span>, <span class="mono">die → keine</span>, <span class="mono">das → kein</span>.
+    </p>
+    <ul>
+      <li>Include 12 masculine objects (practice <span class="mono">keinen</span>)</li>
+      <li>Include 4 neuter (<span class="mono">kein</span>) + 4 feminine (<span class="mono">keine</span>)</li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block B — “End placement” (nicht): 30 sentences</h4>
+    <p class="small">
+      Write 30 sentences with definite objects and add <span class="mono">nicht</span> at the end.
+      Include at least 12 time-first sentences (V2).
+    </p>
+    <div class="prompt mono">
+      Heute kaufe ich den Kaffee <strong>nicht</strong>.<br/>
+      Abends lese ich das Buch <strong>nicht</strong>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block C — <span class="mono">sein</span> + adjective negation: 20 sentences</h4>
+    <p class="small">Write 20 sentences of the form: <span class="mono">X ist nicht + Adjektiv</span>.</p>
+    <ul>
+      <li>Use: <span class="mono">Der Kaffee / Der Tee / Der Apfel / Das Brot</span></li>
+      <li>Use adjectives: <span class="mono">gut, heiß, kalt, teuer</span></li>
+      <li>Underline <span class="mono">nicht</span> and the adjective.</li>
+    </ul>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill Block D — Question + answer with negation: 20 pairs</h4>
+    <p class="small">
+      Write 10 yes/no + 10 W‑questions using negation.
+      Answer each with a full sentence.
+    </p>
+    <div class="prompt mono">
+      Kaufst du keinen Kaffee? — Ja, ich kaufe keinen Kaffee.<br/>
+      Was kaufst du nicht? — Ich kaufe den Tee nicht.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quizzes">
+  <h2>Quizzes (mean but fair)</h2>
+  <p class="lede">These test the exact decision points. If you miss one, drill that rule again.</p>
+
+  <div class="exercise">
+    <h4>Quiz 1 — Pick the negator</h4>
+    <p class="small">Write <span class="mono">nicht</span> or the correct form of <span class="mono">kein</span>.</p>
+    <ol>
+      <li class="mono">Ich kaufe ____ Kaffee. (no coffee)</li>
+      <li class="mono">Ich kaufe den Kaffee ____. (not the coffee)</li>
+      <li class="mono">Wir haben ____ Brot.</li>
+      <li class="mono">Die Pizza ist ____ gut.</li>
+      <li class="mono">Er trinkt ____ Tee.</li>
+      <li class="mono">Wir lesen das Buch ____.</li>
+    </ol>
+    <details><summary>Answers</summary>
+      <ol class="answer mono">
+        <li>keinen</li>
+        <li>nicht</li>
+        <li>kein</li>
+        <li>nicht</li>
+        <li>keinen</li>
+        <li>nicht</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 2 — Fix the sentence (article/negation/placement)</h4>
+    <p class="small">Rewrite each sentence correctly.</p>
+    <ol>
+      <li class="mono">Ich kaufe nicht keinen Kaffee.</li>
+      <li class="mono">Heute ich kaufe keinen der Kaffee.</li>
+      <li class="mono">Der Tee ist heiß nicht.</li>
+      <li class="mono">Wir trinken nicht das Wasser.</li>
+      <li class="mono">Du kaufst kein Apfel.</li>
+      <li class="mono">Kaufst du den Kaffee nicht? — Ja, ich kaufe den Kaffee nicht. <span class="small">(this is fine)</span></li>
+    </ol>
+    <details><summary>Possible corrections</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe keinen Kaffee. <span class="small">(or: Ich kaufe den Kaffee nicht — choose one meaning)</span></li>
+        <li>Heute kaufe ich keinen Kaffee. <span class="small">(or: Heute kaufe ich den Kaffee nicht)</span></li>
+        <li>Der Tee ist nicht heiß.</li>
+        <li>Wir trinken das Wasser nicht.</li>
+        <li>Du kaufst keinen Apfel.</li>
+        <li>(Already correct.)</li>
+      </ol>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Quiz 3 — Micro translations (English → German)</h4>
+    <p class="small">Focus on the correct negator and placement. Keep it simple.</p>
+    <ol>
+      <li>I buy no tea.</li>
+      <li>I don’t buy the tea.</li>
+      <li>We have no water.</li>
+      <li>The coffee is not expensive.</li>
+      <li>Do you buy no coffee?</li>
+      <li>What don’t you drink?</li>
+    </ol>
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe keinen Tee.</li>
+        <li>Ich kaufe den Tee nicht.</li>
+        <li>Wir haben kein Wasser.</li>
+        <li>Der Kaffee ist nicht teuer.</li>
+        <li>Kaufst du keinen Kaffee?</li>
+        <li>Was trinkst du nicht?</li>
+      </ol>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="read">
+  <h2>Read Aloud (mini dialogues with negation)</h2>
+  <p class="lede">Read both roles. Then cover answers and respond from memory.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Dialogue A (coffee drama, A1 edition)</h3>
+    <div class="prompt mono">
+      A: Kaufst du den Kaffee?<br/>
+      B: Nein, ich kaufe den Kaffee nicht.<br/>
+      A: Kaufst du keinen Kaffee?<br/>
+      B: Ja, ich kaufe keinen Kaffee.<br/>
+      A: Was kaufst du dann?<br/>
+      B: Ich kaufe den Tee.<br/>
+      A: Ist der Tee nicht heiß?<br/>
+      B: Nein, der Tee ist nicht heiß.<br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ul>
+      <li>Underline every <span class="mono">nicht</span> and every <span class="mono">kein‑</span> form.</li>
+      <li>Explain the meaning difference between the two coffee questions (in English is fine).</li>
+      <li>Rewrite 2 lines with time-first (V2): <span class="mono">Heute / Jetzt</span></li>
+    </ul>
+
+    <hr/>
+
+    <h3>Dialogue B (shopping)</h3>
+    <div class="prompt mono">
+      A: Was kaufst du?<br/>
+      B: Ich kaufe keinen Apfel.<br/>
+      A: Kaufst du die Pizza nicht?<br/>
+      B: Nein, ich kaufe die Pizza nicht.<br/>
+      A: Hast du kein Brot?<br/>
+      B: Nein, ich habe kein Brot.<br/>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (prove you can choose + place)</h2>
+  <p class="lede">Now you produce negation intentionally. This is what A1 feels like: controlled, simple, correct.</p>
+
+  <div class="exercise">
+    <h4>Production 1 — 12 contrast pairs</h4>
+    <p class="small">
+      Write 12 pairs (24 sentences total).
+      Each pair: Sentence A uses <span class="mono">nicht</span> with a definite object.
+      Sentence B uses <span class="mono">kein</span> to mean “none.”
+    </p>
+    <div class="prompt mono">
+      A) Ich kaufe den Tee nicht.<br/>
+      B) Ich kaufe keinen Tee.
+    </div>
+    <details><summary>Checklist</summary>
+      <ul class="checklist">
+        <li>I used at least 8 masculine nouns (practice <span class="mono">keinen</span>).</li>
+        <li>I wrote 6 time-first sentences (V2) across the 24 sentences.</li>
+        <li>I did at least 4 <span class="mono">sein</span> + adjective sentences: <span class="mono">X ist nicht ...</span></li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue (10 Q&A pairs)</h4>
+    <p class="small">
+      Write 10 Q&A pairs:
+      5 yes/no questions + 5 W‑questions.
+      At least 6 answers must contain negation (mix <span class="mono">nicht</span> and <span class="mono">kein</span>).
+    </p>
+    <details><summary>Mini example (2 pairs)</summary>
+      <div class="answer mono">
+        Kaufst du keinen Kaffee? — Ja, ich kaufe keinen Kaffee.<br/>
+        Was trinkst du nicht? — Ich trinke den Saft nicht.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (fix everything)</h4>
+    <p class="small">Rewrite the paragraph and fix negator choice, placement, and V2.</p>
+    <div class="prompt mono">
+      Heute ich kaufe nicht keinen Kaffee. Der Kaffee ist gut nicht.
+      Ich habe nicht kein Brot. Abends ich lese kein das Buch.
+    </div>
+
+    <details><summary>One corrected version (there are multiple)</summary>
+      <p class="answer mono">
+        Heute kaufe ich keinen Kaffee. Der Kaffee ist nicht gut.
+        Ich habe kein Brot. Abends lese ich das Buch nicht. <span class="small">(or: Abends lese ich kein Buch)</span>
+      </p>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>If this feels hard:</strong> good. It’s the correct kind of hard.
+    Negation forces decision-making. Decision-making is how you stop freezing.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Before you stop, prove Day 4 worked.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>I can explain when to use <span class="mono">kein</span> vs <span class="mono">nicht</span> in one sentence.</li>
+      <li>I can write 10 sentences with <span class="mono">kein</span> forms correctly (<span class="mono">kein/keine/keinen</span>).</li>
+      <li>I can place <span class="mono">nicht</span> correctly at the end in object sentences.</li>
+      <li>I can place <span class="mono">nicht</span> before an adjective with <span class="mono">sein</span>.</li>
+      <li>I can ask and answer 6 questions with negation without freezing.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Notes for Day 5 (accusative prepositions)</h3>
+    <p class="small">Write 3 bullets:</p>
+    <ol>
+      <li>The negation rule I remember instantly is…</li>
+      <li>The form I keep messing up is…</li>
+      <li>Tomorrow I want to automate…</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 4 — nicht vs kein · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

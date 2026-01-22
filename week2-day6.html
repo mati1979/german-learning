@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 2 · Day 6 — Integration Day (Accusative + Questions + Negation + Prepositions)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.15rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:105ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.pill{
+  display:inline-block;
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.22rem .55rem;
+  background:#fff;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.flashcards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:.85rem;
+  margin-top:.7rem;
+}
+.flip{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  padding:.95rem .95rem;
+  min-height:115px;
+}
+.flip .front{font-weight:700;}
+.flip .back{color:var(--muted); margin-top:.35rem;}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:780px){
+  h1{font-size:1.9rem;}
+  .two-col{grid-template-columns:1fr;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 2 · DAY 6</p>
+    <h1>Integration Day — Make Week 2 stick</h1>
+    <p class="subtitle">
+      Today is not “new grammar.” Today is <strong>control</strong>.
+      You will combine: accusative objects, accusative articles, questions (W + yes/no), negation (nicht/kein),
+      and the five accusative prepositions (<span class="mono">für/durch/gegen/ohne/um</span>) — without breaking V2.
+      If Week 2 becomes boring today, you’re doing it right.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week2.html">Week 2</a>
+      <a href="week2-day1.html">Day 1</a>
+      <a href="week2-day2.html">Day 2</a>
+      <a href="week2-day3.html">Day 3</a>
+      <a href="week2-day4.html">Day 4</a>
+      <a href="week2-day5.html">Day 5</a>
+      <a href="week2-day6.html">Day 6</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#warmup">Warm‑Up</a>
+      <a href="#blocks">Integration Blocks</a>
+      <a href="#speed">Speed</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</_toggle it_ — this is where you become dangerous</a>
+      <a href="#diagnosis">Error Diagnosis</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    Integration day works like a gym session: less theory, more reps — but smart reps.
+    You will do <strong>short blocks</strong> with a specific focus, then mix them.
+    If you do this right, you’ll notice you stop translating and start producing.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (what “success” looks like)</h3>
+      <ul class="checklist">
+        <li>I can form a correct yes/no question in 2 seconds.</li>
+        <li>I can choose <span class="mono">nicht</span> vs <span class="mono">kein</span> fast and confidently.</li>
+        <li>I automatically use <span class="mono">den</span> after <span class="mono">für/durch/gegen/ohne/um</span> (no “der” mistakes).</li>
+        <li>I keep V2 correct even when the sentence gets longer.</li>
+        <li>I can write a mini dialogue (10+ lines) using Week 2 tools naturally.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4‑hour schedule</h3>
+      <ul class="checklist">
+        <li><strong>20 min</strong> — Toolkit review (rules on one page)</li>
+        <li><strong>25 min</strong> — Warm‑up (easy reps, no stress)</li>
+        <li><strong>90 min</strong> — Integration blocks (4 blocks × 20–25 min)</li>
+        <li><strong>35 min</strong> — Speed round (timed sets)</li>
+        <li><strong>35 min</strong> — Reading + comprehension</li>
+        <li><strong>25 min</strong> — Speaking (shadowing + Q&A)</li>
+        <li><strong>30 min</strong> — Production (dialogue + paragraph)</li>
+        <li><strong>10 min</strong> — Error diagnosis + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Integration rule:</strong> You don’t “learn” Week 2 by rereading.
+      You learn it by building sentences that contain <em>two or three week‑2 features at once</em>.
+      Today’s reps are designed for that.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="toolkit">
+  <h2>Toolkit (keep this page open)</h2>
+  <p class="lede">This is your Week 2 toolbox. Read once, then use it constantly.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) Word order: V2 stays king</h3>
+    <div class="prompt mono">
+      Position 1 = Subject OR Time/Extra → Verb in Position 2 → then the rest.<br/>
+      <strong>Heute</strong> kaufe ich den Kaffee. <br/>
+      <strong>Ich</strong> kaufe heute den Kaffee.
+    </div>
+
+    <h3>2) Accusative objects (direct object)</h3>
+    <div class="prompt mono">
+      der → <strong>den</strong> (masc acc) · die → die · das → das · plural die → die<br/>
+      ein → <strong>einen</strong> (masc acc) · eine → eine · ein → ein
+    </div>
+
+    <h3>3) Questions</h3>
+    <div class="prompt mono">
+      Yes/No: <strong>Verb‑first</strong> → Kaufst du den Kaffee?<br/>
+      W‑question: <strong>W‑word</strong> + verb → Was kaufst du?
+    </div>
+
+    <h3>4) Negation</h3>
+    <div class="prompt mono">
+      <strong>kein</strong> = no/not any + noun phrase (replaces article): keinen Kaffee, kein Brot, keine Pizza<br/>
+      <strong>nicht</strong> = not (verb/action or adjective): Ich kaufe den Kaffee nicht. / Der Kaffee ist nicht gut.
+    </div>
+
+    <h3>5) Accusative prepositions</h3>
+    <div class="prompt mono">
+      <strong>für</strong> / <strong>durch</strong> / <strong>gegen</strong> / <strong>ohne</strong> / <strong>um</strong> → accusative after them
+    </div>
+
+    <div class="callout">
+      <strong>One sentence that includes everything:</strong><br/>
+      <span class="mono">Heute kaufe ich keinen Kaffee für den Freund nicht?</span> <span class="small">(too messy)</span><br/>
+      Better A1: <span class="mono">Heute kaufe ich keinen Kaffee für den Freund.</span><br/>
+      And also: <span class="mono">Heute kaufe ich den Kaffee für den Freund nicht.</span> <span class="small">(meaning: not for the friend)</span><br/>
+      For A1, keep negation simple: negate the object with <span class="mono">kein‑</span> OR negate the sentence at the end with <span class="mono">nicht</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="warmup">
+  <h2>Warm‑Up (25 minutes) — “easy wins”</h2>
+  <p class="lede">
+    The warm‑up is intentionally easy. It wakes up your patterns.
+    Don’t overthink. Aim for clean structure.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Warm‑Up A — 10 V2 sentences (time-first)</h3>
+    <p class="small">Write 10 sentences. Each begins with a time word: <span class="mono">Heute / Morgen / Jetzt / Abends</span>.</p>
+    <details><summary>Examples (use as model, not copy)</summary>
+      <div class="answer mono">
+        Heute kaufe ich den Kaffee. <br/>
+        Jetzt trinke ich den Tee. <br/>
+        Abends lese ich das Buch nicht. <br/>
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Warm‑Up B — 10 quick questions</h3>
+    <p class="small">5 yes/no + 5 W‑questions. Use: coffee/tea/pizza/bread/park/table/handy.</p>
+
+    <hr/>
+
+    <h3>Warm‑Up C — 10 “kein” noun phrases</h3>
+    <p class="small">Write 10: <span class="mono">keinen (masc)</span>, <span class="mono">keine (fem/pl)</span>, <span class="mono">kein (neut)</span>. Mix them.</p>
+  </div>
+</section>
+
+<section class="section" id="blocks">
+  <h2>Integration Blocks (90 minutes)</h2>
+  <p class="lede">
+    Each block mixes two or three features. That’s the point.
+    Do all blocks. If you’re short on time, do Blocks 1 + 3 + 4 first.
+  </p>
+
+  <div class="exercise">
+    <h4>Block 1 (20–25 min) — Accusative objects + Negation choice</h4>
+    <p class="small">
+      For each prompt, write TWO sentences:
+      (A) negate with <span class="mono">kein‑</span> (general “none”), and
+      (B) negate with <span class="mono">nicht</span> (this specific action/object).
+      This trains meaning + grammar.
+    </p>
+    <ol>
+      <li class="mono">I buy coffee.</li>
+      <li class="mono">We drink the tea.</li>
+      <li class="mono">She eats the pizza.</li>
+      <li class="mono">I read the book (today).</li>
+      <li class="mono">He buys an apple.</li>
+    </ol>
+    <details><summary>Model answers (one possible set)</summary>
+      <div class="answer mono">
+        1A) Ich kaufe keinen Kaffee. 1B) Ich kaufe den Kaffee nicht.<br/>
+        2A) Wir trinken keinen Tee. 2B) Wir trinken den Tee nicht.<br/>
+        3A) Sie isst keine Pizza. 3B) Sie isst die Pizza nicht.<br/>
+        4A) Heute lese ich kein Buch. 4B) Heute lese ich das Buch nicht.<br/>
+        5A) Er kauft keinen Apfel. 5B) Er kauft den Apfel nicht. <span class="small">(or: einen Apfel nicht)</span>
+      </div>
+    </details>
+    <div class="callout">
+      <strong>How to self-check:</strong>
+      If your sentence has <span class="mono">kein‑</span>, there should be NO other article there.
+      If it has <span class="mono">nicht</span>, keep the article and put <span class="mono">nicht</span> at the end (A1 safe).
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block 2 (20–25 min) — Questions + answers with accusative</h4>
+    <p class="small">
+      For each item, write:
+      (1) the question, (2) a short answer, (3) a full answer sentence.
+      You will mix yes/no and W‑questions.
+    </p>
+    <ol>
+      <li class="mono">Ask: What do you buy? (coffee)</li>
+      <li class="mono">Ask: Do you buy the coffee? (no)</li>
+      <li class="mono">Ask: Who buys the pizza? (she)</li>
+      <li class="mono">Ask: Why do you buy no coffee? (simple reason)</li>
+      <li class="mono">Ask: When do you come? (2 o’clock)</li>
+    </ol>
+    <details><summary>Example answers (one set)</summary>
+      <div class="answer mono">
+        1) Was kaufst du? — Kaffee. — Ich kaufe Kaffee.<br/>
+        2) Kaufst du den Kaffee? — Nein. — Nein, ich kaufe den Kaffee nicht.<br/>
+        3) Wer kauft die Pizza? — Sie. — Sie kauft die Pizza.<br/>
+        4) Warum kaufst du keinen Kaffee? — Weil… (A1) — Ich kaufe keinen Kaffee, weil ich Tee trinke.<br/>
+        5) Wann kommst du? — Um zwei Uhr. — Ich komme um zwei Uhr.
+      </div>
+    </details>
+    <p class="small">Note: “Weil…” is A2-ish, but you can keep it as a simple chunk in A1. If that annoys you, skip it and answer with two sentences.</p>
+  </div>
+
+  <div class="exercise">
+    <h4>Block 3 (20–25 min) — Prepositions + accusative articles + V2</h4>
+    <p class="small">
+      Write 20 sentences. Requirements:
+      8 with <span class="mono">für</span>, 4 with <span class="mono">durch</span>, 4 with <span class="mono">ohne</span>, 2 with <span class="mono">um</span> (time), 2 with <span class="mono">gegen</span>.
+      At least 10 must be time-first (V2).
+    </p>
+    <div class="prompt mono">
+      Heute kaufe ich den Kaffee <strong>für den</strong> Freund.<br/>
+      Jetzt gehe ich <strong>durch den</strong> Park.<br/>
+      Abends trinke ich Tee <strong>ohne</strong> Zucker.<br/>
+      Ich komme <strong>um</strong> zwei Uhr.
+    </div>
+    <div class="callout">
+      <strong>Article trap to watch:</strong> If you wrote <span class="mono">für der</span> or <span class="mono">durch der</span>, stop and fix it immediately.
+      These five prepositions force accusative. Masculine becomes <span class="mono">den</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block 4 (20 min) — Mixed: Question + Negation + Preposition</h4>
+    <p class="small">
+      Write 10 mini Q&A pairs. Each pair must include:
+      a question + a full answer, and the answer must contain (1) a prepositional phrase, and (2) negation (<span class="mono">nicht</span> or <span class="mono">kein‑</span>).
+      Keep it clean and A1.
+    </p>
+    <details><summary>Example (2 pairs)</summary>
+      <div class="answer mono">
+        Kaufst du den Kaffee für den Freund? — Nein, ich kaufe den Kaffee für den Freund nicht.<br/>
+        Trinkst du Tee ohne Zucker? — Ja, ich trinke Tee ohne Zucker.
+      </div>
+    </details>
+    <p class="small">If the “nicht placement” feels messy with prepositions, choose <span class="mono">kein‑</span> instead and keep it simple.</p>
+  </div>
+</section>
+
+<section class="section" id="speed">
+  <h2>Speed Round (35 minutes) — timed automation</h2>
+  <p class="lede">
+    Speed round is not about perfection. It’s about forcing your brain to stop “thinking in English.”
+    You will do short timed tasks and then correct only the errors.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Sprint 1 — 10 minutes: 30 phrases</h3>
+    <p class="small">Write 30 prepositional phrases as fast as possible (not full sentences). Must be accurate.</p>
+    <ul>
+      <li>15 with masculine nouns (practice <span class="mono">den</span>)</li>
+      <li>10 with feminine nouns</li>
+      <li>5 with neuter nouns</li>
+    </ul>
+
+    <hr/>
+
+    <h3>Sprint 2 — 10 minutes: 20 questions</h3>
+    <p class="small">Write 20 questions (10 yes/no + 10 W). Include at least 8 with negation.</p>
+
+    <hr/>
+
+    <h3>Sprint 3 — 15 minutes: 24 sentences (mixed constraints)</h3>
+    <p class="small">
+      Write 24 sentences with constraints:
+      <span class="mono">8</span> with <span class="mono">kein‑</span>,
+      <span class="mono">8</span> with <span class="mono">nicht</span>,
+      <span class="mono">8</span> with a preposition phrase.
+      (Some sentences can count for two categories.)
+      At least 12 time-first (V2).
+    </p>
+
+    <div class="callout">
+      <strong>Correction method:</strong>
+      Don’t rewrite everything.
+      Circle errors. Rewrite ONLY the incorrect lines correctly, plus 2 new correct lines of the same type.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (35 minutes) — mini text + comprehension</h2>
+  <p class="lede">This is A1 reading: short, clear, repeatable. Read aloud first.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Mini Text: “A small day”</h3>
+    <div class="prompt mono">
+      Heute kaufe ich keinen Kaffee. <br/>
+      Ich kaufe den Tee für den Freund. <br/>
+      Jetzt gehe ich durch den Park. <br/>
+      Abends esse ich die Pizza nicht. <br/>
+      Ich trinke Tee ohne Zucker. <br/>
+      Ich komme um zwei Uhr. <br/>
+      Morgen gehe ich nicht ohne das Handy. <br/>
+    </div>
+
+    <h3>Comprehension (answer in German, short)</h3>
+    <ol>
+      <li>Was kaufst du heute nicht?</li>
+      <li>Was kaufst du für den Freund?</li>
+      <li>Wo gehst du jetzt?</li>
+      <li>Was isst du abends nicht?</li>
+      <li>Was trinkst du ohne Zucker?</li>
+      <li>Wann kommst du?</li>
+      <li>Gehst du morgen ohne das Handy?</li>
+    </ol>
+
+    <details><summary>Sample answers</summary>
+      <ol class="answer mono">
+        <li>Ich kaufe heute keinen Kaffee.</li>
+        <li>Ich kaufe den Tee für den Freund.</li>
+        <li>Ich gehe jetzt durch den Park.</li>
+        <li>Ich esse abends die Pizza nicht.</li>
+        <li>Ich trinke Tee ohne Zucker.</li>
+        <li>Ich komme um zwei Uhr.</li>
+        <li>Nein, ich gehe morgen nicht ohne das Handy.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Reading trick:</strong> Read the text 3 times:
+      (1) slow + perfect, (2) medium + natural, (3) faster + confident.
+      Then cover it and retell it in 5 sentences.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (25 minutes) — shadow + self‑talk</h2>
+  <p class="lede">
+    You don’t need fancy listening today. You need to activate patterns.
+    Do speaking in two parts: shadowing + self-talk Q&A.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1: Shadowing (10 minutes)</h3>
+    <p class="small">Read the mini text aloud and imitate rhythm. Don’t stop for mistakes. Repeat twice.</p>
+
+    <hr/>
+
+    <h3>Part 2: Self‑talk Q&A (15 minutes)</h3>
+    <p class="small">Ask yourself the questions below and answer with full sentences. (Yes, it feels silly. That’s the point.)</p>
+    <ol>
+      <li>Was kaufst du heute?</li>
+      <li>Kaufst du keinen Kaffee?</li>
+      <li>Für wen kaufst du den Tee?</li>
+      <li>Gehst du durch den Park?</li>
+      <li>Trinkst du Tee ohne Zucker?</li>
+      <li>Wann kommst du?</li>
+      <li>Isst du die Pizza nicht?</li>
+      <li>Gehst du morgen ohne das Handy?</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Speaking rule:</strong> If you freeze, produce a smaller correct sentence, not a bigger wrong one.
+      Example: instead of “I buy coffee for…” just say <span class="mono">Ich kaufe Kaffee.</span> Then add the phrase.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (30 minutes) — the “I can actually use German” part</h2>
+  <p class="lede">
+    Production is the final boss. It forces integration naturally.
+    Keep it A1-simple and correct. You are training reliability, not poetry.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — Dialogue (12–16 lines)</h4>
+    <p class="small">
+      Write a dialogue in a café/shop scenario.
+      Requirements:
+      6 questions total (mix yes/no + W), 6 answers with full sentences,
+      at least 4 uses of <span class="mono">kein/nicht</span>,
+      at least 4 uses of a preposition phrase (<span class="mono">für/durch/ohne/um/gegen</span>),
+      and at least 6 time-first lines (V2).
+    </p>
+    <details><summary>Dialogue skeleton (fill it)</summary>
+      <div class="answer mono">
+        A: Was kaufst du heute?<br/>
+        B: ...<br/>
+        A: Kaufst du keinen Kaffee?<br/>
+        B: ...<br/>
+        A: Für wen ist der Tee?<br/>
+        B: ...<br/>
+        A: Wann kommst du?<br/>
+        B: ...<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Paragraph (8–10 sentences)</h4>
+    <p class="small">
+      Write an 8–10 sentence paragraph about your day (real or fictional).
+      Must include:
+      2 negations with <span class="mono">kein‑</span>,
+      2 negations with <span class="mono">nicht</span>,
+      3 preposition phrases from the set,
+      3 questions (insert them as lines),
+      and at least 5 time-first sentences.
+    </p>
+    <div class="callout">
+      <strong>Self-check method:</strong>
+      Underline verbs. Circle negators. Box the prepositions.
+      If you can’t visually see the structure, you’re probably guessing.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Error-hunting rewrite (integration)</h4>
+    <p class="small">Fix word order, articles, negation choice, and prepositions. Rewrite cleanly.</p>
+    <div class="prompt mono">
+      Heute ich kaufe nicht keinen Kaffee für der Freund.
+      Jetzt gehe ich durch der Park.
+      Abends trinke ich Tee ohne das Zucker nicht.
+      Ich komme zwei Uhr um.
+    </div>
+
+    <details><summary>One corrected version (A1 clean)</summary>
+      <p class="answer mono">
+        Heute kaufe ich keinen Kaffee für den Freund.
+        Jetzt gehe ich durch den Park.
+        Abends trinke ich Tee ohne Zucker.
+        Ich komme um zwei Uhr.
+      </p>
+      <p class="small">Many variants exist — choose clarity and correct A1 patterns.</p>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="diagnosis">
+  <h2>Error Diagnosis (10 minutes) — your personal “bug list”</h2>
+  <p class="lede">
+    This is where you get smarter. Don’t just “practice more.”
+    Identify the exact error type and fix that type.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Common Week 2 error types</h3>
+    <table class="table">
+      <tr><th>Error</th><th>Example (wrong)</th><th>Fix rule</th><th>Fix action</th></tr>
+      <tr>
+        <td>Wrong accusative masculine</td>
+        <td class="mono">für der Freund</td>
+        <td>After accusative preps → <span class="mono">den</span></td>
+        <td>Rewrite phrase 5×: <span class="mono">für den Freund</span></td>
+      </tr>
+      <tr>
+        <td>Negator confusion</td>
+        <td class="mono">Ich kaufe nicht keinen Kaffee.</td>
+        <td>Choose one meaning: <span class="mono">kein</span> OR <span class="mono">nicht</span></td>
+        <td>Write two correct versions, explain meaning difference</td>
+      </tr>
+      <tr>
+        <td>Question order wrong</td>
+        <td class="mono">Du kaufst den Kaffee?</td>
+        <td>Yes/no = verb-first</td>
+        <td>Rewrite 10 questions with verb-first</td>
+      </tr>
+      <tr>
+        <td>V2 breaks when sentence is long</td>
+        <td class="mono">Heute ich kaufe...</td>
+        <td>Verb stays position 2</td>
+        <td>Rewrite 10 time-first sentences</td>
+      </tr>
+    </table>
+
+    <hr/>
+    <h3>Your bug list (write it)</h3>
+    <ol>
+      <li>My #1 error today was…</li>
+      <li>It happened because…</li>
+      <li>My fix drill tomorrow is… (specific)</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">If you can do this, Week 2 is working.</p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Exit task (do without notes)</h3>
+    <ol>
+      <li>Write 6 time-first sentences (V2) with accusative objects.</li>
+      <li>Write 4 questions (2 yes/no + 2 W).</li>
+      <li>Write 4 sentences using <span class="mono">kein</span> (correct forms).</li>
+      <li>Write 4 sentences using <span class="mono">nicht</span> (correct placement).</li>
+      <li>Write 4 sentences with a preposition phrase from <span class="mono">für/durch/gegen/ohne/um</span>.</li>
+      <li>Write a 6-line mini dialogue with at least 2 negations + 2 preposition phrases.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>Score yourself honestly:</strong>
+      If you’re above 80% correct, you’re on track.
+      If you’re below 70%, repeat integration day tomorrow (yes, really) — it’s the fastest fix.
+    </div>
+
+    <hr/>
+    <h3 style="margin-top:0">Next: Day 7 — Checkpoint + mini test</h3>
+    <p class="small">Tomorrow you’ll do a structured checkpoint with a mini test and a short speaking prompt. No new topics — just proving the skill.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 2 · Day 6 — Integration Day · Designed for a 4‑hour study block</small>
+</footer>
+
+</body>
+</html>

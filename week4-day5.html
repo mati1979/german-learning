@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 4 · Day 5 — Reading & Writing Mini Tests (A1 Automation)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family: Georgia, "Times New Roman", serif;line-height:1.65;}
+a{color:inherit;}
+header{background:var(--paper);border-bottom:1px solid var(--border);}
+.header-inner{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 1.6rem;}
+.kicker{letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:.78rem;margin:0 0 .55rem;}
+h1{font-size:2.25rem;margin:.15rem 0 .35rem;}
+.subtitle{color:var(--muted);max-width:110ch;margin:0;font-size:1.02rem;}
+.nav{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem;padding-top:1rem;border-top:1px solid var(--border);}
+.nav a{text-decoration:none;padding:.42rem .7rem;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.nav a:hover{border-color:#cfcfcf;}
+main{max-width:980px;margin:0 auto;padding:2.2rem 1.2rem 5rem;}
+.section{margin:2.1rem 0;}
+.section h2{font-size:1.6rem;margin:0 0 .6rem;}
+.section h3{font-size:1.18rem;margin:1.2rem 0 .4rem;}
+.lede{color:var(--muted);margin:.25rem 0 1.15rem;max-width:110ch;}
+.card{background:var(--paper);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:1.25rem 1.2rem;}
+.grid{display:grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap:1rem;}
+.callout{border-left:4px solid var(--accent);padding:.9rem 1rem;background:#fff;border:1px solid var(--border);border-radius:12px;}
+.callout strong{color:var(--accent);}
+.checklist{list-style:none;padding-left:0;margin:.4rem 0 0;}
+.checklist li{margin:.35rem 0;padding-left:1.6rem;position:relative;}
+.checklist li:before{content:"☐";position:absolute;left:0;color:var(--muted);}
+hr{border:none;border-top:1px solid var(--border);margin:1.2rem 0;}
+.table{width:100%;border-collapse:collapse;margin:.6rem 0;overflow:hidden;border-radius:12px;border:1px solid var(--border);}
+.table th,.table td{padding:.6rem .65rem;border-bottom:1px solid var(--border);vertical-align:top;}
+.table th{text-align:left;background:#fcfcfc;font-weight:700;}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem;color:var(--muted);}
+.exercise{padding:1rem 1rem;border:1px dashed #d7d7d7;border-radius:12px;background:#fff;margin:.8rem 0;}
+.exercise h4{margin:.2rem 0 .55rem;font-size:1.05rem;}
+.prompt{background:#fcfcfc;border:1px solid var(--border);border-radius:12px;padding:.8rem .9rem;margin:.6rem 0;}
+details{border:1px solid var(--border);border-radius:12px;padding:.7rem .85rem;background:#fff;margin:.55rem 0;}
+summary{cursor:pointer;font-weight:700;}
+.badge{display:inline-block;padding:.25rem .55rem;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:.78rem;}
+.timer{font-family:var(--mono);padding:.45rem .65rem;border:1px solid var(--border);border-radius:12px;background:#fff;display:inline-block;}
+@media (max-width:780px){h1{font-size:1.95rem;}}
+footer{border-top:1px solid var(--border);background:var(--paper);padding:1.8rem 1.2rem;color:var(--muted);text-align:center;}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 4 · DAY 5</p>
+    <h1>Reading & Writing Mini Tests</h1>
+    <p class="subtitle">
+      Today you simulate A1 performance: short texts, clear questions, fast writing, and corrections.
+      You are not learning “new grammar.” You’re training <strong>reliability</strong>.
+      If you can pass these mini tests, the A1 exit tasks will feel manageable (even boring).
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week4.html">Week 4</a>
+      <a href="week4-day4.html">Day 4</a>
+      <a href="week4-day5.html">Day 5</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#reading">Reading Tests</a>
+      <a href="#writing">Writing Tests</a>
+      <a href="#correction">Correction System</a>
+      <a href="#drills">Timed Drills</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    The tests are small on purpose. A1 is not “one big exam.” It’s many small moments of control.
+    You’ll do reading tests + writing tests + correction loops.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets</h3>
+      <ul class="checklist">
+        <li>I can understand the main idea of an A1 mini text.</li>
+        <li>I can answer questions in simple German sentences.</li>
+        <li>I can write short texts with stable V2 and endings where needed.</li>
+        <li>I can self-correct common errors (V2, modal endings, separable prefix, articles).</li>
+        <li>I can do this under time pressure without freezing.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>75 min</strong> — Reading mini tests (3 texts + tasks)</li>
+        <li><strong>75 min</strong> — Writing mini tests (3 tasks + timed)</li>
+        <li><strong>45 min</strong> — Correction system + rewrite</li>
+        <li><strong>30 min</strong> — Timed mixed drills (speed + accuracy)</li>
+        <li><strong>15 min</strong> — Exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Rule:</strong> Answer in German. Short is fine. Correct is king.
+      If you don’t know a word, paraphrase with A1 words you know.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading Mini Tests (75 minutes)</h2>
+  <p class="lede">
+    For each text: read once normally, once out loud.
+    Then do tasks. Do not translate word-for-word.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Reading Test 1 — Schedule + shopping</h3>
+    <div class="prompt mono">
+      Heute ist Montag. Um halb acht stehe ich auf. Um neun Uhr muss ich einkaufen.<br/>
+      Ich kaufe Brot und ich kaufe auch ein Buch. Am Abend treffe ich meine Freunde.<br/>
+      Um zehn Uhr rufe ich meinen Freund an. Ich sehe nicht fern.
+    </div>
+
+    <h3>Tasks</h3>
+    <ol>
+      <li>Mark 5 time phrases in the text.</li>
+      <li>Answer in German (full sentences):<br/>
+        a) Welcher Tag ist heute?<br/>
+        b) Um wie viel Uhr steht die Person auf?<br/>
+        c) Was kauft die Person?<br/>
+        d) Wen trifft die Person am Abend?<br/>
+        e) Sieht die Person fern?</li>
+      <li>Rewrite 2 sentences as yes/no questions.</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <div class="mono small">
+        a) Heute ist Montag.<br/>
+        b) Die Person steht um halb acht auf.<br/>
+        c) Die Person kauft Brot und ein Buch.<br/>
+        d) Die Person trifft am Abend ihre Freunde.<br/>
+        e) Nein, die Person sieht nicht fern.<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="margin-top:1rem;">
+    <h3 style="margin-top:0">Reading Test 2 — Appointment change</h3>
+    <div class="prompt mono">
+      A: Wann hast du Zeit?<br/>
+      B: Am Dienstag um zwei Uhr kann ich. Und du?<br/>
+      A: Ich kann nicht am Dienstag. Ich muss arbeiten.<br/>
+      B: Okay. Können wir den Termin ändern?<br/>
+      A: Ja. Am Mittwoch um halb acht passt es.<br/>
+      B: Super. Dann sehen wir uns am Mittwoch.
+    </div>
+
+    <h3>Tasks</h3>
+    <ol>
+      <li>What is the problem? Answer in German with one sentence.</li>
+      <li>When do they meet? Answer with day + time.</li>
+      <li>Find 2 modal verbs in the text and copy the sentences.</li>
+      <li>Rewrite 2 lines to make them more polite (<span class="mono">bitte</span> + Sie-form optional).</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <div class="mono small">
+        1) A kann am Dienstag nicht.<br/>
+        2) Sie treffen sich am Mittwoch um halb acht.<br/>
+        3) Ich kann … / Ich muss … / Können wir …?<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="margin-top:1rem;">
+    <h3 style="margin-top:0">Reading Test 3 — Lost item + instructions</h3>
+    <div class="prompt mono">
+      Ich suche mein Handy, aber ich finde es nicht. Um zwei Uhr muss ich meinen Freund anrufen.<br/>
+      Bitte hilf mir! Mach die Tür zu und such die Tasche. Vielleicht ist das Handy in der Tasche.<br/>
+      Ruf meinen Freund bitte nicht an. Ich rufe ihn später an.
+    </div>
+
+    <h3>Tasks</h3>
+    <ol>
+      <li>Why is the person stressed? (one sentence in German)</li>
+      <li>List 4 imperatives from the text.</li>
+      <li>Find 2 negatives (<span class="mono">nicht</span> or <span class="mono">kein</span>).</li>
+      <li>Rewrite the last sentence with a time phrase first (V2).</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <div class="mono small">
+        1) Die Person findet das Handy nicht und muss um zwei Uhr anrufen.<br/>
+        2) hilf, mach, such, ruf ...<br/>
+        4) Später rufe ich ihn an.<br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Reading benchmark:</strong> If you can answer 70–80% without translating,
+      your A1 reading is working.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="writing">
+  <h2>Writing Mini Tests (75 minutes)</h2>
+  <p class="lede">
+    These are timed because real A1 requires speed + control.
+    You will write, then fix. The fixing is where learning happens.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Writing Test 1 (20 min) — “My day” paragraph</h3>
+    <p class="small">
+      Write 8–10 sentences about your day.
+      Requirements:
+      <span class="badge">5</span> time phrases,
+      <span class="badge">2</span> modals,
+      <span class="badge">2</span> separable verbs,
+      <span class="badge">3</span> accusative objects,
+      <span class="badge">2</span> negatives.
+    </p>
+    <p class="small"><span class="timer">Timer: 12 min write + 8 min check</span></p>
+
+    <details><summary>Starter frames (use or ignore)</summary>
+      <div class="mono small">
+        Um ___ Uhr stehe ich auf.<br/>
+        Heute muss ich ___.<br/>
+        Am Abend rufe ich ___ an.<br/>
+        Ich kaufe ___.<br/>
+        Ich finde ___ nicht.<br/>
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="margin-top:1rem;">
+    <h3 style="margin-top:0">Writing Test 2 (25 min) — Dialogue: appointment + change</h3>
+    <p class="small">
+      Write 12–14 lines (A and B) making and changing an appointment.
+      Requirements:
+      <span class="badge">4</span> questions,
+      <span class="badge">3</span> times,
+      <span class="badge">2</span> days/dates,
+      <span class="badge">3</span> modals,
+      <span class="badge">2</span> imperatives (bitte),
+      <span class="badge">2</span> negatives.
+    </p>
+    <p class="small"><span class="timer">Timer: 15 min write + 10 min check</span></p>
+
+    <details><summary>Chunk bank</summary>
+      <div class="mono small">
+        Wann hast du Zeit?<br/>
+        Kannst du am ___ um ___?<br/>
+        Ich kann nicht / Ich habe keine Zeit.<br/>
+        Können wir den Termin ändern?<br/>
+        Dann sehen wir uns am ___.<br/>
+        Komm bitte um ___.<br/>
+        Warte kurz / Einen Moment bitte.
+      </div>
+    </details>
+  </div>
+
+  <div class="card" style="margin-top:1rem;">
+    <h3 style="margin-top:0">Writing Test 3 (30 min) — Task-based message (instructions)</h3>
+    <p class="small">
+      Scenario: You write a message to a friend with instructions (lost item / meeting / shopping).
+      Write 10–12 lines.
+      Requirements:
+      <span class="badge">6</span> imperatives,
+      <span class="badge">3</span> objects,
+      <span class="badge">2</span> time phrases,
+      <span class="badge">2</span> negatives (nicht/kein),
+      <span class="badge">1</span> separable verb,
+      <span class="badge">1</span> modal sentence.
+    </p>
+    <p class="small"><span class="timer">Timer: 18 min write + 12 min check</span></p>
+
+    <details><summary>Starter (you continue)</summary>
+      <div class="mono small">
+        Hey! Bitte hilf mir kurz.<br/>
+        Um zwei Uhr muss ich ___.<br/>
+        Such bitte ___.<br/>
+        Kauf bitte ___. Kauf keinen ___.<br/>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="correction">
+  <h2>Correction System (45 minutes) — how to actually improve</h2>
+  <p class="lede">
+    You will correct your writing using a small “bug checklist.” This is how accuracy improves.
+    Don’t just fix randomly — fix by category.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Bug checklist (A1)</h3>
+    <table class="table">
+      <tr><th>Bug type</th><th>What to check</th><th>Fix example</th></tr>
+      <tr>
+        <td><strong>V2</strong></td>
+        <td>When something is first, verb must be 2nd.</td>
+        <td class="mono">Heute kaufe ich… (not: Heute ich kaufe…)</td>
+      </tr>
+      <tr>
+        <td><strong>Modal</strong></td>
+        <td>Infinitive goes at the end.</td>
+        <td class="mono">Ich muss einkaufen.</td>
+      </tr>
+      <tr>
+        <td><strong>Separable</strong></td>
+        <td>Prefix at the end in main clauses.</td>
+        <td class="mono">Ich rufe ihn an.</td>
+      </tr>
+      <tr>
+        <td><strong>Akk objects</strong></td>
+        <td>Direct object = accusative (den/…)</td>
+        <td class="mono">Ich sehe den Freund.</td>
+      </tr>
+      <tr>
+        <td><strong>nicht/kein</strong></td>
+        <td>kein = noun negation; nicht = verb/phrase negation</td>
+        <td class="mono">kein Brot / Brot nicht</td>
+      </tr>
+    </table>
+
+    <h3>Rewrite rule</h3>
+    <p class="small">
+      Choose the <strong>5 worst sentences</strong> from your writing.
+      Rewrite each sentence <strong>twice</strong>: one clean and simple, one slightly longer (with time or object).
+      Say both out loud.
+    </p>
+
+    <div class="callout">
+      <strong>Learning trick:</strong> Rewriting the same sentence correctly twice is more powerful
+      than writing 20 new broken sentences.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Timed Mixed Drills (30 minutes)</h2>
+  <p class="lede">Speed + accuracy. Keep sentences simple.</p>
+
+  <div class="exercise">
+    <h4>Drill A (10 min) — 20 sentence sprint</h4>
+    <p class="small">Write 20 sentences. Each sentence must include at least 2 of these: time phrase, modal, separable, object, negation.</p>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill B (10 min) — Transformations (10 sets)</h4>
+    <p class="small">
+      For each base sentence, produce:
+      statement → yes/no question → W-question → negative.
+      (That’s 40 lines total.)
+    </p>
+    <div class="prompt mono">
+      Base ideas: einkaufen, anrufen, aufstehen, treffen, suchen, finden, lesen, lernen, Kaffee trinken, Termin ändern
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Drill C (10 min) — Mini correction</h4>
+    <p class="small">Correct these quickly:</p>
+    <div class="prompt mono">
+      Heute ich muss einkaufen.<br/>
+      Um zwei Uhr ich rufe meinen Freund an.<br/>
+      Ich will kaufen die Bücher.<br/>
+      Ich finde nicht mein Handy.<br/>
+      Mach das nicht bitte.<br/>
+      Ich habe keinen Tasche.<br/>
+      Wann du hast Zeit?<br/>
+      Um halb acht ich stehe auf.<br/>
+      Wir treffen die Freunde am Abend nicht.<br/>
+      Ich muss anrufen den Lehrer.
+    </div>
+
+    <details><summary>Possible corrections</summary>
+      <div class="mono small">
+        Heute muss ich einkaufen.<br/>
+        Um zwei Uhr rufe ich meinen Freund an.<br/>
+        Ich will die Bücher kaufen.<br/>
+        Ich finde mein Handy nicht.<br/>
+        Mach das bitte nicht.<br/>
+        Ich habe keine Tasche.<br/>
+        Wann hast du Zeit?<br/>
+        Um halb acht stehe ich auf.<br/>
+        Am Abend treffen wir die Freunde nicht. <span class="small">(or: ... nicht)</span><br/>
+        Ich muss den Lehrer anrufen.
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (15 minutes)</h2>
+  <p class="lede">If you can do this cleanly, you’re basically at A1 “automation.”</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Reading: I answered 80% of questions in German.</li>
+      <li>Writing: I produced 3 texts with stable V2 most of the time.</li>
+      <li>I corrected my top 5 sentences (rewrote twice each).</li>
+      <li>I can do a 10-sentence sprint with time/modals/separables/objects.</li>
+      <li>Bug list: My #1 issue today is ____. My fix tomorrow: __ minutes of Drill ___.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Tomorrow (Day 6):</strong> Mock situations + speaking prompts.
+      You’ll use the exact language you practiced today — but live.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 4 · Day 5 — Reading & Writing Mini Tests · A1 Automation & Exit</small>
+</footer>
+
+</body>
+</html>

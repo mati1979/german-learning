@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 4 · Day 1 — Imperatives + Daily Language (A1 Automation)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 4 · DAY 1</p>
+    <h1>Imperatives + Daily Language (Automation)</h1>
+    <p class="subtitle">
+      Today you add one of the most useful A1 tools: <strong>commands and requests</strong>.
+      Not as theory — as <em>real daily German</em>: “Come!”, “Wait!”, “Tell me!”, “Please don’t…”.
+      Week 4 is about making A1 stable and boring (in a good way).
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week4.html">Week 4</a>
+      <a href="week4-day1.html">Day 1</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#imperative">Imperative Forms</a>
+      <a href="#daily">Daily Language</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    Week 4 is automation: fewer freezes, faster retrieval, stable sentences under mixing.
+    Imperatives are perfect for this because they’re short, high-frequency, and immediately usable.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end)</h3>
+      <ul class="checklist">
+        <li>I can form imperatives for <span class="mono">du</span>, <span class="mono">ihr</span>, and <span class="mono">Sie</span>.</li>
+        <li>I can use common daily commands and requests naturally.</li>
+        <li>I can make polite imperatives with <span class="mono">bitte</span> and softeners.</li>
+        <li>I can negate imperatives (Don’t do that!) correctly.</li>
+        <li>I can combine imperatives with A1 basics: objects, pronouns, separable verbs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Lesson + examples (imperative forms + daily phrases)</li>
+        <li><strong>90 min</strong> — Drills (Blocks A–D)</li>
+        <li><strong>45 min</strong> — Vocabulary in context (command bank)</li>
+        <li><strong>25 min</strong> — Reading (short instructions + comprehension)</li>
+        <li><strong>20 min</strong> — Speaking (roleplay + fast switching)</li>
+        <li><strong>20 min</strong> — Production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>A1 focus:</strong> Imperatives are still main-clause German. No fancy grammar.
+      Short, correct, repeatable.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="imperative">
+  <h2>Imperative Forms (A1 core)</h2>
+  <p class="lede">
+    German has three main imperative “targets”:
+    <strong>du</strong> (informal singular), <strong>ihr</strong> (informal plural), and <strong>Sie</strong> (formal).
+    You’ll use all three — but <span class="mono">du</span> and <span class="mono">Sie</span> are the most important early.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) du-imperative (informal singular)</h3>
+    <p class="small">
+      Basic idea: use the verb stem (often like “du” form without <span class="mono">-st</span>).
+      Sometimes an extra <span class="mono">-e</span> appears (less important at A1; optional in many cases).
+    </p>
+
+    <table class="table">
+      <tr><th>Infinitive</th><th>du-form</th><th>Imperative (du)</th><th>Meaning</th></tr>
+      <tr><td class="mono">kommen</td><td class="mono">du kommst</td><td class="mono">Komm!</td><td>Come!</td></tr>
+      <tr><td class="mono">warten</td><td class="mono">du wartest</td><td class="mono">Warte!</td><td>Wait!</td></tr>
+      <tr><td class="mono">machen</td><td class="mono">du machst</td><td class="mono">Mach!</td><td>Do!/Make!</td></tr>
+      <tr><td class="mono">sagen</td><td class="mono">du sagst</td><td class="mono">Sag!</td><td>Say!/Tell!</td></tr>
+      <tr><td class="mono">hören</td><td class="mono">du hörst</td><td class="mono">Hör (zu)!</td><td>Listen!</td></tr>
+      <tr><td class="mono">lesen</td><td class="mono">du liest</td><td class="mono">Lies!</td><td>Read!</td></tr>
+      <tr><td class="mono">nehmen</td><td class="mono">du nimmst</td><td class="mono">Nimm!</td><td>Take!</td></tr>
+      <tr><td class="mono">geben</td><td class="mono">du gibst</td><td class="mono">Gib!</td><td>Give!</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>A1 rule of thumb:</strong> If it’s a regular verb, try “remove <span class="mono">-st</span>” from the <span class="mono">du</span> form:
+      <span class="mono">du machst → Mach!</span>, <span class="mono">du wartest → Warte!</span>.
+      For common irregulars, just memorize the few high-frequency ones (nimm, gib, lies).
+    </div>
+
+    <hr/>
+
+    <h3>2) ihr-imperative (informal plural)</h3>
+    <p class="small">
+      Very easy: it looks like the <span class="mono">ihr</span> form <em>without the pronoun</em>.
+    </p>
+    <div class="prompt mono">
+      Ihr kommt → Kommt!<br/>
+      Ihr wartet → Wartet!<br/>
+      Ihr macht → Macht!<br/>
+      Ihr hört zu → Hört zu!
+    </div>
+
+    <hr/>
+
+    <h3>3) Sie-imperative (formal)</h3>
+    <p class="small">
+      This is the most polite and super useful in real life.
+      Structure: <strong>Verb + Sie</strong> (and usually <span class="mono">bitte</span>).
+    </p>
+
+    <div class="prompt mono">
+      Kommen Sie bitte!<br/>
+      Warten Sie bitte!<br/>
+      Machen Sie bitte die Tür zu.<br/>
+      Sagen Sie bitte Ihren Namen.
+    </div>
+
+    <div class="callout">
+      <strong>Important:</strong> With <span class="mono">Sie</span>, you keep the verb conjugation like normal present:
+      <span class="mono">Sie machen</span> → <span class="mono">Machen Sie!</span>.
+    </div>
+
+    <hr/>
+
+    <h3>Negating imperatives (Don’t…)</h3>
+    <p class="small">
+      Use <span class="mono">nicht</span> to negate an action, or <span class="mono">kein</span> to negate a noun.
+      In imperatives, <span class="mono">nicht</span> typically comes after the object/phrase.
+    </p>
+
+    <div class="prompt mono">
+      Mach das nicht! (Don’t do that!)<br/>
+      Komm nicht! (Don’t come!)<br/>
+      Ruf mich nicht an! (Don’t call me!)<br/>
+      Kauf kein Brot! (Don’t buy bread.)<br/>
+      Kauf keine Bücher! (Don’t buy books.)
+    </div>
+
+    <div class="callout">
+      <strong>A1 memory:</strong> “no/not any noun” = <span class="mono">kein</span>.
+      “not (verb/phrase)” = <span class="mono">nicht</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="daily">
+  <h2>Daily Language: Commands, Requests, and Softening</h2>
+  <p class="lede">
+    Real German isn’t just “Do this!” It’s also: “Please…”, “Just a moment…”, “Could you…”.
+    Today you’ll build a command bank you can reuse forever.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Polite softeners (A1)</h3>
+    <table class="table">
+      <tr><th>Phrase</th><th>Meaning</th><th>Use</th></tr>
+      <tr><td class="mono">bitte</td><td>please / you’re welcome</td><td>softens commands</td></tr>
+      <tr><td class="mono">mal</td><td>just / for a moment</td><td>casual softener</td></tr>
+      <tr><td class="mono">einfach</td><td>just / simply</td><td>reduces pressure</td></tr>
+      <tr><td class="mono">kurz</td><td>briefly</td><td>quick action request</td></tr>
+      <tr><td class="mono">einen Moment</td><td>a moment</td><td>“wait a second”</td></tr>
+    </table>
+
+    <div class="prompt mono">
+      Komm bitte.<br/>
+      Warte mal.<br/>
+      Hör bitte kurz zu.<br/>
+      Einen Moment bitte!
+    </div>
+
+    <div class="callout">
+      <strong>Note:</strong> <span class="mono">mal</span> is extremely common in spoken German.
+      It makes commands sound less harsh.
+    </div>
+
+    <hr/>
+
+    <h3>Super high-frequency imperatives (learn these as chunks)</h3>
+    <div class="two-col">
+      <div>
+        <h3>At home / daily</h3>
+        <div class="prompt mono">
+          Komm! / Kommt! / Kommen Sie!<br/>
+          Warte! / Wartet! / Warten Sie!<br/>
+          Mach die Tür auf!<br/>
+          Mach die Tür zu!<br/>
+          Steh auf! (get up!)<br/>
+          Setz dich! (sit down!)<br/>
+          Komm mit! (come along!)<br/>
+          Sei bitte leise! (be quiet!)<br/>
+        </div>
+      </div>
+
+      <div>
+        <h3>Communication</h3>
+        <div class="prompt mono">
+          Hör zu! (listen!)<br/>
+          Sag das nochmal. (say that again)<br/>
+          Sprich langsam. (speak slowly)<br/>
+          Schreib das auf. (write that down)<br/>
+          Lies das. (read that)<br/>
+          Gib mir das. (give me that)<br/>
+          Nimm das. (take that)<br/>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>A1 trick:</strong> Build “command frames”:
+      <span class="mono">Mach ___ auf/zu</span>, <span class="mono">Sag ___</span>, <span class="mono">Gib mir ___</span>.
+      Then you can swap in vocabulary forever.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes) — automation through repetition</h2>
+  <p class="lede">
+    These drills are designed to make imperatives automatic and to integrate them with A1 skills:
+    objects (accusative), separable verbs, negation, and polite language.
+  </p>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Form building: du / ihr / Sie (45 forms)</h4>
+    <p class="small">
+      For each verb, write 3 imperatives: <span class="mono">du</span>, <span class="mono">ihr</span>, <span class="mono">Sie</span>.
+      Add <span class="mono">bitte</span> to the <span class="mono">Sie</span> form.
+    </p>
+
+    <div class="prompt mono">
+      Verbs: kommen, warten, machen, sagen, hören, lesen, nehmen, geben, kaufen, trinken, essen, lernen, suchen, aufstehen, anrufen, einkaufen
+    </div>
+
+    <details><summary>Sample for 3 verbs</summary>
+      <div class="answer mono">
+        kommen: Komm! · Kommt! · Kommen Sie bitte!<br/>
+        warten: Warte! · Wartet! · Warten Sie bitte!<br/>
+        anrufen: Ruf an! · Ruft an! · Rufen Sie bitte an!
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Don’t get stuck:</strong> if a du-form feels uncertain (irregular), you can still master <span class="mono">Sie</span> and <span class="mono">ihr</span> reliably.
+      But for the high-frequency irregulars (nimm/gib/lies), memorize.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Object frames (40 commands)</h4>
+    <p class="small">
+      Write 40 commands using object frames. Mix:
+      <span class="badge">accusative objects</span>,
+      <span class="badge">possessives</span>,
+      <span class="badge">plural</span>.
+      Use both du and Sie.
+    </p>
+
+    <div class="prompt mono">
+      Nouns: das Handy, das Buch, das Brot, die Tasche, die Tür, die Wohnung, die Bücher, die Taschen<br/>
+      Possessives: mein/dein/sein/ihr/unser
+    </div>
+
+    <details><summary>Example set (10)</summary>
+      <div class="answer mono">
+        Gib mir mein Handy.<br/>
+        Nimm dein Buch.<br/>
+        Mach die Tür zu.<br/>
+        Mach bitte die Tür auf.<br/>
+        Kaufen Sie bitte das Brot.<br/>
+        Lies mein Buch.<br/>
+        Such deine Tasche.<br/>
+        Rufen Sie bitte Ihren Freund an.<br/>
+        Kauf die Bücher nicht!<br/>
+        Mach das nicht!
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (20 min) — Negation: nicht vs kein (24 commands)</h4>
+    <p class="small">
+      Write 24 negative imperatives:
+      12 with <span class="mono">nicht</span>, 12 with <span class="mono">kein</span>.
+      Mix du and Sie.
+    </p>
+
+    <details><summary>Examples (not the full set)</summary>
+      <div class="answer mono">
+        Mach das nicht!<br/>
+        Ruf mich nicht an!<br/>
+        Komm nicht mit!<br/>
+        Kauf kein Brot!<br/>
+        Kauf keine Bücher!<br/>
+        Essen Sie bitte keine Pizza. <span class="small">(A1 structure)</span>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Check:</strong> If you can replace it with “no/not any + noun” → use <span class="mono">kein</span>.
+      Otherwise, use <span class="mono">nicht</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (20 min) — Mixed correction (20 lines)</h4>
+    <p class="small">Rewrite correctly. Each line has 1–2 mistakes (form, word order, negation, separable prefix).</p>
+    <div class="prompt mono">
+      Kommst bitte! <br/>
+      Machst die Tür zu! <br/>
+      Ruf mich an nicht! <br/>
+      Kaufen Sie bitte kein die Bücher. <br/>
+      Warte nicht mal! <br/>
+      Hörst zu! <br/>
+      Nehmen du das Handy! <br/>
+      Geben Sie mir mein Buch! <br/>
+      Mach nicht das! <br/>
+      Rufen Sie bitte an Ihren Freund. <br/>
+      Lies du das Buch! <br/>
+      Suchst deine Tasche! <br/>
+      Kauf nicht Brot! <br/>
+      Mach die Tür auf nicht! <br/>
+      Kommt Sie bitte! <br/>
+      Wartet Sie bitte! <br/>
+      Nimm das nicht! <br/>
+      Kauf keine Brot! <br/>
+      Schreib das auf bitte! <br/>
+      Setz dich nicht! <br/>
+    </div>
+
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Komm bitte! <span class="small">(or: Komm!)</span><br/>
+        Mach die Tür zu!<br/>
+        Ruf mich nicht an!<br/>
+        Kaufen Sie bitte die Bücher nicht. <span class="small">(or: Kaufen Sie bitte keine Bücher.)</span><br/>
+        Warte mal! <span class="small">(or: Warte nicht!)</span><br/>
+        Hör zu!<br/>
+        Nimm das Handy!<br/>
+        Geben Sie mir bitte mein Buch!<br/>
+        Mach das nicht!<br/>
+        Rufen Sie bitte Ihren Freund an!<br/>
+        Lies das Buch!<br/>
+        Such deine Tasche!<br/>
+        Kauf kein Brot!<br/>
+        Mach die Tür nicht auf! <span class="small">(or: Mach die Tür nicht auf!)</span><br/>
+        Kommen Sie bitte!<br/>
+        Warten Sie bitte!<br/>
+        Nimm das nicht!<br/>
+        Kauf kein Brot!<br/>
+        Schreib das bitte auf!<br/>
+        Setz dich nicht! <span class="small">(valid, but context matters)</span><br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Note:</strong> Many commands have multiple correct versions depending on emphasis.
+      For A1, choose one clean pattern and repeat it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (25 minutes) — instructions in context</h2>
+  <p class="lede">
+    Read once out loud, then answer questions in simple A1 German.
+    Imperatives are common in signs, messages, and instructions.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Hallo! Bitte komm kurz. Warte einen Moment.<br/>
+      Mach die Tür zu und setz dich.<br/>
+      Hör bitte zu: Schreib das auf.<br/>
+      Ruf deinen Freund an, aber ruf mich nicht an.<br/>
+      Kauf bitte Brot und zwei Brötchen. Kauf keinen Kaffee.<br/>
+    </div>
+
+    <h3>Tasks</h3>
+    <ol>
+      <li>List 6 imperatives from the text.</li>
+      <li>Which lines use <span class="mono">nicht</span>? Which use <span class="mono">kein</span>?</li>
+      <li>Rewrite 3 lines in <span class="mono">Sie</span>-form (formal).</li>
+      <li>Rewrite 2 lines in <span class="mono">ihr</span>-form (plural).</li>
+      <li>Write 5 new imperatives using your own nouns (or from the toolbox).</li>
+    </ol>
+
+    <details><summary>Possible Sie-form rewrites</summary>
+      <div class="answer mono">
+        Bitte kommen Sie kurz. Warten Sie einen Moment.<br/>
+        Machen Sie bitte die Tür zu und setzen Sie sich.<br/>
+        Hören Sie bitte zu: Schreiben Sie das auf.
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (20 minutes) — real-life roleplay</h2>
+  <p class="lede">
+    Imperatives are spoken language. This block makes them automatic.
+    Use a timer. Speak out loud.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 (8 min) — command bursts</h3>
+    <p class="small">
+      Do 8 rounds. Each round: pick 1 verb and give 4 commands quickly (du + Sie + negative + with object).
+      Example verb: <span class="mono">machen</span>.
+    </p>
+    <details><summary>Example burst</summary>
+      <div class="answer mono">
+        Mach die Tür zu!<br/>
+        Machen Sie bitte die Tür zu!<br/>
+        Mach das nicht!<br/>
+        Mach bitte die Tür auf!
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Part 2 (7 min) — mini situations</h3>
+    <p class="small">Speak 5 mini scenes (30–45 seconds each):</p>
+    <ol>
+      <li>Teacher / student: “Listen, repeat, write it down.”</li>
+      <li>At home: “Open the door, close the door, wait.”</li>
+      <li>At a café: “Please sit, wait a moment, don’t call.”</li>
+      <li>Shopping: “Buy bread, don’t buy coffee.”</li>
+      <li>Lost item: “Search my phone, give it to me.”</li>
+    </ol>
+
+    <hr/>
+
+    <h3>Part 3 (5 min) — polite vs direct</h3>
+    <p class="small">Say each command twice: once direct (du), once polite (Sie + bitte).</p>
+    <div class="prompt mono">
+      Komm. → Kommen Sie bitte.<br/>
+      Warte. → Warten Sie bitte.<br/>
+      Mach die Tür zu. → Machen Sie bitte die Tür zu.
+    </div>
+
+    <div class="callout">
+      <strong>Speaking rule:</strong> If you say the wrong form, repeat the corrected form twice.
+      That’s the training.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — make it yours (still A1)</h2>
+  <p class="lede">
+    Production converts drills into real language you can use.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — Your personal command list (25 commands)</h4>
+    <p class="small">
+      Write 25 commands you might actually use (teacher, daily life, travel).
+      Requirements:
+      <ul class="small">
+        <li>10 du-imperatives</li>
+        <li>10 Sie-imperatives (with <span class="mono">bitte</span>)</li>
+        <li>5 negative imperatives (mix nicht/kein)</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Message: “What to do” (8–10 lines)</h4>
+    <p class="small">
+      Write a short message to a friend (informal) giving instructions for today.
+      Include:
+      <span class="badge">6</span> imperatives,
+      <span class="badge">2</span> time words,
+      <span class="badge">2</span> negatives,
+      <span class="badge">1</span> plural noun.
+    </p>
+    <details><summary>Starter frame</summary>
+      <div class="answer mono">
+        Hey! Komm bitte um zwei Uhr.<br/>
+        Warte kurz. Mach die Tür zu.<br/>
+        Kauf Brot, aber kauf keinen Kaffee.<br/>
+        Ruf mich nicht an. Schreib mir!
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 3 — Formal situation: receptionist / office (8–10 lines)</h4>
+    <p class="small">
+      Write a formal instruction exchange using <span class="mono">Sie</span>.
+      Include:
+      <span class="badge">6</span> Sie-imperatives,
+      <span class="badge">2</span> objects,
+      <span class="badge">2</span> negatives.
+    </p>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 2):</strong> Telling time.
+    We’ll reuse imperatives to make time language automatic: “Come at 2”, “Wait until 3”, etc.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Finish with a quick test: can you use imperatives without thinking too hard?</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 10 du-imperatives (mix regular + separable verbs).</li>
+      <li>Write 10 Sie-imperatives with <span class="mono">bitte</span>.</li>
+      <li>Write 8 negative imperatives: 4 with <span class="mono">nicht</span>, 4 with <span class="mono">kein</span>.</li>
+      <li>Write 6 commands with objects + possessives (e.g., <span class="mono">Gib mir mein Handy</span>).</li>
+      <li>Speak 12 commands out loud (alternate du ↔ Sie). If you hesitate, repeat that verb set tomorrow.</li>
+    </ul>
+
+    <hr/>
+    <h3 style="margin-top:0">Bug list</h3>
+    <ol>
+      <li>The imperative form I hesitate on most is: du / ihr / Sie.</li>
+      <li>My most common error is: (missing prefix / wrong negation / wrong object phrase).</li>
+      <li>My fix tomorrow: 10 minutes of Block ___ + speaking bursts.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>A1 truth:</strong> If you can give simple instructions, you can survive daily German.
+      That’s the point of imperatives.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 4 · Day 1 — Imperatives + Daily Language · A1 Automation & Exit</small>
+</footer>
+
+</body>
+</html>

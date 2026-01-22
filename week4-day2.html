@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 4 · Day 2 — Telling Time (Uhrzeit) + Routines (A1 Automation)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 4 · DAY 2</p>
+    <h1>Telling Time (Uhrzeit) + Routine Language</h1>
+    <p class="subtitle">
+      Today you learn to <strong>ask and tell time</strong> and to use time in A1 sentences without freezing:
+      <strong>um</strong> (at), <strong>von … bis …</strong> (from … to …), and daily routine frames.
+      Goal: time becomes automatic, not scary.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week4.html">Week 4</a>
+      <a href="week4-day1.html">Day 1</a>
+      <a href="week4-day2.html">Day 2</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#core">Core Time System</a>
+      <a href="#ask">Asking Time</a>
+      <a href="#use">Using Time in Sentences</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    This is an automation day. We keep grammar simple and turn time phrases into reflexes.
+    Time language appears everywhere: meetings, buses, routines, appointments, “when do we start?”
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets (by the end)</h3>
+      <ul class="checklist">
+        <li>I can ask and answer: “What time is it?” + “At what time?”</li>
+        <li>I can say time in two styles: <span class="mono">official</span> and <span class="mono">everyday</span>.</li>
+        <li>I can use <span class="mono">um</span> correctly: <span class="mono">um 7 Uhr</span>, <span class="mono">um halb acht</span>.</li>
+        <li>I can use <span class="mono">von … bis …</span> to give time ranges.</li>
+        <li>I can combine time with A1 structures: V2, questions, modals, separable verbs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">4-hour structure</h3>
+      <ul class="checklist">
+        <li><strong>60 min</strong> — Lesson: time system + examples</li>
+        <li><strong>90 min</strong> — Drills (Blocks A–D)</li>
+        <li><strong>45 min</strong> — Vocabulary in context: routine verbs + time chunks</li>
+        <li><strong>25 min</strong> — Reading: mini texts + comprehension</li>
+        <li><strong>20 min</strong> — Speaking: timed Q/A</li>
+        <li><strong>20 min</strong> — Production + exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>A1 focus:</strong> Time is not “extra info” — it’s a high-frequency sentence piece.
+      You’re training “sentence control with time attached.”
+    </div>
+  </div>
+</section>
+
+<section class="section" id="core">
+  <h2>Core Time System (A1)</h2>
+  <p class="lede">
+    German time has two styles. You should understand both. For A1, you can speak in the “official” style safely,
+    and gradually learn the everyday style (which Germans use a lot).
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Two styles</h3>
+    <table class="table">
+      <tr><th>Style</th><th>How it looks</th><th>Where it’s used</th><th>A1 advice</th></tr>
+      <tr>
+        <td><strong>Official</strong></td>
+        <td class="mono">7:15 → sieben Uhr fünfzehn</td>
+        <td>announcements, schedules, formal contexts</td>
+        <td>Use this if you’re unsure.</td>
+      </tr>
+      <tr>
+        <td><strong>Everyday</strong></td>
+        <td class="mono">7:15 → Viertel nach sieben</td>
+        <td>spoken daily conversation</td>
+        <td>Learn the core chunks (halb, Viertel, nach, vor).</td>
+      </tr>
+    </table>
+
+    <hr/>
+
+    <h3>Key building blocks (everyday style)</h3>
+    <table class="table">
+      <tr><th>Chunk</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td class="mono">Uhr</td><td>o’clock</td><td class="mono">Es ist sieben Uhr.</td></tr>
+      <tr><td class="mono">halb + (next hour)</td><td>half to the next hour</td><td class="mono">7:30 = halb acht</td></tr>
+      <tr><td class="mono">Viertel nach</td><td>quarter past</td><td class="mono">7:15 = Viertel nach sieben</td></tr>
+      <tr><td class="mono">Viertel vor</td><td>quarter to</td><td class="mono">7:45 = Viertel vor acht</td></tr>
+      <tr><td class="mono">nach</td><td>past</td><td class="mono">7:10 = zehn nach sieben</td></tr>
+      <tr><td class="mono">vor</td><td>to / before</td><td class="mono">7:50 = zehn vor acht</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>Crucial A1 fact:</strong> <span class="mono">halb acht</span> is <strong>7:30</strong>, not 8:30.
+      It’s “half <em>to</em> eight.” This is the #1 beginner trap.
+    </div>
+
+    <hr/>
+
+    <h3>Reference table (learn these first)</h3>
+    <table class="table">
+      <tr><th>Time</th><th>Official</th><th>Everyday</th></tr>
+      <tr><td class="mono">7:00</td><td class="mono">sieben Uhr</td><td class="mono">sieben Uhr</td></tr>
+      <tr><td class="mono">7:05</td><td class="mono">sieben Uhr fünf</td><td class="mono">fünf nach sieben</td></tr>
+      <tr><td class="mono">7:10</td><td class="mono">sieben Uhr zehn</td><td class="mono">zehn nach sieben</td></tr>
+      <tr><td class="mono">7:15</td><td class="mono">sieben Uhr fünfzehn</td><td class="mono">Viertel nach sieben</td></tr>
+      <tr><td class="mono">7:20</td><td class="mono">sieben Uhr zwanzig</td><td class="mono">zwanzig nach sieben</td></tr>
+      <tr><td class="mono">7:25</td><td class="mono">sieben Uhr fünfundzwanzig</td><td class="mono">fünf vor halb acht</td></tr>
+      <tr><td class="mono">7:30</td><td class="mono">sieben Uhr dreißig</td><td class="mono">halb acht</td></tr>
+      <tr><td class="mono">7:35</td><td class="mono">sieben Uhr fünfunddreißig</td><td class="mono">fünf nach halb acht</td></tr>
+      <tr><td class="mono">7:40</td><td class="mono">sieben Uhr vierzig</td><td class="mono">zwanzig vor acht</td></tr>
+      <tr><td class="mono">7:45</td><td class="mono">sieben Uhr fünfundvierzig</td><td class="mono">Viertel vor acht</td></tr>
+      <tr><td class="mono">7:50</td><td class="mono">sieben Uhr fünfzig</td><td class="mono">zehn vor acht</td></tr>
+      <tr><td class="mono">7:55</td><td class="mono">sieben Uhr fünfundfünfzig</td><td class="mono">fünf vor acht</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>A1 permission:</strong> If everyday style stresses you out, use official style and keep going.
+      But you <em>must</em> understand <span class="mono">halb</span> because people will say it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ask">
+  <h2>Asking Time (and answering)</h2>
+  <p class="lede">
+    You need two main question types:
+    (1) “What time is it?” and (2) “At what time…?”.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">1) What time is it?</h3>
+    <div class="prompt mono">
+      Wie spät ist es? — Es ist sieben Uhr.<br/>
+      Wie viel Uhr ist es? — Es ist halb acht.
+    </div>
+
+    <div class="callout">
+      <strong>Both are correct.</strong> <span class="mono">Wie spät…?</span> is very common.
+      <span class="mono">Wie viel Uhr…?</span> is also common and super A1-friendly.
+    </div>
+
+    <hr/>
+
+    <h3>2) At what time…?</h3>
+    <div class="prompt mono">
+      Wann fängst du an? — Um zwei Uhr.<br/>
+      Um wie viel Uhr fängst du an? — Um zwei Uhr.<br/>
+      Wann kommst du? — Um halb acht.
+    </div>
+
+    <div class="callout">
+      <strong>Remember:</strong> <span class="mono">wann</span> is the general “when” question.
+      <span class="mono">um wie viel Uhr</span> forces an exact clock time answer.
+    </div>
+
+    <hr/>
+
+    <h3>3) Time ranges</h3>
+    <div class="prompt mono">
+      Von wann bis wann? — Von neun bis zwölf.<br/>
+      Ich arbeite von neun bis zwölf.<br/>
+      Der Kurs ist von 10 Uhr bis 12 Uhr.
+    </div>
+
+    <div class="callout">
+      <strong>A1 note:</strong> You can drop <span class="mono">Uhr</span> in everyday speech in ranges sometimes
+      (von neun bis zwölf), but for A1 clarity it’s okay to keep it (von neun Uhr bis zwölf Uhr).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="use">
+  <h2>Using Time in Sentences (don’t break your structure)</h2>
+  <p class="lede">
+    Time is usually a “time phrase” that you can place early to practice V2.
+    Today we use time to reinforce your sentence engine.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Time-first V2 (best A1 training)</h3>
+    <div class="prompt mono">
+      Um sieben Uhr stehe ich auf.<br/>
+      Um halb acht kaufe ich ein.<br/>
+      Um zwei Uhr fangen wir an.<br/>
+      Um Viertel nach sieben rufe ich meinen Freund an.<br/>
+    </div>
+
+    <h3>With modals (infinitive at the end)</h3>
+    <div class="prompt mono">
+      Um acht Uhr muss ich einkaufen.<br/>
+      Um zwei Uhr möchte ich mein Buch lesen.<br/>
+      Um halb neun kann ich meine Tasche suchen.
+    </div>
+
+    <h3>With separable verbs (prefix at the end)</h3>
+    <div class="prompt mono">
+      Um sieben Uhr stehe ich auf.<br/>
+      Um zehn Uhr mache ich die Tür zu.<br/>
+      Um halb acht rufe ich meinen Freund an.
+    </div>
+
+    <div class="callout">
+      <strong>A1 stability tip:</strong> Use these 3 “frames” all week:
+      <span class="mono">Um __ Uhr + Verb + …</span> (V2),
+      <span class="mono">Um __ Uhr + Modal + … + Infinitive</span>,
+      <span class="mono">Um __ Uhr + Verb + … + Prefix</span>.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes) — get fast, stay correct</h2>
+  <p class="lede">
+    Drills are your automation engine. Use a timer and do them in blocks.
+    If you freeze, switch to official style and keep going.
+  </p>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Convert time: digital → German (40 items)</h4>
+    <p class="small">
+      Write the German time in BOTH styles (official + everyday) for each.
+      If everyday is hard, do official first, then add everyday.
+    </p>
+
+    <div class="prompt mono">
+      1) 06:00  2) 06:10  3) 06:15  4) 06:30  5) 06:45<br/>
+      6) 07:05  7) 07:20  8) 07:25  9) 07:35  10) 07:50<br/>
+      11) 08:00  12) 08:15  13) 08:30  14) 08:40  15) 08:55<br/>
+      16) 09:00  17) 09:10  18) 09:30  19) 09:45  20) 09:55
+    </div>
+
+    <details><summary>Sample for 3 times</summary>
+      <div class="answer mono">
+        06:00 = sechs Uhr / sechs Uhr<br/>
+        06:15 = sechs Uhr fünfzehn / Viertel nach sechs<br/>
+        06:30 = sechs Uhr dreißig / halb sieben
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Do not skip “halb”.</strong> Add at least 10 half-times to your practice each week.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Q/A reflex: ask & answer (24 pairs)</h4>
+    <p class="small">
+      Write 24 question/answer pairs. Requirements:
+      <ul class="small">
+        <li>8 with <span class="mono">Wie spät ist es?</span></li>
+        <li>8 with <span class="mono">Um wie viel Uhr…?</span></li>
+        <li>8 with <span class="mono">Von wann bis wann…?</span></li>
+        <li>At least 10 answers use everyday style (halb/viertel/nach/vor)</li>
+      </ul>
+    </p>
+
+    <details><summary>Templates</summary>
+      <div class="answer mono">
+        Wie spät ist es? — Es ist …<br/>
+        Um wie viel Uhr fängst du an? — Um …<br/>
+        Von wann bis wann arbeitest du? — Von … bis …
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (20 min) — Routine sentences (36 sentences)</h4>
+    <p class="small">
+      Write 36 sentences using time-first V2.
+      Requirements:
+      <ul class="small">
+        <li>12 with separable verbs (prefix at end)</li>
+        <li>12 with modals (infinitive at end)</li>
+        <li>12 “simple” (no modal, no separable)</li>
+      </ul>
+    </p>
+
+    <div class="prompt mono">
+      Verbs: aufstehen, einkaufen, anrufen, anfangen, aufmachen, zumachen, fernsehen, lernen, lesen, trinken<br/>
+      Time: um sieben Uhr, um halb acht, um Viertel nach sieben, um zehn vor acht, um zwei Uhr
+    </div>
+
+    <div class="callout">
+      <strong>Speed rule:</strong> if sentence quality drops, shorten it:
+      “Um sieben Uhr stehe ich auf.” is better than a broken long sentence.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (20 min) — Mixed correction (20 lines)</h4>
+    <p class="small">Fix the mistakes (time expression, word order, modal ending, separable prefix).</p>
+    <div class="prompt mono">
+      Um sieben Uhr ich stehe auf. <br/>
+      Es ist halb sieben Uhr. <br/>
+      Um wie viel Uhr du kommst? <br/>
+      Von neun Uhr bis zwölf ich arbeite. <br/>
+      Um halb acht ich muss einkaufen. <br/>
+      Um 7:15 ist es Viertel vor sieben. <br/>
+      Um zwei Uhr fangen wir um an. <br/>
+      Wie spät ist es? Es ist sieben fünfzehn. <br/>
+      Um acht Uhr kann ich mein Buch lese. <br/>
+      Wann fängst du an? — Zwei Uhr. <br/>
+      Von wann bis wann ist der Kurs? — Von zehn bis zwölf Uhr. <br/>
+      Um Viertel nach sieben rufe ich an meinen Freund. <br/>
+      Um zehn Uhr mache ich zu die Tür. <br/>
+      Es ist Viertel nach acht Uhr. <br/>
+      Um halb acht stehe ich auf nicht. <br/>
+      Um acht Uhr ich möchte mein Kaffee trinken. <br/>
+      Von neun bis zwölf Uhr ich lerne. <br/>
+      Um zehn vor acht ich komme mit. <br/>
+      Um zwei Uhr muss ich meine Tasche suchen nicht. <br/>
+      Wie viel Uhr ist es? — Es ist sieben und zwanzig. <br/>
+    </div>
+
+    <details><summary>One corrected set</summary>
+      <div class="answer mono">
+        Um sieben Uhr stehe ich auf.<br/>
+        Es ist halb sieben. <span class="small">(6:30)</span><br/>
+        Um wie viel Uhr kommst du?<br/>
+        Ich arbeite von neun Uhr bis zwölf Uhr.<br/>
+        Um halb acht muss ich einkaufen.<br/>
+        Um 7:15 ist es Viertel nach sieben. <span class="small">(not vor)</span><br/>
+        Um zwei Uhr fangen wir an.<br/>
+        Wie spät ist es? Es ist sieben Uhr fünfzehn. <span class="small">(or: Viertel nach sieben)</span><br/>
+        Um acht Uhr kann ich mein Buch lesen.<br/>
+        Wann fängst du an? — Um zwei Uhr.<br/>
+        Von wann bis wann ist der Kurs? — Von zehn Uhr bis zwölf Uhr.<br/>
+        Um Viertel nach sieben rufe ich meinen Freund an.<br/>
+        Um zehn Uhr mache ich die Tür zu.<br/>
+        Es ist Viertel nach acht. <span class="small">(Uhr optional)</span><br/>
+        Um halb acht stehe ich nicht auf. <span class="small">(or: Ich stehe um halb acht nicht auf.)</span><br/>
+        Um acht Uhr möchte ich meinen Kaffee trinken. <span class="small">(structure ok)</span><br/>
+        Ich lerne von neun Uhr bis zwölf Uhr.<br/>
+        Um zehn vor acht komme ich mit.<br/>
+        Um zwei Uhr muss ich meine Tasche suchen. <span class="small">(or: ... nicht suchen)</span><br/>
+        Wie viel Uhr ist es? — Es ist sieben Uhr zwanzig. <span class="small">(or: zehn vor halb acht)</span><br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Key correction habit:</strong> After you correct a sentence, read it out loud once.
+      Your brain learns time phrases faster with sound.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (25 minutes) — a tiny daily schedule</h2>
+  <p class="lede">
+    Read the schedule, then answer in German using full sentences. Use time-first V2 when possible.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Mein Tag:<br/>
+      Um halb acht stehe ich auf. Um acht Uhr trinke ich Kaffee. <br/>
+      Um Viertel nach acht fange ich an zu lernen. <br/>
+      Von neun Uhr bis zwölf Uhr lerne ich. <br/>
+      Um zwölf Uhr esse ich. Am Abend rufe ich meinen Freund an. <br/>
+      Um zehn vor elf sehe ich nicht fern. <br/>
+    </div>
+
+    <h3>Questions (answer in German)</h3>
+    <ol>
+      <li>Wann steht die Person auf?</li>
+      <li>Um wie viel Uhr trinkt die Person Kaffee?</li>
+      <li>Wann fängt die Person an zu lernen? <span class="small">(A1 answer: “Um … fange ich an.”)</span></li>
+      <li>Von wann bis wann lernt die Person?</li>
+      <li>Wann isst die Person?</li>
+      <li>Wen ruft die Person am Abend an?</li>
+      <li>Sieht die Person fern?</li>
+      <li>Um wie viel Uhr sieht die Person nicht fern?</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <ol class="answer mono">
+        <li>Die Person steht um halb acht auf.</li>
+        <li>Die Person trinkt um acht Uhr Kaffee.</li>
+        <li>Die Person fängt um Viertel nach acht an.</li>
+        <li>Die Person lernt von neun Uhr bis zwölf Uhr.</li>
+        <li>Die Person isst um zwölf Uhr.</li>
+        <li>Die Person ruft am Abend ihren Freund an.</li>
+        <li>Nein, die Person sieht nicht fern.</li>
+        <li>Die Person sieht um zehn vor elf nicht fern.</li>
+      </ol>
+    </details>
+
+    <div class="callout">
+      <strong>Extra:</strong> Rewrite 3 sentences using official time style (Uhr + numbers).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (20 minutes) — time Q/A without freezing</h2>
+  <p class="lede">
+    Speaking is where time becomes real. Use a timer. Answer quickly with short, correct sentences.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 (10 min) — rapid Q/A</h3>
+    <p class="small">
+      Do 20 questions out loud. Alternate question types:
+      <span class="badge">Wie spät ist es?</span>
+      <span class="badge">Um wie viel Uhr…?</span>
+      <span class="badge">Von wann bis wann…?</span>
+    </p>
+
+    <details><summary>Question bank (use & vary)</summary>
+      <div class="answer mono">
+        Wie spät ist es?<br/>
+        Um wie viel Uhr fängst du an?<br/>
+        Um wie viel Uhr stehst du auf?<br/>
+        Von wann bis wann lernst du?<br/>
+        Um wie viel Uhr rufst du deinen Freund an?<br/>
+        Um wie viel Uhr kaufst du ein?
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Part 2 (10 min) — time-first sentence bursts</h3>
+    <p class="small">
+      Do 10 bursts. Each burst: produce 3 sentences starting with <span class="mono">Um …</span>.
+      One must be modal, one separable, one simple.
+    </p>
+
+    <details><summary>Example burst</summary>
+      <div class="answer mono">
+        Um halb acht stehe ich auf.<br/>
+        Um acht Uhr muss ich einkaufen.<br/>
+        Um Viertel nach acht rufe ich meine Freundin an.
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Speaking rule:</strong> If you hesitate on everyday time, switch to official time.
+      Keep speaking. Fluency grows from movement, not perfect phrasing.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — your day in time language</h2>
+  <p class="lede">
+    Production forces you to combine time with real A1 structures. Keep it simple and correct.
+  </p>
+
+  <div class="exercise">
+    <h4>Production 1 — My schedule (10–12 sentences)</h4>
+    <p class="small">
+      Write a schedule about your day. Requirements:
+      <ul class="small">
+        <li>At least 8 sentences start with <span class="mono">Um …</span> (time-first V2)</li>
+        <li>At least 3 modal sentences</li>
+        <li>At least 3 separable verb sentences</li>
+        <li>At least 2 negatives</li>
+        <li>At least 1 time range with <span class="mono">von … bis …</span></li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Mini dialogue: appointment (10–12 lines)</h4>
+    <p class="small">
+      Write a dialogue where you set a meeting time. Requirements:
+      <span class="badge">4</span> questions,
+      <span class="badge">2</span> “von … bis …” or time range phrases,
+      <span class="badge">2</span> imperatives from Day 1 (e.g., <span class="mono">Komm bitte…</span>, <span class="mono">Warte…</span>),
+      <span class="badge">2</span> modal sentences.
+    </p>
+
+    <details><summary>Starter lines (you continue)</summary>
+      <div class="answer mono">
+        A: Wann hast du Zeit?<br/>
+        B: Ich kann um halb acht. Und du?<br/>
+        A: Ich muss bis acht Uhr arbeiten. Komm bitte um Viertel nach acht.<br/>
+        B: Okay. Wo treffen wir uns?
+      </div>
+    </details>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 3):</strong> Dates + appointments.
+    We’ll reuse today’s time frames and add calendar language.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">A quick final test: can you do time language without overthinking?</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 12 times in German: 6 official + 6 everyday (include <span class="mono">halb</span>).</li>
+      <li>Write 10 time-first V2 sentences starting with <span class="mono">Um …</span>.</li>
+      <li>Write 6 Q/A pairs: 2 “Wie spät…?”, 2 “Um wie viel Uhr…?”, 2 “Von wann bis wann…?”</li>
+      <li>Speak 10 answers out loud (use everyday style for at least 5).</li>
+      <li>Bug list: I still confuse… (halb? vor/nach? Uhr?). My fix tomorrow is 10 minutes of Block A.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>A1 truth:</strong> Time language is survival German.
+      If you can schedule a meeting and describe your day with times, you’re really doing A1.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 4 · Day 2 — Telling Time (Uhrzeit) + Routine Language · A1 Automation & Exit</small>
+</footer>
+
+</body>
+</html>

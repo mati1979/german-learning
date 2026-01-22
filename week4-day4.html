@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 4 · Day 4 — Mixed Drills (Nom/Akk, Modals, Separable Verbs) — A1 Automation</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+a{color:inherit;}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  margin:0 0 .55rem;
+}
+h1{
+  font-size:2.25rem;
+  margin:.15rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+  margin:0;
+  font-size:1.02rem;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.15rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+.nav a:hover{border-color:#cfcfcf;}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.1rem 0;}
+.section h2{
+  font-size:1.6rem;
+  margin:0 0 .6rem;
+}
+.section h3{
+  font-size:1.18rem;
+  margin:1.2rem 0 .4rem;
+}
+.lede{
+  color:var(--muted);
+  margin:.25rem 0 1.15rem;
+  max-width:110ch;
+}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.callout strong{color:var(--accent);}
+.checklist{
+  list-style:none;
+  padding-left:0;
+  margin:.4rem 0 0;
+}
+.checklist li{
+  margin:.35rem 0;
+  padding-left:1.6rem;
+  position:relative;
+}
+.checklist li:before{
+  content:"☐";
+  position:absolute;
+  left:0;
+  color:var(--muted);
+}
+hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.2rem 0;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin:.6rem 0;
+  overflow:hidden;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+  vertical-align:top;
+}
+.table th{
+  text-align:left;
+  background:#fcfcfc;
+  font-weight:700;
+}
+.table tr:last-child td{border-bottom:none;}
+.mono{font-family:var(--mono);}
+.small{font-size:.95rem; color:var(--muted);}
+.exercise{
+  padding:1rem 1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.exercise h4{
+  margin:.2rem 0 .55rem;
+  font-size:1.05rem;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.answer{color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer; font-weight:700;}
+.badge{
+  display:inline-block;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  font-size:.78rem;
+}
+.timer{
+  font-family:var(--mono);
+  padding:.45rem .65rem;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  display:inline-block;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1rem;
+}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr;}
+}
+@media (max-width:780px){
+  h1{font-size:1.95rem;}
+}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.8rem 1.2rem;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 4 · DAY 4</p>
+    <h1>Mixed Drills: Nom/Akk + Modals + Separable Verbs</h1>
+    <p class="subtitle">
+      Today is a <strong>pressure day</strong> (A1-safe): you mix the main systems so they stop collapsing.
+      You will practice fast switching between: <strong>nominative/accusative objects</strong>, <strong>modals + infinitive</strong>,
+      and <strong>separable verbs + prefix at end</strong> — while keeping <strong>V2</strong>, questions, and negation stable.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="a1-overview.html">A1 Overview</a>
+      <a href="week4.html">Week 4</a>
+      <a href="week4-day3.html">Day 3</a>
+      <a href="week4-day4.html">Day 4</a>
+      <a href="#plan">Plan (4h)</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#rules">Mixing Rules</a>
+      <a href="#drills">Drills</a>
+      <a href="#reading">Reading</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit Check</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    If A1 ever “breaks,” it breaks when you combine things. So today you combine things — deliberately.
+    This is how you earn Week 4.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3 style="margin-top:0">Targets</h3>
+      <ul class="checklist">
+        <li>I keep V2 stable when a time phrase comes first.</li>
+        <li>I choose nominative vs accusative correctly in common sentences.</li>
+        <li>I use modals with infinitive at the end automatically.</li>
+        <li>I place separable prefixes at the end automatically.</li>
+        <li>I can switch: statement ↔ question ↔ negative without breaking structure.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Structure</h3>
+      <ul class="checklist">
+        <li><strong>20 min</strong> — Warm-up refresher (rules + mini test)</li>
+        <li><strong>120 min</strong> — Mixed drill engine (Blocks A–F)</li>
+        <li><strong>40 min</strong> — Vocabulary in context (objects + routine verbs)</li>
+        <li><strong>25 min</strong> — Reading (mini text + comprehension)</li>
+        <li><strong>25 min</strong> — Speaking (fast switching)</li>
+        <li><strong>10 min</strong> — Exit check</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Important:</strong> When you feel your brain overheating, do not stop — <em>shorten</em>.
+      Clean A1 sentences beat broken long sentences every time.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="toolbox">
+  <h2>Toolbox (use this to stay clean)</h2>
+  <p class="lede">
+    Today you’re not hunting new vocabulary. You’re hunting stability.
+    Reuse these nouns/verbs and focus on structure.
+  </p>
+
+  <div class="card">
+    <div class="two-col">
+      <div>
+        <h3 style="margin-top:0">Nouns (with gender)</h3>
+        <div class="prompt mono">
+          der Freund · den Freund<br/>
+          der Termin · den Termin<br/>
+          der Kaffee (mass) · (kein Kaffee)<br/>
+          die Tasche · die Taschen<br/>
+          die Tür · die Türen<br/>
+          die Wohnung · die Wohnungen<br/>
+          das Buch · die Bücher<br/>
+          das Handy · die Handys<br/>
+          das Brot (mass) · (kein Brot)
+        </div>
+
+        <h3>Articles quick chart</h3>
+        <table class="table">
+          <tr><th></th><th>Nominative</th><th>Accusative</th></tr>
+          <tr><td>masc</td><td class="mono">der / ein</td><td class="mono">den / einen</td></tr>
+          <tr><td>fem</td><td class="mono">die / eine</td><td class="mono">die / eine</td></tr>
+          <tr><td>neut</td><td class="mono">das / ein</td><td class="mono">das / ein</td></tr>
+          <tr><td>plural</td><td class="mono">die</td><td class="mono">die</td></tr>
+        </table>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0">Verbs</h3>
+        <div class="prompt mono">
+          kaufen, suchen, lesen, lernen, trinken, essen, sehen, machen, sagen, hören<br/>
+          treffen, finden, brauchen, haben
+        </div>
+
+        <h3>Modals</h3>
+        <div class="prompt mono">
+          können, müssen, wollen, möchten
+        </div>
+
+        <h3>Separable verbs</h3>
+        <div class="prompt mono">
+          aufstehen, anrufen, einkaufen, anfangen, aufmachen, zumachen, mitkommen, fernsehen
+        </div>
+
+        <h3>Time phrases</h3>
+        <div class="prompt mono">
+          heute, morgen, jetzt, später, am Abend, am Morgen, um zwei Uhr, um halb acht
+        </div>
+
+        <h3>Negation</h3>
+        <div class="prompt mono">
+          nicht (not) · kein/keine/keinen (no/not any)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rules">
+  <h2>Mixing Rules (the 4 switches you must control)</h2>
+  <p class="lede">
+    These are the only “rules” today. Keep them visible.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Switch 1 — V2 with time-first</h3>
+    <div class="prompt mono">
+      Um zwei Uhr <strong>komme</strong> ich.<br/>
+      Heute <strong>kaufe</strong> ich Brot.<br/>
+      Am Abend <strong>rufe</strong> ich meinen Freund an.
+    </div>
+
+    <h3>Switch 2 — Modals (infinitive at end)</h3>
+    <div class="prompt mono">
+      Heute <strong>muss</strong> ich einkaufen.<br/>
+      Um zwei Uhr <strong>möchte</strong> ich mein Buch lesen.<br/>
+      Ich <strong>kann</strong> meinen Freund anrufen.
+    </div>
+
+    <h3>Switch 3 — Separable verbs (prefix at end)</h3>
+    <div class="prompt mono">
+      Um sieben Uhr <strong>stehe</strong> ich <strong>auf</strong>.<br/>
+      Am Abend <strong>rufe</strong> ich meinen Freund <strong>an</strong>.<br/>
+      Heute <strong>kaufe</strong> ich <strong>ein</strong>.
+    </div>
+
+    <h3>Switch 4 — Objects + negation</h3>
+    <div class="prompt mono">
+      Ich kaufe <strong>das Brot</strong>.<br/>
+      Ich kaufe <strong>kein Brot</strong>.<br/>
+      Ich kaufe <strong>das Brot nicht</strong>.<br/>
+      Ich sehe <strong>meinen Freund</strong> nicht.
+    </div>
+
+    <div class="callout">
+      <strong>A1 priority:</strong> Keep the verb placement correct first. Articles are second.
+      But today you’ll train both under pressure.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (120 minutes) — the mixed drill engine</h2>
+  <p class="lede">
+    Do these in order. Use a timer. After each block, take a 2-minute break and continue.
+    If you lose accuracy, reduce sentence length.
+  </p>
+
+  <div class="exercise">
+    <h4>Warm-up (20 min) — 4 mini sets</h4>
+    <p class="small">
+      Write quickly. No perfection. Just correct structure.
+    </p>
+    <ol>
+      <li><strong>10</strong> time-first V2 sentences (<span class="mono">heute/um/am Abend</span>)</li>
+      <li><strong>10</strong> modal sentences (each ends with an infinitive)</li>
+      <li><strong>10</strong> separable verb sentences (each ends with the prefix)</li>
+      <li><strong>10</strong> accusative object sentences (use <span class="mono">den/das/die/einen</span>)</li>
+    </ol>
+  </div>
+
+  <div class="exercise">
+    <h4>Block A (25 min) — Nominative vs Accusative identification (40 items)</h4>
+    <p class="small">
+      For each line: mark <span class="mono">S</span> (subject, nominative) and <span class="mono">O</span> (object, accusative).
+      Then rewrite with correct articles.
+    </p>
+
+    <div class="prompt mono">
+      1) ___ Freund sieht ___ Freundin. <br/>
+      2) ___ Frau kauft ___ Brot. <br/>
+      3) ___ Mann sucht ___ Tasche. <br/>
+      4) ___ Kind liest ___ Buch. <br/>
+      5) ___ Freunde kaufen ___ Bücher. <br/>
+      6) ___ Student ruft ___ Freund an. <br/>
+      7) ___ Freundin trinkt ___ Kaffee. <br/>
+      8) ___ Lehrer macht ___ Tür zu. <br/>
+      9) ___ Frau hat ___ Handy. <br/>
+      10) ___ Mann findet ___ Tasche nicht.
+    </div>
+
+    <details><summary>Answer key (one possible)</summary>
+      <div class="answer mono">
+        1) Der Freund sieht die Freundin. (S=der Freund, O=die Freundin)<br/>
+        2) Die Frau kauft das Brot. (O=das Brot / or: kein Brot)<br/>
+        3) Der Mann sucht die Tasche.<br/>
+        4) Das Kind liest das Buch.<br/>
+        5) Die Freunde kaufen die Bücher.<br/>
+        6) Der Student ruft den Freund an.<br/>
+        7) Die Freundin trinkt Kaffee. (or: den Kaffee in some contexts)<br/>
+        8) Der Lehrer macht die Tür zu.<br/>
+        9) Die Frau hat das Handy.<br/>
+        10) Der Mann findet die Tasche nicht.
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Note:</strong> Some nouns like <span class="mono">Kaffee</span> are often used without an article (mass noun).
+      For A1 drills, you can treat it as: <span class="mono">Ich trinke Kaffee / keinen Kaffee</span>.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block B (25 min) — Transformation: statement ↔ question ↔ negative (30 sets)</h4>
+    <p class="small">
+      For each base sentence, create:
+      <span class="badge">1</span> yes/no question,
+      <span class="badge">1</span> W-question,
+      <span class="badge">1</span> negative version.
+      Keep the same meaning.
+    </p>
+
+    <div class="prompt mono">
+      Base sentences (do all 10):<br/>
+      1) Heute kaufe ich Brot.<br/>
+      2) Um zwei Uhr rufe ich meinen Freund an.<br/>
+      3) Am Abend sehe ich meine Freundin.<br/>
+      4) Morgen lerne ich Deutsch.<br/>
+      5) Um halb acht stehe ich auf.<br/>
+      6) Ich habe eine Tasche.<br/>
+      7) Ich finde mein Handy.<br/>
+      8) Wir treffen die Freunde.<br/>
+      9) Du machst die Tür zu.<br/>
+      10) Ihr kauft Bücher.
+    </div>
+
+    <details><summary>Example for #1</summary>
+      <div class="answer mono">
+        Aussage: Heute kaufe ich Brot.<br/>
+        Ja/Nein-Frage: Kaufst du heute Brot?<br/>
+        W-Frage: Was kaufst du heute?<br/>
+        Negation: Heute kaufe ich kein Brot. <span class="small">(or: ... Brot nicht)</span>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Key:</strong> yes/no questions are verb-first:
+      <span class="mono">Kaufst du…?</span> W-questions: W + verb:
+      <span class="mono">Was kaufst du…?</span>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block C (25 min) — Modal + object mixing (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences. Requirements:
+      <ul class="small">
+        <li>At least 20 time-first V2 sentences</li>
+        <li>At least 20 accusative objects</li>
+        <li>At least 10 negatives (mix nicht/kein)</li>
+        <li>Use each modal at least 8 times</li>
+      </ul>
+    </p>
+
+    <div class="prompt mono">
+      Frames (rotate them):<br/>
+      Um __ Uhr + Modal + ich/du/wir + (Objekt) + Infinitive.<br/>
+      Heute + Modal + ich + (Objekt) + Infinitive.<br/><br/>
+      Objects: das Buch, die Tasche, das Handy, den Freund, die Bücher<br/>
+      Verbs: kaufen, suchen, lesen, anrufen, sehen
+    </div>
+
+    <details><summary>Model sentences (10)</summary>
+      <div class="answer mono">
+        Um zwei Uhr muss ich einkaufen.<br/>
+        Heute möchte ich mein Buch lesen.<br/>
+        Am Abend kann ich meinen Freund anrufen.<br/>
+        Morgen muss ich meine Tasche suchen.<br/>
+        Um halb acht will ich keinen Kaffee trinken.<br/>
+        Heute kann ich das Handy nicht finden.<br/>
+        Um zehn Uhr müssen wir die Bücher kaufen.<br/>
+        Später möchte ich die Tür zumachen.<br/>
+        Am Morgen will ich das Brot kaufen.<br/>
+        Um zwei Uhr kann ich die Freunde sehen.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block D (25 min) — Separable + object mixing (40 sentences)</h4>
+    <p class="small">
+      Write 40 sentences using separable verbs. Requirements:
+      <ul class="small">
+        <li>At least 20 time-first V2 sentences</li>
+        <li>At least 20 objects</li>
+        <li>At least 10 negatives</li>
+        <li>Use at least 6 different separable verbs</li>
+      </ul>
+    </p>
+
+    <div class="prompt mono">
+      Separable verbs: aufstehen, anrufen, einkaufen, anfangen, aufmachen, zumachen, mitkommen, fernsehen<br/>
+      Objects: die Tür, die Tasche, das Handy, den Freund, die Bücher<br/>
+      Time: heute, morgen, um zwei Uhr, um halb acht, am Abend
+    </div>
+
+    <details><summary>Model sentences (10)</summary>
+      <div class="answer mono">
+        Um halb acht stehe ich auf.<br/>
+        Am Abend rufe ich meinen Freund an.<br/>
+        Heute kaufe ich nicht ein.<br/>
+        Um zwei Uhr fange ich an.<br/>
+        Morgen mache ich die Tür auf.<br/>
+        Heute mache ich die Tür nicht zu.<br/>
+        Später komme ich mit.<br/>
+        Am Abend sehe ich nicht fern.<br/>
+        Um zwei Uhr rufe ich die Freunde an.<br/>
+        Heute suche ich mein Handy, aber ich finde es nicht.
+      </div>
+    </details>
+  </div>
+
+  <div class="exercise">
+    <h4>Block E (10 min) — Mixed correction sprint (20 lines)</h4>
+    <p class="small">Rewrite correctly. Each line has 1–2 errors.</p>
+    <div class="prompt mono">
+      Um zwei Uhr ich kann mein Buch lesen. <br/>
+      Heute kaufe ich den Brot. <br/>
+      Rufst du an deinen Freund? <br/>
+      Am Abend sehe ich nicht die Freunde. <br/>
+      Um halb acht stehe ich auf nicht. <br/>
+      Morgen muss ich meine Tasche suchen nicht. <br/>
+      Wir wollen kaufen die Bücher. <br/>
+      Um zehn Uhr fangen wir an zu lernen. <br/>
+      Ich möchte kein meinen Kaffee trinken. <br/>
+      Die Freunde ist hier. <br/>
+      Kaufst du heute ein? — Ja, ich kaufe heute. <br/>
+      Wann kommst du? — Um zwei. <br/>
+      Ich rufe an meinen Freund am Abend. <br/>
+      Um halb acht will ich aufstehen. <br/>
+      Heute kann ich nicht mein Handy finden. <br/>
+      Er macht zu die Tür. <br/>
+      Um zwei Uhr müssen wir anrufen den Lehrer. <br/>
+      Am Abend sehen wir fern nicht. <br/>
+      Du kommst mit nicht. <br/>
+      Ich habe keinen Tasche. <br/>
+    </div>
+
+    <details><summary>Possible corrections</summary>
+      <div class="answer mono">
+        Um zwei Uhr kann ich mein Buch lesen.<br/>
+        Heute kaufe ich das Brot. <span class="small">(or: kein Brot)</span><br/>
+        Rufst du deinen Freund an?<br/>
+        Am Abend sehe ich die Freunde nicht. <span class="small">(or: ... nicht)</span><br/>
+        Um halb acht stehe ich nicht auf.<br/>
+        Morgen muss ich meine Tasche nicht suchen. <span class="small">(or: ... suchen, aber ich finde sie nicht)</span><br/>
+        Wir wollen die Bücher kaufen.<br/>
+        Um zehn Uhr fangen wir an zu lernen. <span class="small">(A1 okay as chunk)</span><br/>
+        Ich möchte meinen Kaffee nicht trinken. <span class="small">(or: keinen Kaffee)</span><br/>
+        Die Freunde sind hier.<br/>
+        Kaufst du heute ein? — Ja, ich kaufe heute ein.<br/>
+        Wann kommst du? — Um zwei Uhr.<br/>
+        Am Abend rufe ich meinen Freund an.<br/>
+        Um halb acht will ich aufstehen. <span class="small">(better: Um halb acht stehe ich auf.)</span><br/>
+        Heute kann ich mein Handy nicht finden.<br/>
+        Er macht die Tür zu.<br/>
+        Um zwei Uhr müssen wir den Lehrer anrufen.<br/>
+        Am Abend sehen wir nicht fern. <span class="small">(or: ... fernsehen)</span><br/>
+        Du kommst nicht mit.<br/>
+        Ich habe keine Tasche. <span class="small">(fem)</span><br/>
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Correction habit:</strong> After fixing a line, say it out loud once.
+      If it feels weird, write a simpler version.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h4>Block F (10 min) — Speed round (optional but recommended)</h4>
+    <p class="small">
+      Set a timer: <span class="mono">8 minutes</span>. Write as many correct A1 sentences as possible (goal: 25–35).
+      Rules: each sentence must include at least <strong>two</strong> of these: time phrase, modal, separable verb, accusative object, negation.
+    </p>
+  </div>
+
+</section>
+
+<section class="section" id="reading">
+  <h2>Reading (25 minutes) — mixed systems in a mini text</h2>
+  <p class="lede">
+    Read once, then answer in German using short A1 sentences.
+    This text contains time-first V2, modals, separables, objects, and negation.
+  </p>
+
+  <div class="card">
+    <div class="prompt mono">
+      Heute muss ich einkaufen. Um halb acht stehe ich auf.<br/>
+      Um neun Uhr kaufe ich Brot und ich kaufe auch ein Buch.<br/>
+      Am Abend rufe ich meinen Freund an, aber ich sehe nicht fern.<br/>
+      Morgen möchte ich Deutsch lernen. Um zwei Uhr fange ich an.<br/>
+      Ich suche mein Handy, aber ich finde es nicht.<br/>
+    </div>
+
+    <h3>Questions (answer in German)</h3>
+    <ol>
+      <li>Was muss die Person heute machen?</li>
+      <li>Um wie viel Uhr steht die Person auf?</li>
+      <li>Was kauft die Person um neun Uhr?</li>
+      <li>Wen ruft die Person am Abend an?</li>
+      <li>Sieht die Person fern?</li>
+      <li>Was möchte die Person morgen machen?</li>
+      <li>Um wie viel Uhr fängt die Person an?</li>
+      <li>Findet die Person das Handy?</li>
+    </ol>
+
+    <details><summary>Possible answers</summary>
+      <div class="answer mono">
+        1) Die Person muss heute einkaufen.<br/>
+        2) Die Person steht um halb acht auf.<br/>
+        3) Die Person kauft Brot und ein Buch.<br/>
+        4) Die Person ruft ihren Freund an.<br/>
+        5) Nein, die Person sieht nicht fern.<br/>
+        6) Die Person möchte morgen Deutsch lernen.<br/>
+        7) Die Person fängt um zwei Uhr an.<br/>
+        8) Nein, die Person findet das Handy nicht.
+      </div>
+    </details>
+
+    <div class="callout">
+      <strong>Extra:</strong> Rewrite 3 sentences as questions (yes/no or W-questions).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (25 minutes) — fast switching drill</h2>
+  <p class="lede">
+    Speaking is where the mixing becomes real. You will “switch modes” quickly.
+    Keep sentences short and correct.
+  </p>
+
+  <div class="card">
+    <h3 style="margin-top:0">Part 1 (10 min) — Q/A rapid fire</h3>
+    <p class="small">Do 20 rounds. Alternate: statement → yes/no question → W-question.</p>
+    <div class="prompt mono">
+      Base topics: einkaufen, aufstehen, anrufen, lernen, suchen, finden, sehen, treffen
+    </div>
+
+    <details><summary>Example round</summary>
+      <div class="answer mono">
+        Aussage: Heute kaufe ich ein.<br/>
+        Ja/Nein: Kaufst du heute ein?<br/>
+        W-Frage: Was kaufst du heute?
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Part 2 (10 min) — modal + separable chain</h3>
+    <p class="small">
+      Do 10 chains. Each chain = 3 sentences:
+      (1) time-first + modal, (2) time-first + separable, (3) negative with object.
+    </p>
+
+    <details><summary>Example chain</summary>
+      <div class="answer mono">
+        Um zwei Uhr muss ich einkaufen.<br/>
+        Am Abend rufe ich meinen Freund an.<br/>
+        Ich finde mein Handy nicht.
+      </div>
+    </details>
+
+    <hr/>
+
+    <h3>Part 3 (5 min) — mini roleplay</h3>
+    <p class="small">
+      Speak a 45-second “today plan” monologue:
+      include 2 times, 2 modals, 2 separables, 2 objects, 1 negative.
+    </p>
+
+    <div class="callout">
+      <strong>Rule:</strong> If you make a word order mistake, repeat the corrected sentence twice.
+      That’s how you install it.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes) — prove you can mix A1 cleanly</h2>
+  <p class="lede">Two outputs: a paragraph and a dialogue. Short, correct, functional.</p>
+
+  <div class="exercise">
+    <h4>Production 1 — Paragraph (10–12 sentences)</h4>
+    <p class="small">
+      Write a paragraph about your day. Requirements:
+      <ul class="small">
+        <li>At least 5 time-first V2 sentences</li>
+        <li>At least 3 modal sentences</li>
+        <li>At least 3 separable-verb sentences</li>
+        <li>At least 5 accusative objects</li>
+        <li>At least 3 negatives (mix nicht/kein)</li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h4>Production 2 — Dialogue (12–14 lines): “Plan + problem”</h4>
+    <p class="small">
+      Two people plan to meet, but there’s a problem (no time / lost phone / can’t find bag).
+      Requirements:
+      <span class="badge">4</span> questions,
+      <span class="badge">2</span> modal sentences,
+      <span class="badge">2</span> separable verb sentences,
+      <span class="badge">3</span> objects,
+      <span class="badge">2</span> negatives,
+      <span class="badge">2</span> time phrases.
+    </p>
+  </div>
+
+  <div class="callout">
+    <strong>Tomorrow (Day 5):</strong> Reading & writing mini tests.
+    Your mixing today will make those tests feel easy.
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check (10 minutes)</h2>
+  <p class="lede">Finish with a quick diagnostic. If you can do this, your A1 is solid.</p>
+
+  <div class="card">
+    <ul class="checklist">
+      <li>Write 10 time-first V2 sentences.</li>
+      <li>Write 10 modal sentences (infinitive at end) with objects.</li>
+      <li>Write 10 separable sentences (prefix at end) with objects.</li>
+      <li>Write 6 transformations: statement → yes/no question → W-question → negative.</li>
+      <li>Speak 8 chains out loud (time-first + modal, time-first + separable, negative with object).</li>
+    </ul>
+
+    <div class="callout">
+      <strong>A1 truth:</strong> If your structure holds when everything is mixed, you’re basically “done.”
+      Mistakes become fixable — not chaotic.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 4 · Day 4 — Mixed Drills (Nom/Akk, Modals, Separable Verbs) · A1 Automation & Exit</small>
+</footer>
+
+</body>
+</html>

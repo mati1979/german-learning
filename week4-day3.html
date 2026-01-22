@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week 4 · Day 3 — Dates + Appointments (A1 Automation)</title>
+<style>
+:root{
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#6b6b6b;
+  --accent:#9c2a2a;
+  --border:#e6e6e6;
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.65;
+}
+header{
+  background:var(--paper);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 1.6rem;
+}
+.kicker{
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+}
+h1{
+  font-size:2.2rem;
+  margin:.2rem 0 .35rem;
+}
+.subtitle{
+  color:var(--muted);
+  max-width:110ch;
+}
+.nav{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  margin-top:1.1rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+}
+.nav a{
+  text-decoration:none;
+  padding:.42rem .7rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+}
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:2.2rem 1.2rem 5rem;
+}
+.section{margin:2.2rem 0;}
+.section h2{font-size:1.6rem;margin:0 0 .6rem;}
+.section h3{font-size:1.18rem;margin:1.2rem 0 .4rem;}
+.lede{color:var(--muted);margin:.25rem 0 1.15rem;max-width:110ch;}
+.card{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.2rem;
+}
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:1rem;
+}
+.callout{
+  border-left:4px solid var(--accent);
+  padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.checklist{list-style:none;padding-left:0;}
+.checklist li{margin:.35rem 0;padding-left:1.6rem;position:relative;}
+.checklist li:before{content:"☐";position:absolute;left:0;color:var(--muted);}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  margin:.6rem 0;
+}
+.table th,.table td{
+  padding:.6rem .65rem;
+  border-bottom:1px solid var(--border);
+}
+.table th{background:#fcfcfc;text-align:left;}
+.mono{font-family:var(--mono);}
+.exercise{
+  padding:1rem;
+  border:1px dashed #d7d7d7;
+  border-radius:12px;
+  background:#fff;
+  margin:.8rem 0;
+}
+.prompt{
+  background:#fcfcfc;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.8rem .9rem;
+  margin:.6rem 0;
+}
+.small{font-size:.95rem;color:var(--muted);}
+details{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:.7rem .85rem;
+  background:#fff;
+  margin:.55rem 0;
+}
+summary{cursor:pointer;font-weight:700;}
+footer{
+  border-top:1px solid var(--border);
+  background:var(--paper);
+  padding:1.6rem;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="kicker">WEEK 4 · DAY 3</p>
+    <h1>Dates + Appointments</h1>
+    <p class="subtitle">
+      Today you learn to talk about <strong>calendar dates</strong> and to
+      <strong>make, change, and confirm appointments</strong> — all in clean A1 German.
+      This is real survival language.
+    </p>
+
+    <div class="nav">
+      <a href="index.html">← Index</a>
+      <a href="week4.html">Week 4</a>
+      <a href="week4-day2.html">Day 2</a>
+      <a href="week4-day3.html">Day 3</a>
+      <a href="#plan">Plan</a>
+      <a href="#dates">Dates</a>
+      <a href="#days">Days & Months</a>
+      <a href="#appointments">Appointments</a>
+      <a href="#drills">Drills</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#production">Production</a>
+      <a href="#exit">Exit</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="section" id="plan">
+  <h2>Today’s Plan (4 Hours)</h2>
+  <p class="lede">
+    You already know time (<em>um halb acht</em>). Now you attach it to the calendar.
+    Goal: say <strong>when</strong> something happens and arrange meetings without freezing.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Targets</h3>
+      <ul class="checklist">
+        <li>I can say today / tomorrow / yesterday.</li>
+        <li>I can say the date (spoken A1 style).</li>
+        <li>I can say days of the week and months.</li>
+        <li>I can make and change appointments.</li>
+        <li>I can combine dates + time + verbs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Structure</h3>
+      <ul class="checklist">
+        <li>60 min — lesson + examples</li>
+        <li>90 min — drills</li>
+        <li>45 min — vocab in context</li>
+        <li>25 min — reading</li>
+        <li>20 min — speaking</li>
+        <li>20 min — production + exit</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="dates">
+  <h2>Talking About Dates (A1)</h2>
+  <p class="lede">
+    In German, dates are spoken with <strong>am</strong> (on) + ordinal number.
+    You do <em>not</em> need to master ordinal endings at A1 — recognize and use the pattern.
+  </p>
+
+  <div class="card">
+    <h3>The basic pattern</h3>
+    <div class="prompt mono">
+      am + ordinal + Monat<br/>
+      Am dritten Mai.<br/>
+      Am fünften Juni.<br/>
+      Am zwanzigsten Juli.
+    </div>
+
+    <table class="table">
+      <tr><th>Date (numeric)</th><th>Spoken (A1)</th></tr>
+      <tr><td>01.05.</td><td class="mono">am ersten Mai</td></tr>
+      <tr><td>03.05.</td><td class="mono">am dritten Mai</td></tr>
+      <tr><td>10.06.</td><td class="mono">am zehnten Juni</td></tr>
+      <tr><td>15.07.</td><td class="mono">am fünfzehnten Juli</td></tr>
+      <tr><td>21.08.</td><td class="mono">am einundzwanzigsten August</td></tr>
+    </table>
+
+    <div class="callout">
+      <strong>A1 permission:</strong> You do NOT need to produce perfect ordinal endings.
+      Understand them and use common ones (ersten, dritten, fünften).
+    </div>
+  </div>
+</section>
+
+<section class="section" id="days">
+  <h2>Days of the Week + Months</h2>
+  <p class="lede">These combine constantly with dates and appointments.</p>
+
+  <div class="card">
+    <h3>Days of the week</h3>
+    <div class="prompt mono">
+      Montag · Dienstag · Mittwoch · Donnerstag · Freitag · Samstag · Sonntag
+    </div>
+
+    <h3>Key day phrases</h3>
+    <div class="prompt mono">
+      heute (today)<br/>
+      morgen (tomorrow)<br/>
+      gestern (yesterday)<br/>
+      am Montag (on Monday)<br/>
+      nächsten Montag (next Monday)
+    </div>
+
+    <h3>Months</h3>
+    <div class="prompt mono">
+      Januar · Februar · März · April · Mai · Juni · Juli · August · September · Oktober · November · Dezember
+    </div>
+
+    <div class="callout">
+      <strong>Pronunciation tip:</strong> Months are capitalized and stressed clearly.
+      <span class="mono">Mai</span> is pronounced like “my.”
+    </div>
+  </div>
+</section>
+
+<section class="section" id="appointments">
+  <h2>Appointments (Termine)</h2>
+  <p class="lede">
+    This is the core functional language: making, confirming, and changing plans.
+  </p>
+
+  <div class="card">
+    <h3>Making an appointment</h3>
+    <div class="prompt mono">
+      Hast du Zeit?<br/>
+      Wann hast du Zeit?<br/>
+      Ich habe am Montag Zeit.<br/>
+      Ich kann am Dienstag um zwei Uhr.
+    </div>
+
+    <h3>Confirming</h3>
+    <div class="prompt mono">
+      Okay, passt.<br/>
+      Ja, das passt.<br/>
+      Dann sehen wir uns am Freitag.
+    </div>
+
+    <h3>Changing / cancelling</h3>
+    <div class="prompt mono">
+      Ich kann nicht.<br/>
+      Ich habe keine Zeit.<br/>
+      Können wir den Termin ändern?<br/>
+      Vielleicht am Mittwoch?
+    </div>
+
+    <div class="callout">
+      <strong>A1 focus:</strong> Short sentences are fine.
+      You don’t need explanations — just clear yes/no/time.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="drills">
+  <h2>Drills (90 minutes)</h2>
+
+  <div class="exercise">
+    <h3>Block A — Say the date (30 items)</h3>
+    <p class="small">Convert numeric dates into spoken German.</p>
+    <div class="prompt mono">
+      01.01. · 03.02. · 05.03. · 10.04. · 12.05.<br/>
+      15.06. · 18.07. · 20.08. · 22.09. · 30.10.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Block B — Date + time sentences (24 sentences)</h3>
+    <p class="small">Write full sentences.</p>
+    <div class="prompt mono">
+      am Montag / um zwei Uhr / anfangen<br/>
+      am Freitag / um halb acht / treffen<br/>
+      am dritten Mai / um zehn Uhr / arbeiten
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Block C — Appointment Q/A (20 pairs)</h3>
+    <p class="small">Write questions and answers.</p>
+    <div class="prompt mono">
+      Wann hast du Zeit?<br/>
+      Am Dienstag um drei Uhr.<br/>
+      Kannst du am Freitag?<br/>
+      Nein, ich kann nicht.
+    </div>
+  </div>
+
+  <div class="exercise">
+    <h3>Block D — Correction (15 lines)</h3>
+    <div class="prompt mono">
+      Am Montag ich habe Zeit.<br/>
+      Wann du hast Zeit?<br/>
+      Ich kann am drei Mai.<br/>
+      Am Freitag um halb acht ich komme.<br/>
+      Können wir ändern der Termin?
+    </div>
+
+    <details><summary>Corrections</summary>
+      <div class="prompt mono">
+        Am Montag habe ich Zeit.<br/>
+        Wann hast du Zeit?<br/>
+        Ich kann am dritten Mai.<br/>
+        Am Freitag um halb acht komme ich.<br/>
+        Können wir den Termin ändern?
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="speaking">
+  <h2>Speaking (20 minutes)</h2>
+  <p class="lede">Speak out loud. Short and clear.</p>
+
+  <div class="card">
+    <ol>
+      <li>Ask and answer: <em>Wann hast du Zeit?</em></li>
+      <li>Say 5 dates out loud.</li>
+      <li>Make 3 appointments with time + date.</li>
+      <li>Cancel one appointment politely.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="production">
+  <h2>Production (20 minutes)</h2>
+
+  <div class="exercise">
+    <h3>Production 1 — My week (10 sentences)</h3>
+    <p class="small">
+      Write about your week. Include:
+      5 days, 3 times, 2 appointments, 2 negatives.
+    </p>
+  </div>
+
+  <div class="exercise">
+    <h3>Production 2 — Dialogue (12 lines)</h3>
+    <p class="small">
+      Two people arrange and change a meeting.
+      Use days, dates, and time.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="exit">
+  <h2>Exit Check</h2>
+  <div class="card">
+    <ul class="checklist">
+      <li>I can say today / tomorrow / yesterday.</li>
+      <li>I can say a date out loud.</li>
+      <li>I can make and change an appointment.</li>
+      <li>I can combine date + time + verb.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>A1 truth:</strong> If you can arrange a meeting, you’re functional.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <small>Week 4 · Day 3 — Dates + Appointments · A1 Automation & Exit</small>
+</footer>
+
+</body>
+</html>

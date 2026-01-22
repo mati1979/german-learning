@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 German Roadmap ✿</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple: #9d7bb8;
+            --light-purple: #c5a5db;
+            --pink: #f5b5d4;
+            --light-pink: #ffd6e8;
+            --cream: #fff9f3;
+            --off-white: #fffbf7;
+            --text: #6b5468;
+            --accent: #e89fc9;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-pink) 50%, var(--off-white) 100%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating decorations */
+        .float-decoration {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.5;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .float-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .float-2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .float-3 { top: 60%; left: 3%; animation-delay: 2s; }
+        .float-4 { top: 70%; right: 5%; animation-delay: 3s; }
+        .float-5 { top: 40%; left: 10%; animation-delay: 1.5s; }
+        .float-6 { top: 50%; right: 12%; animation-delay: 2.5s; }
+        .float-7 { top: 85%; left: 15%; animation-delay: 0.5s; }
+        .float-8 { top: 30%; right: 20%; animation-delay: 3.5s; }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(157, 123, 184, 0.2);
+            position: relative;
+            border: 3px solid rgba(197, 165, 219, 0.3);
+        }
+
+        header::before {
+            content: '✿';
+            position: absolute;
+            font-size: 3rem;
+            color: var(--pink);
+            top: 20px;
+            left: 30px;
+            opacity: 0.6;
+            animation: spin 10s linear infinite;
+        }
+
+        header::after {
+            content: '❀';
+            position: absolute;
+            font-size: 3rem;
+            color: var(--light-purple);
+            top: 20px;
+            right: 30px;
+            opacity: 0.6;
+            animation: spin 10s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--purple);
+            font-weight: 500;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--light-purple);
+            padding: 20px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(157, 123, 184, 0.1);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(157, 123, 184, 0.25);
+        }
+
+        .timeline-number {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-label {
+            font-size: 0.9rem;
+            color: var(--purple);
+            text-transform: lowercase;
+            font-weight: 600;
+        }
+
+        .daily-structure {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(197, 165, 219, 0.3);
+            border-radius: 30px;
+            padding: 50px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(157, 123, 184, 0.2);
+            position: relative;
+        }
+
+        .daily-structure::before {
+            content: '❀';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: var(--pink);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .daily-structure h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            margin-bottom: 40px;
+            color: var(--purple);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .hour-block {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 25px;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            border-left: 6px solid var(--pink);
+            box-shadow: 0 5px 15px rgba(157, 123, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hour-block:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(157, 123, 184, 0.2);
+        }
+
+        .hour-number {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            min-width: 90px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hour-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--purple);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .hour-content p {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .week-section {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .week-section:nth-child(1) { animation-delay: 0.1s; }
+        .week-section:nth-child(2) { animation-delay: 0.2s; }
+        .week-section:nth-child(3) { animation-delay: 0.3s; }
+        .week-section:nth-child(4) { animation-delay: 0.4s; }
+        .week-section:nth-child(5) { animation-delay: 0.5s; }
+        .week-section:nth-child(6) { animation-delay: 0.6s; }
+        .week-section:nth-child(7) { animation-delay: 0.7s; }
+        .week-section:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            padding: 25px 35px;
+            border-radius: 25px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(157, 123, 184, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .week-header::before {
+            content: '❀';
+            position: absolute;
+            font-size: 8rem;
+            right: -20px;
+            top: -30px;
+            opacity: 0.1;
+            color: white;
+        }
+
+        .week-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            font-weight: 700;
+        }
+
+        .week-duration {
+            font-size: 0.95rem;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--light-purple);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(157, 123, 184, 0.1);
+        }
+
+        .topic-card::before {
+            content: '✿';
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-size: 2rem;
+            opacity: 0.1;
+            color: var(--pink);
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px) rotate(-1deg);
+            box-shadow: 0 12px 30px rgba(157, 123, 184, 0.25);
+            border-color: var(--pink);
+        }
+
+        .topic-type {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: lowercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .grammar-badge {
+            background: linear-gradient(135deg, var(--light-purple), var(--pink));
+            color: white;
+        }
+
+        .vocab-badge {
+            background: linear-gradient(135deg, var(--pink), var(--light-pink));
+            color: white;
+        }
+
+        .topic-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--purple);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .topic-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topic-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .topic-card li::before {
+            content: '✿';
+            position: absolute;
+            left: 0;
+            color: var(--pink);
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 214, 232, 0.3));
+            backdrop-filter: blur(10px);
+            border-left: 5px solid var(--pink);
+            padding: 20px 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(157, 123, 184, 0.1);
+        }
+
+        .note-box strong {
+            color: var(--purple);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+        }
+
+        footer p {
+            color: var(--purple);
+            font-size: 1rem;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hour-block {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .float-decoration {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorations -->
+    <div class="float-decoration float-1">🌸</div>
+    <div class="float-decoration float-2">✨</div>
+    <div class="float-decoration float-3">🌺</div>
+    <div class="float-decoration float-4">💫</div>
+    <div class="float-decoration float-5">🦋</div>
+    <div class="float-decoration float-6">🌷</div>
+    <div class="float-decoration float-7">🌼</div>
+    <div class="float-decoration float-8">✿</div>
+
+    <div class="page-wrapper">
+        <header>
+            <h1>A1 German Roadmap</h1>
+            <p class="subtitle">Your 8-Week Journey to German Basics</p>
+        </header>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-number">8</div>
+                <div class="timeline-label">weeks</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">224</div>
+                <div class="timeline-label">hours</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-number">~1000</div>
+                <div class="timeline-label">words</div>
+            </div>
+        </div>
+
+        <div class="daily-structure">
+            <h2>Your Daily 4-Hour Structure</h2>
+            
+            <div class="hour-block">
+                <div class="hour-number">1h</div>
+                <div class="hour-content">
+                    <h4>Grammar Theory + Examples</h4>
+                    <p>Learn new grammar concept, see it in context, understand the rules</p>
+                </div>
+            </div>
+
+            <div class="hour-block">
+                <div class="hour-number">1.5h</div>
+                <div class="hour-content">
+                    <h4>Grammar Drilling (Writing)</h4>
+                    <p>Hundreds of sentences writing practice, corrections, repeat until perfect</p>
+                </div>
+            </div>
+
+            <div class="hour-block">
+                <div class="hour-number">1h</div>
+                <div class="hour-content">
+                    <h4>Vocabulary Learning</h4>
+                    <p>New words in thematic groups, example sentences, contextual usage</p>
+                </div>
+            </div>
+
+            <div class="hour-block">
+                <div class="hour-number">0.5h</div>
+                <div class="hour-content">
+                    <h4>Vocab Drilling (Writing)</h4>
+                    <p>Write sentences using new vocabulary, combine with learned grammar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="note-box">
+            <strong>✨ Note:</strong> Each week builds on the previous. Don't rush ahead! Master each topic through repetitive writing before moving forward. You'll write thousands of sentences by the end of A1.
+        </div>
+
+        <!-- WEEK 1 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 1: Foundation</div>
+                <div class="week-duration">Days 1-7</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>German Basics</h3>
+                    <ul>
+                        <li>Alphabet and pronunciation</li>
+                        <li>Gender introduction (der/die/das)</li>
+                        <li>Subject pronouns (ich, du, er/sie/es, wir, ihr, sie/Sie)</li>
+                        <li>sein (to be) - full conjugation</li>
+                        <li>haben (to have) - full conjugation</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Present Tense Verbs</h3>
+                    <ul>
+                        <li>Regular verb endings (-e, -st, -t, -en, -t, -en)</li>
+                        <li>5 common regular verbs (machen, spielen, lernen, arbeiten, wohnen)</li>
+                        <li>Basic word order: SVO (Subject-Verb-Object)</li>
+                        <li>Affirmative sentences</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Essential Words (100 words)</h3>
+                    <ul>
+                        <li>Numbers 0-20</li>
+                        <li>Basic greetings (Hallo, Guten Tag, Tschüss)</li>
+                        <li>Common verbs (10 words)</li>
+                        <li>Question words (wer, was, wo, wie)</li>
+                        <li>Yes/no/please/thank you</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 2 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 2: Questions & Articles</div>
+                <div class="week-duration">Days 8-14</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Question Formation</h3>
+                    <ul>
+                        <li>Yes/No questions (verb-first)</li>
+                        <li>W-questions (wer, was, wo, wann, wie, warum)</li>
+                        <li>Inversion in questions</li>
+                        <li>Answering questions (ja/nein/doch)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Articles & Gender</h3>
+                    <ul>
+                        <li>Definite articles (der, die, das) - nominative</li>
+                        <li>Indefinite articles (ein, eine) - nominative</li>
+                        <li>Gender recognition patterns</li>
+                        <li>Negative article (kein, keine)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Daily Life (150 words)</h3>
+                    <ul>
+                        <li>Numbers 21-100</li>
+                        <li>Days of the week</li>
+                        <li>Family members (15 words)</li>
+                        <li>Common objects (20 words)</li>
+                        <li>Colors (basic 10)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 3 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 3: Accusative Case</div>
+                <div class="week-duration">Days 15-21</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Accusative Case</h3>
+                    <ul>
+                        <li>Direct objects concept</li>
+                        <li>Accusative articles (den, die, das, einen, eine)</li>
+                        <li>Accusative pronouns (mich, dich, ihn, sie, es)</li>
+                        <li>Verbs taking accusative</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Accusative Prepositions</h3>
+                    <ul>
+                        <li>für (for)</li>
+                        <li>durch (through)</li>
+                        <li>gegen (against)</li>
+                        <li>ohne (without)</li>
+                        <li>um (around/at)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Food & Drinks (120 words)</h3>
+                    <ul>
+                        <li>Food items (40 words)</li>
+                        <li>Drinks (15 words)</li>
+                        <li>Restaurant phrases (20 words)</li>
+                        <li>Taste adjectives (10 words)</li>
+                        <li>Eating verbs (10 words)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 4 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 4: Modal Verbs</div>
+                <div class="week-duration">Days 22-28</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Modal Verbs</h3>
+                    <ul>
+                        <li>können (can/to be able to)</li>
+                        <li>müssen (must/to have to)</li>
+                        <li>wollen (to want)</li>
+                        <li>möchten (would like)</li>
+                        <li>Modal verb + infinitive structure</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Possessive Adjectives</h3>
+                    <ul>
+                        <li>mein/meine (my)</li>
+                        <li>dein/deine (your-informal)</li>
+                        <li>sein/seine (his)</li>
+                        <li>ihr/ihre (her)</li>
+                        <li>unser/unsere (our)</li>
+                        <li>Ihr/Ihre (your-formal)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Hobbies & Time (130 words)</h3>
+                    <ul>
+                        <li>Hobbies and activities (30 words)</li>
+                        <li>Sports (20 words)</li>
+                        <li>Time expressions (25 words)</li>
+                        <li>Frequency words (15 words)</li>
+                        <li>Leisure verbs (15 words)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 5 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 5: Separable Verbs & Plurals</div>
+                <div class="week-duration">Days 29-35</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Separable Verbs</h3>
+                    <ul>
+                        <li>Concept of separable prefix verbs</li>
+                        <li>aufstehen (to get up)</li>
+                        <li>anrufen (to call)</li>
+                        <li>einkaufen (to shop)</li>
+                        <li>Position of separated prefix</li>
+                        <li>10 common separable verbs</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Plural Forms</h3>
+                    <ul>
+                        <li>5 plural patterns in German</li>
+                        <li>-e plural (der Tisch → die Tische)</li>
+                        <li>-n/-en plural (die Frau → die Frauen)</li>
+                        <li>-er plural (das Kind → die Kinder)</li>
+                        <li>No change plural (der Lehrer → die Lehrer)</li>
+                        <li>-s plural (das Auto → die Autos)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>House & Rooms (100 words)</h3>
+                    <ul>
+                        <li>Rooms (12 words)</li>
+                        <li>Furniture (25 words)</li>
+                        <li>Household items (30 words)</li>
+                        <li>Location prepositions (10 words)</li>
+                        <li>House verbs (15 words)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 6 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 6: Telling Time & Daily Routine</div>
+                <div class="week-duration">Days 36-42</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Time Expressions</h3>
+                    <ul>
+                        <li>Telling time (Es ist... Uhr)</li>
+                        <li>um + time (at)</li>
+                        <li>von...bis (from...to)</li>
+                        <li>Time prepositions (am, im, um)</li>
+                        <li>Dates and years</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Negation</h3>
+                    <ul>
+                        <li>nicht - position rules</li>
+                        <li>kein/keine (no/not a)</li>
+                        <li>nie/niemals (never)</li>
+                        <li>Difference between nicht and kein</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Daily Routine (120 words)</h3>
+                    <ul>
+                        <li>Morning routine (20 words)</li>
+                        <li>Evening routine (15 words)</li>
+                        <li>Daily activities (30 words)</li>
+                        <li>Time of day words (15 words)</li>
+                        <li>Sequence words (10 words: zuerst, dann, danach)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 7 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 7: Shopping & Adjectives</div>
+                <div class="week-duration">Days 43-49</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Adjectives (Predicative)</h3>
+                    <ul>
+                        <li>Adjectives after sein/werden</li>
+                        <li>Basic descriptive adjectives</li>
+                        <li>Opposites</li>
+                        <li>Size, color, quality adjectives</li>
+                        <li>No endings needed (yet)</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>dieser/jeder/welcher</h3>
+                    <ul>
+                        <li>dieser (this/these)</li>
+                        <li>jeder (every/each)</li>
+                        <li>welcher (which)</li>
+                        <li>alle (all)</li>
+                        <li>Basic declension patterns</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Shopping & Clothes (130 words)</h3>
+                    <ul>
+                        <li>Clothing items (30 words)</li>
+                        <li>Shops and stores (20 words)</li>
+                        <li>Shopping phrases (25 words)</li>
+                        <li>Numbers 100-1000</li>
+                        <li>Money and prices (15 words)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEEK 8 -->
+        <section class="week-section">
+            <div class="week-header">
+                <div class="week-title">Week 8: Body & Health + Review</div>
+                <div class="week-duration">Days 50-56</div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>Imperatives</h3>
+                    <ul>
+                        <li>du-imperative (informal singular)</li>
+                        <li>ihr-imperative (informal plural)</li>
+                        <li>Sie-imperative (formal)</li>
+                        <li>Common commands</li>
+                        <li>Separable verbs in imperative</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type grammar-badge">grammar</span>
+                    <h3>A1 REVIEW WEEK</h3>
+                    <ul>
+                        <li>All cases review (nom/acc)</li>
+                        <li>All verb types review</li>
+                        <li>Articles and pronouns recap</li>
+                        <li>Common mistakes drill</li>
+                        <li>Mixed sentence writing</li>
+                    </ul>
+                </div>
+
+                <div class="topic-card">
+                    <span class="topic-type vocab-badge">vocabulary</span>
+                    <h3>Body & Health (150 words)</h3>
+                    <ul>
+                        <li>Body parts (30 words)</li>
+                        <li>Health/illness words (25 words)</li>
+                        <li>Doctor/pharmacy (20 words)</li>
+                        <li>Feelings and emotions (20 words)</li>
+                        <li>Weather basics (15 words)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="note-box">
+            <strong>🌸 End of A1 Goals:</strong> You should be able to introduce yourself, handle basic shopping and restaurant situations, describe your daily routine, talk about your family and hobbies, ask and answer simple questions, and write simple sentences about everyday topics. You'll have written thousands of sentences and know approximately 1,000 German words!
+        </div>
+
+        <footer>
+            <p><span class="sparkle">✨</span> Consistency beats intensity. 4 hours every day will get you there! <span class="sparkle">✨</span></p>
+            <p style="margin-top: 15px;">Viel Erfolg! (Good luck!)</p>
+        </footer>
+    </div>
+</body>
+</html>
